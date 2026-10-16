@@ -6,6 +6,9 @@ import { precesion } from './precesion.js';
 import { puertasEnoc } from './puertas-enoc.js';
 import { fasesLuna } from './fases-luna.js';
 import { retrogrado } from './retrogrado.js';
+import { solDosModelos } from './sol-dos-modelos.js';
+import { tiposEclipse } from './tipos-eclipse.js';
+import { zodiaco } from './zodiaco.js';
 
 const REGISTRO = {
   'arcos-polaris': (el) => {
@@ -19,6 +22,9 @@ const REGISTRO = {
   'puertas-enoc': puertasEnoc,
   'fases-luna': fasesLuna,
   retrogrado,
+  'sol-dos-modelos': solDosModelos,
+  'tipos-eclipse': tiposEclipse,
+  zodiaco,
 };
 
 // Devuelve una función para desmontarla, o null si el componente no existe.

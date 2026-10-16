@@ -1,8 +1,9 @@
 """Genera el SQL que carga el plan del curso y el contenido de los módulos en Supabase.
 
 Uso: python3 contenido/generar_seed.py > contenido/seed.sql
+     python3 contenido/generar_seed.py --json > contenido/bloques.json
 Cada <h2> del HTML de un módulo es una sección; cada <h3> dentro de ella, un bloque de texto.
-Las animaciones e interactivos se insertan después del bloque cuyo título se indica en ANIMACIONES.
+Las fotos, animaciones e interactivos se insertan después del bloque cuyo título se indica en EXTRAS.
 """
 import json
 import re
@@ -37,23 +38,133 @@ MODULOS = [
 
 ARCHIVOS = {0: "modulo-00-introduccion.html", 1: "modulo-01-mirar-el-cielo.html"}
 
-# (módulo, título de la sección h2, título del h3 tras el que va) -> bloque
-ANIMACIONES = {
-    (1, "El movimiento de las estrellas y el misterio de Polaris", "Lo que se observa"): (
-        "animacion", {"componente": "arcos-polaris",
-                      "pie": "El cielo del norte durante una noche: las estrellas dejan arcos en torno a Polaris."}),
-    (1, "El movimiento de las estrellas y el misterio de Polaris", "Un dato que cambia todo: la estrella polar no siempre fue Polaris"): (
-        "interactivo", {"componente": "precesion",
-                        "pie": "Mueve el año y observa cómo el polo celeste pasa de Thuban a Polaris y a Vega."}),
-    (1, "El Sol, las estaciones y la eclíptica", "Cómo lo entendían otras cosmovisiones"): (
-        "interactivo", {"componente": "puertas-enoc",
-                        "pie": "Libro de Enoc, cap. 72: el Sol sale cada mes por una de las seis puertas del este."}),
-    (1, "La Luna y sus fases", "Lo que se observa"): (
-        "interactivo", {"componente": "fases-luna",
-                        "pie": "Arrastra para recorrer un mes lunar de unos 29,5 días."}),
-    (1, "Los planetas: los astros errantes", "La explicación moderna"): (
-        "animacion", {"componente": "retrogrado",
-                      "pie": "Según el modelo moderno: la Tierra adelanta a Marte y, visto desde aquí, Marte parece retroceder."}),
+# Fotos y obras de archivo libre. Las de Wikimedia Commons se enlazan por su nombre de archivo.
+def commons(nombre, ancho=1280):
+    from urllib.parse import quote
+    n = quote(nombre.replace(' ', '_'))
+    return (f"https://commons.wikimedia.org/wiki/Special:FilePath/{n}?width={ancho}",
+            f"https://commons.wikimedia.org/wiki/File:{n}")
+
+
+def imagen(tipo, url, enlace, pie, credito, licencia, fecha=None, alt=None):
+    c = {"tipo": tipo, "url": url, "enlace": enlace, "pie": pie, "credito": credito, "licencia": licencia}
+    if fecha:
+        c["fecha"] = fecha
+    if alt:
+        c["alt"] = alt
+    return ("imagen", c)
+
+
+def widget(tipo, componente, etiqueta, modelo, pie):
+    return (tipo, {"componente": componente, "etiqueta": etiqueta, "modelo": modelo, "pie": pie})
+
+
+FOTO_NORTE = imagen(
+    "foto", "https://noirlab.edu/public/media/archives/images/screen/iotw2033a.jpg",
+    "https://kpno.noirlab.edu/images/iotw2033a/",
+    "Hemisferio norte: fotografía de larga exposición en el observatorio de Kitt Peak (Arizona). Las estrellas trazan arcos en torno a Polaris.",
+    "KPNO/NOIRLab/NSF/AURA", "CC BY 4.0")
+FOTO_SUR = imagen(
+    "foto", "https://cdn.eso.org/images/screen/171109-cc.jpg",
+    "https://www.eso.org/public/images/171109-cc/",
+    "Hemisferio sur: fotografía de larga exposición con objetivo de ojo de pez en el observatorio Paranal (Chile). Los arcos giran en torno a otro punto del cielo, sin estrella brillante en el centro.",
+    "ESO/A. Santerne", "CC BY 4.0")
+FOTO_TIERRA = imagen(
+    "foto", "https://images-assets.nasa.gov/image/as17-148-22727/as17-148-22727~medium.jpg",
+    "https://images.nasa.gov/details/as17-148-22727",
+    "La NASA la publica como una fotografía tomada por la tripulación del Apolo 17 en 1972, de camino a la Luna. El modelo moderno la presenta entre sus pruebas; los defensores de la Tierra plana cuestionan la autenticidad de este tipo de imágenes.",
+    "NASA", "Dominio público", fecha="1972")
+_u, _e = commons("Gleason's new standard map of the world - on the projection of J. S. Christopher, Modern College, Blackheath, England; scientifically and practically correct; as \"it is.\" (10143175716).jpg")
+MAPA_GLEASON = imagen(
+    "obra", _u, _e,
+    "Mapa del mundo de Alexander Gleason (1892), con el polo norte en el centro y el borde del sur alrededor. Es la disposición que suele usarse para representar el modelo plano.",
+    "Alexander Gleason", "Dominio público", fecha="1892")
+_u, _e = commons("Flammarion.jpg")
+GRABADO_FLAMMARION = imagen(
+    "obra", _u, _e,
+    "Grabado publicado por Camille Flammarion en «L'atmosphère» (París, 1888): un viajero asoma la cabeza más allá de la bóveda del cielo. Aunque a menudo se presenta como medieval, es del siglo XIX.",
+    "Autor desconocido, en C. Flammarion, 1888", "Dominio público", fecha="1888")
+_u, _e = commons("Cellarius Harmonia Macrocosmica - Scenographia Systematis mundani Ptolemaici.jpg")
+CELLARIUS_PTOLOMEO = imagen(
+    "obra", _u, _e,
+    "El sistema de Ptolomeo en el atlas «Harmonia Macrocosmica» de Andreas Cellarius (1660): la Tierra en el centro, rodeada por las esferas de los astros.",
+    "Andreas Cellarius", "Dominio público", fecha="1660")
+_u, _e = commons("WorldMapCosmasIndicopleustes.jpg")
+MAPA_COSMAS = imagen(
+    "obra", _u, _e,
+    "Mapa del mundo de la «Topografía cristiana» de Cosmas Indicopleustes (siglo VI), tal como se conserva en copias manuscritas: la tierra habitada rodeada por el océano.",
+    "Cosmas Indicopleustes (copia manuscrita)", "Dominio público", fecha="Siglo VI")
+_u, _e = commons("Cellarius Harmonia Macrocosmica - Solis circa Orbem Terrarum Spiralis Revolutio.jpg")
+CELLARIUS_ESPIRAL = imagen(
+    "obra", _u, _e,
+    "Cellarius (1660): el recorrido en espiral del Sol alrededor de la Tierra a lo largo del año, según el modelo geocéntrico.",
+    "Andreas Cellarius", "Dominio público", fecha="1660")
+FOTO_LUNA = imagen(
+    "foto", "https://cdn.eso.org/images/screen/eso1210a.jpg",
+    "https://www.eso.org/public/images/eso1210a/",
+    "Luna creciente sobre el observatorio Paranal (Chile), el 27 de octubre de 2011. La parte oscura brilla débilmente: es la llamada luz cenicienta.",
+    "ESO/B. Tafreshi (twanight.org)", "CC BY 4.0", fecha="2011")
+FOTO_CORONA = imagen(
+    "foto", "https://www.nasa.gov/wp-content/uploads/2023/03/36329608000_2e0f627e4b_o.jpg",
+    "https://www.nasa.gov/image-article/suns-corona-seen-during-2017-solar-eclipse/",
+    "Eclipse total de Sol del 21 de agosto de 2017, fotografiado desde un avión sobre Oregón (Estados Unidos): durante la totalidad se ve la corona.",
+    "NASA/Carla Thomas", "Dominio público", fecha="2017")
+FOTO_LUNA_ROJA = imagen(
+    "foto", "https://cdn.eso.org/images/screen/potw2221a.jpg",
+    "https://www.eso.org/public/images/potw2221a/",
+    "Eclipse total de Luna del 15 de mayo de 2022, visto desde el observatorio Paranal (Chile): durante la totalidad la Luna toma un tono rojizo.",
+    "F. Aedo, F. Durán/ESO", "CC BY 4.0", fecha="2022")
+_u, _e = commons("Description of Egypt. 2nd edition. 1822. Vol. 4. Pl. 21 (Dendera Circular Zodiac).jpg")
+DENDERA = imagen(
+    "obra", _u, _e,
+    "El zodiaco circular de Dendera dibujado para la «Description de l'Égypte» (edición de 1822). El original, un relieve de época ptolemaica, se conserva hoy en el Museo del Louvre.",
+    "Description de l'Égypte", "Dominio público", fecha="1822")
+
+SEC_POLARIS = "El movimiento de las estrellas y el misterio de Polaris"
+SEC_SOL = "El Sol, las estaciones y la eclíptica"
+SEC_LUNA = "La Luna y sus fases"
+SEC_ECLIPSES = "Los eclipses"
+SEC_PLANETAS = "Los planetas: los astros errantes"
+SEC_ZODIACO = "El zodiaco y las constelaciones"
+OBS = "Lo que se observa"
+MOD = "La explicación moderna"
+PLANO = "La explicación terraplanista"
+OTRAS = "Cómo lo entendían otras cosmovisiones"
+
+# (módulo, sección h2, h3 tras el que van) -> bloques que se insertan después
+EXTRAS = {
+    (1, SEC_POLARIS, OBS): [
+        widget("animacion", "arcos-polaris", "Animación", "Observación",
+               "Una noche mirando al polo celeste, en el hemisferio norte y en el sur: las estrellas dejan arcos en torno a cada polo. Cambia de hemisferio con los botones."),
+        FOTO_NORTE, FOTO_SUR],
+    (1, SEC_POLARIS, MOD): [FOTO_TIERRA],
+    (1, SEC_POLARIS, PLANO): [MAPA_GLEASON],
+    (1, SEC_POLARIS, "Un dato que cambia todo: la estrella polar no siempre fue Polaris"): [
+        widget("interactivo", "precesion", "Interactivo", "Observación, con el cálculo moderno de la precesión",
+               "Mueve el año y observa cómo el polo celeste pasa de Thuban a Polaris y a Vega.")],
+    (1, SEC_POLARIS, OTRAS): [CELLARIUS_PTOLOMEO, GRABADO_FLAMMARION, MAPA_COSMAS],
+    (1, SEC_SOL, PLANO): [
+        widget("interactivo", "sol-dos-modelos", "Interactivo", "Dos modelos: moderno y plano",
+               "El mismo año explicado por los dos modelos. Arriba, la Tierra inclinada alrededor del Sol; abajo, el Sol girando sobre el plano entre los trópicos. Esquemas, no a escala.")],
+    (1, SEC_SOL, OTRAS): [
+        CELLARIUS_ESPIRAL,
+        widget("interactivo", "puertas-enoc", "Interactivo", "Según el Libro de Enoc",
+               "Libro de Enoc, cap. 72: el Sol sale cada mes por una de las seis puertas del este.")],
+    (1, SEC_LUNA, OBS): [
+        widget("interactivo", "fases-luna", "Interactivo", "Observación",
+               "Arrastra para recorrer un mes lunar de unos 29,5 días. El botón muestra, además, el esquema con el que lo explica el modelo moderno."),
+        FOTO_LUNA],
+    (1, SEC_ECLIPSES, "Los tipos de eclipse"): [
+        widget("interactivo", "tipos-eclipse", "Interactivo", "Observación",
+               "Cómo se ve cada tipo de eclipse desde el suelo. Esquema, no a escala."),
+        FOTO_CORONA, FOTO_LUNA_ROJA],
+    (1, SEC_PLANETAS, MOD): [
+        widget("animacion", "retrogrado", "Animación", "Dos modelos: heliocéntrico y de Ptolomeo",
+               "Un mismo bucle de Marte explicado por dos modelos: el heliocéntrico de Copérnico y Kepler, y el geocéntrico de Ptolomeo con epiciclos. El modelo plano no ha desarrollado una explicación geométrica propia del retroceso.")],
+    (1, SEC_ZODIACO, MOD): [
+        widget("interactivo", "zodiaco", "Interactivo", "Constelaciones y signos",
+               "Fuera, las constelaciones por las que pasa el Sol; dentro, los doce signos del zodiaco tropical, que empiezan en el equinoccio. Mueve el año para ver cómo se separan.")],
+    (1, SEC_ZODIACO, OTRAS): [DENDERA],
 }
 
 
@@ -83,7 +194,27 @@ def bloques_de_texto(cuerpo):
         yield (m.group(1).strip() if m else None), trozo
 
 
+def bloques_json():
+    """Lista plana de bloques, para que la base de datos la lea con pg_net desde GitHub."""
+    filas = []
+    for num, *_ in MODULOS:
+        archivo = ARCHIVOS.get(num)
+        if not archivo:
+            continue
+        html = (AQUI / archivo).read_text(encoding="utf-8")
+        for orden_s, (tit_s, cuerpo) in enumerate(secciones(html), start=1):
+            orden_b = 0
+            for tit_h3, trozo in bloques_de_texto(cuerpo):
+                for tipo, contenido in [("texto", {"html": trozo})] + EXTRAS.get((num, tit_s, tit_h3), []):
+                    orden_b += 1
+                    filas.append({"modulo": num, "seccion": orden_s, "orden": orden_b, "tipo": tipo, "contenido": contenido})
+    return filas
+
+
 def main():
+    if "--json" in sys.argv:
+        print(json.dumps(bloques_json(), ensure_ascii=False, indent=1))
+        return
     out = ["begin;", "delete from public.bloques; delete from public.secciones; delete from public.modulos;"]
     for num, slug, titulo, resumen, publicado in MODULOS:
         out.append(
@@ -99,19 +230,20 @@ def main():
                 f"{q(slugify(tit_s))}, {q(tit_s)} from public.modulos where numero = {num};")
             orden_b = 0
             for tit_h3, trozo in bloques_de_texto(cuerpo):
-                anim = ANIMACIONES.get((num, tit_s, tit_h3))
-                lista = [("texto", {"html": trozo})] + ([anim] if anim else [])
+                lista = [("texto", {"html": trozo})] + EXTRAS.get((num, tit_s, tit_h3), [])
                 for tipo, contenido in lista:
                     orden_b += 1
                     out.append(
                         f"insert into public.bloques (seccion_id, orden, tipo, contenido) select s.id, {orden_b}, "
                         f"'{tipo}', {q(json.dumps(contenido, ensure_ascii=False))}::jsonb from public.secciones s "
                         f"join public.modulos m on m.id = s.modulo_id where m.numero = {num} and s.orden = {orden_s};")
-    # Comprobar que todas las animaciones encontraron su sitio
+    # Comprobar que todos los extras encontraron su sitio
     usados = "\n".join(out)
-    for clave, (_, c) in ANIMACIONES.items():
-        if c["componente"] not in usados:
-            sys.exit(f"Animación sin colocar: {clave}")
+    for clave, bloques in EXTRAS.items():
+        for _, c in bloques:
+            marca = c.get("componente") or c.get("enlace")
+            if json.dumps(marca)[1:-1] not in usados:
+                sys.exit(f"Bloque sin colocar: {clave}")
     out.append("commit;")
     print("\n".join(out))
 

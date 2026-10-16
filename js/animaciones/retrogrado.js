@@ -1,7 +1,9 @@
-// Animación: el bucle retrógrado de Marte según el modelo moderno (heliocéntrico).
-// Arriba, la vista desde fuera del sistema; abajo, lo que se ve desde la Tierra
-// contra las estrellas. La inclinación de la órbita de Marte está exagerada
-// para que el bucle se distinga.
+// Animación: el bucle retrógrado de Marte explicado por dos modelos.
+// Heliocéntrico (Copérnico, Kepler): la Tierra adelanta a Marte en sus órbitas.
+// Geocéntrico (Ptolomeo): Marte gira en un epiciclo cuyo centro recorre un deferente
+// alrededor de la Tierra. Con estas medidas, los dos producen el mismo recorrido
+// aparente, que se dibuja abajo contra las estrellas. La inclinación de la órbita
+// de Marte está exagerada para que el bucle se distinga.
 
 import { ajustarLienzo, bucle, sinMovimiento, boton, barraControles, azar } from './comun.js';
 
@@ -35,6 +37,7 @@ export function retrogrado(contenedor) {
 
   let ctx, ancho, alto;
   let t = -VENTANA;
+  let modelo = 'helio';
   const fondo = [];
   const rnd = azar(5);
   for (let i = 0; i < 70; i++) fondo.push([rnd(), rnd(), 0.4 + rnd() * 1.1]);
@@ -57,8 +60,10 @@ export function retrogrado(contenedor) {
 
     // --- Vista desde fuera ---
     const cx = ancho / 2, cy = altoArriba / 2 + 6;
-    const k = Math.min(ancho * 0.42, altoArriba * 0.44) / R_MARTE;
+    ctx.font = '500 12px "IBM Plex Sans", system-ui, sans-serif';
     ctx.lineWidth = 1;
+    if (modelo === 'geo') { dibujarPtolomeo(p, cx, cy, altoArriba); dibujarFranja(p, altoArriba); return; }
+    const k = Math.min(ancho * 0.42, altoArriba * 0.44) / R_MARTE;
     ctx.setLineDash([3, 5]);
     ctx.strokeStyle = 'rgba(143,176,224,.4)';
     for (const r of [R_TIERRA, R_MARTE]) { ctx.beginPath(); ctx.arc(cx, cy, r * k, 0, Math.PI * 2); ctx.stroke(); }
@@ -79,7 +84,48 @@ export function retrogrado(contenedor) {
     ctx.fillText('Sol', cx + 12, cy + 4);
     ctx.fillText('Tierra', T.x + 9, T.y + 14);
     ctx.fillText('Marte', M.x + 9, M.y - 6);
+    ctx.fillStyle = 'rgba(235,229,213,.6)';
+    ctx.fillText('Modelo heliocéntrico (Copérnico, Kepler)', 14, 20);
+    dibujarFranja(p, altoArriba);
+  }
 
+  function dibujarPtolomeo(p, cx, cy, altoArriba) {
+    const k = Math.min(ancho * 0.42, altoArriba * 0.44) / (R_MARTE + R_TIERRA);
+    // Centro del epiciclo: recorre el deferente al ritmo de Marte
+    const D = { x: cx + p.marte.x * k, y: cy - p.marte.y * k };
+    // Marte en el epiciclo: el radio del epiciclo apunta como la línea Tierra-Sol
+    const M = { x: D.x - p.tierra.x * k, y: D.y + p.tierra.y * k };
+    const Sol = { x: cx - p.tierra.x * k, y: cy + p.tierra.y * k };
+    ctx.setLineDash([3, 5]);
+    ctx.strokeStyle = 'rgba(143,176,224,.4)';
+    ctx.beginPath(); ctx.arc(cx, cy, R_MARTE * k, 0, Math.PI * 2); ctx.stroke();
+    ctx.beginPath(); ctx.arc(cx, cy, R_TIERRA * k, 0, Math.PI * 2); ctx.stroke();
+    ctx.strokeStyle = 'rgba(217,113,78,.55)';
+    ctx.beginPath(); ctx.arc(D.x, D.y, R_TIERRA * k, 0, Math.PI * 2); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.strokeStyle = 'rgba(143,176,224,.6)';
+    ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(D.x, D.y); ctx.stroke();
+    // línea de visión
+    const ux = M.x - cx, uy = M.y - cy, n = Math.hypot(ux, uy) || 1, largo = 3 * k;
+    ctx.strokeStyle = 'rgba(212,174,90,.55)';
+    ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx + (ux / n) * largo, cy + (uy / n) * largo); ctx.stroke();
+    ctx.fillStyle = '#5b8fd6'; ctx.beginPath(); ctx.arc(cx, cy, 7, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = '#f2cf72'; ctx.beginPath(); ctx.arc(Sol.x, Sol.y, 7, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = 'rgba(217,113,78,.6)'; ctx.beginPath(); ctx.arc(D.x, D.y, 2.5, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = '#d9714e'; ctx.beginPath(); ctx.arc(M.x, M.y, 5, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = 'rgba(235,229,213,.85)';
+    ctx.fillText('Tierra', cx + 10, cy + 16);
+    ctx.fillText('Sol', Sol.x - 8, Sol.y - 12);
+    ctx.fillText('Marte', M.x + 9, M.y - 6);
+    ctx.fillStyle = 'rgba(217,113,78,.85)';
+    ctx.fillText('epiciclo', D.x + R_TIERRA * k * 0.72, D.y - R_TIERRA * k * 0.72);
+    ctx.fillStyle = 'rgba(143,176,224,.85)';
+    ctx.fillText('deferente', cx + R_MARTE * k * 0.72 + 6, cy + R_MARTE * k * 0.72);
+    ctx.fillStyle = 'rgba(235,229,213,.6)';
+    ctx.fillText('Modelo geocéntrico (Ptolomeo)', 14, 20);
+  }
+
+  function dibujarFranja(p, altoArriba) {
     // --- Franja de cielo vista desde la Tierra ---
     const y0 = altoArriba + 10, hFranja = alto - y0 - 10;
     ctx.fillStyle = '#0a1224';
@@ -133,7 +179,18 @@ export function retrogrado(contenedor) {
     if (anim.activo) anim.pausar(); else anim.reanudar();
     bPausa.textContent = anim.activo ? 'Pausar' : 'Reproducir';
   });
-  barra.append(bPausa, boton('Empezar de nuevo', () => { t = -VENTANA; dibujar(); }));
+  const bHelio = boton('Heliocéntrico', () => elegir('helio'), { 'aria-pressed': 'true' });
+  const bGeo = boton('Geocéntrico (Ptolomeo)', () => elegir('geo'), { 'aria-pressed': 'false' });
+  const elegir = (m) => {
+    modelo = m;
+    bHelio.setAttribute('aria-pressed', String(m === 'helio'));
+    bGeo.setAttribute('aria-pressed', String(m === 'geo'));
+    canvas.setAttribute('aria-label', m === 'helio'
+      ? 'Animación, modelo heliocéntrico: la Tierra adelanta a Marte en sus órbitas alrededor del Sol; abajo, visto desde la Tierra, Marte frena, retrocede y vuelve a avanzar entre las estrellas.'
+      : 'Animación, modelo geocéntrico de Ptolomeo: Marte gira en un epiciclo cuyo centro recorre un deferente alrededor de la Tierra; abajo, el mismo bucle visto contra las estrellas.');
+    dibujar();
+  };
+  barra.append(bHelio, bGeo, bPausa, boton('Empezar de nuevo', () => { t = -VENTANA; dibujar(); }));
 
   const ro = new ResizeObserver(() => { if (Math.abs(canvas.clientWidth - ancho) > 2) { preparar(); dibujar(); } });
   ro.observe(contenedor);

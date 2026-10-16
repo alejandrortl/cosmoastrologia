@@ -77,20 +77,42 @@ async function portada() {
 
 /* ---------------- Módulo ---------------- */
 
+// Qué es cada imagen, para que el lector sepa si es una foto, una obra antigua o un dibujo.
+const TIPOS_IMAGEN = {
+  foto: 'Fotografía real',
+  obra: 'Obra histórica',
+  esquema: 'Esquema',
+  ia: 'Imagen generada por IA',
+};
+
+function etiquetas(...textos) {
+  const t = textos.filter(Boolean);
+  return t.length ? `<p class="etiquetas">${t.map((x, i) => `<span class="etiqueta${i === 0 ? ' principal' : ''}">${esc(x)}</span>`).join('')}</p>` : '';
+}
+
 function htmlBloque(b) {
   const c = b.contenido || {};
   switch (b.tipo) {
     case 'texto':
       return `<div class="texto">${c.html || ''}</div>`;
-    case 'imagen':
-      return `<figure class="figura"><img src="${esc(urlMedio(c))}" alt="${esc(c.alt || c.pie || '')}" loading="lazy">
-        ${c.pie || c.credito ? `<figcaption>${esc(c.pie || '')}${c.credito ? `<span class="credito">${esc(c.credito)}${c.licencia ? ` (${esc(c.licencia)})` : ''}</span>` : ''}</figcaption>` : ''}</figure>`;
+    case 'imagen': {
+      const fuente = c.enlace
+        ? `<a href="${esc(c.enlace)}" target="_blank" rel="noopener">${esc(c.credito || 'Ver fuente')}</a>`
+        : esc(c.credito || '');
+      return `<figure class="figura figura-imagen">
+        ${etiquetas(TIPOS_IMAGEN[c.tipo] || TIPOS_IMAGEN.foto, c.fecha)}
+        <div class="marco-imagen"><img src="${esc(urlMedio(c))}" alt="${esc(c.alt || c.pie || '')}" loading="lazy" decoding="async"></div>
+        <figcaption>${esc(c.pie || '')}
+          ${fuente ? `<span class="credito">${fuente}${c.licencia ? `, ${esc(c.licencia)}` : ''}</span>` : ''}
+        </figcaption></figure>`;
+    }
     case 'audio':
       return `<figure class="figura audio-bloque"><audio controls preload="none" src="${esc(urlMedio(c))}"></audio>
         ${c.titulo ? `<figcaption>${esc(c.titulo)}</figcaption>` : ''}</figure>`;
     case 'animacion':
     case 'interactivo':
       return `<figure class="figura" data-componente="${esc(c.componente)}">
+        ${etiquetas(c.etiqueta || (b.tipo === 'animacion' ? 'Animación' : 'Interactivo'), c.modelo)}
         <div class="lienzo"></div>
         ${c.pie ? `<figcaption>${esc(c.pie)}</figcaption>` : ''}</figure>`;
     case 'fuente':
@@ -156,6 +178,13 @@ async function paginaModulo(slug) {
         </nav>
       </article>
     </div>`;
+
+  // Si una foto no carga, se deja el pie con el enlace a la fuente
+  principal.querySelectorAll('.figura-imagen img').forEach((img) => {
+    img.addEventListener('error', () => {
+      img.parentElement.innerHTML = '<p class="imagen-no-disponible">La imagen no se ha podido cargar ahora. Puedes verla en su fuente, enlazada abajo.</p>';
+    }, { once: true });
+  });
 
   // Animaciones e interactivos
   principal.querySelectorAll('[data-componente]').forEach((fig) => {
