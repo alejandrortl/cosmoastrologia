@@ -96,6 +96,39 @@ export class Lector {
 
     this.alSalir = () => this.voz?.cancel();
     window.addEventListener('pagehide', this.alSalir);
+
+    // Al volver a la página, el móvil suelta el bloqueo de pantalla: hay que pedirlo otra vez.
+    this.bloqueoPantalla = null;
+    this.alVolver = () => {
+      if (document.visibilityState === 'visible' && this.leyendo) this.mantenerPantalla();
+    };
+    document.addEventListener('visibilitychange', this.alVolver);
+  }
+
+  // Pide al dispositivo que no apague la pantalla mientras suena el audiolibro.
+  async mantenerPantalla() {
+    if (!('wakeLock' in navigator)) {
+      if (!this.avisoPantalla) {
+        this.avisoPantalla = true;
+        this.aviso('Este navegador no permite mantener la pantalla encendida. Para que no se corte, desactiva el bloqueo automático mientras escuchas.');
+      }
+      return;
+    }
+    if (this.bloqueoPantalla && !this.bloqueoPantalla.released) return;
+    try {
+      this.bloqueoPantalla = await navigator.wakeLock.request('screen');
+      this.bloqueoPantalla.addEventListener('release', () => { this.bloqueoPantalla = null; });
+      // Si se pausó mientras llegaba el permiso, soltarlo enseguida.
+      if (!this.leyendo) this.soltarPantalla();
+    } catch (e) {
+      this.bloqueoPantalla = null; // p. ej., modo ahorro de batería: seguimos sin él
+    }
+  }
+
+  soltarPantalla() {
+    const b = this.bloqueoPantalla;
+    this.bloqueoPantalla = null;
+    b?.release?.().catch(() => {});
   }
 
   posicionGuardada() {
@@ -126,6 +159,7 @@ export class Lector {
     this.indice = Math.max(0, Math.min(i, this.pasajes.length - 1));
     this.leyendo = true;
     this.articulo.classList.add('leyendo-activo');
+    this.mantenerPantalla();
     this.leerPasaje();
   }
 
@@ -157,7 +191,7 @@ export class Lector {
       u.onerror = (ev) => {
         if (gen !== this.generacion) return;
         if (ev.error === 'interrupted' || ev.error === 'canceled') return;
-        this.leyendo = false; this.actualizar();
+        this.leyendo = false; this.soltarPantalla(); this.actualizar();
         this.aviso('La voz se ha detenido. Pulsa reproducir para continuar.');
       };
       this.voz.speak(u);
@@ -170,6 +204,7 @@ export class Lector {
     this.leyendo = false;
     this.generacion++;
     this.voz?.cancel();
+    this.soltarPantalla();
     this.actualizar();
   }
 
@@ -186,6 +221,7 @@ export class Lector {
 
   terminar() {
     this.leyendo = false;
+    this.soltarPantalla();
     this.indice = 0;
     guardarAlmacen(this.clave, '0');
     this.pasajes.forEach((p) => p.classList.remove('pasaje-actual'));
@@ -316,5 +352,6 @@ export class Lector {
     this.articulo.removeEventListener('click', this.alPulsarPasaje);
     this.voz?.removeEventListener?.('voiceschanged', this.alCambiarVoces);
     window.removeEventListener('pagehide', this.alSalir);
+    document.removeEventListener('visibilitychange', this.alVolver);
   }
 }
