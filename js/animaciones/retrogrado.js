@@ -63,6 +63,7 @@ export function retrogrado(contenedor) {
     ctx.font = '500 12px "IBM Plex Sans", system-ui, sans-serif';
     ctx.lineWidth = 1;
     if (modelo === 'geo') { dibujarPtolomeo(p, cx, cy, altoArriba); dibujarFranja(p, altoArriba); return; }
+    if (modelo === 'plano') { dibujarPlano(p, cx, cy, altoArriba); dibujarFranja(p, altoArriba); return; }
     const k = Math.min(ancho * 0.42, altoArriba * 0.44) / R_MARTE;
     ctx.setLineDash([3, 5]);
     ctx.strokeStyle = 'rgba(143,176,224,.4)';
@@ -125,6 +126,36 @@ export function retrogrado(contenedor) {
     ctx.fillText('Modelo geocéntrico (Ptolomeo)', 14, 20);
   }
 
+  // Disposición de la wiki de la Flat Earth Society: el Sol da vueltas sobre el centro del
+  // plano y los planetas giran alrededor del Sol. Por simplificar, el observador está en el centro.
+  function dibujarPlano(p, cx, cy, altoArriba) {
+    const k = Math.min(ancho * 0.42, altoArriba * 0.44) / (R_MARTE + R_TIERRA);
+    const Sol = { x: cx - p.tierra.x * k, y: cy + p.tierra.y * k };
+    const M = { x: Sol.x + p.marte.x * k, y: Sol.y - p.marte.y * k };
+    ctx.fillStyle = 'rgba(29,58,95,.6)';
+    ctx.beginPath(); ctx.arc(cx, cy, (R_MARTE + R_TIERRA) * k + 8, 0, Math.PI * 2); ctx.fill();
+    ctx.setLineDash([3, 5]);
+    ctx.strokeStyle = 'rgba(212,174,90,.5)';
+    ctx.beginPath(); ctx.arc(cx, cy, R_TIERRA * k, 0, Math.PI * 2); ctx.stroke();
+    ctx.strokeStyle = 'rgba(217,113,78,.55)';
+    ctx.beginPath(); ctx.arc(Sol.x, Sol.y, R_MARTE * k, 0, Math.PI * 2); ctx.stroke();
+    ctx.setLineDash([]);
+    const ux = M.x - cx, uy = M.y - cy, n = Math.hypot(ux, uy) || 1, largo = 3 * k;
+    ctx.strokeStyle = 'rgba(212,174,90,.55)';
+    ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx + (ux / n) * largo, cy + (uy / n) * largo); ctx.stroke();
+    ctx.fillStyle = '#ebe5d5'; ctx.beginPath(); ctx.arc(cx, cy, 4, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = '#f2cf72'; ctx.beginPath(); ctx.arc(Sol.x, Sol.y, 8, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = '#d9714e'; ctx.beginPath(); ctx.arc(M.x, M.y, 5, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = 'rgba(235,229,213,.85)';
+    ctx.textAlign = 'right';
+    ctx.fillText('Centro del plano', cx - 8, cy + 18);
+    ctx.textAlign = 'left';
+    ctx.fillText('Sol', Sol.x - 8, Sol.y - 12);
+    ctx.fillText('Marte', M.x + 9, M.y - 6);
+    ctx.fillStyle = 'rgba(235,229,213,.6)';
+    ctx.fillText('Modelo plano (Flat Earth Society)', 14, 20);
+  }
+
   function dibujarFranja(p, altoArriba) {
     // --- Franja de cielo vista desde la Tierra ---
     const y0 = altoArriba + 10, hFranja = alto - y0 - 10;
@@ -181,16 +212,21 @@ export function retrogrado(contenedor) {
   });
   const bHelio = boton('Heliocéntrico', () => elegir('helio'), { 'aria-pressed': 'true' });
   const bGeo = boton('Geocéntrico (Ptolomeo)', () => elegir('geo'), { 'aria-pressed': 'false' });
+  const bPlano = boton('Plano (Flat Earth Society)', () => elegir('plano'), { 'aria-pressed': 'false' });
+  const DESCRIPCION = {
+    helio: 'Animación, modelo heliocéntrico: la Tierra adelanta a Marte en sus órbitas alrededor del Sol; abajo, visto desde la Tierra, Marte frena, retrocede y vuelve a avanzar entre las estrellas.',
+    geo: 'Animación, modelo geocéntrico de Ptolomeo: Marte gira en un epiciclo cuyo centro recorre un deferente alrededor de la Tierra; abajo, el mismo bucle visto contra las estrellas.',
+    plano: 'Animación, modelo plano según la Flat Earth Society: el Sol da vueltas sobre el centro del plano y Marte gira alrededor del Sol; abajo, el mismo bucle visto contra las estrellas.',
+  };
   const elegir = (m) => {
     modelo = m;
     bHelio.setAttribute('aria-pressed', String(m === 'helio'));
     bGeo.setAttribute('aria-pressed', String(m === 'geo'));
-    canvas.setAttribute('aria-label', m === 'helio'
-      ? 'Animación, modelo heliocéntrico: la Tierra adelanta a Marte en sus órbitas alrededor del Sol; abajo, visto desde la Tierra, Marte frena, retrocede y vuelve a avanzar entre las estrellas.'
-      : 'Animación, modelo geocéntrico de Ptolomeo: Marte gira en un epiciclo cuyo centro recorre un deferente alrededor de la Tierra; abajo, el mismo bucle visto contra las estrellas.');
+    bPlano.setAttribute('aria-pressed', String(m === 'plano'));
+    canvas.setAttribute('aria-label', DESCRIPCION[m]);
     dibujar();
   };
-  barra.append(bHelio, bGeo, bPausa, boton('Empezar de nuevo', () => { t = -VENTANA; dibujar(); }));
+  barra.append(bHelio, bGeo, bPlano, bPausa, boton('Empezar de nuevo', () => { t = -VENTANA; dibujar(); }));
 
   const ro = new ResizeObserver(() => { if (Math.abs(canvas.clientWidth - ancho) > 2) { preparar(); dibujar(); } });
   ro.observe(contenedor);

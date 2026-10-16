@@ -2,6 +2,7 @@ import { listarModulos, cargarModulo, urlMedio } from './datos.js';
 import { Lector } from './lector.js';
 import { montarAnimacion } from './animaciones/index.js';
 import { arcosPolaris } from './animaciones/arcos-polaris.js';
+import { abrirVisor, cerrarVisor, visorAbierto } from './visor.js';
 
 const principal = document.getElementById('principal');
 let limpiezas = [];
@@ -101,7 +102,10 @@ function htmlBloque(b) {
         : esc(c.credito || '');
       return `<figure class="figura figura-imagen">
         ${etiquetas(TIPOS_IMAGEN[c.tipo] || TIPOS_IMAGEN.foto, c.fecha)}
-        <div class="marco-imagen"><img src="${esc(urlMedio(c))}" alt="${esc(c.alt || c.pie || '')}" loading="lazy" decoding="async"></div>
+        <div class="marco-imagen"><button type="button" class="ampliar" aria-label="Ampliar la imagen">
+          <img src="${esc(urlMedio(c))}" data-grande="${esc(c.grande || '')}" alt="${esc(c.alt || c.pie || '')}" loading="lazy" decoding="async">
+          <span class="ampliar-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 0 1 5.6 11.2l5.1 5.1-1.4 1.4-5.1-5.1A7 7 0 1 1 10 3Zm0 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm1 2v2h2v2h-2v2H9v-2H7V9h2V7h2Z"/></svg></span>
+        </button></div>
         <figcaption>${esc(c.pie || '')}
           ${fuente ? `<span class="credito">${fuente}${c.licencia ? `, ${esc(c.licencia)}` : ''}</span>` : ''}
         </figcaption></figure>`;
@@ -182,8 +186,22 @@ async function paginaModulo(slug) {
   // Si una foto no carga, se deja el pie con el enlace a la fuente
   principal.querySelectorAll('.figura-imagen img').forEach((img) => {
     img.addEventListener('error', () => {
-      img.parentElement.innerHTML = '<p class="imagen-no-disponible">La imagen no se ha podido cargar ahora. Puedes verla en su fuente, enlazada abajo.</p>';
+      img.closest('.marco-imagen').innerHTML = '<p class="imagen-no-disponible">La imagen no se ha podido cargar ahora. Puedes verla en su fuente, enlazada abajo.</p>';
     }, { once: true });
+  });
+  // Tocar una foto la abre a pantalla completa con zoom
+  principal.querySelectorAll('.figura-imagen .ampliar').forEach((b) => {
+    b.addEventListener('click', () => {
+      const img = b.querySelector('img');
+      const fig = b.closest('figure');
+      abrirVisor({
+        src: img.currentSrc || img.src,
+        grande: img.dataset.grande,
+        alt: img.alt,
+        pie: fig.querySelector('figcaption')?.firstChild?.textContent?.trim(),
+        credito: fig.querySelector('.credito')?.textContent?.trim(),
+      });
+    });
   });
 
   // Animaciones e interactivos
@@ -218,6 +236,7 @@ async function paginaModulo(slug) {
 /* ---------------- Enrutado ---------------- */
 
 async function enrutar() {
+  cerrarVisor({ desdeHistorial: true });
   limpiar();
   const ruta = location.pathname.replace(/\/+$/, '') || '/';
   const m = ruta.match(/^\/modulo\/([a-z0-9-]+)$/);
@@ -234,7 +253,10 @@ document.addEventListener('click', (e) => {
   window.scrollTo(0, 0);
   enrutar().then(() => principal.focus({ preventScroll: true }));
 });
-window.addEventListener('popstate', enrutar);
+window.addEventListener('popstate', () => {
+  if (visorAbierto()) { cerrarVisor({ desdeHistorial: true }); return; }
+  enrutar();
+});
 
 document.querySelector('.boton-tema').addEventListener('click', () => {
   const raiz = document.documentElement;

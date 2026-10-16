@@ -67,7 +67,8 @@
    "enlace": "https://kpno.noirlab.edu/images/iotw2033a/",
    "pie": "Hemisferio norte: fotografía de larga exposición en el observatorio de Kitt Peak (Arizona). Las estrellas trazan arcos en torno a Polaris.",
    "credito": "KPNO/NOIRLab/NSF/AURA",
-   "licencia": "CC BY 4.0"
+   "licencia": "CC BY 4.0",
+   "grande": "https://noirlab.edu/public/media/archives/images/large/iotw2033a.jpg"
   }
  },
  {
@@ -81,7 +82,8 @@
    "enlace": "https://www.eso.org/public/images/171109-cc/",
    "pie": "Hemisferio sur: fotografía de larga exposición con objetivo de ojo de pez en el observatorio Paranal (Chile). Los arcos giran en torno a otro punto del cielo, sin estrella brillante en el centro.",
    "credito": "ESO/A. Santerne",
-   "licencia": "CC BY 4.0"
+   "licencia": "CC BY 4.0",
+   "grande": "https://cdn.eso.org/images/large/171109-cc.jpg"
   }
  },
  {
@@ -105,6 +107,7 @@
    "pie": "La NASA la publica como una fotografía tomada por la tripulación del Apolo 17 en 1972, de camino a la Luna. El modelo moderno la presenta entre sus pruebas; los defensores de la Tierra plana cuestionan la autenticidad de este tipo de imágenes.",
    "credito": "NASA",
    "licencia": "Dominio público",
+   "grande": "https://images-assets.nasa.gov/image/as17-148-22727/as17-148-22727~orig.jpg",
    "fecha": "1972"
   }
  },
@@ -114,28 +117,41 @@
   "orden": 7,
   "tipo": "texto",
   "contenido": {
-   "html": "<h3>La explicación terraplanista</h3>\n<p>El modelo terraplanista sostiene que Polaris es una estrella <strong>fija situada justo encima del Polo Norte</strong>, centro de un plano terrestre, y que las estrellas giran en círculo sobre ese plano como una cúpula que rota. En esta visión, los arcos circulares se explican por ese giro de la bóveda, no por el movimiento de la Tierra. Que Polaris baje en el cielo al viajar hacia el sur lo atribuyen a la <strong>perspectiva</strong>: igual que una farola parece más baja cuanto más te alejas de ella, la estrella se acercaría al horizonte a medida que el observador se aleja del centro.</p>"
+   "html": "<h3>La explicación terraplanista</h3>\n<p>El modelo terraplanista sostiene que Polaris es una estrella <strong>fija situada justo encima del Polo Norte</strong>, centro de un plano terrestre, y que las estrellas giran en círculo sobre ese plano como una cúpula que rota. En esta visión, los arcos circulares se explican por ese giro de la bóveda, no por el movimiento de la Tierra. Que Polaris baje en el cielo al viajar hacia el sur lo atribuyen a la <strong>perspectiva</strong>: igual que una farola parece más baja cuanto más te alejas de ella, la estrella se acercaría al horizonte a medida que el observador se aleja del centro.</p>\n<p><strong>El cielo del sur, un punto debatido.</strong> En el hemisferio sur las estrellas giran en sentido contrario alrededor de otro punto del cielo. La propia wiki de la Flat Earth Society reconoce que es un asunto muy discutido entre sus defensores, y recoge tres propuestas:</p>\n<ul><li><p><strong>Un solo centro, por perspectiva.</strong> Todo el cielo gira en torno al norte, pero quien mira hacia el sur ve las estrellas avanzar en sentido contrario, igual que algo que gira sobre nuestra cabeza parece girar al revés según hacia dónde miremos. En la wiki se atribuye a un colaborador que firma como P-Brane.</p></li><li><p><strong>Un solo centro, por efecto de cúpula.</strong> Dentro de la hipótesis de la «aceleración electromagnética», según la cual la luz se curva hacia arriba al recorrer grandes distancias, el cielo se vería como a través de una cúpula de cristal, y eso invertiría el giro aparente en el sur.</p></li><li><p><strong>Dos centros de giro.</strong> El modelo bipolar propone un segundo polo en el sur con su propio cielo giratorio encima. Exige un mapa distinto del de Gleason, con dos centros en lugar de uno.</p></li></ul>"
   }
  },
  {
   "modulo": 1,
   "seccion": 3,
   "orden": 8,
-  "tipo": "imagen",
+  "tipo": "interactivo",
   "contenido": {
-   "tipo": "obra",
-   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gleason%27s_new_standard_map_of_the_world_-_on_the_projection_of_J._S._Christopher%2C_Modern_College%2C_Blackheath%2C_England%3B_scientifically_and_practically_correct%3B_as_%22it_is.%22_%2810143175716%29.jpg?width=1280",
-   "enlace": "https://commons.wikimedia.org/wiki/File:Gleason%27s_new_standard_map_of_the_world_-_on_the_projection_of_J._S._Christopher%2C_Modern_College%2C_Blackheath%2C_England%3B_scientifically_and_practically_correct%3B_as_%22it_is.%22_%2810143175716%29.jpg",
-   "pie": "Mapa del mundo de Alexander Gleason (1892), con el polo norte en el centro y el borde del sur alrededor. Es la disposición que suele usarse para representar el modelo plano.",
-   "credito": "Alexander Gleason",
-   "licencia": "Dominio público",
-   "fecha": "1892"
+   "componente": "sur-plano",
+   "etiqueta": "Interactivo",
+   "modelo": "Según el modelo plano: tres propuestas",
+   "pie": "Las tres propuestas que recoge la wiki de la Flat Earth Society para el giro del cielo del sur. Esquemas simplificados."
   }
  },
  {
   "modulo": 1,
   "seccion": 3,
   "orden": 9,
+  "tipo": "imagen",
+  "contenido": {
+   "tipo": "obra",
+   "url": "https://bpldcassets.blob.core.windows.net/derivatives/images/commonwealth:7h149v867/image_access_800.jpg",
+   "enlace": "https://collections.leventhalmap.org/search/commonwealth:7h149v85z",
+   "pie": "Mapa del mundo de Alexander Gleason (1892), con el polo norte en el centro y el borde del sur alrededor. Es la disposición que suele usarse para representar el modelo plano de un solo centro. Amplíalo para leer sus anotaciones.",
+   "credito": "Alexander Gleason, 1892. Leventhal Map & Education Center (Biblioteca Pública de Boston)",
+   "licencia": "Sin restricciones de uso conocidas",
+   "grande": "https://bpldcassets.blob.core.windows.net/derivatives/images/commonwealth:7h149v867/image_access_full.jpg",
+   "fecha": "1892"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 3,
+  "orden": 10,
   "tipo": "texto",
   "contenido": {
    "html": "<h3>Un dato que cambia todo: la estrella polar no siempre fue Polaris</h3>\n<p>Un hecho observable a muy largo plazo, registrado desde la Antigüedad: el punto en torno al que giran las estrellas <strong>se desplaza lentamente</strong>. Hiparco lo notó comparando sus mediciones con otras más antiguas, y la astronomía moderna calcula que ese punto completa un gran círculo en unos 26.000 años. A esto se le llama <strong>precesión</strong>. Según ese cálculo, hacia el 2700 a. C. la estrella más cercana a ese punto era <strong>Thuban</strong>, en la constelación del Dragón; en tiempos de los griegos clásicos no había ninguna estrella brillante justo en el polo; Polaris alcanzará su máxima cercanía hacia el año 2100, y dentro de unos 12.000 años el papel lo tendrá <strong>Vega</strong>. Esto importa porque cada cultura vio un cielo polar distinto, y cualquier explicación del cielo, sea cual sea su modelo, tiene que dar cuenta también de este lento desplazamiento.</p>"
@@ -144,7 +160,7 @@
  {
   "modulo": 1,
   "seccion": 3,
-  "orden": 10,
+  "orden": 11,
   "tipo": "interactivo",
   "contenido": {
    "componente": "precesion",
@@ -156,25 +172,10 @@
  {
   "modulo": 1,
   "seccion": 3,
-  "orden": 11,
+  "orden": 12,
   "tipo": "texto",
   "contenido": {
    "html": "<h3>Cómo lo entendían otras cosmovisiones</h3>\n<p><strong>Sumerios y babilonios.</strong> Concebían el universo como <strong>An</strong> (el cielo) sobre <strong>Ki</strong> (la tierra). En las tablillas astronómicas babilónicas conocidas como MUL.APIN (compiladas hacia el 1000 a. C.), el cielo se divide en tres franjas o \"caminos\": el de Anu en el centro, el de Enlil al norte y el de Ea al sur. Las estrellas que giran cerca del polo pertenecían al camino de Enlil.</p>\n<p><strong>Egipcios.</strong> Imaginaban el cielo como el cuerpo de la diosa <strong>Nut</strong>, arqueado sobre la tierra. Llamaban a las estrellas circumpolares, las que nunca se ponen, <em>ikhemu-sek</em>, \"las que no conocen la destrucción\" o \"imperecederas\", y aparecen en los Textos de las Pirámides. En su época la estrella polar era Thuban; algunos investigadores han propuesto que un conducto de la Gran Pirámide apuntaba hacia la región polar, aunque es una interpretación debatida.</p>\n<p><strong>Griegos.</strong> Concibieron una <strong>esfera celeste</strong> que gira en torno a un eje fijo, con la Tierra en el centro. Aristóteles, en <em>Sobre el cielo</em>, usó precisamente este fenómeno como argumento: al viajar al norte o al sur cambian las estrellas visibles, lo que para él indicaba una Tierra esférica y no muy grande. Hiparco, hacia el 130 a. C., fue quien detectó la precesión comparando sus mediciones con otras más antiguas.</p>\n<p><strong>Romanos y el mundo grecorromano.</strong> Heredaron y sistematizaron el modelo griego. Ptolomeo, en el <em>Almagesto</em> (siglo II d. C., en Alejandría), fijó el modelo geocéntrico de esferas que dominaría unos catorce siglos. Autores latinos como Cicerón (<em>El sueño de Escipión</em>) describieron el cosmos como nueve esferas encajadas, con la de las estrellas fijas girando por fuera.</p>\n<p><strong>Cosmología bíblica y rabínica.</strong> El Génesis describe un <strong>firmamento</strong> (<em>raqia</em>) que separa las aguas de arriba de las de abajo, y en el que se colocan el Sol, la Luna y las estrellas. La tradición rabínica hablaba de varios cielos superpuestos, a menudo siete. El Talmud (Pesajim 94b) recoge un debate notable: los sabios de Israel sostenían que de noche el Sol pasaba por encima del firmamento, y los sabios de otras naciones que pasaba por debajo de la tierra; el propio Rabí Yehudá HaNasí concedió que la segunda postura parecía más acertada.</p>\n<p><strong>Libro de Enoc.</strong> El llamado <em>1 Enoc</em> es una colección de textos judíos antiguos; se conserva completo en ge'ez (etiópico), es canónico en la Iglesia ortodoxa etíope Tewahedo, y en Qumrán se hallaron fragmentos en arameo. La Epístola de Judas (versículos 14-15) cita un pasaje suyo. Su parte astronómica, el <em>Libro de las Luminarias</em> (capítulos 72-82), está considerada por los especialistas entre las secciones más antiguas, quizá del siglo III a. C. En él, el ángel Uriel muestra a Enoc las leyes de los astros. En el <em>Libro de los Vigilantes</em> (capítulos 33-36) Enoc viaja a los confines de la tierra y ve las <strong>puertas del cielo</strong> por donde salen las estrellas, y en el norte otras puertas de las que salen los vientos. Es decir, un cielo con límites, aberturas y salidas fijas, donde cada astro tiene su puerta y su orden.</p>\n<p><strong>Cábala.</strong> Su texto central, el <em>Zóhar</em> (difundido en Castilla a finales del siglo XIII), contiene un pasaje atribuido a Rav Hamnuná Saba según el cual la tierra gira como una esfera, de modo que cuando es de día para unos es de noche para otros. Es un ejemplo de cómo dentro de una misma tradición conviven modelos distintos del cielo.</p>\n<p><strong>Cristianismo medieval.</strong> La visión dominante, la de Tomás de Aquino o la que retrata Dante, adoptó el cosmos de Aristóteles y Ptolomeo: la Tierra esférica en el centro, rodeada por las esferas de la Luna, Mercurio, Venus, el Sol, Marte, Júpiter, Saturno y las estrellas fijas, luego el <em>primer móvil</em>, que imprime el giro diario a todo, y por fin el <strong>Empíreo</strong>. El manual universitario de astronomía más usado, <em>De sphaera</em> de Sacrobosco (siglo XIII), enseñaba la Tierra esférica. Hubo voces minoritarias distintas, como Cosmas Indicopleustes (siglo VI), que describió un mundo con forma de tabernáculo bajo una bóveda.</p>"
-  }
- },
- {
-  "modulo": 1,
-  "seccion": 3,
-  "orden": 12,
-  "tipo": "imagen",
-  "contenido": {
-   "tipo": "obra",
-   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cellarius_Harmonia_Macrocosmica_-_Scenographia_Systematis_mundani_Ptolemaici.jpg?width=1280",
-   "enlace": "https://commons.wikimedia.org/wiki/File:Cellarius_Harmonia_Macrocosmica_-_Scenographia_Systematis_mundani_Ptolemaici.jpg",
-   "pie": "El sistema de Ptolomeo en el atlas «Harmonia Macrocosmica» de Andreas Cellarius (1660): la Tierra en el centro, rodeada por las esferas de los astros.",
-   "credito": "Andreas Cellarius",
-   "licencia": "Dominio público",
-   "fecha": "1660"
   }
  },
  {
@@ -184,12 +185,13 @@
   "tipo": "imagen",
   "contenido": {
    "tipo": "obra",
-   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flammarion.jpg?width=1280",
-   "enlace": "https://commons.wikimedia.org/wiki/File:Flammarion.jpg",
-   "pie": "Grabado publicado por Camille Flammarion en «L'atmosphère» (París, 1888): un viajero asoma la cabeza más allá de la bóveda del cielo. Aunque a menudo se presenta como medieval, es del siglo XIX.",
-   "credito": "Autor desconocido, en C. Flammarion, 1888",
+   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cellarius_Harmonia_Macrocosmica_-_Scenographia_Systematis_mundani_Ptolemaici.jpg?width=1280",
+   "enlace": "https://commons.wikimedia.org/wiki/File:Cellarius_Harmonia_Macrocosmica_-_Scenographia_Systematis_mundani_Ptolemaici.jpg",
+   "pie": "El sistema de Ptolomeo en el atlas «Harmonia Macrocosmica» de Andreas Cellarius (1660): la Tierra en el centro, rodeada por las esferas de los astros.",
+   "credito": "Andreas Cellarius",
    "licencia": "Dominio público",
-   "fecha": "1888"
+   "grande": "https://commons.wikimedia.org/wiki/Special:FilePath/Cellarius_Harmonia_Macrocosmica_-_Scenographia_Systematis_mundani_Ptolemaici.jpg?width=3200",
+   "fecha": "1660"
   }
  },
  {
@@ -199,21 +201,38 @@
   "tipo": "imagen",
   "contenido": {
    "tipo": "obra",
-   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/WorldMapCosmasIndicopleustes.jpg?width=1280",
-   "enlace": "https://commons.wikimedia.org/wiki/File:WorldMapCosmasIndicopleustes.jpg",
-   "pie": "Mapa del mundo de la «Topografía cristiana» de Cosmas Indicopleustes (siglo VI), tal como se conserva en copias manuscritas: la tierra habitada rodeada por el océano.",
-   "credito": "Cosmas Indicopleustes (copia manuscrita)",
+   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flammarion.jpg?width=1280",
+   "enlace": "https://commons.wikimedia.org/wiki/File:Flammarion.jpg",
+   "pie": "Grabado publicado por Camille Flammarion en «L'atmosphère» (París, 1888): un viajero asoma la cabeza más allá de la bóveda del cielo. Aunque a menudo se presenta como medieval, es del siglo XIX.",
+   "credito": "Autor desconocido, en C. Flammarion, 1888",
    "licencia": "Dominio público",
-   "fecha": "Siglo VI"
+   "grande": "https://commons.wikimedia.org/wiki/Special:FilePath/Flammarion.jpg?width=3200",
+   "fecha": "1888"
   }
  },
  {
   "modulo": 1,
   "seccion": 3,
   "orden": 15,
+  "tipo": "imagen",
+  "contenido": {
+   "tipo": "obra",
+   "url": "https://commons.wikimedia.org/wiki/Special:FilePath/WorldMapCosmasIndicopleustes.jpg?width=1280",
+   "enlace": "https://commons.wikimedia.org/wiki/File:WorldMapCosmasIndicopleustes.jpg",
+   "pie": "Mapa del mundo de la «Topografía cristiana» de Cosmas Indicopleustes (siglo VI), tal como se conserva en copias manuscritas: la tierra habitada rodeada por el océano.",
+   "credito": "Cosmas Indicopleustes (copia manuscrita)",
+   "licencia": "Dominio público",
+   "grande": "https://commons.wikimedia.org/wiki/Special:FilePath/WorldMapCosmasIndicopleustes.jpg?width=3200",
+   "fecha": "Siglo VI"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 3,
+  "orden": 16,
   "tipo": "texto",
   "contenido": {
-   "html": "<h3>Lo que cada modelo le pregunta al otro</h3>\n<p>Las dos explicaciones parten del mismo hecho — los arcos en torno a Polaris — y cada una lo explica con su propia lógica. Entre sus defensores hay preguntas cruzadas que cada parte considera decisivas. Aquí se recogen tal como las plantea cada una, junto con la respuesta que da la otra, para que puedas valorarlas tú.</p>\n<p><strong>Lo que los defensores de la Tierra plana preguntan al modelo moderno.</strong></p>\n<ul><li><p><em>¿Por qué no sentimos que la Tierra gira?</em> Según el modelo moderno, en el ecuador la superficie se movería a unos 1.670 km/h. Su respuesta es que un movimiento constante no se percibe, igual que no se nota la velocidad dentro de un avión en vuelo estable; solo se notan los cambios de velocidad.</p></li><li><p><em>¿Por qué el horizonte se ve plano y siempre a la altura de los ojos?</em> El modelo moderno responde que, con el tamaño que atribuye a la Tierra, la curvatura es muy suave a escala humana, y que el descenso del horizonte existe pero es pequeño y se mide con instrumentos desde lugares altos.</p></li><li><p><em>¿Por qué a veces se ven costas o edificios muy lejanos que la curvatura debería ocultar?</em> El modelo moderno lo atribuye a la refracción atmosférica, que curva la luz cerca del suelo y cambia con la temperatura del aire.</p></li></ul>\n<p><strong>Lo que los defensores del modelo moderno preguntan al modelo plano.</strong></p>\n<ul><li><p><em>¿Qué pasa en el hemisferio sur?</em> Allí Polaris no se ve, y las estrellas giran en torno a otro punto, en sentido contrario. Dentro del modelo plano hay varias propuestas para explicarlo, y sus defensores no coinciden en una sola.</p></li><li><p><em>¿Por qué los barcos que se alejan desaparecen empezando por el casco?</em> Muchos defensores del modelo plano lo atribuyen a la perspectiva y a la refracción, y afirman que con un buen zoom el barco vuelve a verse entero.</p></li><li><p><em>¿Cómo se explican los eclipses de Luna?</em> Se trata en su propio apartado, más abajo.</p></li></ul>\n<p>La capa avanzada del módulo recogerá las fuentes de cada postura y los experimentos que cada parte propone.</p>"
+   "html": "<h3>Lo que cada modelo le pregunta al otro</h3>\n<p>Las dos explicaciones parten del mismo hecho — los arcos en torno a Polaris — y cada una lo explica con su propia lógica. Entre sus defensores hay preguntas cruzadas que cada parte considera decisivas. Aquí se recogen tal como las plantea cada una, junto con la respuesta que da la otra, para que puedas valorarlas tú.</p>\n<p><strong>Lo que los defensores de la Tierra plana preguntan al modelo moderno.</strong></p>\n<ul><li><p><em>¿Por qué no sentimos que la Tierra gira?</em> Según el modelo moderno, en el ecuador la superficie se movería a unos 1.670 km/h. Su respuesta es que un movimiento constante no se percibe, igual que no se nota la velocidad dentro de un avión en vuelo estable; solo se notan los cambios de velocidad.</p></li><li><p><em>¿Por qué el horizonte se ve plano y siempre a la altura de los ojos?</em> El modelo moderno responde que, con el tamaño que atribuye a la Tierra, la curvatura es muy suave a escala humana, y que el descenso del horizonte existe pero es pequeño y se mide con instrumentos desde lugares altos.</p></li><li><p><em>¿Por qué a veces se ven costas o edificios muy lejanos que la curvatura debería ocultar?</em> El modelo moderno lo atribuye a la refracción atmosférica, que curva la luz cerca del suelo y cambia con la temperatura del aire.</p></li></ul>\n<p><strong>Lo que los defensores del modelo moderno preguntan al modelo plano.</strong></p>\n<ul><li><p><em>¿Qué pasa en el hemisferio sur?</em> Allí Polaris no se ve, y las estrellas giran en torno a otro punto, en sentido contrario. Dentro del modelo plano hay tres propuestas, explicadas más arriba en su apartado, y sus defensores no coinciden en una sola.</p></li><li><p><em>¿Por qué los barcos que se alejan desaparecen empezando por el casco?</em> Muchos defensores del modelo plano lo atribuyen a la perspectiva y a la refracción, y afirman que con un buen zoom el barco vuelve a verse entero.</p></li><li><p><em>¿Cómo se explican los eclipses de Luna?</em> Se trata en su propio apartado, más abajo.</p></li></ul>\n<p>La capa avanzada del módulo recogerá las fuentes de cada postura y los experimentos que cada parte propone.</p>"
   }
  },
  {
@@ -276,6 +295,7 @@
    "pie": "Cellarius (1660): el recorrido en espiral del Sol alrededor de la Tierra a lo largo del año, según el modelo geocéntrico.",
    "credito": "Andreas Cellarius",
    "licencia": "Dominio público",
+   "grande": "https://commons.wikimedia.org/wiki/Special:FilePath/Cellarius_Harmonia_Macrocosmica_-_Solis_circa_Orbem_Terrarum_Spiralis_Revolutio.jpg?width=3200",
    "fecha": "1660"
   }
  },
@@ -324,6 +344,7 @@
    "pie": "Luna creciente sobre el observatorio Paranal (Chile), el 27 de octubre de 2011. La parte oscura brilla débilmente: es la llamada luz cenicienta.",
    "credito": "ESO/B. Tafreshi (twanight.org)",
    "licencia": "CC BY 4.0",
+   "grande": "https://cdn.eso.org/images/large/eso1210a.jpg",
    "fecha": "2011"
   }
  },
@@ -342,7 +363,7 @@
   "orden": 5,
   "tipo": "texto",
   "contenido": {
-   "html": "<h3>La explicación terraplanista</h3>\n<p>En el modelo terraplanista la Luna, como el Sol, es un astro pequeño y cercano que gira sobre el plano. Para sus fases hay dos propuestas entre sus defensores: unos sostienen que tiene luz propia y que sus fases responden a un ciclo propio; otros, que refleja la luz del Sol. No hay una postura única.</p>"
+   "html": "<h3>La explicación terraplanista</h3>\n<p>En el modelo terraplanista la Luna, como el Sol, es un astro pequeño y cercano que gira sobre el plano. Sobre su luz y sus fases hay dos posturas:</p>\n<ul><li><p><strong>Luz propia.</strong> Samuel Rowbotham, en <em>Zetetic Astronomy: Earth Not a Globe</em> (1881), sostuvo que la Luna brilla con luz propia y es semitransparente. Argumentaba que su luz tiene un carácter distinto del de la luz solar y que una esfera que solo reflejara la luz del Sol no podría verse iluminada por igual en toda su cara.</p></li><li><p><strong>Luz del Sol con rayos curvos.</strong> La wiki de la Flat Earth Society propone que la Luna sí recibe la luz del Sol, pero que esos rayos se curvan hacia arriba (la «aceleración electromagnética»). Las fases dependerían de la posición y la altura de la Luna respecto al Sol: llena cuando está lejos del Sol y más alta, nueva cuando está cerca y más baja. La propia wiki admite que no se conoce el mecanismo que curvaría la luz.</p></li></ul>"
   }
  },
  {
@@ -411,6 +432,7 @@
    "pie": "Eclipse total de Luna del 15 de mayo de 2022, visto desde el observatorio Paranal (Chile): durante la totalidad la Luna toma un tono rojizo.",
    "credito": "F. Aedo, F. Durán/ESO",
    "licencia": "CC BY 4.0",
+   "grande": "https://cdn.eso.org/images/large/potw2221a.jpg",
    "fecha": "2022"
   }
  },
@@ -429,7 +451,7 @@
   "orden": 7,
   "tipo": "texto",
   "contenido": {
-   "html": "<h3>La explicación terraplanista</h3>\n<p>Para los eclipses de Sol, muchos defensores aceptan que es la Luna la que pasa por delante. Para los de Luna no recurren a la sombra de la Tierra, porque en su modelo la Tierra no se interpone entre el Sol y la Luna. Algunos proponen un cuerpo oscuro no visible que pasaría ante la Luna; otros, explicaciones distintas. No hay una postura única.</p>"
+   "html": "<h3>La explicación terraplanista</h3>\n<p>Para los eclipses de Sol, muchos defensores aceptan que es la Luna la que pasa por delante. Para los de Luna no recurren a la sombra de la Tierra, porque en su modelo la Tierra no se interpone entre el Sol y la Luna. Hay dos propuestas principales:</p>\n<ul><li><p><strong>Un cuerpo oscuro y semitransparente.</strong> Rowbotham (1881) rechazó la sombra de la Tierra y propuso que entre la Luna y el observador pasa un cuerpo no luminoso y semitransparente, quizá un satélite oscuro. Como apoyo citaba que durante la totalidad la Luna puede verse rojiza o incluso brillante, algo que, a su juicio, una simple sombra no explicaría.</p></li><li><p><strong>El «objeto de sombra».</strong> La wiki de la Flat Earth Society habla de un objeto no visto que orbita cerca del Sol y que, al pasar entre el Sol y la Luna, proyecta su sombra sobre ella. Le atribuye una inclinación de unos 5° y deja abierto que pudiera ser un cuerpo ya conocido; no precisa su tamaño ni su naturaleza.</p></li></ul>"
   }
  },
  {
@@ -467,8 +489,8 @@
   "contenido": {
    "componente": "retrogrado",
    "etiqueta": "Animación",
-   "modelo": "Dos modelos: heliocéntrico y de Ptolomeo",
-   "pie": "Un mismo bucle de Marte explicado por dos modelos: el heliocéntrico de Copérnico y Kepler, y el geocéntrico de Ptolomeo con epiciclos. El modelo plano no ha desarrollado una explicación geométrica propia del retroceso."
+   "modelo": "Tres modelos comparados",
+   "pie": "Un mismo bucle de Marte con tres disposiciones: la heliocéntrica de Copérnico y Kepler, la geocéntrica de Ptolomeo con epiciclos y la de la Flat Earth Society, con los planetas girando alrededor de un Sol que da vueltas sobre el centro del plano. Esquemas simplificados."
   }
  },
  {
@@ -477,7 +499,7 @@
   "orden": 4,
   "tipo": "texto",
   "contenido": {
-   "html": "<h3>La explicación terraplanista</h3>\n<p>El modelo terraplanista suele considerar los planetas como luminarias o luces errantes en el firmamento, no como mundos. Sus defensores no han desarrollado una explicación geométrica común del movimiento retrógrado.</p>"
+   "html": "<h3>La explicación terraplanista</h3>\n<p>El modelo terraplanista suele considerar los planetas como luminarias errantes en el firmamento, no como mundos. Para el movimiento retrógrado, la wiki de la Flat Earth Society propone que los planetas giran alrededor del Sol y que el Sol, a su vez, da vueltas sobre el centro del plano: la suma de los dos giros haría que, vistos desde la Tierra, algunos planetas dibujen bucles hacia atrás. Es una disposición parecida a la que propuso Tycho Brahe en 1588 para un mundo con la Tierra quieta en el centro.</p>"
   }
  },
  {
@@ -549,6 +571,7 @@
    "pie": "El zodiaco circular de Dendera dibujado para la «Description de l'Égypte» (edición de 1822). El original, un relieve de época ptolemaica, se conserva hoy en el Museo del Louvre.",
    "credito": "Description de l'Égypte",
    "licencia": "Dominio público",
+   "grande": "https://commons.wikimedia.org/wiki/Special:FilePath/Description_of_Egypt._2nd_edition._1822._Vol._4._Pl._21_%28Dendera_Circular_Zodiac%29.jpg?width=3200",
    "fecha": "1822"
   }
  }

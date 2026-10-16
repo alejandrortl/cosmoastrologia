@@ -9,6 +9,7 @@ import { retrogrado } from './retrogrado.js';
 import { solDosModelos } from './sol-dos-modelos.js';
 import { tiposEclipse } from './tipos-eclipse.js';
 import { zodiaco } from './zodiaco.js';
+import { surPlano } from './sur-plano.js';
 
 const REGISTRO = {
   'arcos-polaris': (el) => {
@@ -25,6 +26,7 @@ const REGISTRO = {
   'sol-dos-modelos': solDosModelos,
   'tipos-eclipse': tiposEclipse,
   zodiaco,
+  'sur-plano': surPlano,
 };
 
 // Devuelve una función para desmontarla, o null si el componente no existe.
