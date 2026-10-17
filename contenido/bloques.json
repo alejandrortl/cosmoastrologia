@@ -139,12 +139,17 @@
   "tipo": "imagen",
   "contenido": {
    "tipo": "obra",
-   "url": "https://bpldcassets.blob.core.windows.net/derivatives/images/commonwealth:7h149v867/image_access_800.jpg",
+   "url": "https://iiif.digitalcommonwealth.org/iiif/2/commonwealth:7h149v867/full/1400,/0/default.jpg",
    "enlace": "https://collections.leventhalmap.org/search/commonwealth:7h149v85z",
    "pie": "Mapa del mundo de Alexander Gleason (1892), con el polo norte en el centro y el borde del sur alrededor. Es la disposición que suele usarse para representar el modelo plano de un solo centro. Amplíalo para leer sus anotaciones.",
    "credito": "Alexander Gleason, 1892. Leventhal Map & Education Center (Biblioteca Pública de Boston)",
    "licencia": "Sin restricciones de uso conocidas",
-   "grande": "https://bpldcassets.blob.core.windows.net/derivatives/images/commonwealth:7h149v867/image_access_full.jpg",
+   "grande": "https://iiif.digitalcommonwealth.org/iiif/2/commonwealth:7h149v867/full/3000,/0/default.jpg",
+   "iiif": "https://iiif.digitalcommonwealth.org/iiif/2/commonwealth:7h149v867",
+   "tam": [
+    4773,
+    6794
+   ],
    "fecha": "1892"
   }
  },

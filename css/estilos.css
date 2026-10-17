@@ -412,3 +412,5 @@ a.fila-modulo .estado { color: var(--lapis); }
 }
 .visor-credito { display: block; opacity: .75; margin-top: .2rem; }
 .visor-carga { position: absolute; top: .8rem; left: 50%; transform: translateX(-50%); margin: 0; font-size: .85rem; background: rgba(27, 42, 72, .9); padding: .35rem .8rem; border-radius: 999px; }
+.visor-profundo { position: absolute; inset: 0; }
+.visor.con-profundo .visor-escenario { cursor: default; }

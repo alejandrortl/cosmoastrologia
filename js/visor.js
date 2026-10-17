@@ -1,16 +1,34 @@
 // Visor de imágenes a pantalla completa con zoom: pellizcar y arrastrar en el móvil,
 // rueda y arrastre en el ordenador, doble toque para acercar, y botones +, - y restablecer.
 // Abre primero la imagen que ya está cargada y la cambia por la versión grande en cuanto llega.
+// Si la imagen tiene un servidor de teselas IIIF, usa OpenSeadragon para un zoom profundo
+// que solo descarga la parte visible a la resolución necesaria.
 
 const MIN = 1, MAX = 8;
+const OSD = 'https://cdn.jsdelivr.net/npm/openseadragon@4.1.1/build/openseadragon/openseadragon.min.js';
+let cargaOSD = null;
+function cargarOSD() {
+  if (window.OpenSeadragon) return Promise.resolve(window.OpenSeadragon);
+  if (!cargaOSD) {
+    cargaOSD = new Promise((ok, mal) => {
+      const s = document.createElement('script');
+      s.src = OSD; s.async = true;
+      s.onload = () => (window.OpenSeadragon ? ok(window.OpenSeadragon) : mal(new Error('sin OpenSeadragon')));
+      s.onerror = () => { cargaOSD = null; mal(new Error('no se pudo cargar OpenSeadragon')); };
+      document.head.append(s);
+    });
+  }
+  return cargaOSD;
+}
 let abierto = null;
 
 export function visorAbierto() { return !!abierto; }
 
 export function cerrarVisor({ desdeHistorial = false } = {}) {
   if (!abierto) return;
-  const { capa, anterior, alTeclado } = abierto;
+  const { capa, anterior, alTeclado, profundo } = abierto;
   abierto = null;
+  try { profundo?.destroy(); } catch (e) { /* nada */ }
   document.removeEventListener('keydown', alTeclado);
   document.body.style.overflow = '';
   capa.remove();
@@ -18,7 +36,7 @@ export function cerrarVisor({ desdeHistorial = false } = {}) {
   if (!desdeHistorial && history.state?.visor) history.back();
 }
 
-export function abrirVisor({ src, grande, alt, pie, credito }) {
+export function abrirVisor({ src, grande, alt, pie, credito, iiif, tam }) {
   if (abierto) cerrarVisor();
   const capa = document.createElement('div');
   capa.className = 'visor';
@@ -42,7 +60,49 @@ export function abrirVisor({ src, grande, alt, pie, credito }) {
   img.src = src;
   capa.querySelector('.visor-pie').innerHTML = [pie, credito].filter(Boolean).join(' <span class="visor-credito">') + (credito ? '</span>' : '');
 
-  if (grande && grande !== src) {
+  if (iiif) {
+    // Zoom profundo: se monta encima de la imagen en cuanto carga OpenSeadragon
+    carga.hidden = false;
+    carga.textContent = 'Preparando el zoom en alta resolución…';
+    cargarOSD().then((OpenSeadragon) => {
+      if (!abierto || abierto.capa !== capa) return;
+      const caja = document.createElement('div');
+      caja.className = 'visor-profundo';
+      escenario.append(caja);
+      const visor = OpenSeadragon({
+        element: caja,
+        tileSources: `${iiif}/info.json`,
+        showNavigationControl: false,
+        showNavigator: true,
+        navigatorPosition: 'TOP_RIGHT',
+        maxZoomPixelRatio: 3,
+        visibilityRatio: 1,
+        constrainDuringPan: true,
+        gestureSettingsTouch: { pinchRotate: false, flickEnabled: true, dblClickToZoom: true },
+      });
+      let reintentado = false;
+      visor.addHandler('open', () => { img.style.visibility = 'hidden'; carga.hidden = true; capa.classList.add('con-profundo'); });
+      visor.addHandler('open-failed', () => {
+        // Si no se pudo leer la ficha del servidor, se describe la imagen a mano y se reintenta
+        if (!reintentado && tam) {
+          reintentado = true;
+          visor.open({
+            '@context': 'http://iiif.io/api/image/2/context.json',
+            '@id': iiif,
+            protocol: 'http://iiif.io/api/image',
+            width: tam[0], height: tam[1],
+            profile: ['http://iiif.io/api/image/2/level2.json'],
+            tiles: [{ width: 512, scaleFactors: [1, 2, 4, 8, 16] }],
+          });
+          return;
+        }
+        caja.remove(); carga.hidden = true;
+      });
+      abierto.profundo = visor;
+    }).catch(() => { carga.hidden = true; });
+  }
+
+  if (!iiif && grande && grande !== src) {
     carga.hidden = false;
     const alta = new Image();
     alta.onload = () => { img.src = grande; carga.hidden = true; };
@@ -82,6 +142,7 @@ export function abrirVisor({ src, grande, alt, pie, credito }) {
   const punteros = new Map();
   let inicio = null, ultimoToque = 0;
   escenario.addEventListener('pointerdown', (e) => {
+    if (capa.classList.contains('con-profundo')) return;
     escenario.setPointerCapture(e.pointerId);
     punteros.set(e.pointerId, { x: e.clientX, y: e.clientY });
     inicio = { escala, x, y, punteros: new Map(punteros) };
@@ -115,13 +176,18 @@ export function abrirVisor({ src, grande, alt, pie, credito }) {
   escenario.addEventListener('pointerup', soltar);
   escenario.addEventListener('pointercancel', soltar);
   escenario.addEventListener('wheel', (e) => {
+    if (capa.classList.contains('con-profundo')) return;
     e.preventDefault();
     zoomEn(escala * Math.exp(-e.deltaY * 0.0015), e.clientX, e.clientY);
   }, { passive: false });
 
   capa.addEventListener('click', (e) => {
     const accion = e.target.closest('[data-v]')?.dataset.v;
+    const prof = abierto?.profundo && capa.classList.contains('con-profundo') ? abierto.profundo : null;
     if (accion === 'cerrar') cerrarVisor();
+    else if (prof && accion === 'mas') prof.viewport.zoomBy(1.6);
+    else if (prof && accion === 'menos') prof.viewport.zoomBy(1 / 1.6);
+    else if (prof && accion === 'reiniciar') prof.viewport.goHome();
     else if (accion === 'mas') zoomEn(escala * 1.6, ...centro());
     else if (accion === 'menos') zoomEn(escala / 1.6, ...centro());
     else if (accion === 'reiniciar') { escala = 1; x = 0; y = 0; aplicar(); }

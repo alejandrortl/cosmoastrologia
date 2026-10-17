@@ -103,7 +103,7 @@ function htmlBloque(b) {
       return `<figure class="figura figura-imagen">
         ${etiquetas(TIPOS_IMAGEN[c.tipo] || TIPOS_IMAGEN.foto, c.fecha)}
         <div class="marco-imagen"><button type="button" class="ampliar" aria-label="Ampliar la imagen">
-          <img src="${esc(urlMedio(c))}" data-grande="${esc(c.grande || '')}" alt="${esc(c.alt || c.pie || '')}" loading="lazy" decoding="async">
+          <img src="${esc(urlMedio(c))}" data-grande="${esc(c.grande || '')}" data-iiif="${esc(c.iiif || '')}" data-tam="${esc((c.tam || []).join(','))}" alt="${esc(c.alt || c.pie || '')}" loading="lazy" decoding="async">
           <span class="ampliar-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 3a7 7 0 0 1 5.6 11.2l5.1 5.1-1.4 1.4-5.1-5.1A7 7 0 1 1 10 3Zm0 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm1 2v2h2v2h-2v2H9v-2H7V9h2V7h2Z"/></svg></span>
         </button></div>
         <figcaption>${esc(c.pie || '')}
@@ -197,6 +197,8 @@ async function paginaModulo(slug) {
       abrirVisor({
         src: img.currentSrc || img.src,
         grande: img.dataset.grande,
+        iiif: img.dataset.iiif,
+        tam: img.dataset.tam ? img.dataset.tam.split(',').map(Number) : null,
         alt: img.alt,
         pie: fig.querySelector('figcaption')?.firstChild?.textContent?.trim(),
         credito: fig.querySelector('.credito')?.textContent?.trim(),

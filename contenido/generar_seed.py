@@ -47,10 +47,14 @@ def commons(nombre, ancho=1280):
     return (f"{base}?width={ancho}", f"https://commons.wikimedia.org/wiki/File:{n}", f"{base}?width=3200")
 
 
-def imagen(tipo, url, enlace, pie, credito, licencia, fecha=None, alt=None, grande=None):
+def imagen(tipo, url, enlace, pie, credito, licencia, fecha=None, alt=None, grande=None, iiif=None, tam=None):
     c = {"tipo": tipo, "url": url, "enlace": enlace, "pie": pie, "credito": credito, "licencia": licencia}
     if grande:
         c["grande"] = grande
+    if iiif:
+        c["iiif"] = iiif  # servidor de teselas: el visor permite zoom profundo
+    if tam:
+        c["tam"] = tam    # ancho y alto en píxeles del original, por si no se puede leer su ficha
     if fecha:
         c["fecha"] = fecha
     if alt:
@@ -79,12 +83,12 @@ FOTO_TIERRA = imagen(
     "La NASA la publica como una fotografía tomada por la tripulación del Apolo 17 en 1972, de camino a la Luna. El modelo moderno la presenta entre sus pruebas; los defensores de la Tierra plana cuestionan la autenticidad de este tipo de imágenes.",
     "NASA", "Dominio público", fecha="1972",
     grande="https://images-assets.nasa.gov/image/as17-148-22727/as17-148-22727~orig.jpg")
-_lev = "https://bpldcassets.blob.core.windows.net/derivatives/images/commonwealth:7h149v867/"
+_lev = "https://iiif.digitalcommonwealth.org/iiif/2/commonwealth:7h149v867"
 MAPA_GLEASON = imagen(
-    "obra", _lev + "image_access_800.jpg", "https://collections.leventhalmap.org/search/commonwealth:7h149v85z",
+    "obra", _lev + "/full/1400,/0/default.jpg", "https://collections.leventhalmap.org/search/commonwealth:7h149v85z",
     "Mapa del mundo de Alexander Gleason (1892), con el polo norte en el centro y el borde del sur alrededor. Es la disposición que suele usarse para representar el modelo plano de un solo centro. Amplíalo para leer sus anotaciones.",
     "Alexander Gleason, 1892. Leventhal Map & Education Center (Biblioteca Pública de Boston)",
-    "Sin restricciones de uso conocidas", fecha="1892", grande=_lev + "image_access_full.jpg")
+    "Sin restricciones de uso conocidas", fecha="1892", grande=_lev + "/full/3000,/0/default.jpg", iiif=_lev, tam=[4773, 6794])
 _u, _e, _g = commons("Flammarion.jpg")
 GRABADO_FLAMMARION = imagen(
     "obra", _u, _e,
