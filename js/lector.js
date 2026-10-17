@@ -80,7 +80,7 @@ export class Lector {
     this.velocidad = parseFloat(leerAlmacen('lector:velocidad', '1')) || 1;
     this.nombreVoz = leerAlmacen('lector:voz', '');
 
-    this.pasajes = [...articulo.querySelectorAll('.seccion h2, .texto h3, .texto p')];
+    this.pasajes = [...articulo.querySelectorAll('.seccion h2, .texto h3, .texto p:not(.fuentes)')];
     this.pasajes.forEach((el, i) => { el.dataset.pasaje = i; });
 
     this.alPulsarPasaje = (e) => {

@@ -2,7 +2,7 @@ import { listarModulos, cargarModulo, urlMedio } from './datos.js';
 import { Lector } from './lector.js';
 import { montarAnimacion } from './animaciones/index.js';
 import { arcosPolaris } from './animaciones/arcos-polaris.js';
-import { abrirVisor, cerrarVisor, visorAbierto } from './visor.js';
+import { abrirVisor, cerrarVisor, visorAbierto, consumirAtrasPropio } from './visor.js';
 
 const principal = document.getElementById('principal');
 let limpiezas = [];
@@ -237,10 +237,13 @@ async function paginaModulo(slug) {
 
 /* ---------------- Enrutado ---------------- */
 
+let rutaPintada = null;
+
 async function enrutar() {
   cerrarVisor({ desdeHistorial: true });
   limpiar();
   const ruta = location.pathname.replace(/\/+$/, '') || '/';
+  rutaPintada = ruta;
   const m = ruta.match(/^\/modulo\/([a-z0-9-]+)$/);
   if (m) await paginaModulo(m[1]);
   else await portada();
@@ -256,7 +259,13 @@ document.addEventListener('click', (e) => {
   enrutar().then(() => principal.focus({ preventScroll: true }));
 });
 window.addEventListener('popstate', () => {
+  // El "atrás" que hace el propio visor al cerrarse: la página se queda como estaba
+  if (consumirAtrasPropio()) return;
+  // El botón "atrás" del móvil con el visor abierto: solo se cierra el visor
   if (visorAbierto()) { cerrarVisor({ desdeHistorial: true }); return; }
+  // Volver de un salto a una sección (#...) dentro del mismo módulo: no hace falta repintar
+  const ruta = location.pathname.replace(/\/+$/, '') || '/';
+  if (ruta === rutaPintada) return;
   enrutar();
 });
 

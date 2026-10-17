@@ -21,8 +21,18 @@ function cargarOSD() {
   return cargaOSD;
 }
 let abierto = null;
+// Cuando el visor se cierra con su botón, se vuelve atrás en el historial para quitar la entrada
+// que añadió al abrirse. Esa vuelta no es un cambio de página: la página no debe volver a pintarse.
+let atrasPropio = false;
 
 export function visorAbierto() { return !!abierto; }
+
+// La usa el enrutador: devuelve true (una sola vez) si el último "atrás" lo provocó el visor.
+export function consumirAtrasPropio() {
+  const v = atrasPropio;
+  atrasPropio = false;
+  return v;
+}
 
 export function cerrarVisor({ desdeHistorial = false } = {}) {
   if (!abierto) return;
@@ -33,7 +43,7 @@ export function cerrarVisor({ desdeHistorial = false } = {}) {
   document.body.style.overflow = '';
   capa.remove();
   anterior?.focus?.({ preventScroll: true });
-  if (!desdeHistorial && history.state?.visor) history.back();
+  if (!desdeHistorial && history.state?.visor) { atrasPropio = true; history.back(); }
 }
 
 export function abrirVisor({ src, grande, alt, pie, credito, iiif, tam }) {
@@ -80,8 +90,29 @@ export function abrirVisor({ src, grande, alt, pie, credito, iiif, tam }) {
         constrainDuringPan: true,
         gestureSettingsTouch: { pinchRotate: false, flickEnabled: true, dblClickToZoom: true },
       });
-      let reintentado = false;
-      visor.addHandler('open', () => { img.style.visibility = 'hidden'; carga.hidden = true; capa.classList.add('con-profundo'); });
+      let reintentado = false, teselasBien = 0, teselasMal = 0;
+      let abandonado = false;
+      const abandonarProfundo = () => {
+        if (abandonado || abierto?.capa !== capa) return;
+        abandonado = true;
+        // El servidor de teselas no responde: se quita el zoom profundo y se usa la imagen grande
+        try { visor.destroy(); } catch (e) { /* nada */ }
+        if (abierto?.capa === capa) abierto.profundo = null;
+        caja.remove();
+        img.style.visibility = '';
+        capa.classList.remove('con-profundo');
+        cargarGrande();
+      };
+      visor.addHandler('open', () => { capa.classList.add('con-profundo'); });
+      visor.addHandler('tile-loaded', () => {
+        // Solo se tapa la imagen de partida cuando ya hay teselas de verdad en pantalla
+        if (teselasBien++ === 0) { img.style.visibility = 'hidden'; carga.hidden = true; }
+      });
+      visor.addHandler('tile-load-failed', () => {
+        if (++teselasMal >= 3 && teselasBien === 0) abandonarProfundo();
+      });
+      // Si en 12 segundos no ha llegado ninguna tesela, tampoco se espera más
+      setTimeout(() => { if (abierto?.capa === capa && teselasBien === 0 && caja.isConnected) abandonarProfundo(); }, 12000);
       visor.addHandler('open-failed', () => {
         // Si no se pudo leer la ficha del servidor, se describe la imagen a mano y se reintenta
         if (!reintentado && tam) {
@@ -96,19 +127,22 @@ export function abrirVisor({ src, grande, alt, pie, credito, iiif, tam }) {
           });
           return;
         }
-        caja.remove(); carga.hidden = true;
+        abandonarProfundo();
       });
       abierto.profundo = visor;
-    }).catch(() => { carga.hidden = true; });
+    }).catch(() => { carga.hidden = true; cargarGrande(); });
   }
 
-  if (!iiif && grande && grande !== src) {
+  function cargarGrande() {
+    if (!grande || grande === src) { carga.hidden = true; return; }
     carga.hidden = false;
+    carga.textContent = 'Cargando la versión en alta resolución…';
     const alta = new Image();
-    alta.onload = () => { img.src = grande; carga.hidden = true; };
+    alta.onload = () => { if (abierto?.capa === capa) img.src = grande; carga.hidden = true; };
     alta.onerror = () => { carga.hidden = true; };
     alta.src = grande;
   }
+  if (!iiif) cargarGrande();
 
   // ---- Estado de zoom ----
   let escala = 1, x = 0, y = 0;

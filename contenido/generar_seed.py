@@ -84,11 +84,41 @@ FOTO_TIERRA = imagen(
     "NASA", "Dominio público", fecha="1972",
     grande="https://images-assets.nasa.gov/image/as17-148-22727/as17-148-22727~orig.jpg")
 _lev = "https://iiif.digitalcommonwealth.org/iiif/2/commonwealth:7h149v867"
+# Copias en el almacén propio (medios/modulo-1/) para no depender del servidor externo;
+# el servidor IIIF se mantiene solo para el zoom profundo del visor.
+_medios = "https://gjkvcdkidjxenhfgxvkc.supabase.co/storage/v1/object/public/medios/modulo-1"
 MAPA_GLEASON = imagen(
-    "obra", _lev + "/full/1400,/0/default.jpg", "https://collections.leventhalmap.org/search/commonwealth:7h149v85z",
+    "obra", _medios + "/gleason-1892-1400.jpg", "https://collections.leventhalmap.org/search/commonwealth:7h149v85z",
     "Mapa del mundo de Alexander Gleason (1892), con el polo norte en el centro y el borde del sur alrededor. Es la disposición que suele usarse para representar el modelo plano de un solo centro. Amplíalo para leer sus anotaciones.",
     "Alexander Gleason, 1892. Leventhal Map & Education Center (Biblioteca Pública de Boston)",
-    "Sin restricciones de uso conocidas", fecha="1892", grande=_lev + "/full/3000,/0/default.jpg", iiif=_lev, tam=[4773, 6794])
+    "Sin restricciones de uso conocidas", fecha="1892", grande=_medios + "/gleason-1892-3000.jpg", iiif=_lev, tam=[4773, 6794])
+# Explicación que va justo debajo de la foto del Apolo 17
+TEXTO_FOTO_TIERRA = ("texto", {"html": (
+    "<h3>Fotografía directa frente a composición: cómo leer una imagen de la Tierra</h3>\n"
+    "<p>No todas las imágenes famosas de la Tierra vistas desde el espacio son fotografías en el mismo sentido. "
+    "Conviene distinguir tres tipos: la <strong>fotografía directa</strong> (una sola toma de cámara), "
+    "la <strong>composición de datos</strong> (muchas observaciones unidas por ordenador) y la "
+    "<strong>ilustración o render</strong> (una recreación).</p>\n"
+    "<p><strong>La foto del Apolo 17 (1972).</strong> Fue tomada el 7 de diciembre de 1972 por Ron Evans o Harrison Schmitt "
+    "durante el viaje a la Luna, a unos 29.400 km de la superficie, con una cámara Hasselblad de 70 mm y objetivo de 80 mm. "
+    "Su nombre oficial en el archivo de NASA es AS17-148-22727, y es la tercera de una serie de tomas casi idénticas hechas justo antes. "
+    "Es una fotografía de una sola vez. Pero la versión que todos conocemos no es exactamente el original: se distribuyó recortada, "
+    "girada para poner el sur abajo y con el color ajustado. En el fotograma original el polo sur aparece arriba, y la imagen abarca "
+    "desde el Mediterráneo hasta la Antártida.</p>\n"
+    "<p><strong>La «Blue Marble» de 2002.</strong> Pese al nombre, es otra cosa. Según la propia NASA, científicos y visualizadores "
+    "unieron meses de observaciones de tierra, océanos, hielo marino y nubes en un mosaico continuo. La superficie procede de "
+    "observaciones sin nubes tomadas entre junio y septiembre de 2001, el relieve se sombreó con datos de elevación del Servicio "
+    "Geológico de EE. UU. y las nubes son una composición de dos días de imágenes. Su autor, Robert Simmon, explicó que renderizó "
+    "por separado tierra y océano, brillos, nubes, máscaras de día y noche y la neblina atmosférica. Es decir: está hecha con datos "
+    "reales, pero la imagen final es una construcción por ordenador, no una vista que alguien pudiera haber fotografiado.</p>\n"
+    "<p><strong>Por qué importa.</strong> Llamar «foto real» a una composición es una afirmación sin matizar. La regla del curso es "
+    "atribuir cada imagen a quien la produjo y decir cómo se hizo: quién, con qué instrumento, y si es una toma única, un montaje o "
+    "una recreación.</p>\n"
+    "<p class=\"fuentes\">Fuentes: <a href=\"https://en.wikipedia.org/wiki/The_Blue_Marble\" target=\"_blank\" rel=\"noopener\">Wikipedia, «The Blue Marble»</a> · "
+    "<a href=\"https://earthobservatory.nasa.gov/Features/BlueMarble/BlueMarble_2002.php\" target=\"_blank\" rel=\"noopener\">NASA Earth Observatory, Blue Marble 2002</a> · "
+    "<a href=\"https://svs.gsfc.nasa.gov/30614\" target=\"_blank\" rel=\"noopener\">NASA SVS, Blue Marble 2002</a> · "
+    "<a href=\"https://earthobservatory.nasa.gov/blogs/elegantfigures/2011/10/\" target=\"_blank\" rel=\"noopener\">Robert Simmon, «Crafting the Blue Marble»</a></p>"
+)})
 _u, _e, _g = commons("Flammarion.jpg")
 GRABADO_FLAMMARION = imagen(
     "obra", _u, _e,
@@ -147,7 +177,7 @@ EXTRAS = {
         widget("animacion", "arcos-polaris", "Animación", "Observación",
                "Una noche mirando al polo celeste, en el hemisferio norte y en el sur: las estrellas dejan arcos en torno a cada polo. Cambia de hemisferio con los botones."),
         FOTO_NORTE, FOTO_SUR],
-    (1, SEC_POLARIS, MOD): [FOTO_TIERRA],
+    (1, SEC_POLARIS, MOD): [FOTO_TIERRA, TEXTO_FOTO_TIERRA],
     (1, SEC_POLARIS, PLANO): [
         widget("interactivo", "sur-plano", "Interactivo", "Según el modelo plano: tres propuestas",
                "Las tres propuestas que recoge la wiki de la Flat Earth Society para el giro del cielo del sur. Esquemas simplificados."),

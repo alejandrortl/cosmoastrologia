@@ -328,6 +328,7 @@ a.fila-modulo .estado { color: var(--lapis); }
 
 .audio-bloque audio { width: 100%; }
 .fuente { font-family: var(--sans); font-size: .9rem; color: var(--tinta-suave); border-left: 2px solid var(--oro); padding-left: .9rem; margin: 1.5rem 0; }
+.texto p.fuentes { font-family: var(--sans); font-size: .85rem; color: var(--tinta-suave); }
 
 /* ---------- Navegación entre módulos ---------- */
 
