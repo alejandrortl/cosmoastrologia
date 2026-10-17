@@ -10,6 +10,7 @@ import { solDosModelos } from './sol-dos-modelos.js';
 import { tiposEclipse } from './tipos-eclipse.js';
 import { zodiaco } from './zodiaco.js';
 import { surPlano } from './sur-plano.js';
+import { rotulosLegibles } from './comun.js';
 
 const REGISTRO = {
   'arcos-polaris': (el) => {
@@ -38,7 +39,9 @@ export function montarAnimacion(nombre, contenedor) {
   }
   try {
     const inst = crear(contenedor);
-    return () => inst?.destruir?.();
+    const svg = contenedor.querySelector('svg.escena');
+    const quitarRotulos = svg ? rotulosLegibles(svg) : () => {};
+    return () => { quitarRotulos(); inst?.destruir?.(); };
   } catch (e) {
     console.error(`No se pudo montar «${nombre}»`, e);
     contenedor.closest('figure')?.remove();

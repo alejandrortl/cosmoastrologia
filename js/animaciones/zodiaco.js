@@ -13,6 +13,8 @@ const CONSTELACIONES = [
 ];
 const SIGNOS = ['Aries', 'Tauro', 'Géminis', 'Cáncer', 'Leo', 'Virgo', 'Libra', 'Escorpio',
   'Sagitario', 'Capricornio', 'Acuario', 'Piscis'];
+// Símbolos de los signos; el selector \uFE0E pide la versión de texto y no la de emoji
+const SIMBOLOS = ['♈', '♉', '♊', '♋', '♌', '♍', '♎', '♏', '♐', '♑', '♒', '♓'].map((s) => `${s}\uFE0E`);
 const RITMO = 50.29 / 3600;
 const MIN = -2500, MAX = 3000;
 const R1 = 250, R2 = 190, R3 = 130; // bordes de los anillos
@@ -40,7 +42,7 @@ function sector(l1, l2, rExt, rInt) {
 const textoAnio = (a) => (a < 0 ? `${-a} a. C.` : `${a}`);
 
 export function zodiaco(contenedor) {
-  const svg = el('svg', { viewBox: '-280 -280 560 560', class: 'escena', role: 'img' });
+  const svg = el('svg', { viewBox: '-280 -280 560 560', class: 'escena', role: 'img', 'data-crecimiento-max': '1.25' });
   contenedor.append(svg);
   const fuente = { 'font-family': 'IBM Plex Sans, system-ui, sans-serif' };
 
@@ -59,8 +61,9 @@ export function zodiaco(contenedor) {
   const anilloS = el('g', {}, svg);
   const sectoresS = SIGNOS.map((nombre, i) => {
     const p = el('path', { fill: i % 2 ? 'rgba(212,174,90,.18)' : 'rgba(212,174,90,.3)', stroke: '#0f1930', 'stroke-width': 1.5 }, anilloS);
-    const t = el('text', { 'text-anchor': 'middle', 'font-size': 12, fill: '#f3e6bf', ...fuente }, anilloS);
-    t.textContent = nombre;
+    const t = el('text', { 'text-anchor': 'middle', 'font-size': 22, fill: '#f3e6bf', 'font-family': 'Segoe UI Symbol, Noto Sans Symbols, DejaVu Sans, sans-serif' }, anilloS);
+    t.textContent = SIMBOLOS[i];
+    el('title', {}, t).textContent = nombre;
     return { p, t, i };
   });
 
@@ -72,6 +75,8 @@ export function zodiaco(contenedor) {
   tCentro.textContent = 'Signos';
   const tCentro2 = el('text', { y: 14, 'text-anchor': 'middle', 'font-size': 12, fill: '#a9b2c4', ...fuente }, centro);
   tCentro2.textContent = '(zodiaco tropical)';
+  const tCentro3 = el('text', { y: 36, 'text-anchor': 'middle', 'font-size': 11, fill: '#a9b2c4', ...fuente }, centro);
+  tCentro3.textContent = '♈︎ Aries · ♓︎ Piscis · ♒︎ Acuario';
 
   const flecha = el('g', {}, svg);
   el('line', { x1: 0, y1: -R3 + 4, x2: 0, y2: -R1 - 2, stroke: '#d4ae5a', 'stroke-width': 2.5 }, flecha);
@@ -95,7 +100,7 @@ export function zodiaco(contenedor) {
       const desde = equinoccio + i * 30;
       p.setAttribute('d', sector(desde, desde + 30, R2 - 4, R3));
       const [x, y] = punto(desde + 15, (R2 - 4 + R3) / 2);
-      t.setAttribute('x', x); t.setAttribute('y', y + 4);
+      t.setAttribute('x', x); t.setAttribute('y', y + 8);
     });
     const [fx, fy] = punto(equinoccio, 1);
     flecha.setAttribute('transform', `rotate(${(Math.atan2(fy, fx) * 180) / Math.PI + 90})`);

@@ -1,6 +1,7 @@
 import { listarModulos, cargarModulo, urlMedio } from './datos.js';
 import { Lector } from './lector.js';
 import { montarAnimacion } from './animaciones/index.js';
+import { instantanea } from './animaciones/comun.js';
 import { arcosPolaris } from './animaciones/arcos-polaris.js';
 import { abrirVisor, cerrarVisor, visorAbierto, consumirAtrasPropio } from './visor.js';
 
@@ -11,6 +12,7 @@ let cacheModulos = null;
 
 const icono = {
   play: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>',
+  lupa: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 3a7 7 0 0 1 5.6 11.2l5.1 5.1-1.4 1.4-5.1-5.1A7 7 0 1 1 10 3Zm0 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm1 2v2h2v2h-2v2H9v-2H7V9h2V7h2Z"/></svg>',
   auriculares: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-9 9v6a3 3 0 0 0 3 3h1a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H5v-1a7 7 0 0 1 14 0v1h-2a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h1a3 3 0 0 0 3-3v-6a9 9 0 0 0-9-9z"/></svg>',
 };
 
@@ -132,7 +134,7 @@ function htmlBloque(b) {
     case 'interactivo':
       return `<figure class="figura" data-componente="${esc(c.componente)}">
         ${etiquetas(c.etiqueta || (b.tipo === 'animacion' ? 'Animación' : 'Interactivo'), c.modelo)}
-        <div class="lienzo"></div>
+        <div class="lienzo"><button type="button" class="ampliar-dibujo" aria-label="Ampliar el dibujo a pantalla completa">${icono.lupa}</button></div>
         ${c.pie ? `<figcaption>${esc(c.pie)}</figcaption>` : ''}</figure>`;
     case 'fuente':
       return `<p class="fuente">${esc(c.cita || '')}${c.url ? ` <a href="${esc(c.url)}" target="_blank" rel="noopener">Ver fuente</a>` : ''}</p>`;
@@ -177,7 +179,7 @@ async function paginaModulo(slug) {
         <button class="boton escuchar-todo" type="button">${icono.auriculares}<span>Escuchar el módulo</span></button>
       </header>
       <nav class="indice" aria-label="Secciones del módulo">
-        <details${matchMedia('(min-width: 1100px)').matches ? ' open' : ''}>
+        <details${matchMedia('(min-width: 1100px)').matches && !('letraGrande' in document.documentElement.dataset) ? ' open' : ''}>
           <summary>En este módulo</summary>
           <ol>${modulo.secciones.map((s) => `<li><a href="#${s.slug}">${esc(s.titulo)}</a></li>`).join('')}</ol>
         </details>
@@ -230,6 +232,23 @@ async function paginaModulo(slug) {
   principal.querySelectorAll('[data-componente]').forEach((fig) => {
     const des = montarAnimacion(fig.dataset.componente, fig.querySelector('.lienzo'));
     if (des) limpiezas.push(des);
+  });
+
+  // Ampliar un dibujo: se abre una imagen fija en alta resolución en el visor con zoom
+  principal.querySelectorAll('.ampliar-dibujo').forEach((b) => {
+    b.addEventListener('click', async () => {
+      const fig = b.closest('figure');
+      try {
+        const src = await instantanea(fig.querySelector('.lienzo'));
+        if (!src) return;
+        abrirVisor({
+          src,
+          alt: fig.querySelector('[role="img"]')?.getAttribute('aria-label') || '',
+          pie: fig.querySelector('figcaption')?.textContent?.trim(),
+          credito: [...fig.querySelectorAll('.etiqueta')].map((e) => e.textContent).join(', '),
+        });
+      } catch (e) { /* si no se puede, no pasa nada */ }
+    });
   });
 
   // Audiolibro
@@ -404,6 +423,48 @@ window.addEventListener('popstate', () => {
   if (ruta === rutaPintada) return;
   enrutar();
 });
+
+// La portada se coloca bajo la cabecera, que puede ocupar una o dos líneas
+const cabecera = document.querySelector('.cabecera');
+new ResizeObserver(() => {
+  document.documentElement.style.setProperty('--alto-cabecera', `${cabecera.offsetHeight}px`);
+}).observe(cabecera);
+
+// Tamaño de letra: escala toda la página a la vez, de modo que se mantienen las proporciones
+const TAMANOS = [0.875, 1, 1.125, 1.25, 1.4, 1.6, 1.8];
+const botonesLetra = document.querySelectorAll('[data-letra]');
+const avisoLetra = document.querySelector('.aviso-letra');
+let temporizadorAviso = 0;
+function letraActual() {
+  try { const v = parseFloat(localStorage.getItem('letra')); if (v > 0) return v; } catch (e) { /* nada */ }
+  return 1;
+}
+function aplicarLetra(f, anunciar) {
+  const raiz = document.documentElement;
+  raiz.style.fontSize = f === 1 ? '' : `${f * 100}%`;
+  if (f >= 1.4) raiz.dataset.letraGrande = ''; else delete raiz.dataset.letraGrande;
+  try { if (f === 1) localStorage.removeItem('letra'); else localStorage.setItem('letra', String(f)); } catch (e) { /* nada */ }
+  const i = TAMANOS.indexOf(f);
+  botonesLetra[0].disabled = i <= 0;
+  botonesLetra[1].disabled = i >= TAMANOS.length - 1;
+  const rep = document.getElementById('reproductor');
+  if (!rep.hidden) document.documentElement.style.setProperty('--alto-reproductor', `${rep.offsetHeight}px`);
+  window.dispatchEvent(new Event('cambio-letra'));
+  if (anunciar) {
+    avisoLetra.textContent = `Letra al ${Math.round(f * 100)} %`;
+    avisoLetra.classList.add('visible');
+    clearTimeout(temporizadorAviso);
+    temporizadorAviso = setTimeout(() => avisoLetra.classList.remove('visible'), 1400);
+  }
+}
+botonesLetra.forEach((b) => b.addEventListener('click', () => {
+  const actual = letraActual();
+  let i = TAMANOS.findIndex((t) => Math.abs(t - actual) < 0.01);
+  if (i < 0) i = 1;
+  const j = Math.min(TAMANOS.length - 1, Math.max(0, i + Number(b.dataset.letra)));
+  if (j !== i) aplicarLetra(TAMANOS[j], true);
+}));
+aplicarLetra((() => { const f = letraActual(); return TAMANOS.find((t) => Math.abs(t - f) < 0.01) || 1; })(), false);
 
 document.querySelector('.boton-tema').addEventListener('click', () => {
   const raiz = document.documentElement;

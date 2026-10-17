@@ -8,7 +8,7 @@ import { svgNS, boton, barraControles, sinMovimiento } from './comun.js';
 const MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto',
   'septiembre', 'octubre', 'noviembre', 'diciembre'];
 const INCLINACION = 23.44;
-const W = 640, H = 700;
+const W = 640, H = 770;
 
 function el(tag, attrs = {}, padre) {
   const e = document.createElementNS(svgNS, tag);
@@ -64,13 +64,18 @@ export function solDosModelos(contenedor) {
   const grad = el('radialGradient', { id: 'foco-sol' }, defs);
   el('stop', { offset: 0, 'stop-color': '#f2cf72', 'stop-opacity': 0.55 }, grad);
   el('stop', { offset: 1, 'stop-color': '#f2cf72', 'stop-opacity': 0 }, grad);
-  for (const [lat, nombre] of [[INCLINACION, 'Trópico de Cáncer'], [0, 'Ecuador'], [-INCLINACION, 'Trópico de Capricornio']]) {
-    el('circle', { cx: C.x, cy: C.y, r: radio(lat), fill: 'none', stroke: '#a9c4ea', 'stroke-opacity': 0.5, 'stroke-dasharray': lat ? '3 5' : '' }, abajo);
-    texto(abajo, C.x, C.y - radio(lat) - 5, nombre, { 'font-size': 13, 'text-anchor': 'middle' });
+  // Rótulos a la izquierda (trópicos de Cáncer y Capricornio, y ecuador), con una línea hasta su círculo
+  for (const [lat, nombre, dy] of [[INCLINACION, 'Cáncer', -42], [0, 'Ecuador', 0], [-INCLINACION, 'Capricornio', 42]]) {
+    const r = radio(lat);
+    el('circle', { cx: C.x, cy: C.y, r, fill: 'none', stroke: '#a9c4ea', 'stroke-opacity': 0.5, 'stroke-dasharray': lat ? '3 5' : '' }, abajo);
+    const xc = C.x - Math.sqrt(r * r - dy * dy);
+    el('line', { x1: C.x - 182, y1: C.y + dy, x2: xc, y2: C.y + dy, stroke: '#a9c4ea', 'stroke-opacity': 0.45 }, abajo);
+    el('circle', { cx: xc, cy: C.y + dy, r: 2.5, fill: '#a9c4ea' }, abajo);
+    texto(abajo, C.x - 188, C.y + dy + 5, nombre, { 'font-size': 13, 'text-anchor': 'end' });
   }
   el('circle', { cx: C.x, cy: C.y, r: 3, fill: '#ebe5d5' }, abajo);
-  texto(abajo, C.x, C.y + 18, 'Polo norte', { 'text-anchor': 'middle', 'font-size': 13, fill: '#ebe5d5' });
-  texto(abajo, C.x, C.y + R + 32, 'Borde de hielo (Antártida)', { 'text-anchor': 'middle', 'font-size': 13 });
+  texto(abajo, C.x, C.y + 20, 'Polo norte', { 'text-anchor': 'middle', 'font-size': 13, fill: '#ebe5d5' });
+  texto(abajo, C.x, C.y + R + 30, 'Borde de hielo (Antártida)', { 'text-anchor': 'middle', 'font-size': 13 });
   const solPlano = el('g', {}, abajo);
   el('circle', { r: 11, fill: '#f2cf72' }, solPlano);
   const circuloSol = el('circle', { cx: C.x, cy: C.y, fill: 'none', stroke: '#d4ae5a', 'stroke-width': 2, 'stroke-opacity': 0.7 }, abajo);

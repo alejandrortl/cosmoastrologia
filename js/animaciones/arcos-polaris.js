@@ -1,7 +1,7 @@
 // Arcos de estrellas alrededor de Polaris, como en una fotografía de larga exposición.
 // Es una observación: no presupone ningún modelo del cosmos.
 
-import { ajustarLienzo, bucle, sinMovimiento, azar, boton, barraControles } from './comun.js';
+import { ajustarLienzo, bucle, sinMovimiento, azar, boton, barraControles, escalaLetra } from './comun.js';
 
 const VUELTA = Math.PI * 2;
 const HORAS_POR_SEGUNDO = 0.9;   // 1 segundo de animación = 54 minutos de noche
@@ -110,7 +110,7 @@ export function arcosPolaris(canvas, { decorativo = false, conControles = false 
     ctx.fill();
 
     if (!decorativo) {
-      ctx.font = '500 13px "IBM Plex Sans", system-ui, sans-serif';
+      ctx.font = `500 ${Math.round(13 * escalaLetra())}px "IBM Plex Sans", system-ui, sans-serif`;
       ctx.fillStyle = 'rgba(235, 229, 213, .85)';
       ctx.textBaseline = 'top';
       const h = Math.floor(horas), m = Math.floor((horas - h) * 60);
@@ -179,7 +179,8 @@ export function arcosPolaris(canvas, { decorativo = false, conControles = false 
   });
   ro.observe(canvas.parentElement);
 
+  window.addEventListener('cambio-letra', alRedimensionar);
   return {
-    destruir() { anim.destruir(); ro.disconnect(); },
+    destruir() { anim.destruir(); ro.disconnect(); window.removeEventListener('cambio-letra', alRedimensionar); },
   };
 }

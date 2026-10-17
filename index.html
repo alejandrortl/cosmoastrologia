@@ -14,15 +14,29 @@
   <link rel="stylesheet" href="/css/estilos.css">
   <script>
     try { var t = localStorage.getItem('tema'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+    try {
+      var l = parseFloat(localStorage.getItem('letra'));
+      if (l > 0) {
+        document.documentElement.style.fontSize = (l * 100) + '%';
+        if (l >= 1.4) document.documentElement.dataset.letraGrande = '';
+      }
+    } catch (e) {}
   </script>
 </head>
 <body>
   <a class="saltar" href="#principal">Ir al contenido</a>
   <header class="cabecera">
     <a class="marca" href="/" data-enlace>Cosmoastrología</a>
-    <button class="boton-tema" type="button" aria-label="Cambiar entre modo noche y modo día">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
-    </button>
+    <div class="herramientas">
+      <div class="tamano-letra" role="group" aria-label="Tamaño de letra">
+        <button class="boton-letra" type="button" data-letra="-1" aria-label="Letra más pequeña">A<span aria-hidden="true">−</span></button>
+        <button class="boton-letra mayor" type="button" data-letra="1" aria-label="Letra más grande">A<span aria-hidden="true">+</span></button>
+      </div>
+      <button class="boton-tema" type="button" aria-label="Cambiar entre modo noche y modo día">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+      </button>
+    </div>
+    <p class="aviso-letra" aria-live="polite"></p>
   </header>
   <main id="principal" tabindex="-1"></main>
   <div id="reproductor" hidden></div>

@@ -5,7 +5,7 @@
 // aparente, que se dibuja abajo contra las estrellas. La inclinación de la órbita
 // de Marte está exagerada para que el bucle se distinga.
 
-import { ajustarLienzo, bucle, sinMovimiento, boton, barraControles, azar } from './comun.js';
+import { ajustarLienzo, bucle, sinMovimiento, boton, barraControles, azar, escalaLetra } from './comun.js';
 
 const T_TIERRA = 1, T_MARTE = 1.881;
 const R_TIERRA = 1, R_MARTE = 1.524;
@@ -60,7 +60,7 @@ export function retrogrado(contenedor) {
 
     // --- Vista desde fuera ---
     const cx = ancho / 2, cy = altoArriba / 2 + 6;
-    ctx.font = '500 12px "IBM Plex Sans", system-ui, sans-serif';
+    ctx.font = `500 ${Math.round(12 * escalaLetra())}px "IBM Plex Sans", system-ui, sans-serif`;
     ctx.lineWidth = 1;
     if (modelo === 'geo') { dibujarPtolomeo(p, cx, cy, altoArriba); dibujarFranja(p, altoArriba); return; }
     if (modelo === 'plano') { dibujarPlano(p, cx, cy, altoArriba); dibujarFranja(p, altoArriba); return; }
@@ -80,7 +80,7 @@ export function retrogrado(contenedor) {
     ctx.fillStyle = '#f2cf72'; ctx.beginPath(); ctx.arc(cx, cy, 9, 0, Math.PI * 2); ctx.fill();
     ctx.fillStyle = '#5b8fd6'; ctx.beginPath(); ctx.arc(T.x, T.y, 6, 0, Math.PI * 2); ctx.fill();
     ctx.fillStyle = '#d9714e'; ctx.beginPath(); ctx.arc(M.x, M.y, 5, 0, Math.PI * 2); ctx.fill();
-    ctx.font = '500 12px "IBM Plex Sans", system-ui, sans-serif';
+    ctx.font = `500 ${Math.round(12 * escalaLetra())}px "IBM Plex Sans", system-ui, sans-serif`;
     ctx.fillStyle = 'rgba(235,229,213,.85)';
     ctx.fillText('Sol', cx + 12, cy + 4);
     ctx.fillText('Tierra', T.x + 9, T.y + 14);
@@ -231,5 +231,7 @@ export function retrogrado(contenedor) {
   const ro = new ResizeObserver(() => { if (Math.abs(canvas.clientWidth - ancho) > 2) { preparar(); dibujar(); } });
   ro.observe(contenedor);
 
-  return { destruir() { anim.destruir(); ro.disconnect(); } };
+  const alCambiarLetra = () => dibujar();
+  window.addEventListener('cambio-letra', alCambiarLetra);
+  return { destruir() { anim.destruir(); ro.disconnect(); window.removeEventListener('cambio-letra', alCambiarLetra); } };
 }
