@@ -176,7 +176,24 @@ PLANO = "La explicación terraplanista"
 OTRAS = "Cómo lo entendían otras cosmovisiones"
 
 # (módulo, sección h2, h3 tras el que van) -> bloques que se insertan después
+SEC_PALABRAS = "Las palabras básicas para mirar el cielo"
+SEC_MODELOS = "Los grandes modelos del mundo y quién los usó"
+
 EXTRAS = {
+    (1, SEC_PALABRAS, "Lo que ves desde donde estás: horizonte, cenit y puntos cardinales"): [
+        widget("interactivo", "cielo-local", "Interactivo", "Observación",
+               "Mueve la altura del astro y mira cuántos puños hay desde el horizonte.")],
+    (1, SEC_PALABRAS, "Hemisferios, ecuador, latitud y longitud"): [
+        widget("interactivo", "mapa-dos-modelos", "Interactivo", "Dos modelos: globo y plano",
+               "El mismo mundo dibujado por los dos modelos. Elige un lugar o mueve la latitud y la longitud: en dorado, su paralelo y su meridiano. Continentes: Natural Earth, simplificados.")],
+    (1, SEC_PALABRAS, "El cielo como una cúpula: polos celestes y ecuador celeste"): [
+        widget("interactivo", "donde-apuntar", "Interactivo", "Observación y dos modelos: globo y plano",
+               "Arriba, lo que ves y hacia dónde apuntar la cámara según la latitud. Abajo, cómo dibuja esa misma situación cada modelo. Esquemas, no a escala.")],
+    (1, SEC_MODELOS, "Dos preguntas, cuatro respuestas"): [
+        widget("interactivo", "cuatro-modelos", "Interactivo", "Los cuatro modelos",
+               "Las dos preguntas combinadas. Toca un modelo para ver qué culturas lo usaron."),
+        widget("interactivo", "linea-tiempo", "Interactivo", "Línea del tiempo",
+               "Qué modelo usó cada cultura, de la más antigua a hoy. Dos franjas en una barra: convivieron dos modelos o su lectura se debate. El detalle está en el texto que sigue.")],
     (1, SEC_POLARIS, OBS): [
         widget("animacion", "arcos-polaris", "Animación", "Observación",
                "Una noche mirando al polo celeste, en el hemisferio norte y en el sur: las estrellas dejan arcos en torno a cada polo. Cambia de hemisferio con los botones."),

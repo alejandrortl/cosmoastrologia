@@ -133,8 +133,11 @@ function htmlBloque(b) {
     case 'animacion':
     case 'interactivo':
       return `<figure class="figura" data-componente="${esc(c.componente)}">
-        ${etiquetas(c.etiqueta || (b.tipo === 'animacion' ? 'Animación' : 'Interactivo'), c.modelo)}
-        <div class="lienzo"><button type="button" class="ampliar-dibujo" aria-label="Ampliar el dibujo a pantalla completa">${icono.lupa}</button></div>
+        <div class="cabecera-figura">
+          ${etiquetas(c.etiqueta || (b.tipo === 'animacion' ? 'Animación' : 'Interactivo'), c.modelo)}
+          <button type="button" class="ampliar-dibujo" aria-label="Ampliar el dibujo a pantalla completa">${icono.lupa}<span>Ampliar</span></button>
+        </div>
+        <div class="lienzo"></div>
         ${c.pie ? `<figcaption>${esc(c.pie)}</figcaption>` : ''}</figure>`;
     case 'fuente':
       return `<p class="fuente">${esc(c.cita || '')}${c.url ? ` <a href="${esc(c.url)}" target="_blank" rel="noopener">Ver fuente</a>` : ''}</p>`;
@@ -236,6 +239,7 @@ async function paginaModulo(slug) {
 
   // Ampliar un dibujo: se abre una imagen fija en alta resolución en el visor con zoom
   principal.querySelectorAll('.ampliar-dibujo').forEach((b) => {
+    if (!b.closest('figure').querySelector('.lienzo svg.escena, .lienzo canvas')) { b.remove(); return; }
     b.addEventListener('click', async () => {
       const fig = b.closest('figure');
       try {

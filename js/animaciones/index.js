@@ -10,6 +10,11 @@ import { solDosModelos } from './sol-dos-modelos.js';
 import { tiposEclipse } from './tipos-eclipse.js';
 import { zodiaco } from './zodiaco.js';
 import { surPlano } from './sur-plano.js';
+import { cieloLocal } from './cielo-local.js';
+import { mapaDosModelos } from './mapa-dos-modelos.js';
+import { dondeApuntar } from './donde-apuntar.js';
+import { cuatroModelos } from './cuatro-modelos.js';
+import { lineaTiempo } from './linea-tiempo.js';
 import { rotulosLegibles } from './comun.js';
 
 const REGISTRO = {
@@ -28,6 +33,11 @@ const REGISTRO = {
   'tipos-eclipse': tiposEclipse,
   zodiaco,
   'sur-plano': surPlano,
+  'cielo-local': cieloLocal,
+  'mapa-dos-modelos': mapaDosModelos,
+  'donde-apuntar': dondeApuntar,
+  'cuatro-modelos': cuatroModelos,
+  'linea-tiempo': lineaTiempo,
 };
 
 // Devuelve una función para desmontarla, o null si el componente no existe.
