@@ -447,11 +447,11 @@ h1, h2, h3, .titulo-modulo { overflow-wrap: break-word; hyphens: auto; -webkit-h
 .boton-indice {
   position: fixed; z-index: 40; right: var(--margen);
   bottom: calc(1rem + var(--alto-reproductor) + env(safe-area-inset-bottom));
-  display: inline-flex; align-items: center; gap: .45rem; height: 2.9rem; padding: 0 1.05rem 0 .9rem;
+  display: inline-flex; align-items: center; gap: 7px; height: 46px; padding: 0 17px 0 14px;
   border-radius: 999px; border: 1px solid var(--linea); background: var(--superficie); color: var(--tinta);
-  font: 500 .95rem var(--sans); cursor: pointer; box-shadow: 0 6px 22px rgba(0, 0, 0, .28);
+  font: 500 16px var(--sans); cursor: pointer; box-shadow: 0 6px 22px rgba(0, 0, 0, .28);
 }
-.boton-indice svg { width: 1.15rem; height: 1.15rem; fill: currentColor; }
+.boton-indice svg { width: 18px; height: 18px; fill: currentColor; }
 .boton-indice:hover, .boton-indice:focus-visible { border-color: var(--oro); color: var(--oro); }
 @media (min-width: 1100px) { :root:not([data-letra-grande]) .boton-indice { display: none; } }
 
