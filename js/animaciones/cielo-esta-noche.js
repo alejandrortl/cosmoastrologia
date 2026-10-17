@@ -50,7 +50,7 @@ export function cieloEstaNoche(contenedor) {
     ancho = canvas.parentElement.clientWidth;
     const margen = Math.round(26 * escalaLetra()) + 10;
     const lado = Math.min(ancho, 620);
-    R = lado / 2 - margen;
+    R = Math.max(20, lado / 2 - margen);
     alto = lado;
     CX = ancho / 2; CY = alto / 2;
     canvas.width = Math.round(ancho * dpr);

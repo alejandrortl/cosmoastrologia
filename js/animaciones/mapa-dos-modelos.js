@@ -174,6 +174,7 @@ export function mapaDosModelos(contenedor) {
   }
 
   function dibujar() {
+    if (!(tam > 8)) return; // la figura aún no tiene ancho (al cargar o recargar la página)
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.fillStyle = '#0f1930';
     ctx.fillRect(0, 0, ancho, alto);

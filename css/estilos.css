@@ -519,3 +519,41 @@ body.con-panel { overflow: hidden; }
 .lt-eje b:last-child { transform: translateX(-100%); }
 .linea-tiempo { container-type: inline-size; }
 @container (max-width: 36rem) { .lt-eje b.menor { display: none; } }
+
+/* ---------- Calendario del cielo ---------- */
+.calendario-cielo { padding: .9rem .9rem .6rem; font-family: var(--sans); color: #ebe5d5; }
+.cal-mes h4 { margin: .4rem 0 .5rem; font-size: 1rem; font-weight: 600; color: #f3e6bf; }
+.cal-mes ul { list-style: none; margin: 0 0 1rem; padding: 0; }
+.cal-ev { display: grid; grid-template-columns: 6.6rem 1fr; gap: .75rem; padding: .6rem 0; border-top: 1px solid rgba(235,229,213,.1); }
+.cal-cuando { font-size: .85rem; color: #c9cfdc; line-height: 1.3; padding-left: .55rem; border-left: 3px solid #8fb0e0; }
+.cal-luna .cal-cuando { border-color: #e9e2c9; }
+.cal-sol .cal-cuando { border-color: #ffd86b; }
+.cal-eclipse .cal-cuando { border-color: #d9714e; }
+.cal-planeta .cal-cuando { border-color: #7cc4a4; }
+.cal-encuentro .cal-cuando { border-color: #b9a3e0; }
+.cal-ev strong { font-weight: 600; font-size: .95rem; }
+.cal-ev p { margin: .2rem 0 .35rem; font-size: .88rem; line-height: 1.45; color: #c9cfdc; }
+.cal-anadir { background: none; border: 0; padding: 0; color: #d4ae5a; font: 500 .82rem var(--sans); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.cal-mas { margin: .2rem 0 .6rem; color: #ebe5d5; border-color: rgba(235,229,213,.35); }
+.cal-cargando { margin: .5rem 0; color: #c9cfdc; }
+@container (max-width: 30rem) { .cal-ev { grid-template-columns: 1fr; gap: .3rem; } }
+.calendario-cielo { container-type: inline-size; }
+
+/* ---------- Misiones de observación ---------- */
+.misiones { padding: .8rem .9rem .4rem; font-family: var(--sans); color: #ebe5d5; }
+.misiones ol { list-style: none; margin: 0; padding: 0; }
+.mision { padding: .6rem 0; border-top: 1px solid rgba(235,229,213,.1); }
+.mision:first-child { border-top: 0; }
+.mision-cabeza { display: flex; gap: .7rem; align-items: flex-start; cursor: pointer; }
+.mision-cabeza input { width: 1.3rem; height: 1.3rem; margin: .15rem 0 0; flex: none; accent-color: #d4ae5a; }
+.mision-cabeza strong { display: block; font-weight: 600; font-size: .95rem; line-height: 1.3; }
+.mision-cabeza small { display: block; color: #a9b2c4; font-size: .82rem; margin-top: .15rem; }
+.mision.hecha strong { color: #d4ae5a; }
+.mision details { margin: .35rem 0 0 2rem; }
+.mision summary { color: #c9cfdc; font-size: .85rem; cursor: pointer; }
+.mision textarea {
+  width: 100%; margin-top: .4rem; padding: .5rem .6rem; border-radius: 8px; border: 1px solid rgba(235,229,213,.25);
+  background: rgba(255,255,255,.04); color: #ebe5d5; font: .9rem/1.4 var(--sans); resize: vertical;
+}
+.figura .controles.arriba { border-radius: 14px 14px 0 0; border-top: 0; border-bottom: 1px solid var(--linea); }
+.figura:has(.controles.arriba) .lienzo { border-radius: 0 0 14px 14px; }

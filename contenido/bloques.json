@@ -731,7 +731,7 @@
   "orden": 1,
   "tipo": "texto",
   "contenido": {
-   "html": "<p>Todo lo anterior sirve para entender el cielo. Esta última sección sirve para salir una noche y encontrar lo que buscas: saber qué hay sobre tu cabeza, ir de una estrella a otra y saber dónde está el norte sin brújula.</p>\n<p>Las técnicas que siguen se basan solo en lo que se observa. Por eso funcionan igual sea cual sea el modelo del mundo de quien las usa, y las han usado navegantes, pastores y viajeros de todas las culturas.</p>"
+   "html": "<p>Todo lo anterior sirve para entender el cielo. Esta sección sirve para salir una noche y encontrar lo que buscas: saber qué hay sobre tu cabeza, ir de una estrella a otra y saber dónde está el norte sin brújula.</p>\n<p>Las técnicas que siguen se basan solo en lo que se observa. Por eso funcionan igual sea cual sea el modelo del mundo de quien las usa, y las han usado navegantes, pastores y viajeros de todas las culturas.</p>"
   }
  },
  {
@@ -782,7 +782,7 @@
   "orden": 6,
   "tipo": "texto",
   "contenido": {
-   "html": "<h3>Encontrar los puntos cardinales sin brújula</h3>\n<p><strong>De noche, en el hemisferio norte.</strong> Busca Polaris con el salto desde el Carro. Bajo ella, en el horizonte, está el norte. A tu espalda queda el sur, a tu derecha el este y a tu izquierda el oeste.</p>\n<p><strong>De noche, en el hemisferio sur.</strong> Busca el polo sur celeste con la Cruz del Sur y los punteros de Centauro. Bajo ese punto, en el horizonte, está el sur.</p>\n<p><strong>De noche, en cualquier lugar.</strong> Mintaka, la estrella del cinturón de Orión más cercana a Aldebarán, está casi sobre el ecuador celeste: desde cualquier lugar de la Tierra sale prácticamente por el este y se pone por el oeste.</p>\n<p><strong>De día, con la sombra de un palo.</strong> Clava un palo recto en el suelo, marca con una piedra la punta de su sombra, espera entre quince minutos y media hora y marca de nuevo la punta. La primera marca queda al oeste y la segunda al este: la línea que las une va de oeste a este. Si te pones con la primera marca a la izquierda y la segunda a la derecha, miras al norte. Funciona en cualquier latitud y en cualquier época del año, y el interactivo de este apartado te deja probarlo.</p>\n<p><strong>De día, con el Sol a mediodía.</strong> Fuera de la franja de los trópicos, cuando el Sol está en su punto más alto del día marca el sur si estás en el hemisferio norte, y el norte si estás en el sur. Es el momento en que las sombras son más cortas. Ese mediodía solar no coincide exactamente con las 12 del reloj: según el lugar y el horario de verano, puede caer más cerca de la una o de las dos de la tarde.</p>\n<p><strong>Con un reloj de agujas.</strong> En el hemisferio norte, apunta la aguja de las horas hacia el Sol: el sur queda a mitad de camino entre esa aguja y las 12 (o la 1, si rige el horario de verano). En el hemisferio sur, apunta las 12 hacia el Sol: el norte queda a mitad de camino entre las 12 y la aguja de las horas. Es un método aproximado.</p>\n<p><strong>Con la Luna.</strong> La parte iluminada de la Luna siempre mira hacia donde está el Sol, aunque el Sol ya se haya puesto. Por eso la Luna creciente de la tarde tiene su lado brillante hacia el oeste, y la menguante del amanecer, hacia el este. De forma aproximada, en el hemisferio norte, si unes las dos puntas de una Luna creciente o menguante y prolongas esa línea hasta el horizonte, señala más o menos hacia el sur.</p>\n<p><strong>Cómo lo explica cada modelo.</strong> Para el modelo del globo, estas técnicas funcionan porque la Tierra gira sobre un eje que apunta hacia los polos celestes, y por eso el Sol y las estrellas parecen girar a su alrededor. Para el modelo plano, funcionan porque el Sol y las estrellas giran por encima del plano alrededor del centro, sobre el que está Polaris. Para los modelos de esferas antiguos, porque la esfera celeste gira cada día alrededor de la Tierra inmóvil. Todos coinciden en lo que se ve, y por eso la orientación por el cielo se ha practicado en todas las culturas.</p>"
+   "html": "<h3>Practica la regla de la mano</h3>\n<p>La regla de la mano solo sirve si se practica. El interactivo de este apartado te muestra parejas de estrellas conocidas y te pide que adivines con qué parte de la mano taparías la distancia entre ellas. Después te enseña la medida real, en grados y en dedos o puños.</p>\n<p>A las medidas de antes se puede añadir una más: <strong>dos dedos juntos</strong>, el índice y el corazón, tapan unos <strong>3°</strong>.</p>\n<p><strong>Cómo comprobar tu propia mano.</strong> Usa distancias que todo el mundo puede ver. Los punteros del Carro, Merak y Dubhe, están a unos 5°: deberían caber en tres dedos. Las tres estrellas del cinturón de Orión ocupan casi 3°. De Betelgeuse a Rigel hay casi 19°, más o menos un palmo. Si tu mano da algo más o algo menos, apúntalo y corrígelo a partir de entonces.</p>\n<p><strong>Cómo medir la altura de un astro.</strong> Apoya el borde del puño en el horizonte y ve poniendo un puño encima de otro, alternando las manos, hasta llegar al astro. Cada puño son unos 10°. Del horizonte al cenit hay 90°: unos nueve puños.</p>\n<p>Lo que se mide así son ángulos: cuánto hay que girar la vista para ir de un punto a otro. Es lo que se observa, y todos los modelos del mundo aceptan esas medidas. En lo que difieren es en a qué distancia real corresponden: en el modelo del globo, las estrellas están tan lejos que esos ángulos son iguales desde cualquier lugar de la Tierra; en el modelo plano, los astros están mucho más cerca y su tamaño y su altura se explican por la perspectiva.</p>"
   }
  },
  {
@@ -791,10 +791,103 @@
   "orden": 7,
   "tipo": "interactivo",
   "contenido": {
+   "componente": "medir-mano",
+   "etiqueta": "Interactivo",
+   "modelo": "Observación",
+   "pie": "Elige cuánto crees que hay entre las dos estrellas y compruébalo. Las distancias se calculan con las posiciones del catálogo Hipparcos (d3-celestial)."
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 11,
+  "orden": 8,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Las constelaciones de cada estación</h3>\n<p>Si sales a la misma hora cada noche, verás que el cielo no es siempre el mismo. Cada estrella sale unos cuatro minutos antes que la noche anterior: unas dos horas antes cada mes. Por eso, a lo largo del año, por el cielo de las diez de la noche desfilan todas las constelaciones que se pueden ver desde tu latitud. Las que rodean el polo, las llamadas <strong>circumpolares</strong>, no se ponen nunca y se ven todo el año: en el norte, la Osa Mayor y Casiopea; en el sur, la Cruz del Sur desde latitudes como las de Buenos Aires o Santiago.</p>\n<p>Las estaciones están invertidas entre los dos hemisferios: cuando en Madrid es invierno, en Buenos Aires es verano. Pero el cielo de enero a las diez de la noche tiene a Orión en lo alto en los dos sitios: alto hacia el sur visto desde el norte, y alto hacia el norte, «cabeza abajo», visto desde el sur.</p>\n<ul><li><p><strong>Enero</strong>: Orión, Tauro con las Pléyades, Géminis, el Perro Mayor con Sirio y el Cochero con Capela. Desde el sur, además, Canopo, la segunda estrella más brillante de la noche, casi encima.</p></li><li><p><strong>Abril</strong>: Leo, Virgo, el Boyero con Arturo y la Osa Mayor muy alta en el norte. Desde el sur, la Cruz del Sur y Centauro en su mejor momento.</p></li><li><p><strong>Julio</strong>: el triángulo de verano (Vega, Deneb y Altair), Escorpio con Antares y Sagitario. Desde el sur, Escorpio pasa casi por encima de la cabeza.</p></li><li><p><strong>Octubre</strong>: Pegaso con su gran cuadrado, Andrómeda, Casiopea y Perseo. Desde el sur, Fomalhaut, Achernar y las dos Nubes de Magallanes.</p></li></ul>\n<p>El interactivo muestra el cielo de mediados de cada uno de esos meses a las diez de la noche, desde una latitud media del norte o del sur, con esas figuras resaltadas. No incluye los planetas, porque cambian de sitio de un año a otro: para verlos, usa el mapa del cielo de esta noche.</p>\n<p><strong>Cómo lo explica cada modelo.</strong> Lo que se observa es que la bóveda de las estrellas da una vuelta completa en 23 horas y 56 minutos, cuatro minutos menos que el Sol. En el modelo del globo, se debe a que la Tierra, además de girar sobre sí misma, recorre su órbita alrededor del Sol, y cada noche mira hacia una parte un poco distinta del espacio. En el modelo plano, a que las estrellas y el Sol giran sobre el plano a velocidades ligeramente distintas. En los modelos geocéntricos antiguos, a que el Sol avanza cada día un grado hacia el este por la eclíptica, sobre la esfera de las estrellas, y tarda un año en dar la vuelta completa.</p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 11,
+  "orden": 9,
+  "tipo": "interactivo",
+  "contenido": {
+   "componente": "cielo-estaciones",
+   "etiqueta": "Interactivo",
+   "modelo": "Observación",
+   "pie": "El cielo hacia las 22:00 de mediados de cada mes, desde 40° N o 34° S, con las figuras de la estación resaltadas. Estrellas y constelaciones: d3-celestial de Olaf Frohn (catálogo Hipparcos)."
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 11,
+  "orden": 10,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Encontrar los puntos cardinales sin brújula</h3>\n<p><strong>De noche, en el hemisferio norte.</strong> Busca Polaris con el salto desde el Carro. Bajo ella, en el horizonte, está el norte. A tu espalda queda el sur, a tu derecha el este y a tu izquierda el oeste.</p>\n<p><strong>De noche, en el hemisferio sur.</strong> Busca el polo sur celeste con la Cruz del Sur y los punteros de Centauro. Bajo ese punto, en el horizonte, está el sur.</p>\n<p><strong>De noche, en cualquier lugar.</strong> Mintaka, la estrella del cinturón de Orión más cercana a Aldebarán, está casi sobre el ecuador celeste: desde cualquier lugar de la Tierra sale prácticamente por el este y se pone por el oeste.</p>\n<p><strong>De día, con la sombra de un palo.</strong> Clava un palo recto en el suelo, marca con una piedra la punta de su sombra, espera entre quince minutos y media hora y marca de nuevo la punta. La primera marca queda al oeste y la segunda al este: la línea que las une va de oeste a este. Si te pones con la primera marca a la izquierda y la segunda a la derecha, miras al norte. Funciona en cualquier latitud y en cualquier época del año, y el interactivo de este apartado te deja probarlo.</p>\n<p><strong>De día, con el Sol a mediodía.</strong> Fuera de la franja de los trópicos, cuando el Sol está en su punto más alto del día marca el sur si estás en el hemisferio norte, y el norte si estás en el sur. Es el momento en que las sombras son más cortas. Ese mediodía solar no coincide exactamente con las 12 del reloj: según el lugar y el horario de verano, puede caer más cerca de la una o de las dos de la tarde.</p>\n<p><strong>Con un reloj de agujas.</strong> En el hemisferio norte, apunta la aguja de las horas hacia el Sol: el sur queda a mitad de camino entre esa aguja y las 12 (o la 1, si rige el horario de verano). En el hemisferio sur, apunta las 12 hacia el Sol: el norte queda a mitad de camino entre las 12 y la aguja de las horas. Es un método aproximado.</p>\n<p><strong>Con la Luna.</strong> La parte iluminada de la Luna siempre mira hacia donde está el Sol, aunque el Sol ya se haya puesto. Por eso la Luna creciente de la tarde tiene su lado brillante hacia el oeste, y la menguante del amanecer, hacia el este. De forma aproximada, en el hemisferio norte, si unes las dos puntas de una Luna creciente o menguante y prolongas esa línea hasta el horizonte, señala más o menos hacia el sur.</p>\n<p><strong>Cómo lo explica cada modelo.</strong> Para el modelo del globo, estas técnicas funcionan porque la Tierra gira sobre un eje que apunta hacia los polos celestes, y por eso el Sol y las estrellas parecen girar a su alrededor. Para el modelo plano, funcionan porque el Sol y las estrellas giran por encima del plano alrededor del centro, sobre el que está Polaris. Para los modelos de esferas antiguos, porque la esfera celeste gira cada día alrededor de la Tierra inmóvil. Todos coinciden en lo que se ve, y por eso la orientación por el cielo se ha practicado en todas las culturas.</p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 11,
+  "orden": 11,
+  "tipo": "interactivo",
+  "contenido": {
    "componente": "sombra-palo",
    "etiqueta": "Interactivo",
    "modelo": "Observación",
    "pie": "Un palo visto desde arriba y el recorrido de la punta de su sombra a lo largo del día. Mueve la hora de la primera marca y cambia de lugar y de estación."
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 12,
+  "orden": 1,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<p>La mejor manera de aprender el cielo es salir a mirarlo con un propósito. Esta sección te da dos herramientas: un calendario de lo que va a pasar en el cielo durante el próximo año, y una lista de misiones de observación para hacer a tu ritmo.</p>\n<p>Las dos se basan en lo que cualquiera puede ver. Te proponemos anotar primero lo que ves, con la fecha, la hora y el lugar, y solo después pensar en cómo lo explicaría cada modelo. Así cada observación es tuya, y puedes usarla para contrastar las explicaciones que has visto en este módulo.</p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 12,
+  "orden": 2,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Calendario del cielo</h3>\n<p>El calendario se calcula en tu propio dispositivo y empieza en la fecha de hoy. Incluye:</p>\n<ul><li><p><strong>Las fases de la Luna</strong>: luna nueva, cuarto creciente, luna llena y cuarto menguante, con su hora.</p></li><li><p><strong>Los equinoccios y los solsticios</strong>: los cuatro momentos del año en que cambian las estaciones.</p></li><li><p><strong>Los planetas</strong>: cuándo Marte, Júpiter y Saturno están en <strong>oposición</strong> (en el lado del cielo contrario al Sol, visibles toda la noche y en su máximo brillo), cuándo Venus y Mercurio se ven más separados del Sol, y cuándo dos planetas se ven muy juntos.</p></li><li><p><strong>La Luna junto a los planetas</strong>: las noches en que la Luna pasa al lado de Venus, Marte, Júpiter o Saturno. Es la forma más fácil de encontrar un planeta por primera vez.</p></li><li><p><strong>Los eclipses</strong> de Sol y de Luna, con las zonas de la Tierra desde donde se ven.</p></li><li><p><strong>Las lluvias de estrellas</strong>, con la fecha aproximada de su máximo y un aviso si ese año la Luna llena va a estorbar.</p></li></ul>\n<p>Puedes elegir qué tipos de fenómenos ver y añadir cualquiera de ellos, o todos, al calendario de tu móvil o de tu ordenador.</p>\n<p>De dónde salen los datos: las posiciones del Sol, la Luna y los planetas se calculan con el método de Paul Schlyter, que tiene una precisión de alrededor de un minuto de arco. Las fechas y las zonas de visibilidad de los eclipses son las del catálogo de la NASA preparado por Fred Espenak, que llega hasta 2030 en este calendario. Las fechas de las lluvias de estrellas son las habituales del máximo según la Organización Internacional de Meteoros, y pueden variar un día de un año a otro.</p>\n<p><strong>Una advertencia importante.</strong> Nunca mires el Sol directamente, tampoco durante un eclipse parcial o anular: solo con gafas de eclipse homologadas, con la norma ISO 12312-2. Las gafas de sol, los cristales ahumados y las radiografías no protegen. Los eclipses de Luna, en cambio, se pueden mirar sin ninguna protección.</p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 12,
+  "orden": 3,
+  "tipo": "interactivo",
+  "contenido": {
+   "componente": "calendario-cielo",
+   "etiqueta": "Interactivo",
+   "modelo": "Observación",
+   "pie": "Calculado en tu dispositivo para los doce meses siguientes. Sol, Luna y planetas: método de Paul Schlyter. Eclipses: NASA (Fred Espenak). Lluvias de estrellas: Organización Internacional de Meteoros."
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 12,
+  "orden": 4,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Misiones de observación</h3>\n<p>Cada misión te pide observar algo concreto y anotar lo que ves. Están ordenadas de más fácil a más larga. En el cuaderno del interactivo puedes marcarlas como hechas y escribir tus notas, que se guardan en tu navegador.</p>\n<p><strong>Misión 1. Encuentra el norte o el sur de tu casa.</strong> Una noche despejada, localiza Polaris con el salto desde el Carro si vives en el hemisferio norte, o el polo sur celeste con la Cruz del Sur si vives en el sur. Fíjate qué edificio, árbol o montaña queda debajo. Desde ese día sabrás dónde está el norte o el sur desde tu ventana, sin brújula.</p>\n<p><strong>Misión 2. Mide tu latitud con la mano.</strong> Mide en puños la altura de Polaris sobre el horizonte, o la del punto del polo sur celeste. Multiplica por diez y compáralo con la latitud de tu ciudad, que puedes buscar en un mapa. Si estás en Madrid, deberían salirte unos cuatro puños: 40°. Anota cuánto te has desviado.</p>\n<p><strong>Misión 3. Recorre los saltos de estrella de la estación.</strong> Elige en el interactivo de las estaciones el mes en el que estás y sal a buscar sus figuras principales. Después, haz los saltos de estrella que se vean esa noche. Anota cuáles has encontrado.</p>\n<p><strong>Misión 4. Sigue a la Luna durante una semana.</strong> Empieza dos o tres días después de la luna nueva, cuando se ve una Luna fina al atardecer. Cada noche, a la misma hora, anota dónde está, a cuántos puños del horizonte y qué forma tiene. Verás que cada día está más de un puño más al este y que su parte iluminada crece, siempre del lado donde se ha puesto el Sol.</p>\n<p><strong>Misión 5. Comprueba que las estrellas madrugan.</strong> Elige una estrella brillante cerca del horizonte y un punto fijo, como una antena o la esquina de un tejado. Anota la hora exacta a la que la estrella desaparece tras él. Repite una semana después desde el mismo sitio: ocurrirá unos 28 minutos antes, cuatro minutos por día.</p>\n<p><strong>Misión 6. Distingue un planeta de una estrella.</strong> Busca en el mapa del cielo de esta noche un planeta visible. Obsérvalo y fíjate en que centellea menos que las estrellas de alrededor. Dibuja su posición respecto a las estrellas cercanas, y repite el dibujo una o dos semanas después: verás que se ha desplazado, mientras que las estrellas siguen igual entre sí. Por eso los antiguos los llamaban astros errantes.</p>\n<p><strong>Misión 7. Encuentra el mediodía con la sombra de un palo.</strong> Un día de sol, clava un palo recto y marca la punta de su sombra cada quince minutos alrededor del mediodía. La marca más cercana al palo te da el mediodía solar y la dirección norte-sur. Anota la hora del reloj: verás que no coincide con las doce.</p>\n<p><strong>Misión 8. Sigue al Sol por el horizonte.</strong> Desde el mismo sitio, fotografía la puesta de Sol una vez cada dos semanas, con el mismo encuadre y alguna referencia en el horizonte. Al cabo de unos meses verás que el Sol se pone cada vez más a un lado, se detiene en los solsticios y vuelve. Es lo que hicieron los constructores de muchos monumentos antiguos alineados con el Sol.</p>\n<p><strong>Misión 9. Cuenta estrellas fugaces.</strong> Busca en el calendario la próxima lluvia de estrellas, aléjate de las luces y túmbate mirando hacia arriba durante una hora. Cuenta cuántas ves y fíjate de qué zona del cielo parecen salir: es el radiante, que da nombre a la lluvia.</p>\n<p><strong>Misión 10. Fotografía el giro del cielo.</strong> Sigue los pasos del apartado «Compruébalo tú mismo», en la sección sobre el movimiento de las estrellas, y consigue tu propia foto de los arcos alrededor del polo. Anota la dirección y la inclinación a la que apuntaste la cámara.</p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 12,
+  "orden": 5,
+  "tipo": "interactivo",
+  "contenido": {
+   "componente": "misiones",
+   "etiqueta": "Interactivo",
+   "modelo": "Tu cuaderno de observación",
+   "pie": "Marca las misiones que vayas haciendo y apunta tus notas. Se guardan solo en este navegador."
   }
  }
 ]

@@ -34,7 +34,7 @@ const NOMBRES = 'And,Andrómeda,1,BkT2;Ant,Máquina Neumática,3,YFI_;Aps,Ave de
 // Las constelaciones del zodiaco, con el nombre que se usa en el resto del curso
 const NOMBRE_COMUN = {
   Ari: 'Aries', Tau: 'Tauro', Gem: 'Géminis', Cnc: 'Cáncer', Leo: 'Leo', Vir: 'Virgo', Lib: 'Libra',
-  Sco: 'Escorpio', Psc: 'Piscis', Car: 'Quilla',
+  Sco: 'Escorpio', Psc: 'Piscis', Car: 'Quilla', Oct: 'Octante',
 };
 
 // Estrellas con nombre propio (número del catálogo Hipparcos, nombre, posición, magnitud)

@@ -179,6 +179,7 @@ OTRAS = "Cómo lo entendían otras cosmovisiones"
 SEC_PALABRAS = "Las palabras básicas para mirar el cielo"
 SEC_MODELOS = "Los grandes modelos del mundo y quién los usó"
 SEC_ORIENTARSE = "Orientarse en el cielo"
+SEC_PRACTICAR = "Practicar bajo el cielo: calendario y misiones"
 
 EXTRAS = {
     (1, SEC_ORIENTARSE, "El cielo de esta noche"): [
@@ -187,6 +188,18 @@ EXTRAS = {
     (1, SEC_ORIENTARSE, "Saltos de estrella: de una estrella conocida a otra"): [
         widget("interactivo", "saltos-estrella", "Interactivo", "Observación",
                "Elige una ruta y avanza paso a paso. El mapa tiene el norte arriba y el este a la izquierda, como el cielo al mirar hacia arriba.")],
+    (1, SEC_ORIENTARSE, "Practica la regla de la mano"): [
+        widget("interactivo", "medir-mano", "Interactivo", "Observación",
+               "Elige cuánto crees que hay entre las dos estrellas y compruébalo. Las distancias se calculan con las posiciones del catálogo Hipparcos (d3-celestial).")],
+    (1, SEC_ORIENTARSE, "Las constelaciones de cada estación"): [
+        widget("interactivo", "cielo-estaciones", "Interactivo", "Observación",
+               "El cielo hacia las 22:00 de mediados de cada mes, desde 40° N o 34° S, con las figuras de la estación resaltadas. Estrellas y constelaciones: d3-celestial de Olaf Frohn (catálogo Hipparcos).")],
+    (1, SEC_PRACTICAR, "Calendario del cielo"): [
+        widget("interactivo", "calendario-cielo", "Interactivo", "Observación",
+               "Calculado en tu dispositivo para los doce meses siguientes. Sol, Luna y planetas: método de Paul Schlyter. Eclipses: NASA (Fred Espenak). Lluvias de estrellas: Organización Internacional de Meteoros.")],
+    (1, SEC_PRACTICAR, "Misiones de observación"): [
+        widget("interactivo", "misiones", "Interactivo", "Tu cuaderno de observación",
+               "Marca las misiones que vayas haciendo y apunta tus notas. Se guardan solo en este navegador.")],
     (1, SEC_ORIENTARSE, "Encontrar los puntos cardinales sin brújula"): [
         widget("interactivo", "sombra-palo", "Interactivo", "Observación",
                "Un palo visto desde arriba y el recorrido de la punta de su sombra a lo largo del día. Mueve la hora de la primera marca y cambia de lugar y de estación.")],
