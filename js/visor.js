@@ -36,8 +36,9 @@ export function consumirAtrasPropio() {
 
 export function cerrarVisor({ desdeHistorial = false } = {}) {
   if (!abierto) return;
-  const { capa, anterior, alTeclado, profundo } = abierto;
+  const { capa, anterior, alTeclado, profundo, alCerrar } = abierto;
   abierto = null;
+  try { alCerrar?.(); } catch (e) { /* nada */ }
   try { profundo?.destroy(); } catch (e) { /* nada */ }
   document.removeEventListener('keydown', alTeclado);
   document.body.style.overflow = '';
@@ -46,7 +47,7 @@ export function cerrarVisor({ desdeHistorial = false } = {}) {
   if (!desdeHistorial && history.state?.visor) { atrasPropio = true; history.back(); }
 }
 
-export function abrirVisor({ src, grande, alt, pie, credito, iiif, tam }) {
+export function abrirVisor({ src, grande, alt, pie, credito, iiif, tam, alCerrar }) {
   if (abierto) cerrarVisor();
   const capa = document.createElement('div');
   capa.className = 'visor';
@@ -234,7 +235,7 @@ export function abrirVisor({ src, grande, alt, pie, credito, iiif, tam }) {
   };
   document.addEventListener('keydown', alTeclado);
 
-  abierto = { capa, anterior: document.activeElement, alTeclado };
+  abierto = { capa, anterior: document.activeElement, alTeclado, alCerrar };
   document.body.style.overflow = 'hidden';
   document.body.append(capa);
   // El botón "atrás" del móvil cierra el visor en lugar de salir de la página

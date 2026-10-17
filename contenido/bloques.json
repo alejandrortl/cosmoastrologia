@@ -68,7 +68,7 @@
    "pie": "Hemisferio norte: fotografía de larga exposición en el observatorio de Kitt Peak (Arizona). Las estrellas trazan arcos en torno a Polaris.",
    "credito": "KPNO/NOIRLab/NSF/AURA",
    "licencia": "CC BY 4.0",
-   "grande": "https://noirlab.edu/public/media/archives/images/large/iotw2033a.jpg"
+   "grande": "https://gjkvcdkidjxenhfgxvkc.supabase.co/storage/v1/object/public/medios/modulo-1/grande/kitt-peak-arcos.jpg"
   }
  },
  {
@@ -83,7 +83,7 @@
    "pie": "Hemisferio sur: fotografía de larga exposición con objetivo de ojo de pez en el observatorio Paranal (Chile). Los arcos giran en torno a otro punto del cielo, sin estrella brillante en el centro.",
    "credito": "ESO/A. Santerne",
    "licencia": "CC BY 4.0",
-   "grande": "https://cdn.eso.org/images/large/171109-cc.jpg"
+   "grande": "https://gjkvcdkidjxenhfgxvkc.supabase.co/storage/v1/object/public/medios/modulo-1/grande/paranal-arcos.jpg"
   }
  },
  {
@@ -107,7 +107,7 @@
    "pie": "La NASA la publica como una fotografía tomada por la tripulación del Apolo 17 en 1972, de camino a la Luna. El modelo moderno la presenta entre sus pruebas; los defensores de la Tierra plana cuestionan la autenticidad de este tipo de imágenes.",
    "credito": "NASA",
    "licencia": "Dominio público",
-   "grande": "https://images-assets.nasa.gov/image/as17-148-22727/as17-148-22727~orig.jpg",
+   "grande": "https://gjkvcdkidjxenhfgxvkc.supabase.co/storage/v1/object/public/medios/modulo-1/grande/apolo17-as17-148-22727.jpg",
    "fecha": "1972"
   }
  },
@@ -153,12 +153,7 @@
    "pie": "Mapa del mundo de Alexander Gleason (1892), con el polo norte en el centro y el borde del sur alrededor. Es la disposición que suele usarse para representar el modelo plano de un solo centro. Amplíalo para leer sus anotaciones.",
    "credito": "Alexander Gleason, 1892. Leventhal Map & Education Center (Biblioteca Pública de Boston)",
    "licencia": "Sin restricciones de uso conocidas",
-   "grande": "https://gjkvcdkidjxenhfgxvkc.supabase.co/storage/v1/object/public/medios/modulo-1/gleason-1892-3000.jpg",
-   "iiif": "https://iiif.digitalcommonwealth.org/iiif/2/commonwealth:7h149v867",
-   "tam": [
-    4773,
-    6794
-   ],
+   "grande": "https://gjkvcdkidjxenhfgxvkc.supabase.co/storage/v1/object/public/medios/modulo-1/grande/gleason-1892.jpg",
    "fecha": "1892"
   }
  },
@@ -204,7 +199,7 @@
    "pie": "El sistema de Ptolomeo en el atlas «Harmonia Macrocosmica» de Andreas Cellarius (1660): la Tierra en el centro, rodeada por las esferas de los astros.",
    "credito": "Andreas Cellarius",
    "licencia": "Dominio público",
-   "grande": "https://commons.wikimedia.org/wiki/Special:FilePath/Cellarius_Harmonia_Macrocosmica_-_Scenographia_Systematis_mundani_Ptolemaici.jpg?width=3200",
+   "grande": "https://gjkvcdkidjxenhfgxvkc.supabase.co/storage/v1/object/public/medios/modulo-1/grande/cellarius-ptolomeo.jpg",
    "fecha": "1660"
   }
  },
@@ -220,7 +215,7 @@
    "pie": "Grabado publicado por Camille Flammarion en «L'atmosphère» (París, 1888): un viajero asoma la cabeza más allá de la bóveda del cielo. Aunque a menudo se presenta como medieval, es del siglo XIX.",
    "credito": "Autor desconocido, en C. Flammarion, 1888",
    "licencia": "Dominio público",
-   "grande": "https://commons.wikimedia.org/wiki/Special:FilePath/Flammarion.jpg?width=3200",
+   "grande": "https://gjkvcdkidjxenhfgxvkc.supabase.co/storage/v1/object/public/medios/modulo-1/grande/flammarion.jpg",
    "fecha": "1888"
   }
  },
@@ -236,7 +231,7 @@
    "pie": "Mapa del mundo de la «Topografía cristiana» de Cosmas Indicopleustes (siglo VI), tal como se conserva en copias manuscritas: la tierra habitada rodeada por el océano.",
    "credito": "Cosmas Indicopleustes (copia manuscrita)",
    "licencia": "Dominio público",
-   "grande": "https://commons.wikimedia.org/wiki/Special:FilePath/WorldMapCosmasIndicopleustes.jpg?width=3200",
+   "grande": "https://gjkvcdkidjxenhfgxvkc.supabase.co/storage/v1/object/public/medios/modulo-1/grande/cosmas.jpg",
    "fecha": "Siglo VI"
   }
  },
@@ -309,7 +304,7 @@
    "pie": "Cellarius (1660): el recorrido en espiral del Sol alrededor de la Tierra a lo largo del año, según el modelo geocéntrico.",
    "credito": "Andreas Cellarius",
    "licencia": "Dominio público",
-   "grande": "https://commons.wikimedia.org/wiki/Special:FilePath/Cellarius_Harmonia_Macrocosmica_-_Solis_circa_Orbem_Terrarum_Spiralis_Revolutio.jpg?width=3200",
+   "grande": "https://gjkvcdkidjxenhfgxvkc.supabase.co/storage/v1/object/public/medios/modulo-1/grande/cellarius-espiral.jpg",
    "fecha": "1660"
   }
  },
@@ -358,7 +353,7 @@
    "pie": "Luna creciente sobre el observatorio Paranal (Chile), el 27 de octubre de 2011. La parte oscura brilla débilmente: es la llamada luz cenicienta.",
    "credito": "ESO/B. Tafreshi (twanight.org)",
    "licencia": "CC BY 4.0",
-   "grande": "https://cdn.eso.org/images/large/eso1210a.jpg",
+   "grande": "https://gjkvcdkidjxenhfgxvkc.supabase.co/storage/v1/object/public/medios/modulo-1/grande/paranal-luna.jpg",
    "fecha": "2011"
   }
  },
@@ -446,7 +441,7 @@
    "pie": "Eclipse total de Luna del 15 de mayo de 2022, visto desde el observatorio Paranal (Chile): durante la totalidad la Luna toma un tono rojizo.",
    "credito": "F. Aedo, F. Durán/ESO",
    "licencia": "CC BY 4.0",
-   "grande": "https://cdn.eso.org/images/large/potw2221a.jpg",
+   "grande": "https://gjkvcdkidjxenhfgxvkc.supabase.co/storage/v1/object/public/medios/modulo-1/grande/paranal-eclipse-luna.jpg",
    "fecha": "2022"
   }
  },
@@ -585,7 +580,7 @@
    "pie": "El zodiaco circular de Dendera dibujado para la «Description de l'Égypte» (edición de 1822). El original, un relieve de época ptolemaica, se conserva hoy en el Museo del Louvre.",
    "credito": "Description de l'Égypte",
    "licencia": "Dominio público",
-   "grande": "https://commons.wikimedia.org/wiki/Special:FilePath/Description_of_Egypt._2nd_edition._1822._Vol._4._Pl._21_%28Dendera_Circular_Zodiac%29.jpg?width=3200",
+   "grande": "https://gjkvcdkidjxenhfgxvkc.supabase.co/storage/v1/object/public/medios/modulo-1/grande/dendera.jpg",
    "fecha": "1822"
   }
  }

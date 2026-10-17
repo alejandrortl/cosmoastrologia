@@ -18,6 +18,21 @@ function esc(s) {
   return String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 }
 
+function sesion(clave, valor) {
+  // sessionStorage puede no existir o fallar (modo privado); nada de esto es imprescindible
+  try {
+    if (valor === undefined) return JSON.parse(sessionStorage.getItem(clave) || 'null');
+    if (valor === null) sessionStorage.removeItem(clave);
+    else sessionStorage.setItem(clave, JSON.stringify(valor));
+  } catch (e) { return null; }
+  return null;
+}
+
+function aSlug(texto) {
+  return String(texto).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
 function limpiar() {
   limpiezas.forEach((f) => { try { f(); } catch (e) { /* nada */ } });
   limpiezas = [];
@@ -190,11 +205,16 @@ async function paginaModulo(slug) {
     }, { once: true });
   });
   // Tocar una foto la abre a pantalla completa con zoom
+  const figuras = [...principal.querySelectorAll('.figura-imagen')];
   principal.querySelectorAll('.figura-imagen .ampliar').forEach((b) => {
     b.addEventListener('click', () => {
       const img = b.querySelector('img');
       const fig = b.closest('figure');
+      // Si el navegador del móvil recarga la pestaña con la imagen abierta (por ejemplo, por falta
+      // de memoria), al volver a pintar el módulo se regresa a esta misma imagen.
+      sesion('volverA', { slug, figura: figuras.indexOf(fig), t: Date.now() });
       abrirVisor({
+        alCerrar: () => sesion('volverA', null),
         src: img.currentSrc || img.src,
         grande: img.dataset.grande,
         iiif: img.dataset.iiif,
@@ -222,17 +242,133 @@ async function paginaModulo(slug) {
     b.addEventListener('click', () => lector.reproducirDesdeElemento(b.closest('.seccion').querySelector('h2')));
   });
 
-  // Índice: marcar la sección visible
-  const enlaces = [...principal.querySelectorAll('.indice a')];
-  const obs = new IntersectionObserver((entradas) => {
-    entradas.forEach((e) => {
-      if (e.isIntersecting) enlaces.forEach((a) => a.setAttribute('aria-current', a.hash === `#${e.target.id}` ? 'true' : 'false'));
-    });
-  }, { rootMargin: '-20% 0px -70% 0px' });
-  principal.querySelectorAll('.seccion').forEach((s) => obs.observe(s));
-  limpiezas.push(() => obs.disconnect());
+  montarIndice(modulo);
 
-  if (location.hash) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
+  const volver = sesion('volverA');
+  if (volver && volver.slug === slug && Date.now() - volver.t < 30 * 60 * 1000 && figuras[volver.figura]) {
+    sesion('volverA', null);
+    const fig = figuras[volver.figura];
+    const ir = () => fig.scrollIntoView({ block: 'center' });
+    ir();
+    // Las imágenes de más arriba pueden terminar de cargar y desplazar la página: se corrige una vez
+    setTimeout(ir, 600);
+  } else if (location.hash) {
+    document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView();
+  }
+}
+
+/* ---------------- Índice del módulo ---------------- */
+
+// Da un id a cada apartado (h3) y construye el índice: secciones y, dentro, sus apartados.
+// Se muestra en la barra lateral en pantallas anchas y, en el móvil, en un panel que se abre
+// con un botón fijo, para saltar a cualquier punto sin volver al principio.
+function montarIndice(modulo) {
+  const usados = new Set();
+  const arbol = modulo.secciones.map((s) => {
+    const seccion = document.getElementById(s.slug);
+    const apartados = [...(seccion?.querySelectorAll('.texto h3') || [])].map((h) => {
+      let id = `${s.slug}--${aSlug(h.textContent)}`;
+      for (let n = 2; usados.has(id); n++) id = `${s.slug}--${aSlug(h.textContent)}-${n}`;
+      usados.add(id);
+      h.id = id;
+      return { id, titulo: h.textContent.trim() };
+    });
+    return { id: s.slug, titulo: s.titulo, apartados };
+  });
+
+  const lista = arbol.map((s) => `<li><a href="#${s.id}" data-salto>${esc(s.titulo)}</a>${s.apartados.length
+    ? `<ol class="apartados">${s.apartados.map((a) => `<li><a href="#${a.id}" data-salto>${esc(a.titulo)}</a></li>`).join('')}</ol>`
+    : ''}</li>`).join('');
+
+  // Barra lateral / desplegable de arriba
+  const ol = principal.querySelector('.indice ol');
+  if (ol) ol.innerHTML = lista;
+
+  // Botón fijo y panel
+  const boton = document.createElement('button');
+  boton.type = 'button';
+  boton.className = 'boton-indice';
+  boton.setAttribute('aria-haspopup', 'dialog');
+  boton.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h2v2H4zm4 0h12v2H8zM4 11h2v2H4zm4 0h12v2H8zm-4 5h2v2H4zm4 0h12v2H8z"/></svg><span>Índice</span>';
+  const panel = document.createElement('div');
+  panel.className = 'panel-indice';
+  panel.hidden = true;
+  panel.setAttribute('role', 'dialog');
+  panel.setAttribute('aria-modal', 'true');
+  panel.setAttribute('aria-labelledby', 'titulo-panel-indice');
+  panel.innerHTML = `
+    <div class="panel-indice-fondo" data-cerrar-indice></div>
+    <div class="panel-indice-hoja">
+      <div class="panel-indice-cabecera">
+        <h2 id="titulo-panel-indice">En este módulo</h2>
+        <button type="button" class="panel-indice-cerrar" data-cerrar-indice aria-label="Cerrar el índice">×</button>
+      </div>
+      <nav aria-label="Índice del módulo"><ol>${lista}</ol></nav>
+    </div>`;
+  principal.append(boton, panel);
+
+  const abrir = () => {
+    panel.hidden = false;
+    document.body.classList.add('con-panel');
+    // Llevar a la vista el apartado en el que se está leyendo
+    const actual = panel.querySelector('a[aria-current="true"]');
+    actual?.scrollIntoView({ block: 'center' });
+    (actual || panel.querySelector('.panel-indice-cerrar')).focus({ preventScroll: true });
+  };
+  const cerrar = () => {
+    if (panel.hidden) return;
+    panel.hidden = true;
+    document.body.classList.remove('con-panel');
+    boton.focus({ preventScroll: true });
+  };
+  boton.addEventListener('click', abrir);
+  panel.addEventListener('click', (e) => { if (e.target.closest('[data-cerrar-indice]')) cerrar(); });
+  const alTeclado = (e) => { if (e.key === 'Escape') cerrar(); };
+  document.addEventListener('keydown', alTeclado);
+  limpiezas.push(() => { document.removeEventListener('keydown', alTeclado); document.body.classList.remove('con-panel'); });
+
+  // Saltos: sin añadir entradas al historial, para que «atrás» siga llevando a la página anterior
+  const alSaltar = (e) => {
+    const a = e.target.closest('a[data-salto]');
+    if (!a) return;
+    e.preventDefault();
+    const id = a.hash.slice(1);
+    const destino = document.getElementById(id);
+    if (!destino) return;
+    cerrar();
+    destino.scrollIntoView({ block: 'start' });
+    history.replaceState(history.state, '', `#${id}`);
+  };
+  principal.addEventListener('click', alSaltar);
+  limpiezas.push(() => principal.removeEventListener('click', alSaltar));
+
+  // Marcar en el índice el apartado visible
+  const enlaces = [...principal.querySelectorAll('a[data-salto]')];
+  const titulos = [...principal.querySelectorAll('.seccion, .texto h3')];
+  let ultimo = null;
+  const marcar = () => {
+    const linea = innerHeight * 0.3;
+    let actual = null;
+    for (const t of titulos) { if (t.getBoundingClientRect().top <= linea) actual = t; else break; }
+    const id = actual?.id || null;
+    if (id === ultimo) return;
+    ultimo = id;
+    const seccion = actual?.closest('.seccion')?.id;
+    enlaces.forEach((a) => {
+      const h = a.hash.slice(1);
+      a.setAttribute('aria-current', h === id ? 'true' : 'false');
+      a.classList.toggle('en-seccion', h === seccion);
+    });
+  };
+  let pendiente = false;
+  const alDesplazar = () => {
+    if (pendiente) return;
+    pendiente = true;
+    requestAnimationFrame(() => { pendiente = false; marcar(); });
+  };
+  addEventListener('scroll', alDesplazar, { passive: true });
+  limpiezas.push(() => removeEventListener('scroll', alDesplazar));
+  marcar();
 }
 
 /* ---------------- Enrutado ---------------- */

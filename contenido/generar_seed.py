@@ -38,13 +38,17 @@ MODULOS = [
 
 ARCHIVOS = {0: "modulo-00-introduccion.html", 1: "modulo-01-mirar-el-cielo.html"}
 
+# Versiones para el visor guardadas en el almacén propio, limitadas a 2400 px de lado mayor
+# (3600 en el mapa de Gleason) para que el móvil no se quede sin memoria al ampliarlas.
+GRANDE = "https://gjkvcdkidjxenhfgxvkc.supabase.co/storage/v1/object/public/medios/modulo-1/grande/"
+
 # Fotos y obras de archivo libre. Las de Wikimedia Commons se enlazan por su nombre de archivo.
 def commons(nombre, ancho=1280):
     """Devuelve (url para la página, enlace a la ficha, url grande para el visor con zoom)."""
     from urllib.parse import quote
     n = quote(nombre.replace(' ', '_'))
     base = f"https://commons.wikimedia.org/wiki/Special:FilePath/{n}"
-    return (f"{base}?width={ancho}", f"https://commons.wikimedia.org/wiki/File:{n}", f"{base}?width=3200")
+    return (f"{base}?width={ancho}", f"https://commons.wikimedia.org/wiki/File:{n}", f"{base}?width=2400")
 
 
 def imagen(tipo, url, enlace, pie, credito, licencia, fecha=None, alt=None, grande=None, iiif=None, tam=None):
@@ -71,27 +75,27 @@ FOTO_NORTE = imagen(
     "https://kpno.noirlab.edu/images/iotw2033a/",
     "Hemisferio norte: fotografía de larga exposición en el observatorio de Kitt Peak (Arizona). Las estrellas trazan arcos en torno a Polaris.",
     "KPNO/NOIRLab/NSF/AURA", "CC BY 4.0",
-    grande="https://noirlab.edu/public/media/archives/images/large/iotw2033a.jpg")
+    grande=GRANDE + "kitt-peak-arcos.jpg")
 FOTO_SUR = imagen(
     "foto", "https://cdn.eso.org/images/screen/171109-cc.jpg",
     "https://www.eso.org/public/images/171109-cc/",
     "Hemisferio sur: fotografía de larga exposición con objetivo de ojo de pez en el observatorio Paranal (Chile). Los arcos giran en torno a otro punto del cielo, sin estrella brillante en el centro.",
-    "ESO/A. Santerne", "CC BY 4.0", grande="https://cdn.eso.org/images/large/171109-cc.jpg")
+    "ESO/A. Santerne", "CC BY 4.0", grande=GRANDE + "paranal-arcos.jpg")
 FOTO_TIERRA = imagen(
     "foto", "https://images-assets.nasa.gov/image/as17-148-22727/as17-148-22727~medium.jpg",
     "https://images.nasa.gov/details/as17-148-22727",
     "La NASA la publica como una fotografía tomada por la tripulación del Apolo 17 en 1972, de camino a la Luna. El modelo moderno la presenta entre sus pruebas; los defensores de la Tierra plana cuestionan la autenticidad de este tipo de imágenes.",
     "NASA", "Dominio público", fecha="1972",
-    grande="https://images-assets.nasa.gov/image/as17-148-22727/as17-148-22727~orig.jpg")
+    grande=GRANDE + "apolo17-as17-148-22727.jpg")
 _lev = "https://iiif.digitalcommonwealth.org/iiif/2/commonwealth:7h149v867"
-# Copias en el almacén propio (medios/modulo-1/) para no depender del servidor externo;
-# el servidor IIIF se mantiene solo para el zoom profundo del visor.
+# Copias en el almacén propio (medios/modulo-1/) para no depender del servidor externo,
+# sacadas de su servidor IIIF (_lev). El zoom profundo desde ese servidor fallaba en el móvil.
 _medios = "https://gjkvcdkidjxenhfgxvkc.supabase.co/storage/v1/object/public/medios/modulo-1"
 MAPA_GLEASON = imagen(
     "obra", _medios + "/gleason-1892-1400.jpg", "https://collections.leventhalmap.org/search/commonwealth:7h149v85z",
     "Mapa del mundo de Alexander Gleason (1892), con el polo norte en el centro y el borde del sur alrededor. Es la disposición que suele usarse para representar el modelo plano de un solo centro. Amplíalo para leer sus anotaciones.",
     "Alexander Gleason, 1892. Leventhal Map & Education Center (Biblioteca Pública de Boston)",
-    "Sin restricciones de uso conocidas", fecha="1892", grande=_medios + "/gleason-1892-3000.jpg", iiif=_lev, tam=[4773, 6794])
+    "Sin restricciones de uso conocidas", fecha="1892", grande=GRANDE + "gleason-1892.jpg")
 # Explicación que va justo debajo de la foto del Apolo 17
 TEXTO_FOTO_TIERRA = ("texto", {"html": (
     "<h3>Fotografía directa frente a composición: cómo leer una imagen de la Tierra</h3>\n"
@@ -123,27 +127,27 @@ _u, _e, _g = commons("Flammarion.jpg")
 GRABADO_FLAMMARION = imagen(
     "obra", _u, _e,
     "Grabado publicado por Camille Flammarion en «L'atmosphère» (París, 1888): un viajero asoma la cabeza más allá de la bóveda del cielo. Aunque a menudo se presenta como medieval, es del siglo XIX.",
-    "Autor desconocido, en C. Flammarion, 1888", "Dominio público", fecha="1888", grande=_g)
+    "Autor desconocido, en C. Flammarion, 1888", "Dominio público", fecha="1888", grande=GRANDE + "flammarion.jpg")
 _u, _e, _g = commons("Cellarius Harmonia Macrocosmica - Scenographia Systematis mundani Ptolemaici.jpg")
 CELLARIUS_PTOLOMEO = imagen(
     "obra", _u, _e,
     "El sistema de Ptolomeo en el atlas «Harmonia Macrocosmica» de Andreas Cellarius (1660): la Tierra en el centro, rodeada por las esferas de los astros.",
-    "Andreas Cellarius", "Dominio público", fecha="1660", grande=_g)
+    "Andreas Cellarius", "Dominio público", fecha="1660", grande=GRANDE + "cellarius-ptolomeo.jpg")
 _u, _e, _g = commons("WorldMapCosmasIndicopleustes.jpg")
 MAPA_COSMAS = imagen(
     "obra", _u, _e,
     "Mapa del mundo de la «Topografía cristiana» de Cosmas Indicopleustes (siglo VI), tal como se conserva en copias manuscritas: la tierra habitada rodeada por el océano.",
-    "Cosmas Indicopleustes (copia manuscrita)", "Dominio público", fecha="Siglo VI", grande=_g)
+    "Cosmas Indicopleustes (copia manuscrita)", "Dominio público", fecha="Siglo VI", grande=GRANDE + "cosmas.jpg")
 _u, _e, _g = commons("Cellarius Harmonia Macrocosmica - Solis circa Orbem Terrarum Spiralis Revolutio.jpg")
 CELLARIUS_ESPIRAL = imagen(
     "obra", _u, _e,
     "Cellarius (1660): el recorrido en espiral del Sol alrededor de la Tierra a lo largo del año, según el modelo geocéntrico.",
-    "Andreas Cellarius", "Dominio público", fecha="1660", grande=_g)
+    "Andreas Cellarius", "Dominio público", fecha="1660", grande=GRANDE + "cellarius-espiral.jpg")
 FOTO_LUNA = imagen(
     "foto", "https://cdn.eso.org/images/screen/eso1210a.jpg",
     "https://www.eso.org/public/images/eso1210a/",
     "Luna creciente sobre el observatorio Paranal (Chile), el 27 de octubre de 2011. La parte oscura brilla débilmente: es la llamada luz cenicienta.",
-    "ESO/B. Tafreshi (twanight.org)", "CC BY 4.0", fecha="2011", grande="https://cdn.eso.org/images/large/eso1210a.jpg")
+    "ESO/B. Tafreshi (twanight.org)", "CC BY 4.0", fecha="2011", grande=GRANDE + "paranal-luna.jpg")
 FOTO_CORONA = imagen(
     "foto", "https://www.nasa.gov/wp-content/uploads/2023/03/36329608000_2e0f627e4b_o.jpg",
     "https://www.nasa.gov/image-article/suns-corona-seen-during-2017-solar-eclipse/",
@@ -153,12 +157,12 @@ FOTO_LUNA_ROJA = imagen(
     "foto", "https://cdn.eso.org/images/screen/potw2221a.jpg",
     "https://www.eso.org/public/images/potw2221a/",
     "Eclipse total de Luna del 15 de mayo de 2022, visto desde el observatorio Paranal (Chile): durante la totalidad la Luna toma un tono rojizo.",
-    "F. Aedo, F. Durán/ESO", "CC BY 4.0", fecha="2022", grande="https://cdn.eso.org/images/large/potw2221a.jpg")
+    "F. Aedo, F. Durán/ESO", "CC BY 4.0", fecha="2022", grande=GRANDE + "paranal-eclipse-luna.jpg")
 _u, _e, _g = commons("Description of Egypt. 2nd edition. 1822. Vol. 4. Pl. 21 (Dendera Circular Zodiac).jpg")
 DENDERA = imagen(
     "obra", _u, _e,
     "El zodiaco circular de Dendera dibujado para la «Description de l'Égypte» (edición de 1822). El original, un relieve de época ptolemaica, se conserva hoy en el Museo del Louvre.",
-    "Description de l'Égypte", "Dominio público", fecha="1822", grande=_g)
+    "Description de l'Égypte", "Dominio público", fecha="1822", grande=GRANDE + "dendera.jpg")
 
 SEC_POLARIS = "El movimiento de las estrellas y el misterio de Polaris"
 SEC_SOL = "El Sol, las estaciones y la eclíptica"
