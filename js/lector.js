@@ -1,7 +1,25 @@
-// Audiolibro: lee el módulo en voz alta con la voz del propio dispositivo
-// (Web Speech API), resaltando el párrafo que se está leyendo.
+// Audiolibro: lee el módulo en voz alta resaltando el párrafo que se está leyendo.
+// Primero usa la voz grabada del curso (archivos MP3 en /audio, uno por párrafo), que sigue
+// sonando con la pantalla apagada. Si un párrafo aún no tiene grabación, o si se elige una voz
+// del dispositivo, se lee con la Web Speech API, que el móvil detiene al bloquear la pantalla.
+// Las grabaciones se generan con contenido/generar_audio.py.
 
 const VELOCIDADES = [0.8, 0.9, 1, 1.15, 1.3, 1.5];
+const GRABADA = 'grabada';
+
+// Clave de cada pasaje: los 16 primeros caracteres del SHA-256 de su texto para la voz.
+async function claveDe(texto) {
+  const h = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(texto));
+  return [...new Uint8Array(h)].slice(0, 8).map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+
+let indiceAudio = null;
+function cargarIndiceAudio() {
+  indiceAudio ||= fetch('/audio/indice.json', { cache: 'no-cache' })
+    .then((r) => (r.ok ? r.json() : { pasajes: {} }))
+    .catch(() => ({ pasajes: {} }));
+  return indiceAudio;
+}
 
 const ic = {
   play: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>',
@@ -78,10 +96,14 @@ export class Lector {
     this.leyendo = false;
     this.generacion = 0;
     this.velocidad = parseFloat(leerAlmacen('lector:velocidad', '1')) || 1;
-    this.nombreVoz = leerAlmacen('lector:voz', '');
+    this.nombreVoz = leerAlmacen('lector:voz-elegida', GRABADA);
+    this.grabadas = {};
+    this.claves = [];
+    this.audio = null;
 
     this.pasajes = [...articulo.querySelectorAll('.seccion h2, .texto h3, .texto p:not(.fuentes)')];
     this.pasajes.forEach((el, i) => { el.dataset.pasaje = i; });
+    this.preparado = this.prepararGrabaciones();
 
     this.alPulsarPasaje = (e) => {
       if (!this.contenedor.hidden) {
@@ -94,15 +116,90 @@ export class Lector {
     this.alCambiarVoces = () => this.pintarVoces();
     if (this.voz) this.voz.addEventListener?.('voiceschanged', this.alCambiarVoces);
 
-    this.alSalir = () => this.voz?.cancel();
+    this.alSalir = () => { this.voz?.cancel(); };
     window.addEventListener('pagehide', this.alSalir);
 
     // Al volver a la página, el móvil suelta el bloqueo de pantalla: hay que pedirlo otra vez.
     this.bloqueoPantalla = null;
     this.alVolver = () => {
-      if (document.visibilityState === 'visible' && this.leyendo) this.mantenerPantalla();
+      if (document.visibilityState === 'visible' && this.leyendo && !this.sonandoGrabada) this.mantenerPantalla();
     };
     document.addEventListener('visibilitychange', this.alVolver);
+  }
+
+  async prepararGrabaciones() {
+    if (!window.crypto?.subtle || typeof Audio === 'undefined') return;
+    try {
+      const [indice, claves] = await Promise.all([
+        cargarIndiceAudio(),
+        Promise.all(this.pasajes.map((el) => claveDe(textoParaVoz(el.textContent)))),
+      ]);
+      this.grabadas = indice.pasajes || {};
+      this.claves = claves;
+      this.pintarVoces();
+    } catch (e) { /* sin grabaciones: se usa la voz del dispositivo */ }
+  }
+
+  usaGrabada() { return this.nombreVoz === GRABADA; }
+  tieneGrabacion(i) { return this.usaGrabada() && !!this.grabadas[this.claves[i]]; }
+  urlGrabacion(i) { return `/audio/${this.claves[i]}.mp3`; }
+
+  // Un único elemento <audio> para todo el módulo: al terminar un párrafo se le cambia el
+  // archivo. Así el navegador lo trata como una lista de reproducción y sigue en segundo plano.
+  elementoAudio() {
+    if (this.audio) return this.audio;
+    const a = new Audio();
+    a.preload = 'auto';
+    a.addEventListener('ended', () => {
+      if (!this.leyendo) return;
+      this.indice++;
+      if (this.indice >= this.pasajes.length) this.terminar();
+      else this.leerPasaje();
+    });
+    // Si el sistema pausa el audio (una llamada, unos auriculares que se desconectan), lo reflejamos.
+    a.addEventListener('pause', () => {
+      if (this.cambiandoArchivo || a.ended || !a.paused || !this.leyendo || !this.sonandoGrabada) return;
+      this.leyendo = false;
+      this.actualizar();
+    });
+    a.addEventListener('play', () => {
+      if (!this.leyendo && this.sonandoGrabada) { this.leyendo = true; this.actualizar(); }
+    });
+    a.addEventListener('error', () => {
+      if (!this.leyendo || !this.sonandoGrabada) return;
+      // Si falla la grabación (sin conexión, por ejemplo), ese párrafo se lee con la voz del dispositivo.
+      this.sonandoGrabada = false;
+      this.leerConVoz(this.generacion, this.pasajes[this.indice]);
+    });
+    this.audio = a;
+    this.prepararMediaSession();
+    return a;
+  }
+
+  // Controles de la pantalla de bloqueo y de los auriculares
+  prepararMediaSession() {
+    const ms = navigator.mediaSession;
+    if (!ms) return;
+    const accion = (n, f) => { try { ms.setActionHandler(n, f); } catch (e) { /* no soportada */ } };
+    accion('play', () => { if (!this.leyendo) this.alternar(); });
+    accion('pause', () => { if (this.leyendo) this.pausar(); });
+    accion('previoustrack', () => this.saltar(-1));
+    accion('nexttrack', () => this.saltar(1));
+    accion('stop', () => this.pausar());
+  }
+
+  metadatos() {
+    const ms = navigator.mediaSession;
+    if (!ms || typeof MediaMetadata === 'undefined') return;
+    try {
+      ms.metadata = new MediaMetadata({
+        title: this.seccionActual(),
+        artist: 'Cosmoastrología',
+        album: this.titulo || '',
+        artwork: [{ src: '/img/icono-audio.png', sizes: '512x512', type: 'image/png' }],
+      });
+      ms.playbackState = this.leyendo ? 'playing' : 'paused';
+    } catch (e) { /* nada */ }
   }
 
   // Pide al dispositivo que no apague la pantalla mientras suena el audiolibro.
@@ -155,23 +252,54 @@ export class Lector {
 
   reproducirDesde(i) {
     this.mostrar();
-    if (!this.voz) return;
     this.indice = Math.max(0, Math.min(i, this.pasajes.length - 1));
+    if (!this.voz && !this.tieneGrabacion(this.indice)) return;
     this.leyendo = true;
     this.articulo.classList.add('leyendo-activo');
-    this.mantenerPantalla();
+    // El audio se crea dentro del toque del usuario: los móviles solo dejan sonar así.
+    if (this.usaGrabada()) this.elementoAudio();
     this.leerPasaje();
   }
 
   leerPasaje() {
     const gen = ++this.generacion;
-    this.voz.cancel();
+    this.voz?.cancel();
     const el = this.pasajes[this.indice];
     if (!el) { this.terminar(); return; }
     this.resaltar(el);
     guardarAlmacen(this.clave, String(this.indice));
-    this.actualizar();
 
+    if (this.tieneGrabacion(this.indice)) {
+      this.sonandoGrabada = true;
+      this.soltarPantalla();
+      this.actualizar();
+      const a = this.elementoAudio();
+      const url = this.urlGrabacion(this.indice);
+      this.cambiandoArchivo = true;
+      if (!a.src.endsWith(url)) a.src = url;
+      else a.currentTime = 0;
+      a.playbackRate = this.velocidad;
+      a.play().then(() => { this.cambiandoArchivo = false; this.metadatos(); }).catch((e) => {
+        this.cambiandoArchivo = false;
+        if (gen !== this.generacion || e?.name === 'AbortError') return;
+        this.leyendo = false; this.actualizar();
+        this.aviso('El audio no ha podido empezar. Pulsa reproducir para continuar.');
+      });
+      // Pedir ya el siguiente párrafo, para que no haya silencio al cambiar
+      const sig = this.indice + 1;
+      if (this.tieneGrabacion(sig)) fetch(this.urlGrabacion(sig)).catch(() => {});
+      return;
+    }
+    this.sonandoGrabada = false;
+    this.audio?.pause();
+    this.actualizar();
+    this.metadatos();
+    if (!this.voz) { this.leyendo = false; this.actualizar(); return; }
+    this.mantenerPantalla();
+    this.leerConVoz(gen, el);
+  }
+
+  leerConVoz(gen, el) {
     const trozos = trocear(textoParaVoz(el.textContent));
     const voz = this.vozElegida();
     let k = 0;
@@ -204,13 +332,26 @@ export class Lector {
     this.leyendo = false;
     this.generacion++;
     this.voz?.cancel();
+    this.audio?.pause();
     this.soltarPantalla();
     this.actualizar();
+    this.metadatos();
   }
 
   alternar() {
-    if (this.leyendo) this.pausar();
-    else this.reproducirDesde(this.indice);
+    if (this.leyendo) { this.pausar(); return; }
+    // Continuar la grabación donde se quedó, en mitad del párrafo
+    const a = this.audio;
+    if (a && this.sonandoGrabada && this.tieneGrabacion(this.indice) && a.src.endsWith(this.urlGrabacion(this.indice))
+      && a.currentTime > 0 && !a.ended) {
+      this.leyendo = true;
+      this.generacion++;
+      a.playbackRate = this.velocidad;
+      a.play().then(() => this.metadatos()).catch(() => this.reproducirDesde(this.indice));
+      this.actualizar();
+      return;
+    }
+    this.reproducirDesde(this.indice);
   }
 
   saltar(delta) {
@@ -221,6 +362,8 @@ export class Lector {
 
   terminar() {
     this.leyendo = false;
+    this.sonandoGrabada = false;
+    this.audio?.pause();
     this.soltarPantalla();
     this.indice = 0;
     guardarAlmacen(this.clave, '0');
@@ -278,12 +421,12 @@ export class Lector {
     };
     this.contenedor.querySelector('select').onchange = (e) => {
       this.nombreVoz = e.target.value;
-      guardarAlmacen('lector:voz', this.nombreVoz);
-      if (this.leyendo) this.reproducirDesde(this.indice);
+      guardarAlmacen('lector:voz-elegida', this.nombreVoz);
+      if (this.leyendo) { this.pausar(); this.reproducirDesde(this.indice); }
     };
     this.pintarVoces();
     this.ajustarHueco();
-    if (!this.voz) this.aviso('Este navegador no puede leer en voz alta. Prueba con Chrome, Safari o Edge actualizados.');
+    if (!this.voz && !this.claves.length) this.aviso('Este navegador no puede leer en voz alta. Prueba con Chrome, Safari o Edge actualizados.');
     this.actualizar();
   }
 
@@ -291,11 +434,15 @@ export class Lector {
     const sel = this.contenedor.querySelector('select');
     if (!sel) return;
     const vs = this.voces();
-    const elegida = this.vozElegida();
-    sel.hidden = vs.length < 2;
-    sel.innerHTML = vs.map((v) =>
-      `<option value="${v.name.replace(/"/g, '&quot;')}"${v === elegida ? ' selected' : ''}>${v.name.replace(/</g, '&lt;')} (${v.lang})</option>`).join('');
-    if (this.voz && this.voz.getVoices().length && !vs.length) {
+    const hayGrabada = Object.keys(this.grabadas).length > 0;
+    if (!hayGrabada && this.usaGrabada() && this.claves.length) this.nombreVoz = vs[0]?.name || '';
+    const elegida = this.usaGrabada() ? null : this.vozElegida();
+    const opciones = (hayGrabada ? [`<option value="${GRABADA}"${this.usaGrabada() ? ' selected' : ''}>Voz grabada del curso (sigue con la pantalla apagada)</option>`] : [])
+      .concat(vs.map((v) =>
+        `<option value="${v.name.replace(/"/g, '&quot;')}"${v === elegida ? ' selected' : ''}>Voz del dispositivo: ${v.name.replace(/</g, '&lt;')} (${v.lang})</option>`));
+    sel.hidden = opciones.length < 2;
+    sel.innerHTML = opciones.join('');
+    if (!hayGrabada && this.voz && this.voz.getVoices().length && !vs.length) {
       this.aviso('No hay ninguna voz en español instalada en este dispositivo; se usará la voz por defecto.');
     }
   }
@@ -305,7 +452,8 @@ export class Lector {
     this.velocidad = VELOCIDADES[(i + 1) % VELOCIDADES.length];
     guardarAlmacen('lector:velocidad', String(this.velocidad));
     this.actualizar();
-    if (this.leyendo) this.reproducirDesde(this.indice);
+    if (this.audio) this.audio.playbackRate = this.velocidad;
+    if (this.leyendo && !this.sonandoGrabada) this.reproducirDesde(this.indice);
   }
 
   actualizar() {
@@ -351,6 +499,7 @@ export class Lector {
     this.cerrar();
     this.articulo.removeEventListener('click', this.alPulsarPasaje);
     this.voz?.removeEventListener?.('voiceschanged', this.alCambiarVoces);
+    if (this.audio) { this.audio.removeAttribute('src'); this.audio.load(); this.audio = null; }
     window.removeEventListener('pagehide', this.alSalir);
     document.removeEventListener('visibilitychange', this.alVolver);
   }
