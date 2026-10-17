@@ -15,6 +15,9 @@ import { mapaDosModelos } from './mapa-dos-modelos.js';
 import { dondeApuntar } from './donde-apuntar.js';
 import { cuatroModelos } from './cuatro-modelos.js';
 import { lineaTiempo } from './linea-tiempo.js';
+import { cieloEstaNoche } from './cielo-esta-noche.js';
+import { saltosEstrella } from './saltos-estrella.js';
+import { sombraPalo } from './sombra-palo.js';
 import { rotulosLegibles } from './comun.js';
 
 const REGISTRO = {
@@ -38,6 +41,9 @@ const REGISTRO = {
   'donde-apuntar': dondeApuntar,
   'cuatro-modelos': cuatroModelos,
   'linea-tiempo': lineaTiempo,
+  'cielo-esta-noche': cieloEstaNoche,
+  'saltos-estrella': saltosEstrella,
+  'sombra-palo': sombraPalo,
 };
 
 // Devuelve una función para desmontarla, o null si el componente no existe.

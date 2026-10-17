@@ -724,5 +724,77 @@
    "grande": "https://gjkvcdkidjxenhfgxvkc.supabase.co/storage/v1/object/public/medios/modulo-1/grande/dendera.jpg",
    "fecha": "1822"
   }
+ },
+ {
+  "modulo": 1,
+  "seccion": 11,
+  "orden": 1,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<p>Todo lo anterior sirve para entender el cielo. Esta última sección sirve para salir una noche y encontrar lo que buscas: saber qué hay sobre tu cabeza, ir de una estrella a otra y saber dónde está el norte sin brújula.</p>\n<p>Las técnicas que siguen se basan solo en lo que se observa. Por eso funcionan igual sea cual sea el modelo del mundo de quien las usa, y las han usado navegantes, pastores y viajeros de todas las culturas.</p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 11,
+  "orden": 2,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>El cielo de esta noche</h3>\n<p>El mapa interactivo de este apartado muestra el cielo de cualquier fecha, hora y lugar, y por defecto el de ahora mismo. Funciona como los planisferios giratorios de cartón que usan los aficionados: es el cielo visto como una cúpula sobre tu cabeza.</p>\n<ul><li><p><strong>El centro del mapa es el cenit</strong>, el punto que tienes justo encima, y <strong>el borde es el horizonte</strong>. Cuanto más cerca del borde está una estrella, más baja la verás.</p></li><li><p><strong>La dirección hacia la que miras va abajo.</strong> Elige con los botones si miras al norte, al sur, al este o al oeste, y sujeta el móvil por encima de tu cabeza con esa dirección hacia abajo: así el mapa coincide con el cielo. Por eso el este y el oeste parecen cambiados respecto a un mapa de la Tierra: un mapa del cielo se mira desde abajo.</p></li><li><p><strong>La línea dorada discontinua es la eclíptica</strong>, el camino del Sol entre las estrellas. La Luna y los planetas siempre andan cerca de ella.</p></li><li><p><strong>Los planetas</strong> aparecen con su nombre y su color. A simple vista se distinguen de las estrellas porque suelen centellear menos y, con los días, cambian de sitio respecto a ellas.</p></li></ul>\n<p>Toca cualquier estrella con nombre, un planeta o la Luna, y el mapa te dirá hacia qué punto cardinal mirar y cuántos puños levantar la vista.</p>\n<p><strong>Consejos para observar.</strong> Busca un lugar lejos de las farolas. Deja que tus ojos se acostumbren a la oscuridad durante unos veinte minutos sin mirar pantallas brillantes; si usas el móvil, baja el brillo al mínimo. La Luna llena ilumina tanto el cielo que oculta las estrellas débiles: las noches sin Luna son las mejores para ver las constelaciones.</p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 11,
+  "orden": 3,
+  "tipo": "interactivo",
+  "contenido": {
+   "componente": "cielo-esta-noche",
+   "etiqueta": "Interactivo",
+   "modelo": "Observación: el cielo de cualquier noche",
+   "pie": "El cielo calculado para la fecha, la hora y el lugar elegidos. Estrellas y constelaciones: d3-celestial de Olaf Frohn (catálogo Hipparcos). Sol, Luna y planetas: método de cálculo de Paul Schlyter."
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 11,
+  "orden": 4,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Saltos de estrella: de una estrella conocida a otra</h3>\n<p>Nadie aprende el cielo estrella a estrella. Se aprende a reconocer unas pocas figuras muy llamativas y, desde ellas, se «salta» a las demás siguiendo líneas imaginarias. Es lo que los aficionados llaman saltar de estrella en estrella.</p>\n<p>Para medir esos saltos se usa la mano, con el brazo bien estirado:</p>\n<ul><li><p>El dedo meñique tapa unos <strong>1°</strong>.</p></li><li><p>Tres dedos juntos, unos <strong>5°</strong>.</p></li><li><p>El puño cerrado, unos <strong>10°</strong>.</p></li><li><p>La mano abierta, del pulgar al meñique, unos <strong>20°</strong>: es el palmo.</p></li></ul>\n<p>Las medidas varían un poco de una persona a otra, pero como quien tiene la mano más grande suele tener también el brazo más largo, se compensan bastante.</p>\n<p>El interactivo recoge las rutas más útiles, cada una con la época y el hemisferio en que se ve: del Carro a Polaris, del Carro a Arturo y Espiga, del cinturón de Orión a Sirio y Aldebarán, los triángulos de verano y de invierno, y de la Cruz del Sur al polo sur celeste.</p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 11,
+  "orden": 5,
+  "tipo": "interactivo",
+  "contenido": {
+   "componente": "saltos-estrella",
+   "etiqueta": "Interactivo",
+   "modelo": "Observación",
+   "pie": "Elige una ruta y avanza paso a paso. El mapa tiene el norte arriba y el este a la izquierda, como el cielo al mirar hacia arriba."
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 11,
+  "orden": 6,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Encontrar los puntos cardinales sin brújula</h3>\n<p><strong>De noche, en el hemisferio norte.</strong> Busca Polaris con el salto desde el Carro. Bajo ella, en el horizonte, está el norte. A tu espalda queda el sur, a tu derecha el este y a tu izquierda el oeste.</p>\n<p><strong>De noche, en el hemisferio sur.</strong> Busca el polo sur celeste con la Cruz del Sur y los punteros de Centauro. Bajo ese punto, en el horizonte, está el sur.</p>\n<p><strong>De noche, en cualquier lugar.</strong> Mintaka, la estrella del cinturón de Orión más cercana a Aldebarán, está casi sobre el ecuador celeste: desde cualquier lugar de la Tierra sale prácticamente por el este y se pone por el oeste.</p>\n<p><strong>De día, con la sombra de un palo.</strong> Clava un palo recto en el suelo, marca con una piedra la punta de su sombra, espera entre quince minutos y media hora y marca de nuevo la punta. La primera marca queda al oeste y la segunda al este: la línea que las une va de oeste a este. Si te pones con la primera marca a la izquierda y la segunda a la derecha, miras al norte. Funciona en cualquier latitud y en cualquier época del año, y el interactivo de este apartado te deja probarlo.</p>\n<p><strong>De día, con el Sol a mediodía.</strong> Fuera de la franja de los trópicos, cuando el Sol está en su punto más alto del día marca el sur si estás en el hemisferio norte, y el norte si estás en el sur. Es el momento en que las sombras son más cortas. Ese mediodía solar no coincide exactamente con las 12 del reloj: según el lugar y el horario de verano, puede caer más cerca de la una o de las dos de la tarde.</p>\n<p><strong>Con un reloj de agujas.</strong> En el hemisferio norte, apunta la aguja de las horas hacia el Sol: el sur queda a mitad de camino entre esa aguja y las 12 (o la 1, si rige el horario de verano). En el hemisferio sur, apunta las 12 hacia el Sol: el norte queda a mitad de camino entre las 12 y la aguja de las horas. Es un método aproximado.</p>\n<p><strong>Con la Luna.</strong> La parte iluminada de la Luna siempre mira hacia donde está el Sol, aunque el Sol ya se haya puesto. Por eso la Luna creciente de la tarde tiene su lado brillante hacia el oeste, y la menguante del amanecer, hacia el este. De forma aproximada, en el hemisferio norte, si unes las dos puntas de una Luna creciente o menguante y prolongas esa línea hasta el horizonte, señala más o menos hacia el sur.</p>\n<p><strong>Cómo lo explica cada modelo.</strong> Para el modelo del globo, estas técnicas funcionan porque la Tierra gira sobre un eje que apunta hacia los polos celestes, y por eso el Sol y las estrellas parecen girar a su alrededor. Para el modelo plano, funcionan porque el Sol y las estrellas giran por encima del plano alrededor del centro, sobre el que está Polaris. Para los modelos de esferas antiguos, porque la esfera celeste gira cada día alrededor de la Tierra inmóvil. Todos coinciden en lo que se ve, y por eso la orientación por el cielo se ha practicado en todas las culturas.</p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 11,
+  "orden": 7,
+  "tipo": "interactivo",
+  "contenido": {
+   "componente": "sombra-palo",
+   "etiqueta": "Interactivo",
+   "modelo": "Observación",
+   "pie": "Un palo visto desde arriba y el recorrido de la punta de su sombra a lo largo del día. Mueve la hora de la primera marca y cambia de lugar y de estación."
+  }
  }
 ]

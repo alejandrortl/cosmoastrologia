@@ -178,8 +178,18 @@ OTRAS = "Cómo lo entendían otras cosmovisiones"
 # (módulo, sección h2, h3 tras el que van) -> bloques que se insertan después
 SEC_PALABRAS = "Las palabras básicas para mirar el cielo"
 SEC_MODELOS = "Los grandes modelos del mundo y quién los usó"
+SEC_ORIENTARSE = "Orientarse en el cielo"
 
 EXTRAS = {
+    (1, SEC_ORIENTARSE, "El cielo de esta noche"): [
+        widget("interactivo", "cielo-esta-noche", "Interactivo", "Observación: el cielo de cualquier noche",
+               "El cielo calculado para la fecha, la hora y el lugar elegidos. Estrellas y constelaciones: d3-celestial de Olaf Frohn (catálogo Hipparcos). Sol, Luna y planetas: método de cálculo de Paul Schlyter.")],
+    (1, SEC_ORIENTARSE, "Saltos de estrella: de una estrella conocida a otra"): [
+        widget("interactivo", "saltos-estrella", "Interactivo", "Observación",
+               "Elige una ruta y avanza paso a paso. El mapa tiene el norte arriba y el este a la izquierda, como el cielo al mirar hacia arriba.")],
+    (1, SEC_ORIENTARSE, "Encontrar los puntos cardinales sin brújula"): [
+        widget("interactivo", "sombra-palo", "Interactivo", "Observación",
+               "Un palo visto desde arriba y el recorrido de la punta de su sombra a lo largo del día. Mueve la hora de la primera marca y cambia de lugar y de estación.")],
     (1, SEC_PALABRAS, "Lo que ves desde donde estás: horizonte, cenit y puntos cardinales"): [
         widget("interactivo", "cielo-local", "Interactivo", "Observación",
                "Mueve la altura del astro y mira cuántos puños hay desde el horizonte.")],
