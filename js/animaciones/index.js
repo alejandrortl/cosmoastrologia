@@ -22,6 +22,10 @@ import { medirMano } from './medir-mano.js';
 import { cieloEstaciones } from './cielo-estaciones.js';
 import { calendarioCielo } from './calendario-cielo.js';
 import { misiones } from './misiones.js';
+import { sentidoGiro } from './sentido-giro.js';
+import { ecuadorCeleste } from './ecuador-celeste.js';
+import { movimientosPropios } from './movimientos-propios.js';
+import { quienGira } from './quien-gira.js';
 import { rotulosLegibles } from './comun.js';
 
 const REGISTRO = {
@@ -52,6 +56,10 @@ const REGISTRO = {
   'cielo-estaciones': cieloEstaciones,
   'calendario-cielo': calendarioCielo,
   misiones,
+  'sentido-giro': sentidoGiro,
+  'ecuador-celeste': ecuadorCeleste,
+  'movimientos-propios': movimientosPropios,
+  'quien-gira': quienGira,
 };
 
 // Devuelve una función para desmontarla, o null si el componente no existe.
