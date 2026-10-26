@@ -221,11 +221,23 @@ EXTRAS = {
         widget("animacion", "arcos-polaris", "Animación", "Observación",
                "Una noche mirando al polo celeste, en el hemisferio norte y en el sur: las estrellas dejan arcos en torno a cada polo. Cambia de hemisferio con los botones."),
         FOTO_NORTE, FOTO_SUR],
+    (1, SEC_POLARIS, "Hacia dónde gira el cielo en el norte y en el sur"): [
+        widget("animacion", "sentido-giro", "Animación", "Observación",
+               "El mismo giro de este a oeste visto de cara a cada polo: antihorario mirando al norte y horario mirando al sur. Esquema, no a escala; estrellas guía en posiciones aproximadas.")],
+    (1, SEC_POLARIS, "El ecuador celeste: el círculo más grande, alrededor del que no gira nada"): [
+        widget("interactivo", "ecuador-celeste", "Interactivo", "Observación y dos modelos: globo y plano",
+               "Arriba, la cúpula del cielo vista desde fuera, con los círculos diarios de las estrellas para la latitud elegida. Abajo, el ecuador celeste en el modelo del globo y en el plano de un solo centro. Esquemas, no a escala.")],
+    (1, SEC_POLARIS, "¿Gira todo el cielo? El Sol, la Luna, los planetas y los demás astros"): [
+        widget("interactivo", "movimientos-propios", "Interactivo", "Observación",
+               "Lo que avanza cada astro hacia el este frente a las constelaciones del zodiaco, con sus velocidades medias. El este queda a la izquierda, como al mirar al sur desde el hemisferio norte. Esquema, no a escala.")],
     (1, SEC_POLARIS, MOD): [FOTO_TIERRA, TEXTO_FOTO_TIERRA],
     (1, SEC_POLARIS, PLANO): [
         widget("interactivo", "sur-plano", "Interactivo", "Según el modelo plano: tres propuestas",
                "Las tres propuestas que recoge la wiki de la Flat Earth Society para el giro del cielo del sur. Esquemas simplificados."),
         MAPA_GLEASON],
+    (1, SEC_POLARIS, "Quién gira y por qué se retrasan los astros, según cada modelo"): [
+        widget("animacion", "quien-gira", "Animación", "Cuatro modelos comparados: heliocéntrico y geocéntricos, globo y plano",
+               "Qué gira cada día según Copérnico y la astronomía moderna, Ptolomeo, Tycho Brahe y la wiki de la Flat Earth Society, vistos desde encima del polo norte. Esquemas simplificados, no a escala; el retraso de cada astro sigue sus periodos medios.")],
     (1, SEC_POLARIS, "Un dato que cambia todo: la estrella polar no siempre fue Polaris"): [
         widget("interactivo", "precesion", "Interactivo", "Observación, con el cálculo moderno de la precesión",
                "Mueve el año y observa cómo el polo celeste pasa de Thuban a Polaris y a Vega.")],
