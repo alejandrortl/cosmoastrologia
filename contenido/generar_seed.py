@@ -230,6 +230,9 @@ EXTRAS = {
     (1, SEC_POLARIS, "¿Gira todo el cielo? El Sol, la Luna, los planetas y los demás astros"): [
         widget("interactivo", "movimientos-propios", "Interactivo", "Observación",
                "Lo que avanza cada astro hacia el este frente a las constelaciones del zodiaco, con sus velocidades medias. El este queda a la izquierda, como al mirar al sur desde el hemisferio norte. Esquema, no a escala.")],
+    (1, SEC_POLARIS, "Qué buscar en el cielo: las estrellas que señalan los polos y el ecuador"): [
+        widget("interactivo", "encontrar-polos", "Interactivo", "Observación",
+               "Las estrellas guía de cada polo y del ecuador celeste. Los mapas de los polos están dibujados de cara a cada polo y giran con la noche; el del ecuador, mirando al sur desde el hemisferio norte. Posiciones: catálogo Hipparcos.")],
     (1, SEC_POLARIS, MOD): [FOTO_TIERRA, TEXTO_FOTO_TIERRA],
     (1, SEC_POLARIS, PLANO): [
         widget("interactivo", "sur-plano", "Interactivo", "Según el modelo plano: tres propuestas",
