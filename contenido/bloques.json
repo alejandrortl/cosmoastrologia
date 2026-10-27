@@ -296,13 +296,34 @@
   "orden": 12,
   "tipo": "texto",
   "contenido": {
-   "html": "<h3>La explicación moderna</h3>\n<p>La astronomía moderna sostiene que Polaris parece quieta porque está <strong>casi alineada con el eje de rotación de la Tierra</strong>. Según este modelo, la Tierra gira sobre ese eje una vez al día, y como Polaris queda prácticamente en su prolongación, se mantiene fija mientras el resto del cielo parece girar a su alrededor. Para este modelo, que la altura de Polaris cambie con la latitud es consecuencia de que la Tierra sea esférica: el ángulo de Polaris sobre el horizonte equivale a la latitud del observador.</p>"
+   "html": "<h3>Qué buscar en el cielo: las estrellas que señalan los polos y el ecuador</h3>\n<p>Los polos celestes y el ecuador celeste no se ven: son puntos y líneas imaginarias. Pero hay estrellas fáciles de reconocer que los señalan, y con ellas puedes saber hacia dónde mirar sin brújula ni aplicaciones. El mapa interactivo muestra las tres búsquedas tal como se ven en el cielo.</p>\n<p><strong>El polo norte celeste.</strong> Empieza por la Osa Mayor, el conocido Carro: siete estrellas brillantes, cuatro que forman una caja y tres que forman el mango. Las dos estrellas del extremo de la caja, Merak y Dubhe, se llaman los Punteros del norte. Prolonga la línea que va de Merak a Dubhe unas cinco veces la distancia entre ellas y llegarás a Polaris, una estrella de brillo medio, sin otras brillantes alrededor. Polaris es la última estrella del mango de la Osa Menor, un carro más pequeño y más débil. Si la Osa Mayor está muy baja o tapada, busca la W de Casiopea: queda al otro lado de Polaris, más o menos a la misma distancia. A lo largo de la noche y del año el Carro y la W dan vueltas alrededor de Polaris, pero la línea de los Punteros siempre señala hacia ella.</p>\n<p><strong>El polo sur celeste.</strong> Aquí no hay estrella brillante en el centro, y se usan dos líneas que se cruzan. La primera sale de la Cruz del Sur, cuatro estrellas brillantes en forma de rombo alargado: prolonga su palo largo, desde Gacrux, la estrella de la cabeza de la cruz, hacia Acrux, la del pie, unas cuatro veces y media su longitud. La segunda sale de los Punteros del sur, Alfa y Beta Centauri, dos estrellas muy brillantes junto a la Cruz: imagina la línea que las une, busca su punto medio y sal de él en perpendicular, por el lado de la Cruz. Donde se cruzan las dos líneas está, más o menos, el polo. Otras ayudas: las dos Nubes de Magallanes, dos manchas lechosas visibles en cielos oscuros, forman con el polo un triángulo, y la brillante Achernar queda al otro lado del polo, frente a la Cruz.</p>\n<p><strong>El ecuador celeste.</strong> La guía más fácil es Orión, visible en las noches de diciembre a marzo desde casi todo el mundo. Las tres estrellas en fila de su cinturón están sobre el ecuador celeste o muy cerca: la primera que sale, Mintaka, está a menos de medio grado. Por eso Orión sale justo por el este y se pone justo por el oeste, en los dos hemisferios. En otras épocas del año sirven de referencia estrellas cercanas a la línea, como Proción, unos 5° al norte, o Altair, en el Águila, unos 9° al norte. Y sin ninguna estrella: el ecuador celeste es el arco que va del punto este al punto oeste del horizonte y pasa a una altura de 90° menos la latitud, hacia el sur en el hemisferio norte y hacia el norte en el sur.</p>\n<p class=\"fuentes\">Posiciones de las estrellas: catálogo Hipparcos (época J2000), redondeadas. Los métodos de búsqueda son los de las guías de observación habituales, por ejemplo <a href=\"https://www.constellation-guide.com/finding-polaris/\" target=\"_blank\" rel=\"noopener\">Constellation Guide, «Finding Polaris»</a> y <a href=\"https://en.wikipedia.org/wiki/Crux#Navigation\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Crux: Navigation»</a>.</p>"
   }
  },
  {
   "modulo": 1,
   "seccion": 5,
   "orden": 13,
+  "tipo": "interactivo",
+  "contenido": {
+   "componente": "encontrar-polos",
+   "etiqueta": "Interactivo",
+   "modelo": "Observación",
+   "pie": "Las estrellas guía de cada polo y del ecuador celeste. Los mapas de los polos están dibujados de cara a cada polo y giran con la noche; el del ecuador, mirando al sur desde el hemisferio norte. Posiciones: catálogo Hipparcos."
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 5,
+  "orden": 14,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>La explicación moderna</h3>\n<p>La astronomía moderna sostiene que Polaris parece quieta porque está <strong>casi alineada con el eje de rotación de la Tierra</strong>. Según este modelo, la Tierra gira sobre ese eje una vez al día, y como Polaris queda prácticamente en su prolongación, se mantiene fija mientras el resto del cielo parece girar a su alrededor. Para este modelo, que la altura de Polaris cambie con la latitud es consecuencia de que la Tierra sea esférica: el ángulo de Polaris sobre el horizonte equivale a la latitud del observador.</p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 5,
+  "orden": 15,
   "tipo": "imagen",
   "contenido": {
    "tipo": "foto",
@@ -318,7 +339,7 @@
  {
   "modulo": 1,
   "seccion": 5,
-  "orden": 14,
+  "orden": 16,
   "tipo": "texto",
   "contenido": {
    "html": "<h3>Fotografía directa frente a composición: cómo leer una imagen de la Tierra</h3>\n<p>No todas las imágenes famosas de la Tierra vistas desde el espacio son fotografías en el mismo sentido. Conviene distinguir tres tipos: la <strong>fotografía directa</strong> (una sola toma de cámara), la <strong>composición de datos</strong> (muchas observaciones unidas por ordenador) y la <strong>ilustración o render</strong> (una recreación).</p>\n<p><strong>La foto del Apolo 17 (1972).</strong> Fue tomada el 7 de diciembre de 1972 por Ron Evans o Harrison Schmitt durante el viaje a la Luna, a unos 29.400 km de la superficie, con una cámara Hasselblad de 70 mm y objetivo de 80 mm. Su nombre oficial en el archivo de NASA es AS17-148-22727, y es la tercera de una serie de tomas casi idénticas hechas justo antes. Es una fotografía de una sola vez. Pero la versión que todos conocemos no es exactamente el original: se distribuyó recortada, girada para poner el sur abajo y con el color ajustado. En el fotograma original el polo sur aparece arriba, y la imagen abarca desde el Mediterráneo hasta la Antártida.</p>\n<p><strong>La «Blue Marble» de 2002.</strong> Pese al nombre, es otra cosa. Según la propia NASA, científicos y visualizadores unieron meses de observaciones de tierra, océanos, hielo marino y nubes en un mosaico continuo. La superficie procede de observaciones sin nubes tomadas entre junio y septiembre de 2001, el relieve se sombreó con datos de elevación del Servicio Geológico de EE. UU. y las nubes son una composición de dos días de imágenes. Su autor, Robert Simmon, explicó que renderizó por separado tierra y océano, brillos, nubes, máscaras de día y noche y la neblina atmosférica. Es decir: está hecha con datos reales, pero la imagen final es una construcción por ordenador, no una vista que alguien pudiera haber fotografiado.</p>\n<p><strong>Por qué importa.</strong> Llamar «foto real» a una composición es una afirmación sin matizar. La regla del curso es atribuir cada imagen a quien la produjo y decir cómo se hizo: quién, con qué instrumento, y si es una toma única, un montaje o una recreación.</p>\n<p class=\"fuentes\">Fuentes: <a href=\"https://en.wikipedia.org/wiki/The_Blue_Marble\" target=\"_blank\" rel=\"noopener\">Wikipedia, «The Blue Marble»</a> · <a href=\"https://earthobservatory.nasa.gov/Features/BlueMarble/BlueMarble_2002.php\" target=\"_blank\" rel=\"noopener\">NASA Earth Observatory, Blue Marble 2002</a> · <a href=\"https://svs.gsfc.nasa.gov/30614\" target=\"_blank\" rel=\"noopener\">NASA SVS, Blue Marble 2002</a> · <a href=\"https://earthobservatory.nasa.gov/blogs/elegantfigures/2011/10/\" target=\"_blank\" rel=\"noopener\">Robert Simmon, «Crafting the Blue Marble»</a></p>"
@@ -327,7 +348,7 @@
  {
   "modulo": 1,
   "seccion": 5,
-  "orden": 15,
+  "orden": 17,
   "tipo": "texto",
   "contenido": {
    "html": "<h3>La explicación terraplanista</h3>\n<p>El modelo terraplanista sostiene que Polaris es una estrella <strong>fija situada justo encima del Polo Norte</strong>, centro de un plano terrestre, y que las estrellas giran en círculo sobre ese plano como una cúpula que rota. En esta visión, los arcos circulares se explican por ese giro de la bóveda, no por el movimiento de la Tierra. Que Polaris baje en el cielo al viajar hacia el sur lo atribuyen a la <strong>perspectiva</strong>: igual que una farola parece más baja cuanto más te alejas de ella, la estrella se acercaría al horizonte a medida que el observador se aleja del centro.</p>\n<p><strong>El cielo del sur, un punto debatido.</strong> En el hemisferio sur las estrellas giran en sentido contrario alrededor de otro punto del cielo. La propia wiki de la Flat Earth Society reconoce que es un asunto muy discutido entre sus defensores, y recoge tres propuestas:</p>\n<ul><li><p><strong>Un solo centro, por perspectiva.</strong> Todo el cielo gira en torno al norte, pero quien mira hacia el sur ve las estrellas avanzar en sentido contrario, igual que algo que gira sobre nuestra cabeza parece girar al revés según hacia dónde miremos. En la wiki se atribuye a un colaborador que firma como P-Brane.</p></li><li><p><strong>Un solo centro, por efecto de cúpula.</strong> Dentro de la hipótesis de la «aceleración electromagnética», según la cual la luz se curva hacia arriba al recorrer grandes distancias, el cielo se vería como a través de una cúpula de cristal, y eso invertiría el giro aparente en el sur.</p></li><li><p><strong>Dos centros de giro.</strong> El modelo bipolar propone un segundo polo en el sur con su propio cielo giratorio encima. Exige un mapa distinto del de Gleason, con dos centros en lugar de uno.</p></li></ul>"
@@ -336,7 +357,7 @@
  {
   "modulo": 1,
   "seccion": 5,
-  "orden": 16,
+  "orden": 18,
   "tipo": "interactivo",
   "contenido": {
    "componente": "sur-plano",
@@ -348,7 +369,7 @@
  {
   "modulo": 1,
   "seccion": 5,
-  "orden": 17,
+  "orden": 19,
   "tipo": "imagen",
   "contenido": {
    "tipo": "obra",
@@ -364,7 +385,7 @@
  {
   "modulo": 1,
   "seccion": 5,
-  "orden": 18,
+  "orden": 20,
   "tipo": "texto",
   "contenido": {
    "html": "<h3>Quién gira y por qué se retrasan los astros, según cada modelo</h3>\n<p>Todas las cosmovisiones parten de las mismas observaciones: un giro diario de este a oeste en torno a dos polos, y unos astros que se retrasan hacia el este, cada uno a su ritmo. Lo que cambia es qué se mueve de verdad. El esquema que sigue compara cuatro respuestas, vistas desde encima del polo norte.</p>\n<p><strong>Astronomía moderna (heliocentrismo).</strong> Sostiene que las estrellas no giran: es la Tierra la que rota sobre su eje de oeste a este, una vez cada 23 horas y 56 minutos, y eso hace que todo el cielo parezca girar en sentido contrario. Vista desde encima del polo norte, la Tierra gira en sentido antihorario. Para el sur, este modelo no necesita nada nuevo: el eje tiene dos extremos, y cada hemisferio mira hacia uno. Los retrasos serían movimientos reales vistos desde una Tierra que también se mueve: la Tierra da la vuelta al Sol en un año, y por eso el Sol parece recorrer las constelaciones; la Luna da la vuelta a la Tierra en unos 27,3 días; y los planetas giran alrededor del Sol, más despacio cuanto más lejos están. Los satélites que van hacia el este darían la vuelta a la Tierra en el mismo sentido en que esta gira, y más deprisa: la Estación Espacial, en hora y media. Se lanzan así muchos de ellos porque, al lanzarlos hacia el este, se aprovecha el giro de la Tierra. Los que se quedan quietos, los geoestacionarios, darían una vuelta cada 23 horas y 56 minutos a unos 36.000 km sobre el ecuador, al mismo ritmo que la Tierra.</p>\n<p><strong>Modelo geocéntrico de Ptolomeo.</strong> En el <em>Almagesto</em> (siglo II), la Tierra es una esfera inmóvil en el centro, y es el cielo el que gira de este a oeste una vez al día, arrastrando a todos los astros. Cada astro tiene, además, un segundo movimiento, más lento y hacia el este: el Sol recorre su círculo en un año, la Luna en un mes y los planetas, con sus epiciclos, en sus propios periodos. Los manuales medievales, como <em>De sphaera</em> de Sacrobosco, lo enseñaban así: un primer movimiento, el diario, que el «primer móvil» comunica a todo, y un segundo movimiento, el propio de cada astro, en sentido contrario. Ptolomeo conocía la idea de que fuera la Tierra la que gira, y admitió que, atendiendo solo a los astros, quizá nada se opondría a ella; la rechazó porque, según él, las nubes, los pájaros y lo que se lanza al aire se quedarían atrás hacia el oeste. En este modelo, el giro del sur es simplemente la otra mitad de la misma esfera.</p>\n<p><strong>Modelo de Tycho Brahe.</strong> Tycho propuso en 1588 un sistema intermedio: la Tierra, inmóvil en el centro; la Luna y el Sol, girando a su alrededor; y los demás planetas, girando alrededor del Sol. Como en el de Ptolomeo, la esfera de las estrellas da una vuelta diaria de este a oeste y arrastra a todo el conjunto. Para el retraso del Sol y de la Luna da la misma explicación que Ptolomeo, y para los bucles de los planetas, la misma geometría que Copérnico, pero vista desde una Tierra quieta. Algunos seguidores, como su discípulo Longomontanus (1622), aceptaron que la Tierra rotara sobre sí misma cada día, aunque siguiera en el centro: el giro diario sería de la Tierra, y el recorrido anual, del Sol.</p>\n<p><strong>Modelos planos.</strong> En la versión más difundida, la que recoge la wiki de la Flat Earth Society, el plano está quieto y es la bóveda de las estrellas la que gira sobre él, alrededor del centro, que es el polo norte; vista desde arriba, en el sentido de las agujas del reloj. El Sol y la Luna serían cuerpos mucho más pequeños y cercanos que dan vueltas por encima del plano. Dentro de esa disposición, que se retrasen frente a las estrellas equivale a que dan su vuelta algo más despacio que la bóveda: el Sol en 24 horas y la Luna en unas 24 horas y 50 minutos, frente a las 23 horas y 56 minutos de las estrellas. Para los planetas, la misma wiki propone que giran alrededor del Sol mientras este da vueltas sobre el plano, una disposición parecida a la de Tycho. Donde no hay acuerdo es en el cielo del sur: como se explica en el apartado anterior, unos lo atribuyen a la perspectiva, otros a un efecto de cúpula de la luz y otros a un segundo centro de giro, y cada propuesta exige un mapa distinto. Sobre los satélites tampoco hay una sola postura. Samuel Shenton, que fundó en 1956 la International Flat Earth Research Society, respondió a los primeros satélites que dar la vuelta a algo no prueba que sea una esfera, igual que rodear en barco la isla de Wight no prueba que sea redonda. Otros defensores actuales sostienen que no hay satélites en órbita y que esas luces son globos de gran altitud u otros aparatos.</p>\n<p><strong>Otras cosmovisiones.</strong></p>\n<ul><li><p><strong>Grecia.</strong> Según autores posteriores, Heráclides Póntico (siglo IV a. C.) propuso ya que la Tierra rota sobre sí misma cada día mientras el cielo de las estrellas está quieto. La mayoría de los astrónomos griegos, con Aristóteles y Ptolomeo, lo rechazó.</p></li><li><p><strong>India.</strong> Aryabhata, en el año 499, escribió que, igual que quien va en una barca ve moverse hacia atrás la orilla quieta, quien está en la Tierra ve moverse hacia el oeste las estrellas quietas. Muchos astrónomos indios posteriores no aceptaron la idea.</p></li><li><p><strong>China.</strong> La teoría del <em>gaitian</em> imaginaba el cielo como una sombrilla o una muela de molino que gira hacia el oeste sobre una tierra plana. Explicaba el retraso del Sol y la Luna con una imagen: son como hormigas que caminan hacia el este sobre una muela que gira hacia el oeste; la muela las arrastra, y por eso, aunque caminan hacia el este, dan la vuelta hacia el oeste. Lo recoge el tratado de astronomía de la <em>Historia de los Jin</em> (siglo VII). La teoría rival, el <em>huntian</em>, descrita por Zhang Heng (siglo II), comparaba el cielo con un huevo y la tierra con su yema.</p></li><li><p><strong>Europa medieval.</strong> En el siglo XIV, Jean Buridan y Nicole Oresme discutieron si gira el cielo o la Tierra. Oresme, en su <em>Libro del cielo y del mundo</em> (1377), sostuvo que ninguna observación permitía decidirlo, aunque concluyó que creía, con la opinión común, que era el cielo el que se movía.</p></li><li><p><strong>Cómo vuelve el Sol al este cada noche.</strong> Para los egipcios, Ra viajaba de noche en su barca por el mundo inferior, la Duat, y renacía por el este. Para algunos poetas griegos, Helios regresaba por el río Océano en una copa de oro. El Eclesiastés (1:5) dice que el Sol «se apresura a volver al lugar de donde se levanta», y el Libro de Enoc (72:5), en la traducción de R. H. Charles, que se pone y «vuelve por el norte para llegar al este», una imagen cercana a la del Sol del modelo plano, que gira sobre el norte. El debate del Talmud sobre si de noche el Sol pasa por encima del firmamento o por debajo de la tierra se cuenta en el apartado «Cómo lo entendían otras cosmovisiones».</p></li></ul>\n<p class=\"fuentes\">Fuentes: <a href=\"https://en.wikipedia.org/wiki/Earth%27s_rotation#History\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Earth's rotation: History»</a> · <a href=\"https://en.wikipedia.org/wiki/Tychonic_system\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Tychonic system»</a> · <a href=\"https://en.wikipedia.org/wiki/Modern_flat_Earth_beliefs\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Modern flat Earth beliefs»</a> · <a href=\"https://wiki.tfes.org/\" target=\"_blank\" rel=\"noopener\">The Flat Earth Society, wiki</a> · <a href=\"https://en.wikipedia.org/wiki/Geostationary_orbit\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Geostationary orbit»</a> · Ptolomeo, <em>Almagesto</em>, libro I, cap. 7 · Aryabhata, <em>Aryabhatiya</em>, «Gola», 9 · <em>Jin shu</em>, «Tianwen zhi» · R. H. Charles, <em>The Book of Enoch</em> (1917), 72:5</p>"
@@ -373,7 +394,7 @@
  {
   "modulo": 1,
   "seccion": 5,
-  "orden": 19,
+  "orden": 21,
   "tipo": "animacion",
   "contenido": {
    "componente": "quien-gira",
@@ -385,7 +406,7 @@
  {
   "modulo": 1,
   "seccion": 5,
-  "orden": 20,
+  "orden": 22,
   "tipo": "texto",
   "contenido": {
    "html": "<h3>Un dato que cambia todo: la estrella polar no siempre fue Polaris</h3>\n<p>Un hecho observable a muy largo plazo, registrado desde la Antigüedad: el punto en torno al que giran las estrellas <strong>se desplaza lentamente</strong>. Hiparco lo notó comparando sus mediciones con otras más antiguas, y la astronomía moderna calcula que ese punto completa un gran círculo en unos 26.000 años. A esto se le llama <strong>precesión</strong>. Según ese cálculo, hacia el 2700 a. C. la estrella más cercana a ese punto era <strong>Thuban</strong>, en la constelación del Dragón; en tiempos de los griegos clásicos no había ninguna estrella brillante justo en el polo; Polaris alcanzará su máxima cercanía hacia el año 2100, y dentro de unos 12.000 años el papel lo tendrá <strong>Vega</strong>. Esto importa porque cada cultura vio un cielo polar distinto, y cualquier explicación del cielo, sea cual sea su modelo, tiene que dar cuenta también de este lento desplazamiento.</p>"
@@ -394,7 +415,7 @@
  {
   "modulo": 1,
   "seccion": 5,
-  "orden": 21,
+  "orden": 23,
   "tipo": "interactivo",
   "contenido": {
    "componente": "precesion",
@@ -406,7 +427,7 @@
  {
   "modulo": 1,
   "seccion": 5,
-  "orden": 22,
+  "orden": 24,
   "tipo": "texto",
   "contenido": {
    "html": "<h3>Cómo lo entendían otras cosmovisiones</h3>\n<p><strong>Sumerios y babilonios.</strong> Concebían el universo como <strong>An</strong> (el cielo) sobre <strong>Ki</strong> (la tierra). En las tablillas astronómicas babilónicas conocidas como MUL.APIN (compiladas hacia el 1000 a. C.), el cielo se divide en tres franjas o \"caminos\": el de Anu en el centro, el de Enlil al norte y el de Ea al sur. Las estrellas que giran cerca del polo pertenecían al camino de Enlil.</p>\n<p><strong>Egipcios.</strong> Imaginaban el cielo como el cuerpo de la diosa <strong>Nut</strong>, arqueado sobre la tierra. Llamaban a las estrellas circumpolares, las que nunca se ponen, <em>ikhemu-sek</em>, \"las que no conocen la destrucción\" o \"imperecederas\", y aparecen en los Textos de las Pirámides. En su época la estrella polar era Thuban; algunos investigadores han propuesto que un conducto de la Gran Pirámide apuntaba hacia la región polar, aunque es una interpretación debatida.</p>\n<p><strong>Griegos.</strong> Concibieron una <strong>esfera celeste</strong> que gira en torno a un eje fijo, con la Tierra en el centro. Aristóteles, en <em>Sobre el cielo</em>, usó precisamente este fenómeno como argumento: al viajar al norte o al sur cambian las estrellas visibles, lo que para él indicaba una Tierra esférica y no muy grande. Hiparco, hacia el 130 a. C., fue quien detectó la precesión comparando sus mediciones con otras más antiguas.</p>\n<p><strong>Romanos y el mundo grecorromano.</strong> Heredaron y sistematizaron el modelo griego. Ptolomeo, en el <em>Almagesto</em> (siglo II d. C., en Alejandría), fijó el modelo geocéntrico de esferas que dominaría unos catorce siglos. Autores latinos como Cicerón (<em>El sueño de Escipión</em>) describieron el cosmos como nueve esferas encajadas, con la de las estrellas fijas girando por fuera.</p>\n<p><strong>Cosmología bíblica y rabínica.</strong> El Génesis describe un <strong>firmamento</strong> (<em>raqia</em>) que separa las aguas de arriba de las de abajo, y en el que se colocan el Sol, la Luna y las estrellas. La tradición rabínica hablaba de varios cielos superpuestos, a menudo siete. El Talmud (Pesajim 94b) recoge un debate notable: los sabios de Israel sostenían que de noche el Sol pasaba por encima del firmamento, y los sabios de otras naciones que pasaba por debajo de la tierra; el propio Rabí Yehudá HaNasí concedió que la segunda postura parecía más acertada.</p>\n<p><strong>Libro de Enoc.</strong> El llamado <em>1 Enoc</em> es una colección de textos judíos antiguos; se conserva completo en ge'ez (etiópico), es canónico en la Iglesia ortodoxa etíope Tewahedo, y en Qumrán se hallaron fragmentos en arameo. La Epístola de Judas (versículos 14-15) cita un pasaje suyo. Su parte astronómica, el <em>Libro de las Luminarias</em> (capítulos 72-82), está considerada por los especialistas entre las secciones más antiguas, quizá del siglo III a. C. En él, el ángel Uriel muestra a Enoc las leyes de los astros. En el <em>Libro de los Vigilantes</em> (capítulos 33-36) Enoc viaja a los confines de la tierra y ve las <strong>puertas del cielo</strong> por donde salen las estrellas, y en el norte otras puertas de las que salen los vientos. Es decir, un cielo con límites, aberturas y salidas fijas, donde cada astro tiene su puerta y su orden.</p>\n<p><strong>Cábala.</strong> Su texto central, el <em>Zóhar</em> (difundido en Castilla a finales del siglo XIII), contiene un pasaje atribuido a Rav Hamnuná Saba según el cual la tierra gira como una esfera, de modo que cuando es de día para unos es de noche para otros. Es un ejemplo de cómo dentro de una misma tradición conviven modelos distintos del cielo.</p>\n<p><strong>Cristianismo medieval.</strong> La visión dominante, la de Tomás de Aquino o la que retrata Dante, adoptó el cosmos de Aristóteles y Ptolomeo: la Tierra esférica en el centro, rodeada por las esferas de la Luna, Mercurio, Venus, el Sol, Marte, Júpiter, Saturno y las estrellas fijas, luego el <em>primer móvil</em>, que imprime el giro diario a todo, y por fin el <strong>Empíreo</strong>. El manual universitario de astronomía más usado, <em>De sphaera</em> de Sacrobosco (siglo XIII), enseñaba la Tierra esférica. Hubo voces minoritarias distintas, como Cosmas Indicopleustes (siglo VI), que describió un mundo con forma de tabernáculo bajo una bóveda.</p>"
@@ -415,7 +436,7 @@
  {
   "modulo": 1,
   "seccion": 5,
-  "orden": 23,
+  "orden": 25,
   "tipo": "imagen",
   "contenido": {
    "tipo": "obra",
@@ -431,7 +452,7 @@
  {
   "modulo": 1,
   "seccion": 5,
-  "orden": 24,
+  "orden": 26,
   "tipo": "imagen",
   "contenido": {
    "tipo": "obra",
@@ -447,7 +468,7 @@
  {
   "modulo": 1,
   "seccion": 5,
-  "orden": 25,
+  "orden": 27,
   "tipo": "imagen",
   "contenido": {
    "tipo": "obra",
@@ -463,7 +484,7 @@
  {
   "modulo": 1,
   "seccion": 5,
-  "orden": 26,
+  "orden": 28,
   "tipo": "texto",
   "contenido": {
    "html": "<h3>Lo que cada modelo le pregunta al otro</h3>\n<p>Las dos explicaciones parten del mismo hecho — los arcos en torno a Polaris — y cada una lo explica con su propia lógica. Entre sus defensores hay preguntas cruzadas que cada parte considera decisivas. Aquí se recogen tal como las plantea cada una, junto con la respuesta que da la otra, para que puedas valorarlas tú.</p>\n<p><strong>Lo que los defensores de la Tierra plana preguntan al modelo moderno.</strong></p>\n<ul><li><p><em>¿Por qué no sentimos que la Tierra gira?</em> Según el modelo moderno, en el ecuador la superficie se movería a unos 1.670 km/h. Su respuesta es que un movimiento constante no se percibe, igual que no se nota la velocidad dentro de un avión en vuelo estable; solo se notan los cambios de velocidad.</p></li><li><p><em>¿Por qué el horizonte se ve plano y siempre a la altura de los ojos?</em> El modelo moderno responde que, con el tamaño que atribuye a la Tierra, la curvatura es muy suave a escala humana, y que el descenso del horizonte existe pero es pequeño y se mide con instrumentos desde lugares altos.</p></li><li><p><em>¿Por qué a veces se ven costas o edificios muy lejanos que la curvatura debería ocultar?</em> El modelo moderno lo atribuye a la refracción atmosférica, que curva la luz cerca del suelo y cambia con la temperatura del aire.</p></li></ul>\n<p><strong>Lo que los defensores del modelo moderno preguntan al modelo plano.</strong></p>\n<ul><li><p><em>¿Qué pasa en el hemisferio sur?</em> Allí Polaris no se ve, y las estrellas giran en torno a otro punto, en sentido contrario. Dentro del modelo plano hay tres propuestas, explicadas más arriba en su apartado, y sus defensores no coinciden en una sola.</p></li><li><p><em>¿Por qué los barcos que se alejan desaparecen empezando por el casco?</em> Muchos defensores del modelo plano lo atribuyen a la perspectiva y a la refracción, y afirman que con un buen zoom el barco vuelve a verse entero.</p></li><li><p><em>¿Cómo se explican los eclipses de Luna?</em> Se trata en su propio apartado, más abajo.</p></li></ul>\n<p>La capa avanzada del módulo recogerá las fuentes de cada postura y los experimentos que cada parte propone.</p>"

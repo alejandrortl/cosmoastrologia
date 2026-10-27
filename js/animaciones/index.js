@@ -26,6 +26,7 @@ import { sentidoGiro } from './sentido-giro.js';
 import { ecuadorCeleste } from './ecuador-celeste.js';
 import { movimientosPropios } from './movimientos-propios.js';
 import { quienGira } from './quien-gira.js';
+import { encontrarPolos } from './encontrar-polos.js';
 import { rotulosLegibles } from './comun.js';
 
 const REGISTRO = {
@@ -60,6 +61,7 @@ const REGISTRO = {
   'ecuador-celeste': ecuadorCeleste,
   'movimientos-propios': movimientosPropios,
   'quien-gira': quienGira,
+  'encontrar-polos': encontrarPolos,
 };
 
 // Devuelve una función para desmontarla, o null si el componente no existe.
