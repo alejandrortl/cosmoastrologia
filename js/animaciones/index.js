@@ -27,6 +27,8 @@ import { ecuadorCeleste } from './ecuador-celeste.js';
 import { movimientosPropios } from './movimientos-propios.js';
 import { quienGira } from './quien-gira.js';
 import { encontrarPolos } from './encontrar-polos.js';
+import { eclipseHibrido } from './eclipse-hibrido.js';
+import { selenelion } from './selenelion.js';
 import { rotulosLegibles } from './comun.js';
 
 const REGISTRO = {
@@ -62,6 +64,8 @@ const REGISTRO = {
   'movimientos-propios': movimientosPropios,
   'quien-gira': quienGira,
   'encontrar-polos': encontrarPolos,
+  'eclipse-hibrido': eclipseHibrido,
+  selenelion,
 };
 
 // Devuelve una función para desmontarla, o null si el componente no existe.

@@ -260,6 +260,12 @@ EXTRAS = {
         widget("interactivo", "tipos-eclipse", "Interactivo", "Observación",
                "Cómo se ve cada tipo de eclipse desde el suelo. Esquema, no a escala."),
         FOTO_CORONA, FOTO_LUNA_ROJA],
+    (1, SEC_ECLIPSES, "El eclipse híbrido según la astronomía moderna"): [
+        widget("interactivo", "eclipse-hibrido", "Interactivo", "Dos modelos: globo y plano",
+               "Mueve el recorrido del eclipse del amanecer al atardecer. Arriba, el modelo del globo: la punta de la sombra de la Luna llega al suelo en el centro y se queda corta en los extremos. Abajo, la disposición plana con la Luna delante del Sol. Esquemas exagerados, no a escala.")],
+    (1, SEC_ECLIPSES, "La selenelion según la astronomía moderna: la refracción"): [
+        widget("interactivo", "selenelion", "Interactivo", "Dos modelos: globo y plano",
+               "Arriba, el modelo del globo con y sin aire. En medio, lo que vería un observador hacia el este y hacia el oeste, calculado con los valores medios de refracción (34′) y paralaje lunar (57′), con la Luna en el centro de la sombra y el Sol subiendo 0,2° por minuto. Abajo, las dos propuestas planas para el eclipse de Luna. Esquemas, no a escala.")],
     (1, SEC_PLANETAS, MOD): [
         widget("animacion", "retrogrado", "Animación", "Tres modelos comparados",
                "Un mismo bucle de Marte con tres disposiciones: la heliocéntrica de Copérnico y Kepler, la geocéntrica de Ptolomeo con epiciclos y la de la Flat Earth Society, con los planetas girando alrededor de un Sol que da vueltas sobre el centro del plano. Esquemas simplificados.")],
