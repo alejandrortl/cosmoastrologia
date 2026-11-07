@@ -29,9 +29,9 @@ MODULOS = [
     (6, "comparativa", "Comparativa",
      "Las diferencias clave entre todas las visiones.", False),
     (7, "astrologia", "Astrología",
-     "El lado simbólico y cómo leer una carta natal.", False),
+     "La astrología como sistema histórico y cultural: su origen babilonio, el zodiaco tropical frente al sidéreo y la precesión, cómo se calculan el ascendente y las casas a partir del cielo real, las variantes védica, china y maya, y qué dicen los estudios sobre su eficacia.", False),
     (8, "esoterismo", "Astronomía y astrología esotéricas",
-     "La masonería y su simbolismo astral, la cábala judía (el Árbol de la Vida y las correspondencias planetarias) y el misticismo cristiano.", False),
+     "La masonería y su simbolismo astral y el misticismo cristiano. La cábala (el Árbol de la Vida y las correspondencias planetarias) se resume aquí y se estudia a fondo en el curso de Cábala hermética.", False),
     (9, "cronologias-en-disputa", "Cronologías en disputa",
      "La cronología estándar académica frente a la «Nueva Cronología» de Anatoli Fomenko, atribuida a él y contrastada. Ninguna se da por sentada.", False),
 ]
