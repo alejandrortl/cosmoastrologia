@@ -868,7 +868,7 @@
   "orden": 1,
   "tipo": "texto",
   "contenido": {
-   "html": "<h3>Lo que se observa</h3>\n<ul><li><p>Las estrellas forman grupos reconocibles que mantienen su forma a lo largo de toda una vida humana: las <strong>constelaciones</strong>.</p></li><li><p>El Sol, la Luna y los planetas recorren siempre la misma franja de constelaciones: el <strong>zodiaco</strong>.</p></li><li><p>Por la precesión (ver el apartado de Polaris), el punto donde está el Sol en el equinoccio de primavera se desplaza lentamente por el zodiaco. Hace unos dos mil años estaba en Aries; hoy está en Piscis, acercándose a Acuario.</p></li></ul>"
+   "html": "<p>La primera vez que se mira un cielo oscuro, lleno de estrellas, parece imposible orientarse. Pero las personas que conocen el cielo no se saben cada estrella: reconocen unas cuantas figuras muy llamativas, igual que reconocemos la cara de un amigo entre la gente, y desde ellas encuentran las demás.</p>\n<p>Esta sección enseña a hacerlo paso a paso. Primero, qué es una constelación y qué es un asterismo. Después, cómo se aprende una figura y cuáles conviene aprender primero, con un interactivo para practicar. Y al final, las dos preguntas que dividen a las cosmovisiones: si las estrellas de una figura están juntas de verdad, y si las figuras cambian con el tiempo.</p>"
   }
  },
  {
@@ -877,13 +877,160 @@
   "orden": 2,
   "tipo": "texto",
   "contenido": {
-   "html": "<h3>La explicación moderna</h3>\n<p>La astronomía moderna sostiene que las estrellas de una constelación suelen estar a distancias muy distintas de nosotros y solo parecen agrupadas desde la Tierra. La Unión Astronómica Internacional reconoce oficialmente <strong>88 constelaciones</strong>, con fronteras fijadas en 1930, y según esas fronteras la eclíptica atraviesa trece, porque también cruza Ofiuco.</p>\n<p>Aquí conviven dos sistemas que conviene no confundir. Las <strong>constelaciones</strong> son grupos de estrellas de tamaños desiguales. Los <strong>signos</strong> de la astrología occidental son doce partes iguales de 30° que empiezan en el equinoccio de primavera: es el llamado <strong>zodiaco tropical</strong>, ligado a las estaciones y no a las estrellas, así que con la precesión los signos y las constelaciones del mismo nombre se han ido separando. La astrología védica usa en cambio un <strong>zodiaco sideral</strong>, que sigue a las estrellas. Cada sistema mide una cosa distinta; el módulo 7 lo verá con detalle.</p>"
+   "html": "<h3>Constelaciones y asterismos: qué son</h3>\n<p>Una <strong>constelación</strong> es un grupo de estrellas al que una cultura le ha dado un nombre y una figura: un cazador, un toro, una cruz. Las figuras no están dibujadas en el cielo; las imaginamos uniendo estrellas con líneas, como en los pasatiempos de unir puntos. Por eso cada cultura ha visto figuras distintas en las mismas estrellas.</p>\n<p>Hoy la palabra tiene además un sentido oficial. En 1922 la <strong>Unión Astronómica Internacional</strong> (la UAI, la asociación que reúne a los astrónomos profesionales) adoptó una lista de <strong>88 constelaciones</strong>, casi todas heredadas de los griegos y de los navegantes europeos de los siglos XVI a XVIII. En 1930 publicó sus fronteras, trazadas por el astrónomo belga Eugène Delporte. Desde entonces, para la astronomía, una constelación no es solo la figura sino una <strong>región del cielo</strong> con límites fijos, como los países en un mapa: cada estrella pertenece a una sola constelación.</p>\n<p>Un <strong>asterismo</strong> es una figura que se reconoce con facilidad pero que no es una de las 88 constelaciones oficiales. Muchas de las figuras más útiles para orientarse son asterismos:</p>\n<ul><li><p><strong>El Carro</strong> (también llamado el Cazo o el Arado): las siete estrellas más brillantes de la Osa Mayor. La Osa completa es mucho más grande.</p></li><li><p><strong>El cinturón de Orión</strong>, las «Tres Marías»: tres estrellas en fila en el centro de Orión.</p></li><li><p><strong>La W de Casiopea</strong>: las cinco estrellas principales de esa constelación.</p></li><li><p><strong>El Gran Cuadrado de Pegaso</strong>: cuatro estrellas que forman un cuadrado enorme; una de ellas, Alpheratz, pertenece en realidad a Andrómeda.</p></li><li><p><strong>El triángulo de verano</strong> (Vega, Deneb y Altair) y <strong>el de invierno</strong> (Betelgeuse, Sirio y Proción), cada uno con estrellas de tres constelaciones distintas.</p></li><li><p><strong>La Tetera de Sagitario</strong>: ocho estrellas de Sagitario que parecen una tetera, con el vapor de la Vía Láctea saliendo del pico.</p></li><li><p><strong>La Falsa Cruz</strong>, en el cielo del sur: cuatro estrellas de la Quilla y de la Vela que se confunden a menudo con la Cruz del Sur.</p></li><li><p><strong>Las Pléyades</strong>, las Siete Cabrillas: un grupito apretado de estrellas en Tauro, que a simple vista parece una pequeña nube brillante.</p></li></ul>"
   }
  },
  {
   "modulo": 1,
   "seccion": 10,
   "orden": 3,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Cómo se aprende a reconocer una figura</h3>\n<p>Para reconocer una figura en el cielo real, sirven cuatro pistas:</p>\n<ul><li><p><strong>El brillo.</strong> Las estrellas no brillan todas igual. Los astrónomos lo miden con la <strong>magnitud</strong>, una escala heredada de Hiparco y Ptolomeo en la que el número más bajo es el más brillante: las estrellas «de primera magnitud» son las más llamativas, y las de sexta apenas se ven desde un lugar muy oscuro. Sirio, la más brillante, tiene magnitud negativa. En una ciudad solo se ven las de magnitud 1, 2 y 3, y precisamente por eso las figuras principales se distinguen mejor allí que en el campo, donde las estrellas débiles las «rellenan».</p></li><li><p><strong>El color.</strong> Con atención se nota que Betelgeuse y Antares son rojizas, Aldebarán y Arturo anaranjadas, Capela amarillenta, y Rigel, Vega y Espiga blanco azuladas. El color ayuda a no confundirlas.</p></li><li><p><strong>El tamaño.</strong> Las figuras son más grandes de lo que se suele esperar. Con la regla de la mano (ver «Practica la regla de la mano», más abajo): el Carro ocupa unos 25°, más que un palmo; la Cruz del Sur, en cambio, solo unos 6°, poco más que tres dedos.</p></li><li><p><strong>La compañía.</strong> Cada figura está siempre al lado de las mismas vecinas. Si encuentras una, las de alrededor salen solas: es la técnica de los «saltos de estrella» que se explica en «Orientarse en el cielo».</p></li></ul>\n<p><strong>Un orden para empezar.</strong> Conviene empezar por las figuras que se ven todo el año desde tu latitud, las <strong>circumpolares</strong>: en el hemisferio norte, el Carro y Casiopea; en el sur, la Cruz del Sur y los punteros de Centauro. Después, añadir cada estación una o dos figuras nuevas. En un año se conoce el cielo entero visible desde casa.</p>\n<p><strong>Un consejo práctico.</strong> Antes de salir, mira la figura en un mapa o en el interactivo de esta sección, en el modo «solo estrellas», y fíjate en la forma que hacen las estrellas brillantes sin las líneas. Así es como la verás en el cielo.</p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 10,
+  "orden": 4,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Las figuras que conviene aprender primero</h3>\n<p>Estas son las figuras más fáciles y más útiles, agrupadas por la época del año en que se ven mejor a primera hora de la noche. Las estaciones están invertidas entre los dos hemisferios, así que se indican los meses.</p>\n<p><strong>Todo el año, desde el hemisferio norte.</strong></p>\n<ul><li><p><strong>Osa Mayor y el Carro.</strong> Siete estrellas brillantes en forma de cazo con su mango. Gira alrededor de Polaris: en primavera se ve alta, en otoño baja sobre el horizonte norte. Las dos estrellas del extremo del cazo, Merak y Dubhe, señalan a Polaris.</p></li><li><p><strong>Osa Menor.</strong> Un carro pequeño y débil cuyo extremo del mango es Polaris. Desde una ciudad solo se ven Polaris y las dos estrellas del otro extremo, Kochab y Pherkad, llamadas «las guardas».</p></li><li><p><strong>Casiopea.</strong> Una W o una M, según la hora, al otro lado de Polaris respecto al Carro. Cuando el Carro está bajo, Casiopea está alta, y al revés.</p></li><li><p><strong>Dragón y Cefeo.</strong> Más débiles. El Dragón serpentea entre las dos Osas; su estrella Thuban fue la estrella polar en tiempos de las pirámides de Egipto. Cefeo parece una casita con el tejado en punta, junto a Casiopea.</p></li></ul>\n<p><strong>De diciembre a marzo</strong> (invierno en el norte, verano en el sur).</p>\n<ul><li><p><strong>Orión.</strong> La figura más fácil de todo el cielo, visible desde los dos hemisferios: un gran rectángulo con Betelgeuse, rojiza, y Rigel, azulada, en esquinas opuestas, y las Tres Marías en el centro. Desde el sur se ve «cabeza abajo», y mucha gente la reconoce allí como «la Olla» o «el Cazo».</p></li><li><p><strong>Tauro.</strong> Siguiendo el cinturón de Orión hacia el noroeste se llega a Aldebarán, anaranjada, en la punta de una V de estrellas, las Híades: es la cara del toro. Un poco más allá, las Pléyades.</p></li><li><p><strong>Can Mayor y Can Menor.</strong> Siguiendo el cinturón hacia el sudeste se llega a Sirio, la estrella más brillante de la noche. Proción, en el Can Menor, forma con Sirio y Betelgeuse el triángulo de invierno.</p></li><li><p><strong>Géminis.</strong> Dos estrellas brillantes y parecidas, Cástor y Pólux, al noreste de Orión, cada una a la cabeza de una fila de estrellas: los dos gemelos.</p></li><li><p><strong>Cochero.</strong> Un pentágono de estrellas encima de Orión, con Capela, muy brillante y amarillenta, en una esquina.</p></li></ul>\n<p><strong>De marzo a junio</strong> (primavera en el norte, otoño en el sur).</p>\n<ul><li><p><strong>Leo.</strong> Una «hoz» o un signo de interrogación al revés, que forma la cabeza y el pecho del león, con Régulo en la base, y un triángulo detrás que forma sus patas traseras y su cola, con Denébola.</p></li><li><p><strong>Boyero.</strong> Una figura en forma de cometa o de cucurucho de helado, con Arturo, anaranjada y muy brillante, en la punta. Se llega a ella siguiendo la curva del mango del Carro.</p></li><li><p><strong>Virgo.</strong> Una figura grande y poco marcada; lo más visible es Espiga, blanco azulada, a la que se llega prolongando el arco del Carro más allá de Arturo.</p></li><li><p><strong>Corona Boreal.</strong> Un semicírculo pequeño y precioso de estrellas, junto al Boyero.</p></li></ul>\n<p><strong>De junio a septiembre</strong> (verano en el norte, invierno en el sur).</p>\n<ul><li><p><strong>Lira, Cisne y Águila.</strong> Sus estrellas más brillantes, Vega, Deneb y Altair, forman el triángulo de verano. El Cisne, en forma de cruz grande (la «Cruz del Norte»), vuela a lo largo de la Vía Láctea.</p></li><li><p><strong>Escorpio.</strong> Una de las pocas figuras que se parecen de verdad a lo que representan: una línea de estrellas curvada como la cola de un escorpión, con Antares, roja, en el corazón. Desde el sur pasa casi por encima de la cabeza; desde España se ve baja hacia el sur.</p></li><li><p><strong>Sagitario.</strong> Al este de Escorpio, la Tetera. En esa dirección, según la astronomía moderna, está el centro de nuestra galaxia, y la Vía Láctea se ve allí más ancha y brillante.</p></li><li><p><strong>Hércules.</strong> Un trapecio de estrellas no muy brillantes entre Vega y la Corona Boreal.</p></li></ul>\n<p><strong>De septiembre a diciembre</strong> (otoño en el norte, primavera en el sur).</p>\n<ul><li><p><strong>Pegaso.</strong> El Gran Cuadrado: cuatro estrellas a casi un palmo y medio unas de otras, con muy pocas estrellas dentro.</p></li><li><p><strong>Andrómeda.</strong> Dos filas de estrellas que salen de una esquina del Cuadrado. Desde un lugar muy oscuro se ve junto a ella una mancha alargada y tenue: la galaxia de Andrómeda, el objeto más lejano visible a simple vista según la astronomía moderna.</p></li><li><p><strong>Perseo.</strong> Una figura en forma de arco entre Casiopea y las Pléyades. Contiene Algol, la «estrella del demonio», que cada casi tres días pierde brillo durante unas horas: cualquiera puede comprobarlo.</p></li></ul>\n<p><strong>El cielo del sur</strong> (desde el hemisferio sur y las zonas tropicales).</p>\n<ul><li><p><strong>Cruz del Sur.</strong> Cuatro estrellas brillantes en forma de cometa pequeña; la más pequeña de las 88 constelaciones. Su palo largo señala hacia el polo sur celeste.</p></li><li><p><strong>Centauro.</strong> Una figura enorme que rodea la Cruz. Sus dos estrellas más brillantes, Alfa y Beta Centauri, son los «punteros» que señalan hacia la Cruz. Alfa Centauri es, según la astronomía moderna, el sistema estelar más cercano al Sol.</p></li><li><p><strong>Quilla, Vela y la Falsa Cruz.</strong> Restos del antiguo Navío Argos de los griegos, dividido en tres por el astrónomo francés Nicolas-Louis de Lacaille en el siglo XVIII. En la Quilla está Canopo, la segunda estrella más brillante de la noche.</p></li><li><p><strong>Las Nubes de Magallanes.</strong> Dos manchas claras, como trozos de Vía Láctea sueltos, cerca del polo sur celeste. Para la astronomía moderna son dos galaxias vecinas de la nuestra.</p></li></ul>\n<p>El interactivo de este apartado tiene dos modos. En <strong>Aprender</strong>, eliges una figura y la ves primero solo con sus estrellas, como en el cielo, y después con sus líneas y con la explicación de cómo encontrarla. En <strong>Ponte a prueba</strong>, aparecen las estrellas de una figura al azar y tienes que adivinar cuál es.</p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 10,
+  "orden": 5,
+  "tipo": "interactivo",
+  "contenido": {
+   "componente": "figuras-cielo",
+   "etiqueta": "Interactivo",
+   "modelo": "Observación",
+   "pie": "Elige una figura y mírala primero solo con sus estrellas, como en el cielo; o ponte a prueba. El mapa tiene el norte arriba y el este a la izquierda, como el cielo al mirar hacia arriba. Estrellas y líneas: d3-celestial de Olaf Frohn (catálogo Hipparcos)."
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 10,
+  "orden": 6,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>¿Están juntas las estrellas de una figura?</h3>\n<p><strong>Lo que se observa.</strong> A simple vista, todas las estrellas parecen estar a la misma distancia, pegadas a una gran cúpula. No hay nada en la mirada que diga que una está más lejos que otra. Lo que se ve son direcciones y brillos, no distancias.</p>\n<p><strong>Según la astronomía moderna.</strong> Las estrellas de una constelación casi nunca están juntas: solo están en la misma dirección vistas desde la Tierra. La astronomía moderna mide la distancia a las estrellas cercanas con la <strong>paralaje</strong>: el pequeñísimo vaivén que muestra una estrella cercana sobre el fondo de las lejanas a lo largo del año, cuando, según este modelo, la Tierra está en un lado y en el otro de su órbita. La primera la midió Friedrich Bessel en 1838, para la estrella 61 del Cisne, y hoy el satélite Gaia de la Agencia Espacial Europea la ha medido para más de mil millones de estrellas. En Orión, por ejemplo, Bellatrix estaría a unos 250 años luz, Betelgeuse a unos 550, Rigel a unos 860, y las Tres Marías a entre 1.200 y 2.000 años luz: unas cuatro veces más lejos que la estrella del hombro. Vista desde otro lugar de la galaxia, la figura de Orión no existiría. Hay excepciones: las Pléyades y la mayoría de las estrellas del Carro sí forman, según este modelo, grupos de estrellas nacidas juntas que viajan por el espacio en la misma dirección.</p>\n<p><strong>Según el modelo plano.</strong> Los defensores de la Tierra plana sostienen, en general, que las estrellas son luces relativamente cercanas que giran sobre el plano, y muchos las sitúan en una bóveda o firmamento, como el de la cosmología bíblica. Desde este punto de vista, las figuras son lo que parecen: dibujos de luces en una misma bóveda, y las distancias de miles de años luz son una consecuencia del modelo del globo, que este modelo no acepta. Las diferencias de brillo y de color serían propias de cada luz.</p>\n<p><strong>Según las esferas antiguas.</strong> Para Aristóteles y para Ptolomeo, las estrellas estaban todas engastadas en la misma <strong>esfera de las estrellas fijas</strong>, la más exterior del cosmos, y por tanto a la misma distancia de la Tierra. Las diferencias de brillo eran diferencias de tamaño o de naturaleza de cada estrella. Esta idea se mantuvo en Europa hasta el siglo XVI; Thomas Digges, en 1576, fue de los primeros en dibujar las estrellas esparcidas a distancias distintas por un espacio sin límite.</p>\n<p>El esquema de este apartado dibuja Orión como se ve desde aquí y, debajo, cómo coloca cada modelo sus estrellas: a distancias muy distintas en el modelo moderno, o en una misma bóveda en el plano y en las esferas antiguas.</p>\n<p class=\"fuentes\">Distancias aproximadas de la astronomía moderna, con incertidumbres grandes en las estrellas más lejanas: <a href=\"https://en.wikipedia.org/wiki/Orion_(constellation)\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Orion (constellation)»</a> · <a href=\"https://www.esa.int/Science_Exploration/Space_Science/Gaia\" target=\"_blank\" rel=\"noopener\">ESA, misión Gaia</a></p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 10,
+  "orden": 7,
+  "tipo": "interactivo",
+  "contenido": {
+   "componente": "profundidad-orion",
+   "etiqueta": "Esquema",
+   "modelo": "Dos respuestas: astronomía moderna frente a bóveda (modelo plano y esferas antiguas)",
+   "pie": "Orión como se ve y, debajo, de lado según cada modelo. Distancias aproximadas de la astronomía moderna, a escala entre sí; los ángulos están exagerados. Esquema, no a escala real."
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 10,
+  "orden": 8,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>¿Cambian las figuras con el tiempo?</h3>\n<p><strong>Lo que se observa.</strong> En toda la historia escrita, las figuras no han cambiado de forma de manera apreciable a simple vista. El catálogo de unas mil estrellas que recoge Ptolomeo en el <em>Almagesto</em>, del siglo II, describe las mismas constelaciones que vemos hoy. Por eso a estas estrellas se las llamó «fijas», frente a los planetas, los «errantes».</p>\n<p><strong>La medida que lo matizó.</strong> En 1718 el astrónomo inglés Edmond Halley comparó las posiciones de Sirio, Arturo y Aldebarán con las del catálogo de Ptolomeo y encontró que se habían desplazado algo más de medio grado: más de lo que podía explicar cualquier error de medida. Lo llamó <strong>movimiento propio</strong>. Arturo, por ejemplo, avanza un grado cada unos 1.600 años.</p>\n<p><strong>Cómo lo interpreta cada modelo.</strong> Para la astronomía moderna, cada estrella viaja por la galaxia a su propia velocidad, y las figuras se deforman muy despacio: dentro de unos 50.000 años el Carro ya no tendrá forma de carro. Para el modelo de las esferas antiguas, las estrellas eran fijas por definición, y el hallazgo de Halley fue, según los historiadores de la astronomía, una de las razones para abandonar la idea de una esfera rígida. En las fuentes del modelo plano que cita este curso no hemos localizado una explicación propia del movimiento propio de las estrellas.</p>\n<p>Hay otro cambio, mucho más rápido y visible en una vida, que no deforma las figuras pero sí cambia su relación con las estaciones y con el polo: la <strong>precesión</strong>. Se explica en la sección «Quién decide en qué zodiaco y en qué era estamos».</p>\n<p class=\"fuentes\">Fuentes: E. Halley, «Considerations on the Change of the Latitudes of Some of the Principal Fixt Stars», <em>Philosophical Transactions</em> 30 (1718) · <a href=\"https://en.wikipedia.org/wiki/Proper_motion\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Proper motion»</a></p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 10,
+  "orden": 9,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Cada cultura, sus figuras</h3>\n<p>Las 88 constelaciones oficiales son una herencia sobre todo griega y europea, pero no son las únicas. Cada cultura ha unido las estrellas a su manera:</p>\n<ul><li><p><strong>Babilonios y griegos.</strong> Muchas figuras del zodiaco vienen de Babilonia, como el Toro, los Gemelos o el Escorpión. Los griegos las recibieron, les añadieron sus mitos, y Ptolomeo fijó 48 en el <em>Almagesto</em>.</p></li><li><p><strong>Astrónomos árabes y persas.</strong> Tradujeron y conservaron a Ptolomeo, y de ellos vienen la mayoría de los nombres de las estrellas: Aldebarán (<em>al-dabarān</em>, «el que sigue», porque sale detrás de las Pléyades), Betelgeuse (de <em>yad al-ŷawzā'</em>, «la mano de al-Ŷawzā'», nombre árabe de Orión), Rigel (<em>riŷl</em>, «el pie») o Vega (de <em>al-nasr al-wāqi'</em>, «el águila que cae»). El astrónomo persa al-Sufi publicó en el año 964 el <em>Libro de las estrellas fijas</em>, con las figuras de Ptolomeo y también las de la tradición beduina.</p></li><li><p><strong>China.</strong> La astronomía china dividió el cielo en tres recintos alrededor del polo y en 28 «mansiones» lunares a lo largo del camino de la Luna. En el siglo III, el astrónomo Chen Zhuo reunió 283 asterismos con 1.464 estrellas, mucho más pequeños que las constelaciones griegas.</p></li><li><p><strong>Los Andes.</strong> Los pueblos quechuas reconocen, además de figuras de estrellas, figuras oscuras: las nubes de polvo de la Vía Láctea forman una llama (Yacana), una serpiente o un sapo. Lo documentó el antropólogo Gary Urton en 1981.</p></li><li><p><strong>Australia.</strong> Muchos pueblos aborígenes ven en las manchas oscuras de la Vía Láctea, desde la Cruz del Sur hasta Escorpio, un emú, cuya posición al anochecer marcaba la época de recoger sus huevos, según los estudios de astronomía cultural de Ray Norris y Duane Hamacher.</p></li><li><p><strong>Navegantes europeos.</strong> El cielo cercano al polo sur, invisible desde Grecia, se llenó de figuras nuevas en la época de los grandes viajes: doce las trazaron los navegantes neerlandeses Pieter Dirkszoon Keyser y Frederick de Houtman hacia 1595-1597, y catorce más Lacaille en 1752, muchas con nombres de instrumentos científicos, como el Telescopio, el Microscopio o la Máquina Neumática.</p></li></ul>\n<p>Ninguna de estas figuras es más «verdadera» que otra: todas usan las mismas estrellas, vistas desde la misma Tierra. La lista de la UAI es una convención para que los astrónomos de todo el mundo hablen de las mismas regiones del cielo. Desde 2016 la UAI también mantiene una lista oficial de nombres propios de estrellas, y en ella ha incluido nombres de tradiciones chinas, indígenas, polinesias o africanas.</p>\n<p class=\"fuentes\">Fuentes: <a href=\"https://www.iau.org/public/themes/constellations/\" target=\"_blank\" rel=\"noopener\">UAI, «The Constellations»</a> · <a href=\"https://www.iau.org/science/scientific_bodies/working_groups/280/\" target=\"_blank\" rel=\"noopener\">UAI, grupo de trabajo sobre nombres de estrellas</a> · <a href=\"https://en.wikipedia.org/wiki/Chinese_constellations\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Chinese constellations»</a> · G. Urton, <em>At the Crossroads of the Earth and the Sky: An Andean Cosmology</em> (1981) · <a href=\"https://en.wikipedia.org/wiki/Emu_in_the_sky\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Emu in the sky»</a></p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 11,
+  "orden": 1,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Lo que se observa</h3>\n<ul><li><p>Las estrellas forman grupos reconocibles que mantienen su forma a lo largo de toda una vida humana: las <strong>constelaciones</strong>.</p></li><li><p>El Sol, la Luna y los planetas recorren siempre la misma franja de constelaciones: el <strong>zodiaco</strong>.</p></li><li><p>Por la precesión (ver el apartado de Polaris), el punto donde está el Sol en el equinoccio de primavera se desplaza lentamente por el zodiaco. Hace unos dos mil años estaba en Aries; hoy está en Piscis, acercándose a Acuario.</p></li></ul>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 11,
+  "orden": 2,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Qué es el zodiaco, explicado desde el principio</h3>\n<p>Imagina que pudieras ver las estrellas de día. Verías que el Sol no está quieto entre ellas: cada día amanece un poco más al este respecto a las estrellas, casi un grado, el doble de su propio tamaño. En un año da la vuelta completa al cielo y vuelve al mismo punto. Ese camino del Sol entre las estrellas se llama <strong>eclíptica</strong>.</p>\n<p>La Luna y los planetas no se alejan nunca mucho de ese camino: se mueven siempre dentro de una franja de unos 8 o 9 grados a cada lado de la eclíptica, poco menos que un puño. Esa franja es el <strong>zodiaco</strong>. Su nombre viene del griego <em>zōidiakòs kýklos</em>, «el círculo de las figuras de animales», porque la mayoría de las constelaciones que lo cruzan representan animales: el Carnero, el Toro, el Cangrejo, el León, el Escorpión, la Cabra, los Peces.</p>\n<p><strong>¿Cómo se sabe dónde está el Sol, si de día no se ven las estrellas?</strong> Los astrónomos antiguos usaban tres trucos que cualquiera puede repetir:</p>\n<ul><li><p><strong>Mirar justo antes del amanecer.</strong> La constelación que sale por el este un poco antes que el Sol es la que está al lado del Sol, un poco al oeste. Los egipcios anotaban el día en que Sirio volvía a verse al alba después de semanas oculta, su <strong>orto helíaco</strong>, que anunciaba la crecida del Nilo.</p></li><li><p><strong>Mirar a medianoche hacia el sur</strong> (desde el hemisferio norte; hacia el norte desde el sur). La constelación del zodiaco que está en lo más alto es la opuesta a donde está el Sol.</p></li><li><p><strong>Mirar la Luna llena.</strong> Siempre está en el lado del cielo opuesto al Sol, así que la constelación en la que está la Luna llena es la contraria a la del Sol.</p></li></ul>\n<p>Con estas observaciones, repetidas mes a mes, los babilonios trazaron el camino del Sol y lo dividieron en tramos. Todas las cosmovisiones del curso aceptan esta observación; lo que discuten es por qué el Sol avanza entre las estrellas, como se explica más abajo.</p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 11,
+  "orden": 3,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>¿Son estrellas los signos? Constelaciones frente a signos</h3>\n<p>Esta es la confusión más común sobre el zodiaco, y conviene aclararla bien: la palabra «Aries» o «Escorpio» puede nombrar dos cosas distintas.</p>\n<ul><li><p><strong>La constelación</strong> es un grupo de <strong>estrellas</strong> reales que se pueden ver de noche. Para la astronomía, además, es una región del cielo con las fronteras de la UAI. Las constelaciones del zodiaco tienen tamaños muy desiguales: el Sol tarda unos 45 días en cruzar Virgo y solo unos 7 en cruzar Escorpio.</p></li><li><p><strong>El signo</strong> no es un grupo de estrellas: es un <strong>tramo de la eclíptica</strong> de exactamente 30°, una doceava parte de la vuelta. Los doce signos son iguales y se cuentan desde un punto de partida, como las horas de un reloj se cuentan desde las doce. Un signo es una medida, como un mes del calendario, y no contiene estrellas propias.</p></li></ul>\n<p>Los signos nacieron de las constelaciones. Hacia el siglo V a. C., los astrónomos de Babilonia simplificaron las constelaciones del camino del Sol, de tamaños distintos, en doce tramos iguales, para poder calcular con ellos, y les dieron el nombre de la constelación que había en cada tramo. Durante unos siglos signos y constelaciones casi coincidieron.</p>\n<p>Lo que las distingue hoy es <strong>desde dónde se empieza a contar</strong>. Hay dos respuestas, y cada una da un zodiaco distinto:</p>\n<ul><li><p>El <strong>zodiaco tropical</strong> empieza a contar en el punto donde está el Sol en el equinoccio de marzo, el comienzo de la primavera en el hemisferio norte. Es el que usa la mayoría de la astrología occidental, y el que da las fechas de los horóscopos de las revistas.</p></li><li><p>El <strong>zodiaco sideral</strong> empieza a contar desde un punto fijo entre las estrellas. Es el que usa la astrología védica de la India.</p></li></ul>\n<p>Por la precesión, que se explica en la sección siguiente, los dos puntos de partida se separan un grado cada 72 años. Hoy están separados unos 24°, casi un signo entero. Por eso, en 2026, el mismo día el Sol puede estar en tres sitios distintos según a quién se pregunte. Por ejemplo, el 12 de noviembre:</p>\n<ul><li><p>Según el <strong>zodiaco tropical</strong>, el Sol está en el signo de <strong>Escorpio</strong> (del 23 de octubre al 21 de noviembre).</p></li><li><p>Según el <strong>zodiaco sideral</strong> más usado en la India, el de Lahiri, está en el signo de <strong>Libra</strong> (del 17 de octubre al 15 de noviembre).</p></li><li><p>Según las <strong>fronteras de la UAI</strong>, el Sol está delante de las estrellas de la constelación de <strong>Libra</strong> (del 1 al 23 de noviembre), y pasará después por Escorpio solo del 24 al 29 de noviembre, y por Ofiuco del 30 de noviembre al 17 de diciembre.</p></li></ul>\n<p>Cada sistema mide una cosa distinta y lo dice abiertamente: el tropical, la posición del Sol respecto a las estaciones; el sideral, respecto a las estrellas según una división en partes iguales; y la UAI, respecto a las regiones del cielo que ella misma definió. El interactivo de este apartado calcula los tres para cualquier fecha.</p>\n<p class=\"fuentes\">Fechas calculadas para 2026 con la posición del Sol según el método de Paul Schlyter, las fronteras de la UAI a lo largo de la eclíptica y el ayanamsa de Lahiri (23,86° en el año 2000, más 50,3″ por año). Pueden variar un día de un año a otro.</p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 11,
+  "orden": 4,
+  "tipo": "interactivo",
+  "contenido": {
+   "componente": "tres-zodiacos",
+   "etiqueta": "Interactivo",
+   "modelo": "Tres sistemas: zodiaco tropical, zodiaco sideral y constelaciones de la UAI",
+   "pie": "Elige una fecha: la franja del camino del Sol centrada en él, con el este a la izquierda. Posición del Sol: método de Paul Schlyter. Ayanamsa de Lahiri en aproximación lineal; fronteras de la UAI aproximadas."
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 11,
+  "orden": 5,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Las constelaciones del zodiaco en el cielo: cómo encontrarlas</h3>\n<p>Las constelaciones del zodiaco no son las más fáciles del cielo: varias, como Cáncer, Piscis o Capricornio, son débiles y cuesta verlas desde una ciudad. Lo más sencillo es buscar primero las cinco que tienen estrellas brillantes, y usarlas de mojón para las demás. Se indica en qué meses se ven mejor hacia las diez de la noche. El Sol nunca deja ver la constelación en la que está: la de tu signo tropical se ve mejor unos seis meses después de tu cumpleaños.</p>\n<ul><li><p><strong>Tauro</strong> (diciembre a febrero): Aldebarán, anaranjada, en la V de las Híades, y las Pléyades. Se encuentra siguiendo el cinturón de Orión.</p></li><li><p><strong>Géminis</strong> (enero a marzo): Cástor y Pólux, dos estrellas brillantes juntas al noreste de Orión.</p></li><li><p><strong>Leo</strong> (marzo a mayo): la hoz con Régulo en la base. Las dos estrellas del cazo del Carro más cercanas al mango, Megrez y Phecda, señalan hacia Leo por el lado contrario a Polaris.</p></li><li><p><strong>Virgo</strong> (abril a junio): Espiga, al final del arco que sale del mango del Carro y pasa por Arturo.</p></li><li><p><strong>Escorpio</strong> (junio a agosto): Antares, roja, y la cola curvada. Es la más llamativa de todas.</p></li></ul>\n<p>Las otras siete se encuentran entre estas cinco:</p>\n<ul><li><p><strong>Aries</strong> (octubre a enero): tres estrellas en un arco corto, entre las Pléyades y el Gran Cuadrado de Pegaso. La más brillante es Hamal.</p></li><li><p><strong>Cáncer</strong> (febrero a abril): muy débil, a mitad de camino entre Pólux y Régulo. En su centro, desde un lugar oscuro, se ve una manchita: el cúmulo del Pesebre.</p></li><li><p><strong>Libra</strong> (mayo a julio): entre Espiga y Antares. Sus dos estrellas principales tienen nombres árabes que significan «la pinza del sur» y «la pinza del norte», porque antes eran las pinzas del Escorpión.</p></li><li><p><strong>Ofiuco</strong> (junio a agosto): un gran pentágono alargado de estrellas medianas encima de Escorpio. La eclíptica cruza su parte sur, entre Antares y Sagitario.</p></li><li><p><strong>Sagitario</strong> (julio a septiembre): la Tetera, al este de Escorpio.</p></li><li><p><strong>Capricornio</strong> (agosto a octubre): un triángulo grande y débil, como una sonrisa, al sur de Altair.</p></li><li><p><strong>Acuario</strong> (septiembre a noviembre): débil y extensa, al sur de Pegaso; lo más reconocible es un pequeño grupo de cuatro estrellas en forma de Y, «el Cántaro».</p></li><li><p><strong>Piscis</strong> (octubre a diciembre): una cadena de estrellas débiles que rodea Pegaso por el sur y el este, con un pequeño anillo, «el Círculo», debajo del Cuadrado.</p></li></ul>\n<p>Todas están en el interactivo de «Reconocer las figuras del cielo», en el grupo «Zodiaco». Hay una pista extra: si ves una «estrella» muy brillante dentro de esta franja que no aparece en el mapa, casi siempre es un planeta.</p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 11,
+  "orden": 6,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Por qué el Sol pasa por delante de las constelaciones, según cada modelo</h3>\n<p>Todas las cosmovisiones parten de la misma observación: a lo largo del año, el Sol se ve delante de una constelación del zodiaco distinta cada mes, siempre en el mismo orden. La explicación cambia de un modelo a otro:</p>\n<ul><li><p><strong>Modelo heliocéntrico</strong> (Copérnico, Kepler y la astronomía moderna). El Sol está quieto en el centro y la Tierra gira a su alrededor en un año. Desde la Tierra, el Sol se ve proyectado sobre las estrellas lejanas que hay detrás de él. Al moverse la Tierra por su órbita, cambia la dirección en la que vemos el Sol, y con ella la constelación del fondo. Las constelaciones que están al otro lado, a nuestra espalda, son las que vemos de noche.</p></li><li><p><strong>Modelo geocéntrico</strong> (Ptolomeo y la astronomía hasta el siglo XVI). La Tierra está quieta en el centro. Cada día, toda la esfera de las estrellas gira hacia el oeste, y el Sol con ella; pero el Sol tiene además su propio movimiento lento hacia el este, sobre su esfera, de casi un grado al día, y tarda un año en recorrer la eclíptica entera, pasando por delante de las doce constelaciones.</p></li><li><p><strong>Modelo plano</strong>. En la disposición que recoge la wiki de la Flat Earth Society, la Tierra es un plano quieto y la bóveda de las estrellas gira sobre él alrededor del polo norte, una vez cada 23 horas y 56 minutos. En esa disposición, el Sol gira también sobre el plano, pero un poco más despacio, una vez cada 24 horas: por eso se va quedando atrás respecto a las estrellas, casi un grado al día, y a lo largo del año se ve delante de una constelación distinta. A la vez, su círculo se cierra hacia el trópico de Cáncer y se abre hacia el de Capricornio, lo que explica las estaciones en este modelo.</p></li></ul>\n<p>Los tres modelos predicen lo mismo para quien mira desde el suelo: el mismo orden de constelaciones y el mismo ritmo. El interactivo de este apartado los pone lado a lado con el mismo mes. Las diferencias aparecen en otros fenómenos, como la paralaje de las estrellas cercanas, que el modelo heliocéntrico usa como prueba del movimiento de la Tierra y que los otros dos modelos explican de otra forma o no aceptan.</p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 11,
+  "orden": 7,
+  "tipo": "interactivo",
+  "contenido": {
+   "componente": "sol-entre-estrellas",
+   "etiqueta": "Interactivo",
+   "modelo": "Tres modelos comparados: heliocéntrico, geocéntrico y plano",
+   "pie": "El mismo día del año en los tres modelos, vistos desde encima del polo norte. En el plano, la bóveda se dibuja quieta para que se vea cómo se retrasa el Sol respecto a ella. Esquemas simplificados, no a escala."
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 11,
+  "orden": 8,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>La explicación moderna</h3>\n<p>La astronomía moderna sostiene que las estrellas de una constelación suelen estar a distancias muy distintas de nosotros y solo parecen agrupadas desde la Tierra. La Unión Astronómica Internacional reconoce oficialmente <strong>88 constelaciones</strong>, con fronteras fijadas en 1930, y según esas fronteras la eclíptica atraviesa trece, porque también cruza Ofiuco.</p>\n<p>Aquí conviven dos sistemas que conviene no confundir. Las <strong>constelaciones</strong> son grupos de estrellas de tamaños desiguales. Los <strong>signos</strong> de la astrología occidental son doce partes iguales de 30° que empiezan en el equinoccio de primavera: es el llamado <strong>zodiaco tropical</strong>, ligado a las estaciones y no a las estrellas, así que con la precesión los signos y las constelaciones del mismo nombre se han ido separando. La astrología védica usa en cambio un <strong>zodiaco sideral</strong>, que sigue a las estrellas. Cada sistema mide una cosa distinta; la sección «Quién decide en qué zodiaco y en qué era estamos» lo explica con detalle.</p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 11,
+  "orden": 9,
   "tipo": "interactivo",
   "contenido": {
    "componente": "zodiaco",
@@ -894,8 +1041,8 @@
  },
  {
   "modulo": 1,
-  "seccion": 10,
-  "orden": 4,
+  "seccion": 11,
+  "orden": 10,
   "tipo": "texto",
   "contenido": {
    "html": "<h3>La explicación terraplanista</h3>\n<p>En el modelo terraplanista las estrellas son luces situadas en la cúpula o firmamento, a no mucha distancia, y las constelaciones son figuras de esa misma bóveda que gira en torno al polo.</p>"
@@ -903,8 +1050,8 @@
  },
  {
   "modulo": 1,
-  "seccion": 10,
-  "orden": 5,
+  "seccion": 11,
+  "orden": 11,
   "tipo": "texto",
   "contenido": {
    "html": "<h3>Cómo lo entendían otras cosmovisiones</h3>\n<p><strong>Sumerios y babilonios.</strong> Muchas de nuestras constelaciones vienen de ellos. Las tablillas MUL.APIN enumeran unas diecisiete constelaciones \"en el camino de la Luna\", y hacia el siglo V a. C. los astrónomos babilónicos fijaron el zodiaco de doce signos iguales.</p>\n<p><strong>Egipcios.</strong> Usaban los <strong>decanos</strong>: 36 grupos de estrellas que salían sucesivamente, cada uno durante unos diez días, y que servían para medir las horas de la noche. El famoso <strong>zodiaco de Dendera</strong> es ya de época ptolemaica (hacia el 50 a. C.) y combina los decanos egipcios con los signos babilónicos y griegos.</p>\n<p><strong>Griegos.</strong> Recibieron el zodiaco de Babilonia y le dieron sus mitos. El poema <em>Fenómenos</em> de Arato describe las constelaciones, y Ptolomeo cataloga 48 en el <em>Almagesto</em>, base de las que usamos hoy.</p>\n<p><strong>Romanos.</strong> Poetas como Manilio, en su <em>Astronómica</em> (siglo I d. C.), divulgaron en latín el zodiaco y las constelaciones.</p>\n<p><strong>Cosmología bíblica y rabínica.</strong> El libro de Job (9:9 y 38:31-32) nombra las Pléyades, Orión, la Osa y las <em>Mazzaroth</em>, palabra que muchos traducen como las constelaciones o el zodiaco. En sinagogas antiguas de Galilea, como la de Hamat Tiberias (siglo IV) y la de Beit Alfa (siglo VI), se han hallado mosaicos con la rueda del zodiaco.</p>\n<p><strong>Cábala.</strong> El <em>Séfer Yetzirá</em>, uno de sus textos fundacionales, organiza el cosmos en correspondencias: doce letras del alfabeto hebreo para los doce signos, siete para los siete planetas. Aquí solo se señala esa estructura; su significado se verá en el módulo 8.</p>\n<p><strong>Libro de Enoc.</strong> El <em>Libro de las Luminarias</em> describe estrellas con \"jefes\" que las guían en su orden y en sus meses, y doce puertas en los confines del cielo. Todo el cielo aparece como un sistema ordenado de puertas, guardianes y turnos, que Uriel enseña a Enoc.</p>\n<p><strong>Cristianismo medieval.</strong> El zodiaco se integró en el calendario: en catedrales como Chartres o Amiens se esculpieron los signos junto a los trabajos de cada mes.</p>"
@@ -912,8 +1059,8 @@
  },
  {
   "modulo": 1,
-  "seccion": 10,
-  "orden": 6,
+  "seccion": 11,
+  "orden": 12,
   "tipo": "imagen",
   "contenido": {
    "tipo": "obra",
@@ -928,7 +1075,112 @@
  },
  {
   "modulo": 1,
-  "seccion": 11,
+  "seccion": 12,
+  "orden": 1,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<p>La respuesta corta es que <strong>nadie tiene la última palabra</strong>: no hay ningún organismo que decida para todos en qué signo está el Sol ni en qué era vive la humanidad. Hay tres preguntas distintas, y cada una tiene sus propias autoridades:</p>\n<ul><li><p><strong>¿Delante de qué estrellas está el Sol?</strong> Es una pregunta de astronomía, y la responde la convención de la Unión Astronómica Internacional con sus 88 regiones del cielo.</p></li><li><p><strong>¿En qué signo está el Sol?</strong> Es una pregunta de astrología, y cada tradición astrológica la responde con su propio zodiaco: el tropical o el sideral, y dentro del sideral, con distintas formas de medir.</p></li><li><p><strong>¿En qué era estamos?</strong> Es una pregunta sobre la que ni siquiera los astrólogos se ponen de acuerdo: las fechas propuestas para el comienzo de la Era de Acuario van del siglo XV al XXXVI.</p></li></ul>\n<p>Para entender por qué, hace falta conocer un movimiento lentísimo del cielo: la precesión de los equinoccios.</p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 12,
+  "orden": 2,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>La precesión: el reloj más lento del cielo</h3>\n<p><strong>Lo que se observa.</strong> Si cada año se anota delante de qué estrellas está el Sol el día del equinoccio de marzo, se ve que ese punto, llamado <strong>punto vernal</strong> o punto Aries, no está quieto: retrocede muy despacio por el zodiaco, hacia el oeste, un grado cada unos 72 años. A ese ritmo tarda unos 25.800 años en dar la vuelta completa. En una vida humana se mueve un grado, el doble del tamaño de la Luna llena, y por eso solo se nota comparando observaciones de siglos distintos.</p>\n<p>El mismo movimiento hace que el polo celeste cambie de estrella: hace 4.500 años la estrella polar era Thuban, hoy es Polaris y dentro de unos 12.000 años será Vega, como se ve en el apartado «Un dato que cambia todo: la estrella polar no siempre fue Polaris».</p>\n<p><strong>Quién lo descubrió.</strong> El astrónomo griego Hiparco, hacia el año 130 a. C., comparó sus medidas de la estrella Espiga con las que había hecho Timócaris unos 150 años antes, y vio que la distancia de Espiga al punto del equinoccio había cambiado unos dos grados. Concluyó que el equinoccio se desplazaba. Ptolomeo, en el siglo II, lo confirmó y lo estimó en un grado por siglo, algo menos que el valor actual.</p>\n<p><strong>Por qué importa para el zodiaco.</strong> Cuando los babilonios y los griegos fijaron los signos, el punto vernal estaba al principio de la constelación de Aries. Hoy está en Piscis, cerca de la frontera con Acuario. Los signos tropicales, que siempre empiezan en el punto vernal, se han ido corriendo junto con él, y por eso ya no coinciden con las constelaciones del mismo nombre.</p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 12,
+  "orden": 3,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Cómo explica cada modelo la precesión</h3>\n<ul><li><p><strong>La astronomía moderna</strong> (modelo heliocéntrico). La Tierra gira sobre un eje inclinado unos 23,4°. Como no es una esfera perfecta, sino algo más ancha por el ecuador, la gravedad del Sol y de la Luna tira de ese abultamiento y hace que el eje describa lentamente un cono, como el de una peonza que bambolea al girar. Al cambiar la dirección del eje, cambia la estrella a la que apunta y el punto donde se cruzan el ecuador celeste y la eclíptica. Lo explicó Isaac Newton en los <em>Principia</em> (1687).</p></li><li><p><strong>Ptolomeo y las esferas</strong> (modelo geocéntrico). La Tierra está quieta. La esfera de las estrellas fijas, además del giro diario, tiene un movimiento propio lentísimo hacia el este, de un grado por siglo, alrededor de los polos de la eclíptica. Son las estrellas las que se mueven respecto a los equinoccios, no la Tierra.</p></li><li><p><strong>La trepidación medieval.</strong> Algunos astrónomos árabes y europeos, como Thābit ibn Qurra en el siglo IX y las <em>Tablas alfonsíes</em> de Castilla en el siglo XIII, creyeron que la precesión no era uniforme, sino un vaivén de adelante atrás, y añadieron una novena esfera para explicarlo. Tycho Brahe, a finales del siglo XVI, mostró con sus medidas que ese vaivén no existía.</p></li><li><p><strong>El modelo plano.</strong> En las fuentes del modelo plano que cita este curso no hemos localizado una explicación desarrollada de la precesión. Siguiendo su disposición, el desplazamiento tendría que atribuirse a un movimiento lento de la propia bóveda de las estrellas respecto al recorrido anual del Sol, de forma parecida a la de Ptolomeo; pero esa es una lectura de este curso, no una afirmación de sus defensores.</p></li></ul>\n<p>La animación de este apartado compara las dos explicaciones que están documentadas: el eje de la Tierra que bambolea y la esfera de las estrellas que se desliza. Las dos producen la misma observación.</p>\n<p class=\"fuentes\">Fuentes: <a href=\"https://en.wikipedia.org/wiki/Axial_precession\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Axial precession»</a> · <a href=\"https://www.britannica.com/science/precession-of-the-equinoxes\" target=\"_blank\" rel=\"noopener\">Britannica, «Precession of the equinoxes»</a> · <a href=\"https://en.wikipedia.org/wiki/Trepidation\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Trepidation»</a></p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 12,
+  "orden": 4,
+  "tipo": "animacion",
+  "contenido": {
+   "componente": "precesion-modelos",
+   "etiqueta": "Animación",
+   "modelo": "Dos modelos comparados: heliocéntrico (eje de la Tierra) y geocéntrico (esfera de las estrellas)",
+   "pie": "Mueve el año o deja pasar los siglos. Arriba, el cono que describe el eje de la Tierra según la astronomía moderna; abajo, la esfera de Ptolomeo deslizándose respecto al equinoccio. Esquemas, no a escala."
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 12,
+  "orden": 5,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>El zodiaco tropical: el que sigue a las estaciones</h3>\n<p>El zodiaco tropical cuenta los signos desde el punto vernal. Aries empieza siempre el día del equinoccio de marzo, Cáncer en el solsticio de junio, Libra en el equinoccio de septiembre y Capricornio en el solsticio de diciembre. Su nombre viene de los trópicos, los dos círculos que marca el Sol en los solsticios.</p>\n<p><strong>Quién lo fijó.</strong> La astrología griega de época helenística usó durante un tiempo varios puntos de partida, pero Ptolomeo, en el <em>Tetrabiblos</em> (siglo II), defendió contar los signos desde los equinoccios y los solsticios, porque para él la cualidad de cada signo venía de la estación del año que señalaba. Su autoridad hizo que la astrología árabe, la medieval europea y la mayoría de la astrología occidental moderna usen el zodiaco tropical.</p>\n<p><strong>Quién calcula hoy sus fechas.</strong> El instante del equinoccio lo calculan los observatorios astronómicos, como el Observatorio Astronómico Nacional de España o el Observatorio Naval de Estados Unidos, y los astrólogos tropicales lo toman de esas efemérides. Por eso los signos tropicales cambian de fecha uno o dos días de un año a otro, al ritmo de los equinoccios.</p>\n<p><strong>Lo que sostienen sus defensores.</strong> Que el zodiaco tropical nunca pretendió medir las constelaciones, sino el ciclo de las estaciones, y que por eso la precesión no lo invalida. Sus críticos, desde la astrología sideral, responden que los signos nacieron de las estrellas, y desde la astronomía, que el ciclo de las estaciones es opuesto en los dos hemisferios, mientras el zodiaco tropical es el mismo para todos.</p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 12,
+  "orden": 6,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>El zodiaco sideral: el que sigue a las estrellas</h3>\n<p>El zodiaco sideral cuenta los signos desde un punto fijo entre las estrellas, así que sus signos se quedan siempre cerca de las constelaciones del mismo nombre. Para pasar del zodiaco tropical al sideral se resta un ángulo, que en sánscrito se llama <strong>ayanamsa</strong>: la distancia que ha recorrido el punto vernal desde que los dos zodiacos coincidieron. Crece unos 50 segundos de arco al año.</p>\n<ul><li><p><strong>Babilonia.</strong> El zodiaco babilonio, el primero de doce signos iguales, era sideral: se anclaba a estrellas concretas, como Aldebarán y Antares, según los historiadores de la astronomía que han estudiado sus tablillas.</p></li><li><p><strong>India.</strong> La astrología védica, el <em>jyotisha</em>, usa el zodiaco sideral desde hace siglos, pero sus escuelas no coincidían en el punto de partida. En 1952 el Gobierno de la India creó un Comité de Reforma del Calendario, presidido por el físico Meghnad Saha y con el astrónomo N. C. Lahiri como secretario, que unificó el calendario oficial. Se adoptó el ayanamsa de Lahiri, llamado también <em>chitrapaksha</em> porque coloca la estrella Espiga (<em>Chitra</em>) justo en el comienzo de Libra. Hoy es el más usado en la India, aunque otras escuelas, como las de B. V. Raman o K. S. Krishnamurti, usan valores algo distintos.</p></li><li><p><strong>Occidente.</strong> A mediados del siglo XX, el astrólogo irlandés Cyril Fagan y el estadounidense Donald Bradley propusieron volver al zodiaco sideral en la astrología occidental, con un ayanamsa propio, casi un grado mayor que el de Lahiri. Es una corriente minoritaria.</p></li></ul>\n<p>Según el ayanamsa de Lahiri, los dos zodiacos coincidieron hacia el siglo III, y en 2026 están separados 24,2°.</p>\n<p><strong>Lo que sostienen sus defensores.</strong> Que un zodiaco con nombres de constelaciones debe seguir a las constelaciones. Sus críticos, desde la astrología tropical, responden que no hay acuerdo sobre el punto de partida, y que la elección de una estrella u otra es tan convencional como la del equinoccio; y desde la astronomía, que los signos siderales siguen siendo tramos iguales de 30°, mientras las constelaciones de la UAI son desiguales y son trece.</p>\n<p class=\"fuentes\">Fuentes: Ptolomeo, <em>Tetrabiblos</em>, libro I · <a href=\"https://packolkata.imd.gov.in/history.php\" target=\"_blank\" rel=\"noopener\">Centro de Astronomía Posicional de la India, historia del Comité de Reforma del Calendario</a> · <a href=\"https://en.wikipedia.org/wiki/Ayanamsa\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Ayanamsa»</a> · <a href=\"https://en.wikipedia.org/wiki/Sidereal_and_tropical_astrology\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Sidereal and tropical astrology»</a></p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 12,
+  "orden": 7,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Otros zodiacos que no son de estrellas del camino del Sol</h3>\n<p>La palabra «zodiaco» se usa también para sistemas que funcionan de otra manera:</p>\n<ul><li><p><strong>El zodiaco chino</strong> no divide el camino del Sol, sino el tiempo: asigna un animal a cada año en un ciclo de doce (rata, buey, tigre, conejo, dragón, serpiente, caballo, cabra, mono, gallo, perro y cerdo), combinado con cinco elementos, en un ciclo de 60 años. El año cambia con el Año Nuevo chino, en la segunda luna nueva después del solsticio de invierno, entre el 21 de enero y el 20 de febrero; algunas escuelas de astrología china lo cambian el 4 de febrero, en el comienzo de la primavera de su calendario solar. Según los historiadores de la astronomía china, el ciclo de doce está relacionado con el de Júpiter, que tarda casi doce años en dar la vuelta al cielo. Quien marca la fecha es el calendario tradicional, que en China calcula hoy el Observatorio de la Montaña Púrpura.</p></li><li><p><strong>Las mansiones lunares</strong>: la astronomía china, la india y la árabe dividieron también el camino de la Luna en 27 o 28 «mansiones», una por cada noche de su vuelta al cielo. En la India se llaman <em>nakshatras</em> y siguen siendo esenciales en el <em>jyotisha</em>.</p></li><li><p><strong>Los mayas.</strong> No hay acuerdo sobre si tuvieron un zodiaco. Los investigadores Harvey y Victoria Bricker propusieron en 1992 que las figuras de animales colgadas de una banda celeste en el Códice de París representan trece constelaciones a lo largo de la eclíptica; otros mayistas consideran que la interpretación no está demostrada.</p></li></ul>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 12,
+  "orden": 8,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Ofiuco: ¿hay un signo número trece?</h3>\n<p><strong>Lo que se observa.</strong> Con las fronteras de la UAI de 1930, la eclíptica cruza trece constelaciones: entre Escorpio y Sagitario pasa por la parte sur de <strong>Ofiuco</strong>, el Serpentario, un hombre que sujeta una serpiente. El Sol está delante de Ofiuco cada año del 29 o 30 de noviembre al 17 o 18 de diciembre, bastante más tiempo que delante de Escorpio.</p>\n<p><strong>No es un descubrimiento nuevo.</strong> Ofiuco ya está en el catálogo de Ptolomeo, y los astrónomos antiguos sabían que el Sol pasaba cerca de sus pies. Los babilonios y los griegos, sin embargo, eligieron doce signos, quizá porque doce encaja con los doce meses lunares del año. La cuestión se vuelve noticia cada cierto tiempo: en enero de 2011, el astrónomo Parke Kunkle, de la Sociedad del Planetario de Minnesota, recordó en una entrevista que las fechas astronómicas no coinciden con las de los horóscopos, y la prensa lo contó como un «signo nuevo». En 2016, una página educativa de la NASA volvió a explicarlo, y la agencia tuvo que aclarar que no había cambiado ningún signo, que solo había hecho los cálculos.</p>\n<p><strong>Las posturas.</strong> Para la astrología tropical, Ofiuco no cambia nada: sus signos son tramos de las estaciones, no constelaciones, y siempre han sido doce. Para la mayoría de la astrología sideral, tampoco: sus signos son tramos iguales de 30°. Algunos autores han propuesto zodiacos con más signos: Stephen Schmidt, en 1970, uno de catorce que añadía Ofiuco y la Ballena, y Walter Berg, en 1995, uno de trece con Ofiuco. Son propuestas minoritarias dentro de la astrología. Para la astronomía, el zodiaco no es un concepto científico, y Ofiuco es solo una de las constelaciones que cruza la eclíptica.</p>\n<p class=\"fuentes\">Fuentes: <a href=\"https://en.wikipedia.org/wiki/Ophiuchus_(astrology)\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Ophiuchus (astrology)»</a> · <a href=\"https://www.mprnews.org/story/oncampus/2011/01/mctc-professor-sees-new-zodiac-sign\" target=\"_blank\" rel=\"noopener\">MPR News, enero de 2011</a> · <a href=\"https://www.csmonitor.com/Science/2016/0927/Did-your-zodiac-sign-change-Don-t-worry-NASA-says-astrology-is-still-fake\" target=\"_blank\" rel=\"noopener\">The Christian Science Monitor, septiembre de 2016</a></p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 12,
+  "orden": 9,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>La Era de Acuario: por qué nadie se pone de acuerdo</h3>\n<p><strong>Qué es una era astrológica.</strong> Para muchos astrólogos, la historia humana se divide en «eras» de unos 2.150 años, una doceava parte de la vuelta de la precesión. Cada era toma el nombre de la constelación, o del signo sideral, en la que está el punto vernal. Según esta idea, hace unos 4.000 años vivíamos en la era de Aries, en los últimos dos mil años en la de Piscis, y ahora estaríamos entrando, o a punto de entrar, en la de Acuario. Algunos autores relacionan el símbolo de los peces con los primeros cristianos y el carnero con el culto a Amón en Egipto o con el carnero del sacrificio de Isaac; son interpretaciones de esos autores.</p>\n<p><strong>Por qué no hay una fecha.</strong> Para saber cuándo empieza una era hay que decidir dónde acaba Piscis, y eso depende del criterio:</p>\n<ul><li><p><strong>Con las fronteras de la UAI</strong>, el astrónomo belga Jean Meeus calculó que el punto vernal entrará en la constelación de Acuario en el año <strong>2597</strong>.</p></li><li><p><strong>Con signos siderales iguales de 30°</strong>, la fecha depende del ayanamsa: con el de Lahiri, el punto vernal llega al final de Piscis hacia el año <strong>2440</strong>; con el de Fagan y Bradley, hacia el <strong>2375</strong>. Son cálculos aproximados de este curso.</p></li><li><p><strong>Por las señales de la historia</strong>, otros autores fechan la era por los cambios en el mundo, no por el cielo. Samael Aun Weor, fundador del movimiento gnóstico, la hizo comenzar el 4 de febrero de 1962, y otros la asocian con la Ilustración, la Revolución industrial o la contracultura de los años sesenta.</p></li></ul>\n<p>El historiador de la astrología Nicholas Campion reunió en 1999 las fechas que habían dado los astrólogos para el comienzo de la Era de Acuario. Iban del año <strong>1447</strong>, según Terry MacKinnell, al <strong>3597</strong>, según John Addey; Rudolf Steiner, fundador de la antroposofía, la situó en el 3573. La mayoría de las propuestas caía en el siglo XX, y la segunda época más citada era el siglo XXIV. El interactivo de este apartado dibuja esas fechas.</p>\n<p><strong>De dónde viene la idea popular.</strong> La expresión se hizo famosa en todo el mundo con la canción «Aquarius», que abre el musical <em>Hair</em> (1967) y que en 1969 fue número uno en Estados Unidos en la versión de The 5th Dimension. Antes, la habían difundido autores teosóficos y esotéricos de principios del siglo XX.</p>\n<p class=\"fuentes\">Fuentes: N. Campion, <em>The Book of World Horoscopes</em> (1999) · J. Meeus, <em>Mathematical Astronomy Morsels</em> (1997) · <a href=\"https://en.wikipedia.org/wiki/Age_of_Aquarius\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Age of Aquarius»</a> · <a href=\"https://earthsky.org/human-world/when-will-the-age-of-aquarius-begin/\" target=\"_blank\" rel=\"noopener\">EarthSky, «When will the Age of Aquarius begin?»</a></p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 12,
+  "orden": 10,
+  "tipo": "interactivo",
+  "contenido": {
+   "componente": "era-acuario",
+   "etiqueta": "Esquema",
+   "modelo": "Fechas según cada criterio",
+   "pie": "Barras: propuestas por siglo recogidas por Nicholas Campion en «The Book of World Horoscopes» (1999). Fechas: Jean Meeus (UAI), los autores citados y cálculos aproximados de este curso para los signos siderales."
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 12,
+  "orden": 11,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Lo que cada sistema le pregunta al otro</h3>\n<p>Como en el resto del curso, cada postura tiene preguntas para las demás. Se recogen aquí sin dar ninguna por buena:</p>\n<ul><li><p><strong>La astronomía moderna a la astrología.</strong> Si las estrellas de una constelación están a cientos de años luz unas de otras y no forman un grupo real, ¿por qué iba a tener sentido una cualidad común para cada signo? Y si los signos tropicales ya no coinciden con las constelaciones, ¿qué relación guardan con las estrellas?</p></li><li><p><strong>La astrología tropical a la astronomía.</strong> Nuestros signos nunca han sido constelaciones: son el ciclo de las estaciones, que la propia astronomía calcula con precisión. ¿Por qué exigirles que coincidan con unas fronteras que la UAI trazó en 1930?</p></li><li><p><strong>La astrología sideral a la tropical.</strong> Si los signos llevan los nombres de las constelaciones y nacieron de ellas, ¿no es más coherente seguir a las estrellas que a un punto que se desplaza por el cielo?</p></li><li><p><strong>La astrología tropical a la sideral.</strong> Si no hay acuerdo sobre la estrella desde la que empezar a contar, ¿no es tan convencional un ayanamsa como el equinoccio?</p></li><li><p><strong>El modelo plano y las esferas antiguas a la astronomía moderna.</strong> Si todo lo que vemos son direcciones y brillos, y los tres modelos predicen el mismo zodiaco para quien mira desde el suelo, ¿por qué dar por hecho que las estrellas están a distancias enormes?</p></li><li><p><strong>La astronomía moderna a los modelos de bóveda.</strong> Si las estrellas están todas a la misma distancia, ¿cómo se explica la paralaje anual que mide el satélite Gaia, distinta para cada estrella?</p></li></ul>\n<p>El módulo 7, dedicado a la astrología, retomará estas cuestiones desde dentro de cada tradición.</p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 13,
   "orden": 1,
   "tipo": "texto",
   "contenido": {
@@ -937,7 +1189,7 @@
  },
  {
   "modulo": 1,
-  "seccion": 11,
+  "seccion": 13,
   "orden": 2,
   "tipo": "texto",
   "contenido": {
@@ -946,7 +1198,7 @@
  },
  {
   "modulo": 1,
-  "seccion": 11,
+  "seccion": 13,
   "orden": 3,
   "tipo": "interactivo",
   "contenido": {
@@ -958,7 +1210,7 @@
  },
  {
   "modulo": 1,
-  "seccion": 11,
+  "seccion": 13,
   "orden": 4,
   "tipo": "texto",
   "contenido": {
@@ -967,7 +1219,7 @@
  },
  {
   "modulo": 1,
-  "seccion": 11,
+  "seccion": 13,
   "orden": 5,
   "tipo": "interactivo",
   "contenido": {
@@ -979,7 +1231,7 @@
  },
  {
   "modulo": 1,
-  "seccion": 11,
+  "seccion": 13,
   "orden": 6,
   "tipo": "texto",
   "contenido": {
@@ -988,7 +1240,7 @@
  },
  {
   "modulo": 1,
-  "seccion": 11,
+  "seccion": 13,
   "orden": 7,
   "tipo": "interactivo",
   "contenido": {
@@ -1000,7 +1252,7 @@
  },
  {
   "modulo": 1,
-  "seccion": 11,
+  "seccion": 13,
   "orden": 8,
   "tipo": "texto",
   "contenido": {
@@ -1009,7 +1261,7 @@
  },
  {
   "modulo": 1,
-  "seccion": 11,
+  "seccion": 13,
   "orden": 9,
   "tipo": "interactivo",
   "contenido": {
@@ -1021,7 +1273,7 @@
  },
  {
   "modulo": 1,
-  "seccion": 11,
+  "seccion": 13,
   "orden": 10,
   "tipo": "texto",
   "contenido": {
@@ -1030,7 +1282,7 @@
  },
  {
   "modulo": 1,
-  "seccion": 11,
+  "seccion": 13,
   "orden": 11,
   "tipo": "interactivo",
   "contenido": {
@@ -1042,7 +1294,7 @@
  },
  {
   "modulo": 1,
-  "seccion": 12,
+  "seccion": 14,
   "orden": 1,
   "tipo": "texto",
   "contenido": {
@@ -1051,7 +1303,7 @@
  },
  {
   "modulo": 1,
-  "seccion": 12,
+  "seccion": 14,
   "orden": 2,
   "tipo": "texto",
   "contenido": {
@@ -1060,7 +1312,7 @@
  },
  {
   "modulo": 1,
-  "seccion": 12,
+  "seccion": 14,
   "orden": 3,
   "tipo": "interactivo",
   "contenido": {
@@ -1072,7 +1324,7 @@
  },
  {
   "modulo": 1,
-  "seccion": 12,
+  "seccion": 14,
   "orden": 4,
   "tipo": "texto",
   "contenido": {
@@ -1081,7 +1333,7 @@
  },
  {
   "modulo": 1,
-  "seccion": 12,
+  "seccion": 14,
   "orden": 5,
   "tipo": "interactivo",
   "contenido": {

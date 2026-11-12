@@ -170,6 +170,8 @@ SEC_LUNA = "La Luna y sus fases"
 SEC_ECLIPSES = "Los eclipses"
 SEC_PLANETAS = "Los planetas: los astros errantes"
 SEC_ZODIACO = "El zodiaco y las constelaciones"
+SEC_FIGURAS = "Reconocer las figuras del cielo"
+SEC_QUIEN = "Quién decide en qué zodiaco y en qué era estamos"
 OBS = "Lo que se observa"
 MOD = "La explicación moderna"
 PLANO = "La explicación terraplanista"
@@ -269,6 +271,24 @@ EXTRAS = {
     (1, SEC_PLANETAS, MOD): [
         widget("animacion", "retrogrado", "Animación", "Tres modelos comparados",
                "Un mismo bucle de Marte con tres disposiciones: la heliocéntrica de Copérnico y Kepler, la geocéntrica de Ptolomeo con epiciclos y la de la Flat Earth Society, con los planetas girando alrededor de un Sol que da vueltas sobre el centro del plano. Esquemas simplificados.")],
+    (1, SEC_FIGURAS, "Las figuras que conviene aprender primero"): [
+        widget("interactivo", "figuras-cielo", "Interactivo", "Observación",
+               "Elige una figura y mírala primero solo con sus estrellas, como en el cielo; o ponte a prueba. El mapa tiene el norte arriba y el este a la izquierda, como el cielo al mirar hacia arriba. Estrellas y líneas: d3-celestial de Olaf Frohn (catálogo Hipparcos).")],
+    (1, SEC_FIGURAS, "¿Están juntas las estrellas de una figura?"): [
+        widget("interactivo", "profundidad-orion", "Esquema", "Dos respuestas: astronomía moderna frente a bóveda (modelo plano y esferas antiguas)",
+               "Orión como se ve y, debajo, de lado según cada modelo. Distancias aproximadas de la astronomía moderna, a escala entre sí; los ángulos están exagerados. Esquema, no a escala real.")],
+    (1, SEC_ZODIACO, "¿Son estrellas los signos? Constelaciones frente a signos"): [
+        widget("interactivo", "tres-zodiacos", "Interactivo", "Tres sistemas: zodiaco tropical, zodiaco sideral y constelaciones de la UAI",
+               "Elige una fecha: la franja del camino del Sol centrada en él, con el este a la izquierda. Posición del Sol: método de Paul Schlyter. Ayanamsa de Lahiri en aproximación lineal; fronteras de la UAI aproximadas.")],
+    (1, SEC_ZODIACO, "Por qué el Sol pasa por delante de las constelaciones, según cada modelo"): [
+        widget("interactivo", "sol-entre-estrellas", "Interactivo", "Tres modelos comparados: heliocéntrico, geocéntrico y plano",
+               "El mismo día del año en los tres modelos, vistos desde encima del polo norte. En el plano, la bóveda se dibuja quieta para que se vea cómo se retrasa el Sol respecto a ella. Esquemas simplificados, no a escala.")],
+    (1, SEC_QUIEN, "Cómo explica cada modelo la precesión"): [
+        widget("animacion", "precesion-modelos", "Animación", "Dos modelos comparados: heliocéntrico (eje de la Tierra) y geocéntrico (esfera de las estrellas)",
+               "Mueve el año o deja pasar los siglos. Arriba, el cono que describe el eje de la Tierra según la astronomía moderna; abajo, la esfera de Ptolomeo deslizándose respecto al equinoccio. Esquemas, no a escala.")],
+    (1, SEC_QUIEN, "La Era de Acuario: por qué nadie se pone de acuerdo"): [
+        widget("interactivo", "era-acuario", "Esquema", "Fechas según cada criterio",
+               "Barras: propuestas por siglo recogidas por Nicholas Campion en «The Book of World Horoscopes» (1999). Fechas: Jean Meeus (UAI), los autores citados y cálculos aproximados de este curso para los signos siderales.")],
     (1, SEC_ZODIACO, MOD): [
         widget("interactivo", "zodiaco", "Interactivo", "Constelaciones y signos",
                "Fuera, las constelaciones por las que pasa el Sol; dentro, los doce signos del zodiaco tropical, que empiezan en el equinoccio. Mueve el año para ver cómo se separan.")],
