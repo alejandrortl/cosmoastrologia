@@ -29,6 +29,12 @@ import { quienGira } from './quien-gira.js';
 import { encontrarPolos } from './encontrar-polos.js';
 import { eclipseHibrido } from './eclipse-hibrido.js';
 import { selenelion } from './selenelion.js';
+import { figurasCielo } from './figuras-cielo.js';
+import { profundidadOrion } from './profundidad-orion.js';
+import { solEntreEstrellas } from './sol-entre-estrellas.js';
+import { tresZodiacos } from './tres-zodiacos.js';
+import { precesionModelos } from './precesion-modelos.js';
+import { eraAcuario } from './era-acuario.js';
 import { rotulosLegibles } from './comun.js';
 
 const REGISTRO = {
@@ -66,6 +72,12 @@ const REGISTRO = {
   'encontrar-polos': encontrarPolos,
   'eclipse-hibrido': eclipseHibrido,
   selenelion,
+  'figuras-cielo': figurasCielo,
+  'profundidad-orion': profundidadOrion,
+  'sol-entre-estrellas': solEntreEstrellas,
+  'tres-zodiacos': tresZodiacos,
+  'precesion-modelos': precesionModelos,
+  'era-acuario': eraAcuario,
 };
 
 // Devuelve una función para desmontarla, o null si el componente no existe.
