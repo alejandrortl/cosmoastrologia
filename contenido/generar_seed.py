@@ -277,6 +277,9 @@ EXTRAS = {
     (1, SEC_FIGURAS, "¿Están juntas las estrellas de una figura?"): [
         widget("interactivo", "profundidad-orion", "Esquema", "Dos respuestas: astronomía moderna frente a bóveda (modelo plano y esferas antiguas)",
                "Orión como se ve y, debajo, de lado según cada modelo. Distancias aproximadas de la astronomía moderna, a escala entre sí; los ángulos están exagerados. Esquema, no a escala real.")],
+    (1, SEC_ZODIACO, "¿Estrellas, puntos fijos o zonas que giran? Las cuatro cosas que se llaman zodiaco"): [
+        widget("interactivo", "capas-zodiaco", "Interactivo", "Cuatro sentidos de «zodiaco»: franja común, constelaciones de la UAI, signos siderales de Lahiri y signos tropicales",
+               "Fuera, las estrellas reales de la franja y las constelaciones de la UAI; después, los signos siderales; dentro, los tropicales, que la precesión desliza. Estrellas: d3-celestial de Olaf Frohn (catálogo Hipparcos). Precesión: 50,3″ al año. Esquema, no a escala.")],
     (1, SEC_ZODIACO, "¿Son estrellas los signos? Constelaciones frente a signos"): [
         widget("interactivo", "tres-zodiacos", "Interactivo", "Tres sistemas: zodiaco tropical, zodiaco sideral y constelaciones de la UAI",
                "Elige una fecha: la franja del camino del Sol centrada en él, con el este a la izquierda. Posición del Sol: método de Paul Schlyter. Ayanamsa de Lahiri en aproximación lineal; fronteras de la UAI aproximadas.")],
