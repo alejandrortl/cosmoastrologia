@@ -277,6 +277,9 @@ EXTRAS = {
     (1, SEC_FIGURAS, "¿Están juntas las estrellas de una figura?"): [
         widget("interactivo", "profundidad-orion", "Esquema", "Dos respuestas: astronomía moderna frente a bóveda (modelo plano y esferas antiguas)",
                "Orión como se ve y, debajo, de lado según cada modelo. Distancias aproximadas de la astronomía moderna, a escala entre sí; los ángulos están exagerados. Esquema, no a escala real.")],
+    (1, SEC_ZODIACO, "Cómo se divide el cielo, paso a paso"): [
+        widget("interactivo", "zodiaco-paso-a-paso", "Interactivo", "Cómo se divide el cielo: zodiaco tropical y sideral de Lahiri",
+               "La rueda se construye en seis pasos, como en el texto. Se dibuja como en las cartas astrológicas: el punto vernal a la izquierda y los signos en sentido antihorario, que es el sentido en que avanza el Sol. Posición del Sol: método de Paul Schlyter. Esquema, no a escala.")],
     (1, SEC_ZODIACO, "¿Estrellas, puntos fijos o zonas que giran? Las cuatro cosas que se llaman zodiaco"): [
         widget("interactivo", "capas-zodiaco", "Interactivo", "Cuatro sentidos de «zodiaco»: franja común, constelaciones de la UAI, signos siderales de Lahiri y signos tropicales",
                "Fuera, las estrellas reales de la franja y las constelaciones de la UAI; después, los signos siderales; dentro, los tropicales, que la precesión desliza. Estrellas: d3-celestial de Olaf Frohn (catálogo Hipparcos). Precesión: 50,3″ al año. Esquema, no a escala.")],
