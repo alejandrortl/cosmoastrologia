@@ -82,6 +82,30 @@ const REGISTRO = {
   'capas-zodiaco': capasZodiaco,
 };
 
+// Todas las animaciones siguen el mismo orden: primero la explicación (el pie y los textos que
+// cambian con los mandos), después el dibujo y al final los mandos que lo controlan. Cada
+// animación crea su barra de mandos con barraControles() y mete sus textos con la clase
+// «lectura-dato»; aquí se colocan en su sitio, así que una animación nueva no tiene que ocuparse.
+function ordenarFigura(contenedor) {
+  const figura = contenedor.closest('figure');
+  if (!figura) return;
+  const barras = [...figura.querySelectorAll(':scope > .controles')];
+  const textos = barras.flatMap((b) => [...b.querySelectorAll(':scope > .lectura-dato')]);
+  if (textos.length) {
+    const explicacion = document.createElement('div');
+    explicacion.className = 'explicacion-figura';
+    explicacion.append(...textos);
+    contenedor.before(explicacion);
+  }
+  let ultimo = contenedor;
+  for (const b of barras) {
+    b.classList.remove('arriba');
+    if (!b.children.length) { b.remove(); continue; }
+    ultimo.after(b);
+    ultimo = b;
+  }
+}
+
 // Devuelve una función para desmontarla, o null si el componente no existe.
 export function montarAnimacion(nombre, contenedor) {
   const crear = REGISTRO[nombre];
@@ -91,6 +115,7 @@ export function montarAnimacion(nombre, contenedor) {
   }
   try {
     const inst = crear(contenedor);
+    ordenarFigura(contenedor);
     const svg = contenedor.querySelector('svg.escena');
     const quitarRotulos = svg ? rotulosLegibles(svg) : () => {};
     return () => { quitarRotulos(); inst?.destruir?.(); };

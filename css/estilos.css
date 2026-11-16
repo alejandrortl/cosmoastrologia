@@ -306,6 +306,16 @@ h1, h2, h3, .titulo-modulo { overflow-wrap: break-word; hyphens: auto; -webkit-h
   font-family: var(--sans); font-size: .95rem; line-height: 1.5;
   color: var(--tinta-suave); margin-top: .7rem;
 }
+/* En animaciones e interactivos el orden es: explicación, dibujo y mandos */
+.figura figcaption:has(+ .lienzo) { margin: 0 0 .7rem; color: var(--tinta); }
+.explicacion-figura {
+  display: flex; flex-direction: column; gap: .5rem;
+  padding: .75rem .9rem; font-family: var(--sans); font-size: .95rem;
+  background: var(--superficie); color: var(--tinta);
+  border-radius: 14px 14px 0 0; border-bottom: 1px solid var(--linea);
+}
+.explicacion-figura ul.lectura-dato { padding-left: 1.2rem; }
+.explicacion-figura ul.lectura-dato li + li { margin-top: .35rem; }
 .figura img { display: block; width: 100%; height: auto; border-radius: 14px; background: var(--superficie-2); }
 .marco-imagen { border-radius: 14px; overflow: hidden; }
 .imagen-no-disponible {
@@ -330,7 +340,8 @@ h1, h2, h3, .titulo-modulo { overflow-wrap: break-word; hyphens: auto; -webkit-h
   border-top: 1px solid var(--linea);
 }
 .figura .lienzo + .controles { border-radius: 0 0 14px 14px; }
-.figura:has(.controles) .lienzo { border-radius: 14px 14px 0 0; }
+.figura:has(> .controles) .lienzo { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+.figura:has(> .explicacion-figura) .lienzo { border-top-left-radius: 0; border-top-right-radius: 0; }
 .control {
   border: 1px solid var(--linea); background: transparent; color: var(--tinta);
   border-radius: 999px; padding: .45rem .9rem; cursor: pointer; font-family: var(--sans); font-size: .92rem;
@@ -555,5 +566,3 @@ body.con-panel { overflow: hidden; }
   width: 100%; margin-top: .4rem; padding: .5rem .6rem; border-radius: 8px; border: 1px solid rgba(235,229,213,.25);
   background: rgba(255,255,255,.04); color: #ebe5d5; font: .9rem/1.4 var(--sans); resize: vertical;
 }
-.figura .controles.arriba { border-radius: 14px 14px 0 0; border-top: 0; border-bottom: 1px solid var(--linea); }
-.figura:has(.controles.arriba) .lienzo { border-radius: 0 0 14px 14px; }

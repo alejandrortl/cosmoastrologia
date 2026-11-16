@@ -137,8 +137,8 @@ function htmlBloque(b) {
           ${etiquetas(c.etiqueta || (b.tipo === 'animacion' ? 'Animación' : 'Interactivo'), c.modelo)}
           <button type="button" class="ampliar-dibujo" aria-label="Ampliar el dibujo a pantalla completa">${icono.lupa}<span>Ampliar</span></button>
         </div>
-        <div class="lienzo"></div>
-        ${c.pie ? `<figcaption>${esc(c.pie)}</figcaption>` : ''}</figure>`;
+        ${c.pie ? `<figcaption>${esc(c.pie)}</figcaption>` : ''}
+        <div class="lienzo"></div></figure>`;
     case 'fuente':
       return `<p class="fuente">${esc(c.cita || '')}${c.url ? ` <a href="${esc(c.url)}" target="_blank" rel="noopener">Ver fuente</a>` : ''}</p>`;
     default:
