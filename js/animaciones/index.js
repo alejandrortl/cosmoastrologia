@@ -35,6 +35,7 @@ import { solEntreEstrellas } from './sol-entre-estrellas.js';
 import { tresZodiacos } from './tres-zodiacos.js';
 import { precesionModelos } from './precesion-modelos.js';
 import { eraAcuario } from './era-acuario.js';
+import { capasZodiaco } from './capas-zodiaco.js';
 import { rotulosLegibles } from './comun.js';
 
 const REGISTRO = {
@@ -78,6 +79,7 @@ const REGISTRO = {
   'tres-zodiacos': tresZodiacos,
   'precesion-modelos': precesionModelos,
   'era-acuario': eraAcuario,
+  'capas-zodiaco': capasZodiaco,
 };
 
 // Devuelve una función para desmontarla, o null si el componente no existe.
