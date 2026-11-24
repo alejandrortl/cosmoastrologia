@@ -1,25 +1,30 @@
 // Copia el curso dentro de la web al publicar (lo ejecuta Vercel como comando de build).
 //
+// 0. Monta la web en public/ (lo que Vercel publica) con los archivos del repositorio.
 // 1. Lee todos los módulos, secciones y bloques de Supabase.
 // 2. Descarga las imágenes que usan los bloques (de Supabase o de otros servidores) a
-//    curso/medios/, con el nombre sacado de su contenido, y cambia las rutas en los bloques.
-// 3. Escribe curso/curso.json y curso/archivos.json (la lista que guarda el modo sin conexión).
+//    public/curso/medios/, con el nombre sacado de su contenido, y cambia las rutas en los bloques.
+// 3. Escribe public/curso/curso.json y public/curso/archivos.json (la lista que guarda el modo
+//    sin conexión).
 //
 // Así la web no necesita Supabase para mostrarse. Si Supabase no responde (por ejemplo, porque
 // el proyecto se ha pausado), se copia el curso de la web ya publicada, para que un cambio de
-// código se pueda publicar igual. Si tampoco eso funciona, el build falla y Vercel mantiene la
-// versión anterior en línea.
+// código se pueda publicar igual. Si tampoco eso funciona, la web se publica sin copia y lee de
+// Supabase directamente, como antes.
 //
 // Uso: node scripts/copiar-curso.mjs
 // Variables opcionales: WEB_PUBLICADA (por defecto https://cosmoastrologia-xi.vercel.app)
 
 import { createHash } from 'node:crypto';
-import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { cp, mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { join, dirname, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const RAIZ = join(dirname(fileURLToPath(import.meta.url)), '..');
-const SALIDA = join(RAIZ, 'curso');
+const WEB = join(RAIZ, 'public');
+const SALIDA = join(WEB, 'curso');
+// Lo que se publica del repositorio
+const PUBLICAR = ['index.html', 'sw.js', 'manifest.webmanifest', 'css', 'js', 'img', 'audio'];
 const MEDIOS = join(SALIDA, 'medios');
 
 const SUPABASE_URL = 'https://gjkvcdkidjxenhfgxvkc.supabase.co';
@@ -110,7 +115,7 @@ async function copiarMedios(modulos, base) {
 
 async function listar(dir) {
   const salida = [];
-  for (const e of await readdir(join(RAIZ, dir), { withFileTypes: true })) {
+  for (const e of await readdir(join(WEB, dir), { withFileTypes: true })) {
     if (e.name.startsWith('.')) continue;
     const rel = `${dir}/${e.name}`;
     if (e.isDirectory()) salida.push(...await listar(rel));
@@ -120,10 +125,11 @@ async function listar(dir) {
 }
 
 async function main() {
-  await rm(SALIDA, { recursive: true, force: true });
+  await rm(WEB, { recursive: true, force: true });
+  for (const a of PUBLICAR) await cp(join(RAIZ, a), join(WEB, a), { recursive: true });
   await mkdir(MEDIOS, { recursive: true });
 
-  let modulos, origen;
+  let modulos = null, origen;
   try {
     console.log('Leyendo el curso de Supabase…');
     modulos = await cursoDeSupabase();
@@ -131,31 +137,42 @@ async function main() {
     await copiarMedios(modulos, '');
   } catch (e) {
     console.warn(`  Supabase no responde (${e.message}).`);
-    console.log(`Copiando el curso de la web publicada (${WEB_PUBLICADA})…`);
-    const r = await pedir(`${WEB_PUBLICADA}/curso/curso.json`, { headers: { 'Cache-Control': 'no-cache' } });
-    ({ modulos } = await r.json());
-    origen = 'web publicada';
-    await copiarMedios(modulos, WEB_PUBLICADA);
+    try {
+      console.log(`Copiando el curso de la web publicada (${WEB_PUBLICADA})…`);
+      const r = await pedir(`${WEB_PUBLICADA}/curso/curso.json`, { headers: { 'Cache-Control': 'no-cache' } });
+      ({ modulos } = await r.json());
+      origen = 'web publicada';
+      await copiarMedios(modulos, WEB_PUBLICADA);
+    } catch (e2) {
+      modulos = null;
+      console.warn(`  Tampoco se ha podido (${e2.message}).`);
+      console.warn('AVISO: se publica sin copia del curso; la web leerá de Supabase directamente.');
+    }
   }
 
-  const curso = { generado: new Date().toISOString(), origen, modulos };
-  await writeFile(join(SALIDA, 'curso.json'), JSON.stringify(curso));
+  if (modulos) {
+    const curso = { generado: new Date().toISOString(), origen, modulos };
+    await writeFile(join(SALIDA, 'curso.json'), JSON.stringify(curso));
+  }
 
   // Lo que el modo sin conexión guarda al instalarse (el audio se guarda aparte, a petición)
   const archivos = [
-    '/', '/manifest.webmanifest', '/curso/curso.json', '/audio/indice.json',
+    '/', '/manifest.webmanifest', ...(modulos ? ['/curso/curso.json'] : []), '/audio/indice.json',
     ...await listar('css'), ...await listar('js'), ...await listar('img'),
     ...(await readdir(MEDIOS)).map((n) => `/curso/medios/${n}`),
   ];
   const huella = createHash('sha256');
   for (const a of archivos) {
-    if (a === '/') huella.update(await readFile(join(RAIZ, 'index.html')));
-    else huella.update(a).update(await readFile(join(RAIZ, a)));
+    if (a === '/') huella.update(await readFile(join(WEB, 'index.html')));
+    else huella.update(a).update(await readFile(join(WEB, a)));
   }
   await writeFile(join(SALIDA, 'archivos.json'), JSON.stringify({ version: huella.digest('hex').slice(0, 16), archivos }));
 
-  const publicados = modulos.filter((m) => m.publicado).length;
-  console.log(`Curso copiado desde ${origen}: ${modulos.length} módulos (${publicados} publicados), ${archivos.length} archivos para usar sin conexión.`);
+  if (modulos) {
+    const publicados = modulos.filter((m) => m.publicado).length;
+    console.log(`Curso copiado desde ${origen}: ${modulos.length} módulos (${publicados} publicados).`);
+  }
+  console.log(`Web lista en public/ (${archivos.length} archivos para usar sin conexión).`);
 }
 
-main().catch((e) => { console.error(`No se ha podido copiar el curso: ${e.message}`); process.exit(1); });
+main().catch((e) => { console.error(`No se ha podido montar la web: ${e.message}`); process.exit(1); });

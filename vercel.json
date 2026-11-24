@@ -1,5 +1,6 @@
 {
   "buildCommand": "node scripts/copiar-curso.mjs",
+  "outputDirectory": "public",
   "cleanUrls": true,
   "rewrites": [
     {

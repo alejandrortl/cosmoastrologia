@@ -3,5 +3,5 @@ node_modules/
 .vercel/
 __pycache__/
 
-# Copia del curso que genera scripts/copiar-curso.mjs al publicar
-curso/
+# Web que monta scripts/copiar-curso.mjs al publicar (con la copia del curso)
+public/

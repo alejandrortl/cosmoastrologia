@@ -5,7 +5,7 @@ Curso de astronomía y astrología comparada: lo que se observa en el cielo y c�
 ## Cómo está hecho
 
 - **HTML, CSS y JavaScript puros.** El único paso al publicar es `scripts/copiar-curso.mjs`, que no necesita instalar nada.
-- **Contenido en Supabase** (proyecto `cosmoastrologia`), que sigue siendo la fuente. Al publicar, Vercel copia el curso y sus imágenes dentro de la web (`/curso/curso.json` y `/curso/medios/`), así que la web se muestra aunque Supabase esté pausado. Si al publicar Supabase no responde, se copia el curso de la web ya publicada; si tampoco, el build falla y sigue en línea la versión anterior. Sin la copia (por ejemplo, en local), la web lee de Supabase con la clave publicable.
+- **Contenido en Supabase** (proyecto `cosmoastrologia`), que sigue siendo la fuente. Al publicar, Vercel copia el curso y sus imágenes dentro de la web (`/curso/curso.json` y `/curso/medios/`), así que la web se muestra aunque Supabase esté pausado. El script monta la web en `public/` (lo que publica Vercel). Si al publicar Supabase no responde, se copia el curso de la web ya publicada; si tampoco, se publica sin copia y la web lee de Supabase como antes. Sin la copia (por ejemplo, en local), la web lee de Supabase con la clave publicable.
 - **Funciona sin conexión** (`sw.js`, `manifest.webmanifest`, `js/sin-conexion.js`): se instala como app y guarda la web, los textos y las imágenes la primera vez que se abre. El audiolibro se guarda al escucharlo, o entero con el botón de la portada.
 - **Audiolibro** con la voz del propio dispositivo (Web Speech API): resalta el párrafo que lee, recuerda por dónde ibas, permite cambiar velocidad y voz, y saltar a cualquier párrafo tocándolo.
 
@@ -46,5 +46,5 @@ Para publicar un módulo nuevo se cargan sus secciones y bloques, se pone `publi
 ## Publicar en Vercel
 
 1. En vercel.com, **Add New → Project** e importa este repositorio.
-2. Framework: **Other**. El comando de build está en `vercel.json` (`node scripts/copiar-curso.mjs`); sin directorio de salida.
+2. Framework: **Other**. El comando de build y el directorio de salida (`public`) están en `vercel.json`.
 3. Deploy. Cada cambio que llegue a `main` se publica solo.
