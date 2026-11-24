@@ -1,0 +1,16 @@
+# Servicio de systemd que sirve la copia local del curso y arranca solo al encender el servidor.
+# Instalación (cambia TU_USUARIO por tu usuario):
+#   sudo cp cosmoastrologia.service /etc/systemd/system/
+#   sudo systemctl daemon-reload && sudo systemctl enable --now cosmoastrologia
+[Unit]
+Description=Copia local del curso Cosmoastrología
+After=network.target
+
+[Service]
+User=TU_USUARIO
+Environment=PUERTO=8080
+ExecStart=/usr/bin/env node /home/TU_USUARIO/cosmoastrologia-copia/repositorio/scripts/servir-local.mjs /home/TU_USUARIO/cosmoastrologia-copia/copias/actual
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

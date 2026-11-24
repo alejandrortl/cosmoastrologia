@@ -1,0 +1,13 @@
+# Alternativa con Docker: sirve la copia local del curso en el puerto 8080.
+# Antes, ejecuta una vez scripts/copia-local.sh. Después, desde esta carpeta:
+#   docker compose up -d
+# Si guardaste las copias en otra carpeta, cambia la ruta de la izquierda en "volumes".
+services:
+  cosmoastrologia:
+    image: node:22-alpine
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - ~/cosmoastrologia-copia:/copia:ro
+    command: node /copia/repositorio/scripts/servir-local.mjs /copia/copias/actual 8080

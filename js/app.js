@@ -4,6 +4,7 @@ import { montarAnimacion } from './animaciones/index.js';
 import { instantanea } from './animaciones/comun.js';
 import { arcosPolaris } from './animaciones/arcos-polaris.js';
 import { abrirVisor, cerrarVisor, visorAbierto, consumirAtrasPropio } from './visor.js';
+import { registrarModoSinConexion, htmlSinConexion, montarSinConexion } from './sin-conexion.js';
 
 const principal = document.getElementById('principal');
 let limpiezas = [];
@@ -66,11 +67,13 @@ async function portada() {
       <h2 id="t-temario">Temario</h2>
       <p>Cada módulo va de lo accesible a lo profundo. Puedes leerlo o escucharlo como un audiolibro.</p>
       <ol class="lista-modulos" aria-busy="true"><li class="estado">Cargando el temario…</li></ol>
-    </section>`;
+    </section>
+    ${htmlSinConexion()}`;
 
   const lienzo = principal.querySelector('.portada canvas');
   const anim = arcosPolaris(lienzo, { decorativo: true });
   limpiezas.push(() => anim.destruir());
+  montarSinConexion(principal).then((parar) => limpiezas.push(parar)).catch(() => {});
 
   const lista = principal.querySelector('.lista-modulos');
   try {
@@ -88,7 +91,7 @@ async function portada() {
         : `<div class="fila-modulo">${dentro}</div>`}</li>`;
     }).join('');
   } catch (e) {
-    lista.innerHTML = `<li class="aviso">No se ha podido cargar el temario. Comprueba tu conexión y recarga la página.</li>`;
+    lista.innerHTML = `<li class="aviso">No se ha podido cargar el temario. ${navigator.onLine ? 'Recarga la página dentro de un momento.' : 'Parece que no hay conexión y el curso aún no estaba guardado en este dispositivo.'}</li>`;
   }
   lista.removeAttribute('aria-busy');
 }
@@ -152,7 +155,7 @@ async function paginaModulo(slug) {
   try {
     modulo = await cargarModulo(slug);
   } catch (e) {
-    principal.innerHTML = `<p class="aviso">No se ha podido cargar el módulo. Comprueba tu conexión y recarga la página.</p>`;
+    principal.innerHTML = `<p class="aviso">No se ha podido cargar el módulo. ${navigator.onLine ? 'Recarga la página dentro de un momento.' : 'Parece que no hay conexión y el módulo aún no estaba guardado en este dispositivo.'}</p>`;
     return;
   }
   if (!modulo) {
@@ -481,3 +484,4 @@ document.querySelector('.boton-tema').addEventListener('click', () => {
 });
 
 enrutar();
+registrarModoSinConexion();

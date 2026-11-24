@@ -3,6 +3,8 @@
 - **El curso vive aquí**: este repositorio (alejandrortl/cosmoastrologia), publicado en Vercel en https://cosmoastrologia-xi.vercel.app/ con el contenido en Supabase (proyecto `cosmoastrologia`).
 - **No usar documentos ni artefactos de Anthropic** (Claude Docs, artefactos) para el curso. Decisión del autor: todo cambio se hace en este repositorio y en su base de datos.
 - Cada cambio que llega a `main` se publica solo en Vercel.
+- **La web muestra una copia del curso hecha al publicar** (`scripts/copiar-curso.mjs` monta la web en `public/` y copia los bloques y las imágenes de Supabase a `/curso/`; un archivo nuevo en la raíz que deba publicarse se añade a `PUBLICAR` en ese script). Un cambio hecho solo en Supabase no se ve hasta la siguiente publicación: cargar primero en Supabase y después fusionar en `main` (o pulsar Redeploy en Vercel).
+- La web funciona sin conexión (`sw.js`). Si se añade un tipo de archivo nuevo que deba verse sin internet, comprobar que `copiar-curso.mjs` lo incluya en `curso/archivos.json`.
 
 ## Al cambiar el contenido
 
