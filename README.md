@@ -4,15 +4,19 @@ Curso de astronomía y astrología comparada: lo que se observa en el cielo y c�
 
 ## Cómo está hecho
 
-- **Sin paso de compilación.** HTML, CSS y JavaScript puros. Vercel publica la carpeta tal cual.
-- **Contenido en Supabase** (proyecto `cosmoastrologia`). La web lo lee con la clave publicable, que solo permite leer los módulos marcados como publicados.
+- **HTML, CSS y JavaScript puros.** El único paso al publicar es `scripts/copiar-curso.mjs`, que no necesita instalar nada.
+- **Contenido en Supabase** (proyecto `cosmoastrologia`), que sigue siendo la fuente. Al publicar, Vercel copia el curso y sus imágenes dentro de la web (`/curso/curso.json` y `/curso/medios/`), así que la web se muestra aunque Supabase esté pausado. Si al publicar Supabase no responde, se copia el curso de la web ya publicada; si tampoco, el build falla y sigue en línea la versión anterior. Sin la copia (por ejemplo, en local), la web lee de Supabase con la clave publicable.
+- **Funciona sin conexión** (`sw.js`, `manifest.webmanifest`, `js/sin-conexion.js`): se instala como app y guarda la web, los textos y las imágenes la primera vez que se abre. El audiolibro se guarda al escucharlo, o entero con el botón de la portada.
 - **Audiolibro** con la voz del propio dispositivo (Web Speech API): resalta el párrafo que lee, recuerda por dónde ibas, permite cambiar velocidad y voz, y saltar a cualquier párrafo tocándolo.
 
 ```
 index.html                 página única
 css/estilos.css            estilos (modo noche y modo día)
 js/app.js                  portada, página de módulo y navegación
-js/datos.js                lectura de la base de datos
+js/datos.js                lectura del curso (copia local o Supabase)
+js/sin-conexion.js         registro del modo sin conexión y botón del audiolibro
+sw.js                      service worker del modo sin conexión
+scripts/copiar-curso.mjs   copia el curso de Supabase a la web al publicar
 js/lector.js               audiolibro
 js/animaciones/            un archivo por animación o interactivo
 contenido/                 texto original de los módulos y script de carga
@@ -37,10 +41,10 @@ Tipos de bloque y su campo `contenido` (JSON):
 
 Componentes disponibles: `arcos-polaris`, `precesion`, `puertas-enoc`, `fases-luna`, `retrogrado`. Para crear uno nuevo, añade un archivo en `js/animaciones/` y regístralo en `js/animaciones/index.js`.
 
-Para publicar un módulo nuevo basta con cargar sus secciones y bloques y poner `publicado = true`; no hace falta volver a desplegar la web.
+Para publicar un módulo nuevo se cargan sus secciones y bloques, se pone `publicado = true` y se vuelve a publicar la web (un cambio que llegue a `main`, o **Redeploy** en Vercel), porque la web muestra la copia que se hizo al publicar.
 
 ## Publicar en Vercel
 
 1. En vercel.com, **Add New → Project** e importa este repositorio.
-2. Framework: **Other**. Sin comando de build ni directorio de salida.
+2. Framework: **Other**. El comando de build está en `vercel.json` (`node scripts/copiar-curso.mjs`); sin directorio de salida.
 3. Deploy. Cada cambio que llegue a `main` se publica solo.
