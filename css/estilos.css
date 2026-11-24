@@ -215,6 +215,19 @@ a.fila-modulo .numero-modulo { color: var(--oro); }
 }
 a.fila-modulo .estado { color: var(--lapis); }
 
+/* ---------- Sin conexión (portada) ---------- */
+
+.sin-conexion {
+  max-width: 50rem; margin: 0 auto;
+  padding: 0 var(--margen) 5rem;
+}
+.sin-conexion h2 { font-weight: 400; font-size: 1.6rem; margin: 0 0 .5rem; }
+.sin-conexion p { color: var(--tinta-suave); max-width: var(--medida); margin: 0 0 1rem; }
+.sin-conexion strong { color: var(--tinta); font-weight: 600; }
+.estado-sin-conexion { font-family: var(--sans); font-size: .9rem; }
+.estado-sin-conexion:empty { display: none; }
+.guardar-audio:disabled { opacity: .6; cursor: progress; }
+
 /* ---------- Página de módulo ---------- */
 
 .modulo {
