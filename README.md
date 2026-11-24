@@ -48,3 +48,7 @@ Para publicar un módulo nuevo se cargan sus secciones y bloques, se pone `publi
 1. En vercel.com, **Add New → Project** e importa este repositorio.
 2. Framework: **Other**. El comando de build y el directorio de salida (`public`) están en `vercel.json`.
 3. Deploy. Cada cambio que llegue a `main` se publica solo.
+
+## Copia de seguridad en un servidor propio
+
+`scripts/copia-local.sh` guarda el repositorio y una copia fechada de la web con todo el curso (bloques, imágenes y audio), y `scripts/servir-local.mjs` la sirve en tu red sin internet. Instrucciones en [`copia-local/LEEME.md`](copia-local/LEEME.md).
