@@ -166,6 +166,44 @@ DENDERA = imagen(
     "El zodiaco circular de Dendera dibujado para la «Description de l'Égypte» (edición de 1822). El original, un relieve de época ptolemaica, se conserva hoy en el Museo del Louvre.",
     "Description de l'Égypte", "Dominio público", fecha="1822", grande=GRANDE + "dendera.jpg")
 
+# Imágenes del documento «Osiris, la Luna y los eclipses», guardadas en img/ del repositorio
+# (desde la sesión en la nube no se llega al almacén «medios»; se pueden mover allí más adelante).
+_IGN = "https://astronomia.ign.es/es/eclipses-de-sol-y-luna/eclipse-total-sol-de-12-de-agosto-2026"
+_IGN_CRED = "Instituto Geográfico Nacional, con cálculos del Observatorio Astronómico Nacional"
+MAPA_IGN_2026 = imagen(
+    "esquema", "/img/modulo-1/ign-eclipse-2026.jpg", _IGN,
+    "Mapa del eclipse total del 12 de agosto de 2026: la franja de totalidad cruza en diagonal el norte de la península, de Galicia a Valencia y Baleares, y las líneas marcan la duración y el porcentaje del Sol tapado fuera de ella. Es un mapa calculado, no una foto.",
+    _IGN_CRED, "CC BY 4.0", fecha="2026")
+MAPA_IGN_2027 = imagen(
+    "esquema", "/img/modulo-1/ign-eclipse-2027.jpg", _IGN,
+    "Mapa del eclipse total del 2 de agosto de 2027: la totalidad pasa por el extremo sur, por Cádiz, el Estrecho, Málaga, Ceuta y Melilla. Mapa calculado.",
+    _IGN_CRED, "CC BY 4.0", fecha="2026")
+MAPA_IGN_2028 = imagen(
+    "esquema", "/img/modulo-1/ign-eclipse-2028.jpg", _IGN,
+    "Mapa del eclipse anular del 26 de enero de 2028: la franja del anillo va de suroeste a noreste, de Andalucía a Valencia y Cataluña, con el Sol poniéndose eclipsado. Mapa calculado.",
+    _IGN_CRED, "CC BY 4.0", fecha="2026")
+APEP = imagen(
+    "obra", "/img/modulo-3/apep-tumba.jpg", "https://en.wikipedia.org/wiki/Apep",
+    "La serpiente Apep enroscada, en una pintura mural de una tumba egipcia, con un personaje que la sujeta junto a textos jeroglíficos.",
+    "Pintura mural egipcia (autor anónimo); fotografía tomada del material de origen", "Obra en dominio público",
+    alt="Pintura mural egipcia de la serpiente Apep enroscada")
+CARTA_ECLIPSE_2026 = imagen(
+    "esquema", "/img/modulo-7/carta-eclipse-2026-benicarlo.jpg", "https://www.astro-seek.com/",
+    "Carta astrológica del eclipse del 12 de agosto de 2026 calculada para la zona de Benicarló. Es un dibujo hecho por un programa a partir de las posiciones calculadas de los astros.",
+    "Astro-Seek.com", "Captura de la web del programa", fecha="2026")
+MEDIA_ESTACION_IA = imagen(
+    "ia", "/img/modulo-8/dias-media-estacion-ia.jpg", "https://en.wikipedia.org/wiki/Quarter_days",
+    "Esquema generado con IA de los días de media estación. Tiene dos errores: redondea todos los intervalos a 40 días (compáralo con la tabla) y sus grados no siguen la convención astrológica, que pone el 0° de Aries en el equinoccio de marzo. Se deja como ejercicio de corrección.",
+    "Imagen generada por IA (autor desconocido)", "Uso educativo")
+KIRCHER_254 = imagen(
+    "obra", "/img/modulo-8/kircher-tabla-254.jpg", "https://www.hab.de/",
+    "La tabla de correspondencias de dioses de Athanasius Kircher (siglo XVII), en la página 254 del libro III, «Mystagogia», según la copia digital de la Herzog August Bibliothek de Wolfenbüttel.",
+    "Athanasius Kircher. Herzog August Bibliothek Wolfenbüttel", "Obra en dominio público", fecha="Siglo XVII")
+TETRAMORFOS = imagen(
+    "esquema", "/img/modulo-8/tetramorfos-timpano.jpg", "https://en.wikipedia.org/wiki/Tetramorph",
+    "Dibujo de un tímpano románico con Cristo dentro de la mandorla (marcada en rojo) y los cuatro seres del tetramorfos: el ángel y el águila arriba, el león y el toro abajo.",
+    "Dibujo de un tímpano románico, con anotación añadida; tomado del material de origen", "Obra en dominio público")
+
 SEC_POLARIS = "El movimiento de las estrellas y el misterio de Polaris"
 SEC_SOL = "El Sol, las estaciones y la eclíptica"
 SEC_LUNA = "La Luna y sus fases"
@@ -273,6 +311,12 @@ EXTRAS = {
     (1, SEC_ECLIPSES, "Por qué hay temporadas de eclipses: la sicigia y los nodos"): [
         widget("interactivo", "temporadas-eclipse", "Interactivo", "Observación y dos modelos: globo y plano",
                "Mueve la fecha o salta de eclipse en eclipse. Arriba, el cielo desenrollado: el camino de la Luna cruza el del Sol en dos nodos. En medio, el modelo del globo con la órbita inclinada de la Luna. Abajo, la disposición plana de la wiki de la Flat Earth Society. Al final, cada luna nueva y llena de 2026 y 2027; en color, las que quedan cerca de un nodo. Posiciones medias del Sol y la Luna (Jean Meeus), que pueden diferir un día de las fechas reales; se cuentan también los eclipses penumbrales de Luna. Esquemas, no a escala.")],
+    (1, SEC_ECLIPSES, "España: dos tríos de eclipses en algo más de un siglo"): [MAPA_IGN_2026, MAPA_IGN_2027, MAPA_IGN_2028],
+    (3, "Egipto: Osiris, la Luna y los eclipses", "Apep, la serpiente que ataca al Sol"): [APEP],
+    (7, "Leer un eclipse en una carta astrológica", "La carta del eclipse del 12 de agosto de 2026"): [CARTA_ECLIPSE_2026],
+    (8, "El calendario sagrado y el cielo", "Los días de media estación"): [MEDIA_ESTACION_IA],
+    (8, "Dioses y planetas", "La tabla de Athanasius Kircher"): [KIRCHER_254],
+    (8, "Dioses y planetas", "El tetramorfos y los signos fijos"): [TETRAMORFOS],
     (1, SEC_PLANETAS, MOD): [
         widget("animacion", "retrogrado", "Animación", "Tres modelos comparados",
                "Un mismo bucle de Marte con tres disposiciones: la heliocéntrica de Copérnico y Kepler, la geocéntrica de Ptolomeo con epiciclos y la de la Flat Earth Society, con los planetas girando alrededor de un Sol que da vueltas sobre el centro del plano. Esquemas simplificados.")],
