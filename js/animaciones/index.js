@@ -37,6 +37,7 @@ import { precesionModelos } from './precesion-modelos.js';
 import { eraAcuario } from './era-acuario.js';
 import { capasZodiaco } from './capas-zodiaco.js';
 import { zodiacoPasoAPaso } from './zodiaco-paso-a-paso.js';
+import { temporadasEclipse } from './temporadas-eclipse.js';
 import { rotulosLegibles } from './comun.js';
 
 const REGISTRO = {
@@ -82,6 +83,7 @@ const REGISTRO = {
   'era-acuario': eraAcuario,
   'capas-zodiaco': capasZodiaco,
   'zodiaco-paso-a-paso': zodiacoPasoAPaso,
+  'temporadas-eclipse': temporadasEclipse,
 };
 
 // Devuelve una función para desmontarla, o null si el componente no existe.

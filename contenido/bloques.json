@@ -715,7 +715,7 @@
   "orden": 8,
   "tipo": "texto",
   "contenido": {
-   "html": "<h3>Cómo lo entendían otras cosmovisiones</h3>\n<p><strong>Sumerios y babilonios.</strong> Fueron los grandes registradores de eclipses. Durante siglos los anotaron en los llamados <em>Diarios astronómicos</em> y en la serie <em>Enuma Anu Enlil</em>, y a partir de esas listas descubrieron que se repetían en ciclos, lo que les permitió predecir los eclipses de Luna.</p>\n<p><strong>Egipcios.</strong> Sorprendentemente, se han conservado muy pocos registros egipcios claros de eclipses, pese a su observación del cielo.</p>\n<p><strong>Griegos.</strong> Heródoto cuenta que Tales de Mileto predijo un eclipse de Sol (habitualmente fechado en el 585 a. C.), aunque los historiadores discuten cómo pudo hacerlo. Aristóteles usó los eclipses de Luna como argumento: la sombra de la Tierra sobre la Luna es siempre curva, lo que para él probaba una Tierra esférica. El <strong>mecanismo de Anticitera</strong> (siglos II-I a. C.), hallado en un naufragio, es un artefacto de engranajes que calculaba ciclos de eclipses.</p>\n<p><strong>Romanos y Ptolomeo.</strong> El <em>Almagesto</em> dedica capítulos enteros al cálculo de eclipses, apoyándose en registros babilónicos antiguos.</p>\n<p><strong>Cosmología bíblica y rabínica.</strong> El libro de Joel (2:31) habla del Sol convertido en tinieblas y la Luna en sangre, una imagen que muchos lectores relacionan con los eclipses. El Talmud (Sucot 29a) trata de los eclipses, pero en clave de significado, que corresponde al módulo 8.</p>\n<p><strong>Libro de Enoc.</strong> En los textos conservados del <em>Libro de las Luminarias</em> no aparece una descripción explícita de los eclipses. Su cielo de puertas y recorridos ordenados se centra en la regularidad de los astros, no en estas excepciones.</p>\n<p><strong>Cristianismo medieval.</strong> Heredó de Ptolomeo el cálculo de eclipses. Un debate famoso giró en torno a la oscuridad que, según los Evangelios, cubrió la tierra en la crucifixión: autores como Orígenes ya observaron que no pudo ser un eclipse solar normal, porque la Pascua judía cae en luna llena, y un eclipse de Sol solo ocurre en luna nueva.</p>"
+   "html": "<h3>Cómo lo entendían otras cosmovisiones</h3>\n<p><strong>Sumerios y babilonios.</strong> Fueron los grandes registradores de eclipses. Durante siglos los anotaron en los llamados <em>Diarios astronómicos</em> y en la serie <em>Enuma Anu Enlil</em>, y a partir de esas listas descubrieron que se repetían en ciclos, lo que les permitió predecir los eclipses de Luna.</p>\n<p><strong>Egipcios.</strong> Sorprendentemente, se han conservado muy pocos registros egipcios claros de eclipses, pese a su observación del cielo. Sí hay mitos que se han leído en relación con ellos, como la serpiente Apep que ataca la barca del Sol o el Ojo de Horus que Seth arranca y el Sol devuelve; el módulo 3 los trata con detalle.</p>\n<p><strong>Griegos.</strong> Heródoto cuenta que Tales de Mileto predijo un eclipse de Sol (habitualmente fechado en el 585 a. C.), aunque los historiadores discuten cómo pudo hacerlo. Aristóteles usó los eclipses de Luna como argumento: la sombra de la Tierra sobre la Luna es siempre curva, lo que para él probaba una Tierra esférica. El <strong>mecanismo de Anticitera</strong> (siglos II-I a. C.), hallado en un naufragio, es un artefacto de engranajes que calculaba ciclos de eclipses.</p>\n<p><strong>Romanos y Ptolomeo.</strong> El <em>Almagesto</em> dedica capítulos enteros al cálculo de eclipses, apoyándose en registros babilónicos antiguos.</p>\n<p><strong>Cosmología bíblica y rabínica.</strong> El libro de Joel (2:31) habla del Sol convertido en tinieblas y la Luna en sangre, una imagen que muchos lectores relacionan con los eclipses. El Talmud (Sucot 29a) trata de los eclipses, pero en clave de significado, que corresponde al módulo 8.</p>\n<p><strong>Libro de Enoc.</strong> En los textos conservados del <em>Libro de las Luminarias</em> no aparece una descripción explícita de los eclipses. Su cielo de puertas y recorridos ordenados se centra en la regularidad de los astros, no en estas excepciones.</p>\n<p><strong>Cristianismo medieval.</strong> Heredó de Ptolomeo el cálculo de eclipses. Un debate famoso giró en torno a la oscuridad que, según los Evangelios, cubrió la tierra en la crucifixión: autores como Orígenes ya observaron que no pudo ser un eclipse solar normal, porque la Pascua judía cae en luna llena, y un eclipse de Sol solo ocurre en luna nueva.</p>"
   }
  },
  {
@@ -812,6 +812,45 @@
   "tipo": "texto",
   "contenido": {
    "html": "<h3>La selenelion en otras cosmovisiones y en la historia</h3>\n<p><strong>Griegos.</strong> Cleomedes, en su tratado sobre los movimientos circulares de los cuerpos celestes (libro 2, capítulo 6), habla del llamado eclipse «paradójico»: la Luna que sale eclipsada cuando el Sol parece seguir sobre el horizonte. Según el <em>Dictionary of Scientific Biography</em>, Cleomedes negó que pudiera ocurrir, aunque en el pasaje siguiente explica que, por la refracción del aire, el Sol puede verse cuando ya está bajo el horizonte, una idea que, según ese diccionario, habría servido para explicarlo. No se sabe bien cuándo vivió; Otto Neugebauer propuso hacia el año 371.</p>\n<p><strong>Romanos.</strong> Según Glaisher, citado por Rowbotham, ya Plinio el Viejo (siglo I) dejó noticia de eclipses así.</p>\n<p><strong>India.</strong> En la tradición hindú, Rahu y Ketu son «planetas de sombra» invisibles a los que se atribuyen los eclipses; en el mito, Rahu se traga el Sol o la Luna. La astronomía india los identificó con los dos puntos en que la órbita de la Luna cruza el camino del Sol, y Aryabhata (año 499) explicó los eclipses con la sombra de la Tierra y de la Luna. Las páginas terraplanistas que hablan de cuerpos oscuros recuperan la primera de esas ideas. El módulo 4 trata la India védica con detalle.</p>\n<p><strong>Casos recientes.</strong> Para la astronomía moderna, la lista de Rowbotham reúne selenelions. Entre las más fotografiadas están la del 8 de octubre de 2014, al amanecer, en Minneapolis (Estados Unidos), y la del 8 de noviembre de 2022, para la que Photo Ephemeris propuso subir a casi 4.900 metros en los Andes de Perú, con el Sol iluminando la tierra y la Luna eclipsada poniéndose sobre el océano. La más reciente fue la del 3 de marzo de 2026: según el anuncio de Joe Rao en Space.com, podía verse desde la mitad oriental de Estados Unidos y Canadá, en ciudades como Boston, Nueva York, Montreal y Washington, con la Luna poniéndose en plena fase total hacia el oeste-noroeste mientras el Sol salía por el este-sureste.</p>\n<p><strong>Cómo verla.</strong> El calendario del cielo, en la última sección de este módulo, avisa de los próximos eclipses de Luna y de desde dónde se ven. Para intentar una selenelion hay que estar donde el Sol salga o se ponga durante la fase total, con horizonte despejado hacia los dos lados. La Luna eclipsada se puede mirar sin protección; el Sol, aunque esté bajo, solo con gafas de eclipse homologadas.</p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 8,
+  "orden": 19,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Por qué hay temporadas de eclipses: la sicigia y los nodos</h3>\n<p><strong>Lo que se observa.</strong> Cada mes hay una luna nueva y una luna llena, pero los eclipses no llegan cada mes. Llegan por rachas: durante unas pocas semanas puede haber un eclipse de Sol y otro de Luna, uno detrás de otro, y después pasan casi seis meses sin ninguno. A esas rachas se las llama <strong>temporadas de eclipses</strong>.</p>\n<p><strong>Dos palabras para entenderlo.</strong> La primera es <strong>sicigia</strong>, del griego <em>syzygía</em>, «unión» o «yunta»: el momento en que el Sol y la Luna quedan en línea vista desde la Tierra, juntos en el cielo (luna nueva) o en lados opuestos (luna llena). La segunda son los <strong>nodos</strong>: en el cielo, el camino de la Luna no coincide con el camino del Sol, la eclíptica, sino que la cruza en dos puntos. Esos dos cruces son los nodos. Para que haya eclipse no basta con la sicigia: además, la Luna tiene que estar cerca de uno de los nodos, es decir, cerca del camino del Sol.</p>\n<p><strong>Según la astronomía moderna.</strong> El camino de la Luna está inclinado unos 5 grados respecto al del Sol porque su órbita alrededor de la Tierra está inclinada esos 5 grados respecto a la órbita de la Tierra alrededor del Sol. En la mayoría de las lunas nuevas la Luna pasa un poco por encima o por debajo del Sol, y su sombra no toca la Tierra; en la mayoría de las lunas llenas pasa por encima o por debajo de la sombra de la Tierra. Solo cuando el Sol, en su recorrido anual, está cerca de uno de los nodos, la sicigia coincide con el cruce y hay eclipse. Como hay dos nodos en lados opuestos, eso ocurre dos veces al año, más o menos cada 173 días. Además, los nodos retroceden despacio y dan una vuelta completa en unos 18,6 años, por eso las temporadas se adelantan unos 19 días cada año.</p>\n<p><strong>Según los modelos planos.</strong> En la disposición de la wiki de la Flat Earth Society, el Sol y la Luna son cuerpos pequeños que giran por encima del plano a alturas distintas, y para los eclipses de Sol muchos defensores aceptan que la Luna pasa por delante. Para los de Luna, esa wiki propone el «objeto de sombra» y le atribuye una inclinación de unos 5 grados, la misma cifra que la astronomía moderna da a la órbita de la Luna. En las fuentes planas consultadas el curso no ha encontrado un cálculo propio de por qué los eclipses llegan en temporadas cada unos seis meses, y no les atribuye uno que no hayan publicado.</p>\n<p><strong>En otras cosmovisiones.</strong> Los babilonios, sin hablar de órbitas, ya sabían por sus listas que los eclipses de Luna se separan casi siempre seis meses (a veces cinco), y con ello los predecían. En la India, los dos nodos recibieron nombre propio: Rahu y Ketu, los «planetas de sombra» de los que se habla más arriba.</p>\n<p class=\"fuentes\">Fuentes: <a href=\"https://eclipse.gsfc.nasa.gov/SEsaros/SEperiodicity.html\" target=\"_blank\" rel=\"noopener\">Fred Espenak (NASA), «Periodicity of Solar Eclipses»</a> · <a href=\"https://en.wikipedia.org/wiki/Eclipse_season\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Eclipse season»</a> · <a href=\"https://en.wikipedia.org/wiki/Syzygy_(astronomy)\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Syzygy (astronomy)»</a></p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 8,
+  "orden": 20,
+  "tipo": "interactivo",
+  "contenido": {
+   "componente": "temporadas-eclipse",
+   "etiqueta": "Interactivo",
+   "modelo": "Observación y dos modelos: globo y plano",
+   "pie": "Mueve la fecha o salta de eclipse en eclipse. Arriba, el cielo desenrollado: el camino de la Luna cruza el del Sol en dos nodos. En medio, el modelo del globo con la órbita inclinada de la Luna. Abajo, la disposición plana de la wiki de la Flat Earth Society. Al final, cada luna nueva y llena de 2026 y 2027; en color, las que quedan cerca de un nodo. Posiciones medias del Sol y la Luna (Jean Meeus), que pueden diferir un día de las fechas reales; se cuentan también los eclipses penumbrales de Luna. Esquemas, no a escala."
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 8,
+  "orden": 21,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Dos franjas que se cruzan: Estados Unidos, 2017 y 2024</h3>\n<p><strong>Lo que se observó.</strong> El 21 de agosto de 2017, la franja de totalidad de un eclipse de Sol cruzó Estados Unidos de costa a costa, de Oregón a Carolina del Sur. El 8 de abril de 2024, otra franja lo atravesó en diagonal, de Texas a Maine. Las dos franjas se cortan en el sur de Illinois, cerca de la ciudad de Carbondale, que vio la totalidad en los dos eclipses, separados por 2.422 días, unos seis años y siete meses (cálculo del curso).</p>\n<p><strong>¿Es una casualidad rara?</strong> Según la astronomía moderna, no tanto. Cada eclipse de Sol deja su franja en un lugar y con una dirección distintos, según la época del año y la posición de la Luna en su órbita, así que a lo largo de los siglos las franjas se van cruzando por todo el mundo. Que dos caigan sobre un mismo país en pocos años llama la atención, pero no responde a un ciclo especial. Los eclipses sí se repiten en ciclos: el más conocido, el saros, de unos 18 años y 11 días, devuelve un eclipse muy parecido, pero desplazado un tercio de vuelta hacia el oeste, por eso no cae en el mismo sitio.</p>\n<p><strong>Cómo encaja en cada modelo.</strong> Las franjas son datos de observación: miles de personas vieron la totalidad en esos lugares y no fuera de ellos. La astronomía moderna las calcula como la sombra de la Luna barriendo una Tierra esférica que gira. En la disposición plana, la Luna tapa el Sol para quienes quedan en la línea entre los dos; el curso no ha encontrado en las fuentes planas consultadas un cálculo publicado de la forma y la dirección de estas dos franjas.</p>\n<p class=\"fuentes\">Fuentes: <a href=\"https://svs.gsfc.nasa.gov/4518/\" target=\"_blank\" rel=\"noopener\">NASA SVS, mapa del eclipse de 2017</a> · <a href=\"https://svs.gsfc.nasa.gov/5073\" target=\"_blank\" rel=\"noopener\">NASA SVS, eclipses de 2023 y 2024</a> · <a href=\"https://blog.wolfram.com/2017/08/14/double-eclipse-or-why-carbondale-illinois-is-special/\" target=\"_blank\" rel=\"noopener\">Wolfram, «Double Eclipse! Or Why Carbondale, Illinois, Is Special»</a></p>"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 8,
+  "orden": 22,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>España: dos tríos de eclipses en algo más de un siglo</h3>\n<p><strong>Lo que se observa.</strong> Entre 1900 y 1912, la península ibérica vio tres grandes eclipses de Sol en doce años, y la prensa internacional los llamó «los eclipses españoles». Entre 2026 y 2028 se repite la situación: tres eclipses en año y medio. Entre un trío y otro, el único eclipse total en territorio español fue el de Canarias del 2 de octubre de 1959, según el Instituto Geográfico Nacional (IGN).</p>\n<ul><li><p><strong>28 de mayo de 1900:</strong> total, por Portugal y el centro de España.</p></li><li><p><strong>30 de agosto de 1905:</strong> total, de Galicia y Burgos hacia Valencia, Castellón y Baleares. La totalidad duró unos tres minutos y tres cuartos en su punto máximo.</p></li><li><p><strong>17 de abril de 1912:</strong> híbrido, total solo unos segundos, por el noroeste peninsular.</p></li><li><p><strong>12 de agosto de 2026:</strong> total, al atardecer, en diagonal de Galicia a Valencia y Baleares.</p></li><li><p><strong>2 de agosto de 2027:</strong> total, por la mañana, por Cádiz, el Estrecho, Málaga, Ceuta y Melilla, con más de cuatro minutos de totalidad en el extremo sur.</p></li><li><p><strong>26 de enero de 2028:</strong> anular, al atardecer, de Andalucía a Valencia y Cataluña, con el Sol poniéndose eclipsado.</p></li></ul>\n<p><strong>Por qué vienen en grupo.</strong> Según la astronomía moderna, no hay un ciclo que traiga tríos a España: es la coincidencia de varias franjas en pocos años sobre la misma zona del mundo, como la X de Estados Unidos. Hay, eso sí, un dato curioso: entre el eclipse de 1905 y el de 1912 hay también 2.422 días, igual que entre los dos de Estados Unidos. Son 82 meses lunares, un intervalo cercano a siete «años de eclipses» (el tiempo que tarda el Sol en volver al mismo nodo, unos 346,6 días), así que la Luna nueva vuelve a estar cerca de un nodo y puede haber otro eclipse (cálculo del curso).</p>\n<p><strong>Cómo verlos.</strong> El calendario del cielo, en la última sección de este módulo, avisa de los próximos eclipses. El Sol solo se puede mirar con gafas de eclipse homologadas, salvo durante los minutos de totalidad.</p>\n<p class=\"fuentes\">Fuentes: <a href=\"https://eclipses.ign.es/eclipses-en-la-historia.html\" target=\"_blank\" rel=\"noopener\">IGN, «Eclipses en la historia»</a> · <a href=\"https://astronomia.ign.es/es/eclipses-de-sol-y-luna/eclipse-total-sol-de-12-de-agosto-2026\" target=\"_blank\" rel=\"noopener\">IGN, eclipse total del 12 de agosto de 2026</a> · <a href=\"https://www.esa.int/ESA_Multimedia/Images/2026/05/Total_solar_eclipse_12_August_2026_Map_of_totality_in_Spain\" target=\"_blank\" rel=\"noopener\">ESA, mapa de la totalidad de 2026 en España</a> · <a href=\"https://www.elobservador.com.uy/espana/sucede/el-primer-eclipse-del-siglo-llega-espana-n6052796\" target=\"_blank\" rel=\"noopener\">El Observador, sobre «los eclipses españoles»</a></p>"
   }
  },
  {
@@ -1383,6 +1422,177 @@
    "etiqueta": "Interactivo",
    "modelo": "Tu cuaderno de observación",
    "pie": "Marca las misiones que vayas haciendo y apunta tus notas. Se guardan solo en este navegador."
+  }
+ },
+ {
+  "modulo": 3,
+  "seccion": 1,
+  "orden": 1,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Un mito leído como calendario</h3>\n<p>Este apartado es un primer borrador del módulo 3. Presenta cómo un autor antiguo, el griego Plutarco, leyó el mito egipcio de Osiris como una descripción del cielo, y qué otras figuras del mito egipcio se han relacionado con el Sol, la Luna y los eclipses. Es la lectura de Plutarco, no necesariamente la de los propios egipcios.</p>\n<p><strong>Quién era Plutarco.</strong> Fue un escritor y sacerdote de Delfos que vivió entre los siglos I y II. En su tratado <em>Isis y Osiris</em> cuenta el mito y repasa varias interpretaciones que circulaban en su época: unas lo leían como historia de reyes antiguos, otras como alegoría del Nilo y de las estaciones, y otras como alegoría de la Luna y del Sol.</p>"
+  }
+ },
+ {
+  "modulo": 3,
+  "seccion": 1,
+  "orden": 2,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>El mito, en pocas palabras</h3>\n<p>Según el relato de Plutarco, Osiris reinaba en Egipto hasta que su hermano Seth, al que los griegos llamaban Tifón, lo encerró con engaños en un cofre y lo arrojó al Nilo. Su esposa Isis encontró el cuerpo, pero Seth lo halló de nuevo y lo partió en catorce trozos que dispersó por el país. Isis los buscó uno a uno. Más tarde, Horus, hijo de Isis y Osiris, luchó contra Seth, y en esa lucha Seth le arrancó un ojo, que después le fue devuelto.</p>"
+  }
+ },
+ {
+  "modulo": 3,
+  "seccion": 1,
+  "orden": 3,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Cada episodio, una fase de la Luna, según Plutarco</h3>\n<p>Plutarco recoge una lectura en la que cada detalle del mito corresponde a algo que se ve en la Luna. Los catorce trozos de Osiris serían los catorce días en que la Luna mengua, de llena a nueva. Los veintiocho años que, según algunos, vivió o reinó Osiris serían los veintiocho días que la Luna brilla en cada ciclo. El cofre tallado en forma de media luna sería la Luna creciente que desaparece junto al Sol, y Osiris encerrado en él, la Luna llena que se oscurece en un eclipse. La fiesta llamada «la subida de Osiris a la Luna» se celebraba en la luna nueva del mes de Phamenoth, al inicio de la primavera. Y los golpes de Seth al ojo de Horus serían la Luna que mengua cada mes; cuando Seth lo arranca y se lo traga, y el Sol lo devuelve, sería el eclipse, del que la Luna sale cuando deja la sombra.</p>\n<table class=\"tabla\">\n<thead><tr><th>Episodio del mito</th><th>Lectura astronómica que recoge Plutarco</th></tr></thead>\n<tbody>\n<tr><td>Osiris partido en 14 trozos</td><td>Los 14 días en que la Luna mengua, de llena a nueva</td></tr>\n<tr><td>Osiris vive o reina 28 años</td><td>Los 28 días en que la Luna brilla en cada ciclo</td></tr>\n<tr><td>El cofre en forma de media luna</td><td>La Luna creciente que desaparece junto al Sol</td></tr>\n<tr><td>Osiris encerrado en el cofre</td><td>La Luna llena que se eclipsa</td></tr>\n<tr><td>«La subida de Osiris a la Luna»</td><td>La fiesta de la luna nueva de Phamenoth, al inicio de la primavera</td></tr>\n<tr><td>Seth golpea el ojo de Horus</td><td>La Luna que mengua cada mes</td></tr>\n<tr><td>Seth arranca y traga el ojo; el Sol lo devuelve</td><td>El eclipse, del que la Luna sale al dejar la sombra</td></tr>\n</tbody>\n</table>\n<p class=\"fuentes\">Fuentes: Plutarco, <em>Isis y Osiris</em>, capítulos <a href=\"https://cts.perseids.org/read/greekLit/tlg0007/tlg089/perseus-eng3/18\" target=\"_blank\" rel=\"noopener\">18</a>, <a href=\"https://cts.perseids.org/read/greekLit/tlg0007/tlg089/perseus-eng3/42\" target=\"_blank\" rel=\"noopener\">42</a> y <a href=\"https://cts.perseids.org/read/greekLit/tlg0007/tlg089/perseus-eng4/41-60\" target=\"_blank\" rel=\"noopener\">41-60</a> · <a href=\"https://penelope.uchicago.edu/Thayer/e/roman/texts/plutarch/moralia/isis_and_osiris*/b.html\" target=\"_blank\" rel=\"noopener\">texto de la edición Loeb, Universidad de Chicago</a> · <a href=\"https://www-current.chs.harvard.edu/?p=171236\" target=\"_blank\" rel=\"noopener\">Gregory Nagy, comentario a <em>Isis y Osiris</em></a></p>"
+  }
+ },
+ {
+  "modulo": 3,
+  "seccion": 1,
+  "orden": 4,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Apep, la serpiente que ataca al Sol</h3>\n<p>En los textos funerarios egipcios, el dios Sol, Ra, recorre cada noche el mundo inferior en una barca, y una enorme serpiente, Apep (los griegos la llamaron Apofis), intenta detenerla y tragársela. Cada amanecer, el Sol vence. Según los resúmenes de egiptología que recoge Wikipedia, a algunos de sus ataques se atribuían fenómenos como las tormentas y los eclipses, en los que la serpiente parecía ganar por un momento. La lectura simbólica posterior de esta figura, por ejemplo en la tradición de la Golden Dawn, se trata en el módulo 8.</p>"
+  }
+ },
+ {
+  "modulo": 3,
+  "seccion": 1,
+  "orden": 5,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Horus niño, el Sol que nace</h3>\n<p>En época grecorromana, Horus niño, al que los griegos llamaron Harpócrates, se representaba como un niño con el dedo en los labios. El escritor latino Macrobio, en sus <em>Saturnales</em> (libro I, capítulo 18), cuenta que los egipcios mostraban el Sol del solsticio de invierno en figura de niño pequeño, porque es el día más corto y el Sol parece empezar de nuevo. Por eso Harpócrates se ha leído como el Sol que nace, tanto cada mañana como cada invierno.</p>\n<p class=\"fuentes\">Fuentes: <a href=\"https://en.wikipedia.org/wiki/Apep\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Apep»</a> · <a href=\"https://www.wikiwand.com/en/articles/Harpocrates\" target=\"_blank\" rel=\"noopener\">Wikiwand, «Harpocrates»</a></p>"
+  }
+ },
+ {
+  "modulo": 7,
+  "seccion": 1,
+  "orden": 1,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Qué es la carta de un eclipse</h3>\n<p>Este apartado es un primer borrador del módulo 7. En astrología, una carta es un dibujo del cielo en un momento y un lugar concretos: dónde estaban el Sol, la Luna y los planetas dentro de los doce signos, y cómo se reparte el cielo en doce casas según la hora y el lugar. Muchos astrólogos levantan la carta del momento exacto de un eclipse y la leen como el tono de los meses siguientes. La astrología lo sostiene así dentro de su propio sistema; el módulo 7 explica también qué dicen los estudios sobre su eficacia.</p>"
+  }
+ },
+ {
+  "modulo": 7,
+  "seccion": 1,
+  "orden": 2,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>La carta del eclipse del 12 de agosto de 2026</h3>\n<p>El eclipse total de Sol del 12 de agosto de 2026 cruzó España al atardecer, como se cuenta en el módulo 1. Calculada con el programa Astro-Seek para la zona de Benicarló (Castellón), su carta muestra lo siguiente:</p>\n<ul><li><p><strong>El Sol y la Luna juntos, a unos 20 grados de Leo.</strong> En la tradición astrológica, Leo es el signo que rige el Sol, su «domicilio»; los astrólogos lo leen como un eclipse que oscurece al Sol en su propia casa.</p></li><li><p><strong>Mercurio y Júpiter, también en Leo.</strong> Cuatro astros en un mismo signo forman lo que los astrólogos llaman un <em>stellium</em>.</p></li><li><p><strong>Saturno y Neptuno en Aries.</strong> Los dos se juntaron a comienzos de 2026 muy cerca del grado 0 de Aries. Según la astronomía, Saturno y Neptuno se alinean así, vistos desde la Tierra, cada unos 36 años; los astrólogos leen esa conjunción como el inicio de un ciclo.</p></li><li><p><strong>Plutón en Acuario,</strong> al comienzo de su paso por ese signo, que durará hasta la década de 2040.</p></li><li><p><strong>El ascendente a 13 grados de Piscis,</strong> y el medio cielo a 16 grados de Sagitario. El ascendente es el grado del zodiaco que salía por el horizonte del este en ese momento y lugar.</p></li></ul>"
+  }
+ },
+ {
+  "modulo": 7,
+  "seccion": 1,
+  "orden": 3,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Una lectura astrológica de los tres eclipses de 2026 a 2028</h3>\n<p>La astróloga Gabriela González, citada en el material de origen de este apartado, lee los tres eclipses que cruzan España en 2026, 2027 y 2028 como tres fases de un mismo proceso: el primero, en Leo y en la casa 7, sería «el Encuentro»; el segundo, también en Leo pero en la casa 10, «la Expresión»; y el tercero, en Acuario, en la casa 8 y junto a Plutón, «la Transformación». Es su interpretación; otros astrólogos hacen otras.</p>"
+  }
+ },
+ {
+  "modulo": 7,
+  "seccion": 1,
+  "orden": 4,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Practicar</h3>\n<ul><li><p>Busca la carta del eclipse del 12 de agosto de 2026 para tu ciudad y compara su ascendente con el de Benicarló: cambia con el lugar y la hora, aunque el Sol y la Luna estén en el mismo grado.</p></li><li><p>Señala en la carta los signos, las casas y los aspectos principales.</p></li></ul>\n<p class=\"fuentes\">Fuentes: carta calculada con <a href=\"https://www.astro-seek.com/\" target=\"_blank\" rel=\"noopener\">Astro-Seek</a> · <a href=\"https://astronomia.ign.es/es/eclipses-de-sol-y-luna/eclipse-total-sol-de-12-de-agosto-2026\" target=\"_blank\" rel=\"noopener\">IGN, eclipse total del 12 de agosto de 2026</a></p>"
+  }
+ },
+ {
+  "modulo": 8,
+  "seccion": 1,
+  "orden": 1,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Fiestas que se fijan con el Sol y la Luna</h3>\n<p>Este apartado es un primer borrador del módulo 8. Muchas fiestas religiosas no tienen una fecha fija en el calendario civil, sino que dependen del Sol y de la Luna. Aquí se separa lo que es un hecho histórico documentado (cómo se calcula cada fecha) de lo que es una lectura simbólica (qué significado le dan distintas tradiciones y autores).</p>"
+  }
+ },
+ {
+  "modulo": 8,
+  "seccion": 1,
+  "orden": 2,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>La Pascua: el primer domingo después de la primera luna llena de primavera</h3>\n<p><strong>El hecho.</strong> En las Iglesias de tradición occidental, el domingo de Pascua es el siguiente a la primera luna llena que cae en el equinoccio de primavera o después. Para el cálculo, el llamado cómputo eclesiástico fija el equinoccio el 21 de marzo y usa una luna calculada con tablas, no la luna real del cielo, por eso a veces la fecha no coincide con la que daría la astronomía. El monje Dionisio el Exiguo preparó en el año 525 unas tablas de la Pascua con el método de Alejandría, que acabaron imponiéndose en Occidente; en ellas empezó a contar los años desde el nacimiento de Cristo, la cuenta «antes y después de Cristo» que usamos hoy. La Pascua judía, Pésaj, empieza el 15 del mes de Nisán, y como el calendario hebreo sigue la Luna, ese día es siempre de luna llena o casi.</p>\n<p><strong>La lectura simbólica.</strong> Hacia el equinoccio de marzo, el Sol está en el signo de Aries, el carnero. Algunos autores relacionan con ese signo el cordero pascual, tanto el de Pésaj como el «Cordero de Dios» cristiano. Es una lectura de esos autores, no un dato de los textos bíblicos.</p>"
+  }
+ },
+ {
+  "modulo": 8,
+  "seccion": 1,
+  "orden": 3,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Del cordero al pez: la precesión leída como eras</h3>\n<p><strong>El hecho.</strong> Como se explica en el módulo 1, la precesión hace que el punto donde está el Sol en el equinoccio de marzo, el punto vernal, retroceda despacio entre las estrellas: un signo de 30 grados cada unos 2.160 años, según la astronomía moderna. Según el criterio que se use, hacia el comienzo de nuestra era ese punto pasó de las estrellas de Aries a las de Piscis, y hoy se acerca a Acuario.</p>\n<p><strong>La lectura simbólica.</strong> Muchos astrólogos y autores esotéricos leen la historia en «eras» de unos 2.000 años: la Era de Aries, la del carnero, y después la Era de Piscis, que hacen coincidir con el cristianismo, cuyo símbolo más antiguo es el pez (en griego, <em>ichthys</em>). Aleister Crowley propuso otra división, en «eones»: el de Isis, de carácter materno; el de Osiris, que abarcaría la época clásica y la medieval; y el de Horus, que según él empezó en 1904. Lon Milo DuQuette, autor de la misma tradición, hace coincidir el eón de Horus con la Era de Acuario.</p>"
+  }
+ },
+ {
+  "modulo": 8,
+  "seccion": 1,
+  "orden": 4,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>El Sol y los doce</h3>\n<p>El esquema de una figura central rodeada de doce aparece en muchas tradiciones, y algunos autores modernos lo leen en clave astronómica: el Sol en el centro y los doce signos alrededor. Una de esas lecturas se aplica a <em>La última cena</em> de Leonardo da Vinci: Cristo como el Sol y los doce apóstoles repartidos en cuatro grupos de tres, como los doce signos en las cuatro estaciones. Es una interpretación posterior, no algo que Leonardo dejara escrito.</p>"
+  }
+ },
+ {
+  "modulo": 8,
+  "seccion": 1,
+  "orden": 5,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Los días de media estación</h3>\n<p><strong>El hecho.</strong> Entre los solsticios y los equinoccios caen cuatro fiestas tradicionales llamadas «de media estación», de origen celta según la tradición irlandesa: Imbolc, que coincide con la Candelaria (2 de febrero); Beltane (1 de mayo); Lughnasadh (1 de agosto); y Samhain, que coincide con Todos los Santos (1 de noviembre). A menudo se dice que están separadas unos cuarenta días de los solsticios y equinoccios, pero, contando con las fechas habituales, los intervalos reales van de 41 a 51 días (cálculo del curso). El año suma 365.</p>\n<table class=\"tabla\">\n<thead><tr><th>Tramo</th><th>Días</th></tr></thead>\n<tbody>\n<tr><td>Solsticio de diciembre (21) → Candelaria (2 de febrero)</td><td>43</td></tr>\n<tr><td>2 de febrero → equinoccio de marzo (21)</td><td>47</td></tr>\n<tr><td>21 de marzo → Beltane (1 de mayo)</td><td>41</td></tr>\n<tr><td>1 de mayo → solsticio de junio (21)</td><td>51</td></tr>\n<tr><td>21 de junio → Lughnasadh (1 de agosto)</td><td>41</td></tr>\n<tr><td>1 de agosto → equinoccio de septiembre (21)</td><td>51</td></tr>\n<tr><td>21 de septiembre → Samhain (1 de noviembre)</td><td>41</td></tr>\n<tr><td>1 de noviembre → 21 de diciembre</td><td>50</td></tr>\n</tbody>\n</table>\n<p class=\"fuentes\">Fuentes: <a href=\"https://en.wikipedia.org/wiki/Computus\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Computus»</a> · <a href=\"https://en.wikipedia.org/wiki/Dionysius_Exiguus\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Dionysius Exiguus»</a> · <a href=\"https://en.wikipedia.org/wiki/Aeon_of_Horus\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Aeon of Horus»</a></p>"
+  }
+ },
+ {
+  "modulo": 8,
+  "seccion": 2,
+  "orden": 1,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>La tabla de Athanasius Kircher</h3>\n<p>Athanasius Kircher fue un jesuita alemán del siglo XVII, estudioso de Egipto, de las lenguas y de las ciencias de su tiempo. En una de sus obras publicó una tabla que iguala los dioses de Egipto con los de los hebreos y otros pueblos de Oriente y con los de griegos y latinos. Casi todos esos dioses tenían además un planeta asociado en la tradición antigua. Según el material de origen de este apartado, la tabla está en el libro III, <em>Mystagogia</em>, página 254, en la copia digital de la Herzog August Bibliothek de Wolfenbüttel; las fuentes lo relacionan con su <em>Obeliscus Pamphilius</em> (1650). La columna de planetas la añade el curso como ayuda: Kircher no la pone.</p>\n<table class=\"tabla\">\n<thead><tr><th>Egipto</th><th>Hebreos y orientales</th><th>Griegos y latinos</th><th>Planeta o astro (añadido)</th></tr></thead>\n<tbody>\n<tr><td>Osiris</td><td>Thamuz, Belus, Saturno, Rephan</td><td>Júpiter (Zeus), Amón</td><td>Saturno y Júpiter</td></tr>\n<tr><td>Arveris (Dioniso)</td><td>Chamos, Moth</td><td>Baco</td><td>—</td></tr>\n<tr><td>Anubis</td><td>Marcolis</td><td>Mercurio (Hermes)</td><td>Mercurio</td></tr>\n<tr><td>Horus</td><td>Adonis</td><td>Apolo (Febo)</td><td>Sol</td></tr>\n<tr><td>Tifón (Seth)</td><td>Moloch, Mitra</td><td>Marte (Ares)</td><td>Marte</td></tr>\n<tr><td>Canopo o Nilo</td><td>Dagón</td><td>Neptuno</td><td>(Neptuno)</td></tr>\n<tr><td>Isis superna</td><td>Astarté</td><td>Venus (Afrodita)</td><td>Venus</td></tr>\n<tr><td>Isis inferna</td><td>Atargatis</td><td>Proserpina, Ceres</td><td>Luna y Tierra</td></tr>\n</tbody>\n</table>"
+  }
+ },
+ {
+  "modulo": 8,
+  "seccion": 2,
+  "orden": 2,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>El tetramorfos y los signos fijos</h3>\n<p><strong>El hecho.</strong> En los tímpanos de muchas iglesias románicas, Cristo aparece sentado dentro de una mandorla, una aureola en forma de almendra, rodeado de cuatro seres: un hombre o ángel, un león, un toro y un águila. Es el <strong>tetramorfos</strong>, tomado de las visiones de Ezequiel (capítulo 1) y del Apocalipsis (capítulo 4). Desde san Jerónimo, cada ser se asocia a un evangelista.</p>\n<p><strong>La lectura simbólica.</strong> Muchos autores astrológicos y esotéricos leen esos cuatro seres como los cuatro signos «fijos» del zodiaco, uno por cada elemento. Es su interpretación; los textos bíblicos no hablan de signos.</p>\n<table class=\"tabla\">\n<thead><tr><th>Ser</th><th>Evangelista</th><th>Signo fijo (lectura astrológica)</th><th>Elemento</th></tr></thead>\n<tbody>\n<tr><td>Hombre o ángel</td><td>Mateo</td><td>Acuario</td><td>Aire</td></tr>\n<tr><td>León</td><td>Marcos</td><td>Leo</td><td>Fuego</td></tr>\n<tr><td>Toro</td><td>Lucas</td><td>Tauro</td><td>Tierra</td></tr>\n<tr><td>Águila</td><td>Juan</td><td>Escorpio</td><td>Agua</td></tr>\n</tbody>\n</table>"
+  }
+ },
+ {
+  "modulo": 8,
+  "seccion": 2,
+  "orden": 3,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Apep en la tradición de la Golden Dawn</h3>\n<p>La Orden Hermética de la Golden Dawn, fundada en Londres en 1888, usaba una fórmula llamada IAO, formada con las iniciales de Isis, Apofis (Apep) y Osiris, que leía como nacimiento, destrucción y renacimiento. En esa lectura, Apofis se asociaba con el signo de Escorpio. Es una interpretación de esa orden, no de la religión egipcia, cuya Apep se describe en el módulo 3.</p>"
+  }
+ },
+ {
+  "modulo": 8,
+  "seccion": 2,
+  "orden": 4,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Una curiosidad numerológica</h3>\n<p>Si se suman las cifras de las fechas de los tres eclipses que cruzan España entre 2026 y 2028, escritas en la forma día, mes y año, las tres dan 21: 12-08-2026 da 1+2+0+8+2+0+2+6; 02-08-2027 da 0+2+0+8+2+0+2+7; y 26-01-2028 da 2+6+0+1+2+0+2+8. La suma es correcta (comprobada por el curso); el significado que se le dé es cosa de la numerología, no de la astronomía.</p>"
+  }
+ },
+ {
+  "modulo": 8,
+  "seccion": 2,
+  "orden": 5,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Para practicar</h3>\n<ol><li><p>Calcula la fecha de la Pascua de 2027 con la regla del equinoccio y la luna llena, y compárala con la fecha oficial.</p></li><li><p>Compara la «era de Horus» de Crowley con las fechas que dan distintos autores para la Era de Acuario (módulo 1).</p></li><li><p>Comprueba con un calendario los intervalos de la tabla de los días de media estación.</p></li></ol>\n<p class=\"fuentes\">Fuentes: <a href=\"https://en.wikipedia.org/wiki/Obeliscus_Pamphilius\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Obeliscus Pamphilius»</a> · <a href=\"https://en.wikipedia.org/wiki/Tetramorph\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Tetramorph»</a> · <a href=\"https://en.wikipedia.org/wiki/Aeon_of_Horus\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Aeon of Horus»</a></p>"
   }
  }
 ]
