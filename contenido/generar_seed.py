@@ -204,6 +204,22 @@ TETRAMORFOS = imagen(
     "Dibujo de un tímpano románico con Cristo dentro de la mandorla (marcada en rojo) y los cuatro seres del tetramorfos: el ángel y el águila arriba, el león y el toro abajo.",
     "Dibujo de un tímpano románico, con anotación añadida; tomado del material de origen", "Obra en dominio público")
 
+LOUGHCREW_C16 = imagen(
+    "esquema", "/img/modulo-1/loughcrew-c16-esquema.svg", "https://knowth.com/loughcrew-cairnl.htm",
+    "Dibujo simplificado de los grabados de la piedra C16 del Cairn L, en Loughcrew (Irlanda), hecho por el curso a partir de fotografías publicadas. Paul Griffin leyó los círculos solapados como un eclipse de Sol; otros investigadores los consideran motivos habituales del arte neolítico irlandés.",
+    "Esquema del curso. Descripción de la piedra: Frank Prendergast", "Uso educativo", fecha="Hacia 3300 a. C. (la piedra)",
+    alt="Dibujo de círculos concéntricos, arcos anidados que se solapan y una columna de rombos")
+LOUGHCREW_SOL = imagen(
+    "esquema", "/img/modulo-1/loughcrew-salida-sol-esquema.svg", "https://knowth.com/loughcrew-cairnl.htm",
+    "Por dónde sale el Sol en Loughcrew en los solsticios, los equinoccios y a principios de noviembre y de febrero. La línea roja marca la dirección de la luz que, según las medidas de Frank Prendergast, llega a la cámara 6 hacia el 7 de noviembre y el 4 de febrero. Ángulos calculados por el curso para 53,7° N con el horizonte llano; el horizonte real cambia algo los valores.",
+    "Esquema del curso. Alineaciones: Frank Prendergast", "Uso educativo",
+    alt="Vista desde arriba del Cairn L con cuatro direcciones de salida del Sol a lo largo del año")
+LOUGHCREW_IA = imagen(
+    "ia", "/img/modulo-1/loughcrew-infografia-ia.jpg", "https://www.atlasobscura.com/articles/oldest-eclipse-art-loughcrew-ireland",
+    "Infografía generada con IA (Gemini) sobre la lectura del eclipse. Tiene errores, y se deja como ejercicio de corrección: mezcla inglés y español («SUN», «MOON») y tiene erratas («EERTH», «saolar») y texto repetido; habla del solsticio de verano, cuando las alineaciones del Cairn L que se citan son de principios de noviembre y de febrero; y presenta la corona solar «visible desde el túnel de la tumba», una idea que no aparece en las fuentes consultadas. La foto de la parte de arriba también está retocada por la IA.",
+    "Imagen generada por IA con Gemini", "Uso educativo",
+    alt="Infografía con la piedra de Loughcrew, un esquema de eclipse y la luz del amanecer entrando en una tumba")
+
 SEC_POLARIS = "El movimiento de las estrellas y el misterio de Polaris"
 SEC_SOL = "El Sol, las estaciones y la eclíptica"
 SEC_LUNA = "La Luna y sus fases"
@@ -311,6 +327,7 @@ EXTRAS = {
     (1, SEC_ECLIPSES, "Por qué hay temporadas de eclipses: la sicigia y los nodos"): [
         widget("interactivo", "temporadas-eclipse", "Interactivo", "Observación y dos modelos: globo y plano",
                "Mueve la fecha o salta de eclipse en eclipse. Arriba, el cielo desenrollado: el camino de la Luna cruza el del Sol en dos nodos. En medio, el modelo del globo con la órbita inclinada de la Luna. Abajo, la disposición plana de la wiki de la Flat Earth Society. Al final, cada luna nueva y llena de 2026 y 2027; en color, las que quedan cerca de un nodo. Posiciones medias del Sol y la Luna (Jean Meeus), que pueden diferir un día de las fechas reales; se cuentan también los eclipses penumbrales de Luna. Esquemas, no a escala.")],
+    (1, SEC_ECLIPSES, "Loughcrew: ¿un eclipse grabado en piedra hace más de 5.000 años?"): [LOUGHCREW_C16, LOUGHCREW_SOL, LOUGHCREW_IA],
     (1, SEC_ECLIPSES, "España: dos tríos de eclipses en algo más de un siglo"): [MAPA_IGN_2026, MAPA_IGN_2027, MAPA_IGN_2028],
     (3, "Egipto: Osiris, la Luna y los eclipses", "Apep, la serpiente que ataca al Sol"): [APEP],
     (7, "Leer un eclipse en una carta astrológica", "La carta del eclipse del 12 de agosto de 2026"): [CARTA_ECLIPSE_2026],
