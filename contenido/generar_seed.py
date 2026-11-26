@@ -36,7 +36,9 @@ MODULOS = [
      "La cronología estándar académica frente a la «Nueva Cronología» de Anatoli Fomenko, atribuida a él y contrastada. Ninguna se da por sentada.", False),
 ]
 
-ARCHIVOS = {0: "modulo-00-introduccion.html", 1: "modulo-01-mirar-el-cielo.html"}
+ARCHIVOS = {0: "modulo-00-introduccion.html", 1: "modulo-01-mirar-el-cielo.html",
+            # Borradores: se cargan en la base de datos, pero el módulo sigue sin publicar
+            3: "modulo-03-cosmologias-antiguas.html", 7: "modulo-07-astrologia.html", 8: "modulo-08-esoterismo.html"}
 
 # Versiones para el visor guardadas en el almacén propio, limitadas a 2400 px de lado mayor
 # (3600 en el mapa de Gleason) para que el móvil no se quede sin memoria al ampliarlas.
@@ -268,6 +270,9 @@ EXTRAS = {
     (1, SEC_ECLIPSES, "La selenelion según la astronomía moderna: la refracción"): [
         widget("interactivo", "selenelion", "Interactivo", "Dos modelos: globo y plano",
                "Arriba, el modelo del globo con y sin aire. En medio, lo que vería un observador hacia el este y hacia el oeste, calculado con los valores medios de refracción (34′) y paralaje lunar (57′), con la Luna en el centro de la sombra y el Sol subiendo 0,2° por minuto. Abajo, las dos propuestas planas para el eclipse de Luna. Esquemas, no a escala.")],
+    (1, SEC_ECLIPSES, "Por qué hay temporadas de eclipses: la sicigia y los nodos"): [
+        widget("interactivo", "temporadas-eclipse", "Interactivo", "Observación y dos modelos: globo y plano",
+               "Mueve la fecha o salta de eclipse en eclipse. Arriba, el cielo desenrollado: el camino de la Luna cruza el del Sol en dos nodos. En medio, el modelo del globo con la órbita inclinada de la Luna. Abajo, la disposición plana de la wiki de la Flat Earth Society. Al final, cada luna nueva y llena de 2026 y 2027; en color, las que quedan cerca de un nodo. Posiciones medias del Sol y la Luna (Jean Meeus), que pueden diferir un día de las fechas reales; se cuentan también los eclipses penumbrales de Luna. Esquemas, no a escala.")],
     (1, SEC_PLANETAS, MOD): [
         widget("animacion", "retrogrado", "Animación", "Tres modelos comparados",
                "Un mismo bucle de Marte con tres disposiciones: la heliocéntrica de Copérnico y Kepler, la geocéntrica de Ptolomeo con epiciclos y la de la Flat Earth Society, con los planetas girando alrededor de un Sol que da vueltas sobre el centro del plano. Esquemas simplificados.")],

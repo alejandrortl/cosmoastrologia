@@ -557,3 +557,8 @@ body.con-panel { overflow: hidden; }
 }
 .figura .controles.arriba { border-radius: 14px 14px 0 0; border-top: 0; border-bottom: 1px solid var(--linea); }
 .figura:has(.controles.arriba) .lienzo { border-radius: 0 0 14px 14px; }
+
+/* Tablas dentro del texto de un módulo */
+.texto .tabla { width: 100%; border-collapse: collapse; margin: 0 0 1.3rem; font-family: var(--sans); font-size: .9rem; line-height: 1.4; display: block; overflow-x: auto; }
+.texto .tabla th, .texto .tabla td { text-align: left; vertical-align: top; padding: .5rem .6rem; border-bottom: 1px solid var(--linea); }
+.texto .tabla th { font-weight: 600; color: var(--oro); }
