@@ -855,6 +855,51 @@
  },
  {
   "modulo": 1,
+  "seccion": 8,
+  "orden": 23,
+  "tipo": "imagen",
+  "contenido": {
+   "tipo": "esquema",
+   "url": "/img/modulo-1/ign-eclipse-2026.jpg",
+   "enlace": "https://astronomia.ign.es/es/eclipses-de-sol-y-luna/eclipse-total-sol-de-12-de-agosto-2026",
+   "pie": "Mapa del eclipse total del 12 de agosto de 2026: la franja de totalidad cruza en diagonal el norte de la península, de Galicia a Valencia y Baleares, y las líneas marcan la duración y el porcentaje del Sol tapado fuera de ella. Es un mapa calculado, no una foto.",
+   "credito": "Instituto Geográfico Nacional, con cálculos del Observatorio Astronómico Nacional",
+   "licencia": "CC BY 4.0",
+   "fecha": "2026"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 8,
+  "orden": 24,
+  "tipo": "imagen",
+  "contenido": {
+   "tipo": "esquema",
+   "url": "/img/modulo-1/ign-eclipse-2027.jpg",
+   "enlace": "https://astronomia.ign.es/es/eclipses-de-sol-y-luna/eclipse-total-sol-de-12-de-agosto-2026",
+   "pie": "Mapa del eclipse total del 2 de agosto de 2027: la totalidad pasa por el extremo sur, por Cádiz, el Estrecho, Málaga, Ceuta y Melilla. Mapa calculado.",
+   "credito": "Instituto Geográfico Nacional, con cálculos del Observatorio Astronómico Nacional",
+   "licencia": "CC BY 4.0",
+   "fecha": "2026"
+  }
+ },
+ {
+  "modulo": 1,
+  "seccion": 8,
+  "orden": 25,
+  "tipo": "imagen",
+  "contenido": {
+   "tipo": "esquema",
+   "url": "/img/modulo-1/ign-eclipse-2028.jpg",
+   "enlace": "https://astronomia.ign.es/es/eclipses-de-sol-y-luna/eclipse-total-sol-de-12-de-agosto-2026",
+   "pie": "Mapa del eclipse anular del 26 de enero de 2028: la franja del anillo va de suroeste a noreste, de Andalucía a Valencia y Cataluña, con el Sol poniéndose eclipsado. Mapa calculado.",
+   "credito": "Instituto Geográfico Nacional, con cálculos del Observatorio Astronómico Nacional",
+   "licencia": "CC BY 4.0",
+   "fecha": "2026"
+  }
+ },
+ {
+  "modulo": 1,
   "seccion": 9,
   "orden": 1,
   "tipo": "texto",
@@ -1464,6 +1509,21 @@
   "modulo": 3,
   "seccion": 1,
   "orden": 5,
+  "tipo": "imagen",
+  "contenido": {
+   "tipo": "obra",
+   "url": "/img/modulo-3/apep-tumba.jpg",
+   "enlace": "https://en.wikipedia.org/wiki/Apep",
+   "pie": "La serpiente Apep enroscada, en una pintura mural de una tumba egipcia, con un personaje que la sujeta junto a textos jeroglíficos.",
+   "credito": "Pintura mural egipcia (autor anónimo); fotografía tomada del material de origen",
+   "licencia": "Obra en dominio público",
+   "alt": "Pintura mural egipcia de la serpiente Apep enroscada"
+  }
+ },
+ {
+  "modulo": 3,
+  "seccion": 1,
+  "orden": 6,
   "tipo": "texto",
   "contenido": {
    "html": "<h3>Horus niño, el Sol que nace</h3>\n<p>En época grecorromana, Horus niño, al que los griegos llamaron Harpócrates, se representaba como un niño con el dedo en los labios. El escritor latino Macrobio, en sus <em>Saturnales</em> (libro I, capítulo 18), cuenta que los egipcios mostraban el Sol del solsticio de invierno en figura de niño pequeño, porque es el día más corto y el Sol parece empezar de nuevo. Por eso Harpócrates se ha leído como el Sol que nace, tanto cada mañana como cada invierno.</p>\n<p class=\"fuentes\">Fuentes: <a href=\"https://en.wikipedia.org/wiki/Apep\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Apep»</a> · <a href=\"https://www.wikiwand.com/en/articles/Harpocrates\" target=\"_blank\" rel=\"noopener\">Wikiwand, «Harpocrates»</a></p>"
@@ -1491,6 +1551,21 @@
   "modulo": 7,
   "seccion": 1,
   "orden": 3,
+  "tipo": "imagen",
+  "contenido": {
+   "tipo": "esquema",
+   "url": "/img/modulo-7/carta-eclipse-2026-benicarlo.jpg",
+   "enlace": "https://www.astro-seek.com/",
+   "pie": "Carta astrológica del eclipse del 12 de agosto de 2026 calculada para la zona de Benicarló. Es un dibujo hecho por un programa a partir de las posiciones calculadas de los astros.",
+   "credito": "Astro-Seek.com",
+   "licencia": "Captura de la web del programa",
+   "fecha": "2026"
+  }
+ },
+ {
+  "modulo": 7,
+  "seccion": 1,
+  "orden": 4,
   "tipo": "texto",
   "contenido": {
    "html": "<h3>Una lectura astrológica de los tres eclipses de 2026 a 2028</h3>\n<p>La astróloga Gabriela González, citada en el material de origen de este apartado, lee los tres eclipses que cruzan España en 2026, 2027 y 2028 como tres fases de un mismo proceso: el primero, en Leo y en la casa 7, sería «el Encuentro»; el segundo, también en Leo pero en la casa 10, «la Expresión»; y el tercero, en Acuario, en la casa 8 y junto a Plutón, «la Transformación». Es su interpretación; otros astrólogos hacen otras.</p>"
@@ -1499,7 +1574,7 @@
  {
   "modulo": 7,
   "seccion": 1,
-  "orden": 4,
+  "orden": 5,
   "tipo": "texto",
   "contenido": {
    "html": "<h3>Practicar</h3>\n<ul><li><p>Busca la carta del eclipse del 12 de agosto de 2026 para tu ciudad y compara su ascendente con el de Benicarló: cambia con el lugar y la hora, aunque el Sol y la Luna estén en el mismo grado.</p></li><li><p>Señala en la carta los signos, las casas y los aspectos principales.</p></li></ul>\n<p class=\"fuentes\">Fuentes: carta calculada con <a href=\"https://www.astro-seek.com/\" target=\"_blank\" rel=\"noopener\">Astro-Seek</a> · <a href=\"https://astronomia.ign.es/es/eclipses-de-sol-y-luna/eclipse-total-sol-de-12-de-agosto-2026\" target=\"_blank\" rel=\"noopener\">IGN, eclipse total del 12 de agosto de 2026</a></p>"
@@ -1552,6 +1627,20 @@
  },
  {
   "modulo": 8,
+  "seccion": 1,
+  "orden": 6,
+  "tipo": "imagen",
+  "contenido": {
+   "tipo": "ia",
+   "url": "/img/modulo-8/dias-media-estacion-ia.jpg",
+   "enlace": "https://en.wikipedia.org/wiki/Quarter_days",
+   "pie": "Esquema generado con IA de los días de media estación. Tiene dos errores: redondea todos los intervalos a 40 días (compáralo con la tabla) y sus grados no siguen la convención astrológica, que pone el 0° de Aries en el equinoccio de marzo. Se deja como ejercicio de corrección.",
+   "credito": "Imagen generada por IA (autor desconocido)",
+   "licencia": "Uso educativo"
+  }
+ },
+ {
+  "modulo": 8,
   "seccion": 2,
   "orden": 1,
   "tipo": "texto",
@@ -1563,9 +1652,15 @@
   "modulo": 8,
   "seccion": 2,
   "orden": 2,
-  "tipo": "texto",
+  "tipo": "imagen",
   "contenido": {
-   "html": "<h3>El tetramorfos y los signos fijos</h3>\n<p><strong>El hecho.</strong> En los tímpanos de muchas iglesias románicas, Cristo aparece sentado dentro de una mandorla, una aureola en forma de almendra, rodeado de cuatro seres: un hombre o ángel, un león, un toro y un águila. Es el <strong>tetramorfos</strong>, tomado de las visiones de Ezequiel (capítulo 1) y del Apocalipsis (capítulo 4). Desde san Jerónimo, cada ser se asocia a un evangelista.</p>\n<p><strong>La lectura simbólica.</strong> Muchos autores astrológicos y esotéricos leen esos cuatro seres como los cuatro signos «fijos» del zodiaco, uno por cada elemento. Es su interpretación; los textos bíblicos no hablan de signos.</p>\n<table class=\"tabla\">\n<thead><tr><th>Ser</th><th>Evangelista</th><th>Signo fijo (lectura astrológica)</th><th>Elemento</th></tr></thead>\n<tbody>\n<tr><td>Hombre o ángel</td><td>Mateo</td><td>Acuario</td><td>Aire</td></tr>\n<tr><td>León</td><td>Marcos</td><td>Leo</td><td>Fuego</td></tr>\n<tr><td>Toro</td><td>Lucas</td><td>Tauro</td><td>Tierra</td></tr>\n<tr><td>Águila</td><td>Juan</td><td>Escorpio</td><td>Agua</td></tr>\n</tbody>\n</table>"
+   "tipo": "obra",
+   "url": "/img/modulo-8/kircher-tabla-254.jpg",
+   "enlace": "https://www.hab.de/",
+   "pie": "La tabla de correspondencias de dioses de Athanasius Kircher (siglo XVII), en la página 254 del libro III, «Mystagogia», según la copia digital de la Herzog August Bibliothek de Wolfenbüttel.",
+   "credito": "Athanasius Kircher. Herzog August Bibliothek Wolfenbüttel",
+   "licencia": "Obra en dominio público",
+   "fecha": "Siglo XVII"
   }
  },
  {
@@ -1574,13 +1669,36 @@
   "orden": 3,
   "tipo": "texto",
   "contenido": {
-   "html": "<h3>Apep en la tradición de la Golden Dawn</h3>\n<p>La Orden Hermética de la Golden Dawn, fundada en Londres en 1888, usaba una fórmula llamada IAO, formada con las iniciales de Isis, Apofis (Apep) y Osiris, que leía como nacimiento, destrucción y renacimiento. En esa lectura, Apofis se asociaba con el signo de Escorpio. Es una interpretación de esa orden, no de la religión egipcia, cuya Apep se describe en el módulo 3.</p>"
+   "html": "<h3>El tetramorfos y los signos fijos</h3>\n<p><strong>El hecho.</strong> En los tímpanos de muchas iglesias románicas, Cristo aparece sentado dentro de una mandorla, una aureola en forma de almendra, rodeado de cuatro seres: un hombre o ángel, un león, un toro y un águila. Es el <strong>tetramorfos</strong>, tomado de las visiones de Ezequiel (capítulo 1) y del Apocalipsis (capítulo 4). Desde san Jerónimo, cada ser se asocia a un evangelista.</p>\n<p><strong>La lectura simbólica.</strong> Muchos autores astrológicos y esotéricos leen esos cuatro seres como los cuatro signos «fijos» del zodiaco, uno por cada elemento. Es su interpretación; los textos bíblicos no hablan de signos.</p>\n<table class=\"tabla\">\n<thead><tr><th>Ser</th><th>Evangelista</th><th>Signo fijo (lectura astrológica)</th><th>Elemento</th></tr></thead>\n<tbody>\n<tr><td>Hombre o ángel</td><td>Mateo</td><td>Acuario</td><td>Aire</td></tr>\n<tr><td>León</td><td>Marcos</td><td>Leo</td><td>Fuego</td></tr>\n<tr><td>Toro</td><td>Lucas</td><td>Tauro</td><td>Tierra</td></tr>\n<tr><td>Águila</td><td>Juan</td><td>Escorpio</td><td>Agua</td></tr>\n</tbody>\n</table>"
   }
  },
  {
   "modulo": 8,
   "seccion": 2,
   "orden": 4,
+  "tipo": "imagen",
+  "contenido": {
+   "tipo": "esquema",
+   "url": "/img/modulo-8/tetramorfos-timpano.jpg",
+   "enlace": "https://en.wikipedia.org/wiki/Tetramorph",
+   "pie": "Dibujo de un tímpano románico con Cristo dentro de la mandorla (marcada en rojo) y los cuatro seres del tetramorfos: el ángel y el águila arriba, el león y el toro abajo.",
+   "credito": "Dibujo de un tímpano románico, con anotación añadida; tomado del material de origen",
+   "licencia": "Obra en dominio público"
+  }
+ },
+ {
+  "modulo": 8,
+  "seccion": 2,
+  "orden": 5,
+  "tipo": "texto",
+  "contenido": {
+   "html": "<h3>Apep en la tradición de la Golden Dawn</h3>\n<p>La Orden Hermética de la Golden Dawn, fundada en Londres en 1888, usaba una fórmula llamada IAO, formada con las iniciales de Isis, Apofis (Apep) y Osiris, que leía como nacimiento, destrucción y renacimiento. En esa lectura, Apofis se asociaba con el signo de Escorpio. Es una interpretación de esa orden, no de la religión egipcia, cuya Apep se describe en el módulo 3.</p>"
+  }
+ },
+ {
+  "modulo": 8,
+  "seccion": 2,
+  "orden": 6,
   "tipo": "texto",
   "contenido": {
    "html": "<h3>Una curiosidad numerológica</h3>\n<p>Si se suman las cifras de las fechas de los tres eclipses que cruzan España entre 2026 y 2028, escritas en la forma día, mes y año, las tres dan 21: 12-08-2026 da 1+2+0+8+2+0+2+6; 02-08-2027 da 0+2+0+8+2+0+2+7; y 26-01-2028 da 2+6+0+1+2+0+2+8. La suma es correcta (comprobada por el curso); el significado que se le dé es cosa de la numerología, no de la astronomía.</p>"
@@ -1589,7 +1707,7 @@
  {
   "modulo": 8,
   "seccion": 2,
-  "orden": 5,
+  "orden": 7,
   "tipo": "texto",
   "contenido": {
    "html": "<h3>Para practicar</h3>\n<ol><li><p>Calcula la fecha de la Pascua de 2027 con la regla del equinoccio y la luna llena, y compárala con la fecha oficial.</p></li><li><p>Compara la «era de Horus» de Crowley con las fechas que dan distintos autores para la Era de Acuario (módulo 1).</p></li><li><p>Comprueba con un calendario los intervalos de la tabla de los días de media estación.</p></li></ol>\n<p class=\"fuentes\">Fuentes: <a href=\"https://en.wikipedia.org/wiki/Obeliscus_Pamphilius\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Obeliscus Pamphilius»</a> · <a href=\"https://en.wikipedia.org/wiki/Tetramorph\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Tetramorph»</a> · <a href=\"https://en.wikipedia.org/wiki/Aeon_of_Horus\" target=\"_blank\" rel=\"noopener\">Wikipedia, «Aeon of Horus»</a></p>"
